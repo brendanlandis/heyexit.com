@@ -1,11 +1,19 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+
 const path = require('path')
 
-module.exports = nextConfig
-
-module.exports = {
+const nextConfig = {
+    images: {
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'api.slownames.net',
+        },
+      ],
+    },
     sassOptions: {
         includePaths: [path.join(__dirname, 'css')],
-    },
+    }
 }
+
+module.exports = nextConfig
