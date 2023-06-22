@@ -23,7 +23,7 @@ export default function Home() {
   const path = "https://api.slownames.net"
 
   return (
-    <main>
+    <main className="container mx-auto">
       {works.map(({ id, attributes }) => (
         <Image
           key={id}

@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+.prose, .prose-sm {
+    text-align: left;
+}
+.container {
+    // border: 1px solid #000;
+}
+
 header {
     display: grid;
     max-width: 1024px;
@@ -27,19 +34,19 @@ header {
     nav {
         ul {
             display: flex;
-            justify-content: flex-start;
+            justify-content: flex-end;
             overflow: hidden;
             li {
                 &:hover {
                     a {
                         transform: rotate(180deg);
-                        text-decoration: overline;
+                        text-underline-offset: -13px;
                     }
                 }
                 a {
-                    @apply text-black;
                     display: block;
                     padding: 20px 50px 22px 50px;
+                    text-underline-offset: 2px;
                     transition: 100ms;
                     text-decoration: underline;
                 }
