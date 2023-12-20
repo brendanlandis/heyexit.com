@@ -37,6 +37,9 @@ export default function RootLayout({
             </head> */}
             <body>
                 <header>
+                    <div className="logo">
+                        <img src="/img/logo.png" alt="Hey Exit logo" />
+                    </div>
                     <NavDesktop />
                     <NavMobile />
                 </header>

@@ -5,7 +5,10 @@ export default function NavDesktop() {
         <nav id="nav-desktop">
             <ul id="primary">
                 <NavDesktopItem url="/" name="home" />
-                <NavDesktopItem url="/shows" name="shows" />
+                <NavDesktopItem url="/about" name="about" />
+                <NavDesktopItem url="/discography" name="discography" />
+                <NavDesktopItem url="/live" name="live" />
+                <NavDesktopItem url="/contact" name="contact" />
             </ul>
         </nav>
     );

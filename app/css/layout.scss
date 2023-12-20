@@ -10,20 +10,50 @@ header {
 // main
 body {
     min-height: 100vh;
-}
+    header {
+        @apply mx-auto;
+        max-width: $xl;
+        display: flex;
+        flex-wrap: nowrap;
+        margin: 0 auto;
+        justify-content: space-between;
+        align-items: center;
+        .logo {
+            max-width: 400px;
+            img {
+                transform: scale(0.8);
+            }
+        }
+        #nav-desktop {
+            overflow: hidden;
+            ul {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: flex-end;
+                align-items: center;
+                /* height: 100%; */
 
-nav {
-}
-
-main {
-    @apply mx-auto;
-    max-width: $xl;
-    display: grid;
-    grid-template-columns: 1fr;
-    align-content: start;
-    text-align: left;
-    justify-content: center;
-    margin: 0 auto;
-    min-height: 100vh;
-    position: relative;
+                li {
+                    /* height: 100%; */
+                    display: flex;
+                    align-items: center;
+                }
+                a {
+                    overflow: hidden;
+                    padding: 2em;
+                }
+            }
+        }
+    }
+    main {
+        @apply mx-auto;
+        max-width: $xl;
+        display: grid;
+        grid-template-columns: 1fr;
+        align-content: start;
+        text-align: left;
+        justify-content: center;
+        margin: 0 auto;
+        position: relative;
+    }
 }

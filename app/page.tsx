@@ -8,8 +8,9 @@ export default function Home() {
     return (
         <>
             <main id="home">
-                <h1>hey it's me</h1>
-                <div className="about">hellodddddd</div>
+                <div className="image">
+                    <img src="/img/home.jpg" alt="hey exit live in 2015" />
+                </div>
             </main>
         </>
     );
