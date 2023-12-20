@@ -1,23 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik+80s+Fade&family=Rubik+Broken+Fax&family=Rubik+Burned&family=Rubik+Dirt&family=Rubik+Distressed&family=Rubik+Doodle+Triangles&family=Rubik+Glitch&family=Rubik+Iso&family=Rubik+Lines&family=Rubik+Maps&family=Rubik+Maze&family=Rubik+Moonrocks&family=Rubik+Pixels&family=Rubik+Storm&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Rubik+80s+Fade&family=Rubik+Broken+Fax&family=Rubik+Burned&family=Rubik+Dirt&family=Rubik+Distressed&family=Rubik+Doodle+Triangles&family=Rubik+Glitch&family=Rubik+Iso&family=Rubik+Lines&family=Rubik+Maps&family=Rubik+Maze&family=Rubik+Moonrocks&family=Rubik+Pixels&family=Rubik+Storm&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Rubik+Maze&display=swap');
 
 $font-roboto: 'Roboto Mono', monospace;
-
-$font-80sfade: 'Rubik 80s Fade', sans-serif;
-$font-brokenfax: 'Rubik Broken Fax', sans-serif;
-$font-burned: 'Rubik Burned', sans-serif;
-$font-dirt: 'Rubik Dirt', sans-serif;
-$font-distressed: 'Rubik Distressed', sans-serif;
-$font-doodletriangles: 'Rubik Doodle Triangles', sans-serif;
-$font-glitch: 'Rubik Glitch', sans-serif;
-$font-iso: 'Rubik Iso', sans-serif;
-$font-lines: 'Rubik Lines', sans-serif;
-$font-maps: 'Rubik Maps', sans-serif;
 $font-maze: 'Rubik Maze', sans-serif;
-$font-moonrocks: 'Rubik Moonrocks', sans-serif;
-$font-pixels: 'Rubik Pixels', sans-serif;
-$font-storm: 'Rubik Storm', sans-serif;
 
 $font-header: $font-maze;
 $font-nav: $font-roboto;
@@ -30,6 +14,7 @@ header {
 #mobile-menu,
 #nav-desktop {
     font-family: $font-nav;
+    font-weight: 900;
 }
 
 main {
@@ -46,7 +31,10 @@ h6 {
 }
 
 h1 {
-    font-size: 10em;
+    div {
+        line-height: 1em;
+        margin-bottom: 0.3em;
+    }
 }
 
 h2 {

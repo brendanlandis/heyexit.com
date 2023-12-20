@@ -1,0 +1,15 @@
+#about {
+    overflow: hidden;
+    @media (max-width: $lg) {
+        padding: 0 1em;
+    }
+    p, ul {
+        max-width: 700px;
+        text-align: justify;
+        margin: 0 auto 2em auto;
+    }
+    ul {
+        list-style-type: disc;
+        padding-left: 1em;
+    }
+}

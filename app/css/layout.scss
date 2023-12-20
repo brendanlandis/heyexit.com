@@ -4,9 +4,6 @@ $lg: 1024px;
 $xl: 1280px;
 $xxl: 1536px;
 
-header {
-}
-
 // main
 body {
     min-height: 100vh;
@@ -48,6 +45,10 @@ body {
             }
         }
     }
+    > div {
+        height: auto !important;
+        margin: 1em auto;
+    }
     main {
         @apply mx-auto;
         max-width: $xl;
@@ -58,5 +59,8 @@ body {
         justify-content: center;
         margin: 1em auto;
         position: relative;
+        h1 {
+            text-align: center;
+        }
     }
 }
