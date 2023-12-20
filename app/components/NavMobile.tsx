@@ -60,20 +60,30 @@ export default function NavMobile() {
                                     </svg>
                                 </button>
                             </div>
-                            <ul className='mobile-menu-list'>
+                            <ul className="mobile-menu-list">
                                 <NavMobileItem
                                     url="/"
                                     name="home"
                                     onClick={closeModal}
                                 />
                                 <NavMobileItem
-                                    url="/shows"
-                                    name="shows"
+                                    url="/about"
+                                    name="about"
                                     onClick={closeModal}
                                 />
                                 <NavMobileItem
-                                    url="/else"
-                                    name="other stuff we're up to"
+                                    url="/discography"
+                                    name="discography"
+                                    onClick={closeModal}
+                                />
+                                <NavMobileItem
+                                    url="/live"
+                                    name="live"
+                                    onClick={closeModal}
+                                />
+                                <NavMobileItem
+                                    url="/contact"
+                                    name="contact"
                                     onClick={closeModal}
                                 />
                             </ul>

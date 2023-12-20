@@ -16,12 +16,17 @@ body {
         display: flex;
         flex-wrap: nowrap;
         margin: 0 auto;
-        justify-content: space-between;
+        justify-content: center;
+        @media (min-width: $lg) {
+            justify-content: space-between;
+        }
         align-items: center;
         .logo {
             max-width: 400px;
-            img {
-                transform: scale(0.8);
+            @media (min-width: $lg) {
+                img {
+                    transform: scale(0.8);
+                }
             }
         }
         #nav-desktop {
@@ -31,10 +36,8 @@ body {
                 flex-wrap: nowrap;
                 justify-content: flex-end;
                 align-items: center;
-                /* height: 100%; */
 
                 li {
-                    /* height: 100%; */
                     display: flex;
                     align-items: center;
                 }
@@ -53,7 +56,7 @@ body {
         align-content: start;
         text-align: left;
         justify-content: center;
-        margin: 0 auto;
+        margin: 1em auto;
         position: relative;
     }
 }
