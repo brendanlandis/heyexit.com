@@ -1,6 +1,6 @@
 # notes for current steps
-- ~~HOME PAGE~~
-    - ~~one photo~~
+- HOME PAGE
+    - one photo
 - ABOUT
     - bio
     - defunct notice
@@ -17,16 +17,6 @@
     - social links
 
 # hey exit roadmap
-- make a slownames logo, put it in Strapi on prod, clone db to local
-- Get a rudimentary admin section together on local
-    - create admin routes and pages
-        - `/login` with login form and logout link
-        - `/admin` with:
-            - list of artsts (plus "edit" & "delete" links)
-            - "Add new artist" form
-        - successful "logged out" message on logout (plus forwarded back to login page)
-    - make all the shit work
-    - transfer admin stuff to a new app which will be at slownames.net
 - get the home page design together
     - mono font
     - make a heyexit favicon
@@ -48,8 +38,8 @@
 
 # other sites roadmap
 - get reader site together for brendanlandis.com
-- get receive site together
-- get wren.skin together
+- ~~get receive site together~~
+- get slownames.net together
 - get star card site together
 - get anura site together
 

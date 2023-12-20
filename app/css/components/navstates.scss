@@ -1,0 +1,29 @@
+.nav-item-default-state {
+    transition: 100ms;
+    display: block;
+    text-underline-offset: 2px;
+    text-decoration: underline;
+}
+
+.nav-item-hover-state {
+    transform: rotate(180deg);
+    text-underline-offset: -13px;
+}
+.nav-item-active-state {
+    transform: rotate(180deg);
+    text-underline-offset: -13px;
+}
+
+.nav-item {
+    a {
+        @apply nav-item-default-state;
+    }
+    a:hover,
+    a:focus,
+    a:active {
+        @apply nav-item-hover-state;
+    }
+    &.active a {
+        @apply nav-item-active-state;
+    }
+}

@@ -1,0 +1,29 @@
+$sm: 640px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1280px;
+$xxl: 1536px;
+
+header {
+}
+
+// main
+body {
+    min-height: 100vh;
+}
+
+nav {
+}
+
+main {
+    @apply mx-auto;
+    max-width: $xl;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: start;
+    text-align: left;
+    justify-content: center;
+    margin: 0 auto;
+    min-height: 100vh;
+    position: relative;
+}

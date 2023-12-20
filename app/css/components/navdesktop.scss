@@ -1,0 +1,7 @@
+nav#nav-desktop {
+    display: none;
+    @media (min-width: $lg) {
+        display: inline-block;
+    }
+    
+}
