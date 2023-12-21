@@ -4,6 +4,11 @@ $lg: 1024px;
 $xl: 1280px;
 $xxl: 1536px;
 
+pre {
+    max-width: 100%;
+    overflow: hidden;
+}
+
 // main
 body {
     min-height: 100vh;
@@ -20,6 +25,11 @@ body {
         align-items: center;
         .logo {
             max-width: 400px;
+            @media (max-width: $lg) {
+                img {
+                    margin-top: 2em;
+                }
+            }
             @media (min-width: $lg) {
                 img {
                     transform: scale(0.8);

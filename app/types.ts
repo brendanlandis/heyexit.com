@@ -158,3 +158,164 @@ export interface Tab {
     linkText: string;
     description: string;
 }
+
+export interface RawReleaseData {
+    id: number;
+    attributes: {
+        title: string;
+        about: string;
+        credits: string;
+        bandcampURL: string;
+        bandcampEmbedID: string;
+        bandcampAlbumOrTrack: string;
+        spotifyURL: string;
+        visibility: string;
+        type: string;
+        bands: {
+            data: Array<{
+                id: number;
+                displayBandname: string;
+                band: {
+                    data: {
+                        id: number;
+                        attributes: {
+                            bandname: string;
+                        };
+                    };
+                };
+            }>;
+        };
+        tracklist: {
+            data: Array<{
+                id: number;
+                title: string;
+                note: string;
+            }>;
+        };
+        cover: {
+            data: Array<{
+                id: number;
+                attributes: {
+                    alternativeText: string;
+                    url: string;
+                    formats: {
+                        medium: {
+                            url: string;
+                        };
+                    };
+                };
+            }>;
+        };
+        linerNotes: {
+            data: Array<{
+                id: number;
+                attributes: {
+                    alternativeText: string;
+                    url: string;
+                    formats: {
+                        medium: {
+                            url: string;
+                        };
+                    };
+                };
+            }>;
+        };
+        attachments: {
+            data: Array<{
+                id: number;
+                attributes: {
+                    url: string;
+                };
+            }>;
+        };
+        editions: {
+            data: Array<{
+                id: number;
+                attributes: {
+                    printedCDs: number;
+                    printedCassettes: number;
+                    printedRecords: number;
+                    printedObjects: number;
+                    objectDesc: string;
+                    label: string;
+                    catalogNumber: string;
+                    releaseDate: string;
+                    link: string;
+                    soldOut: boolean;
+                    photos: {
+                        data: Array<{
+                            id: number;
+                            attributes: {
+                                alternativeText: string;
+                                url: string;
+                                formats: {
+                                    medium: {
+                                        url: string;
+                                    };
+                                };
+                            };
+                        }>;
+                    };
+                };
+            }>;
+        };
+    };
+}
+
+export interface Release {
+    id: number;
+    title: string;
+    about: string;
+    credits: string;
+    bandcampURL: string;
+    bandcampEmbedID: string;
+    bandcampAlbumOrTrack: string;
+    spotifyURL: string;
+    visibility: string;
+    type: string;
+    bands: Array<{
+        id: number;
+        bandname: string;
+        displayBandname: string;
+    }>;
+    tracklist: Array<{
+        id: number;
+        title: string;
+        note: string;
+    }>;
+    cover: Array<{
+        id: number;
+        alt: string;
+        urlLarge: string;
+        urlSmall: string;
+    }>;
+    linerNotes: Array<{
+        id: number;
+        alt: string;
+        urlLarge: string;
+        urlSmall: string;
+    }>;
+    attachments: Array<{
+        id: number;
+        url: string;
+    }>;
+    editions: Array<{
+        id: number;
+        printedCDs: number;
+        printedCassettes: number;
+        printedRecords: number;
+        printedObjects: number;
+        objectDesc: string;
+        label: string;
+        catalogNumber: string;
+        releaseDate: string;
+        link: string;
+        soldOut: boolean;
+        photos: Array<{
+            id: number;
+            alt: string;
+            urlLarge: string;
+            urlSmall: string;
+        }>;
+    }>;
+}
