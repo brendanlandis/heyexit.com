@@ -3,15 +3,15 @@ import { usePathname } from 'next/navigation';
 import useAxios from 'axios-hooks';
 import { format } from 'date-fns/format';
 import { Release, RawReleaseData } from '../../types';
-import HeaderText from '@/app/components/HeaderText';
+import ReleaseDetails from './ReleaseDetails';
 
 export default function Page() {
-    const slug = usePathname().replace('/release/', '');
+    const slug = usePathname().replace('/discography/', '');
     const [{ data: releases, loading, error }, refetch] = useAxios(
         'https://api.slownames.net/api/releases?populate=deep,3&filters[bands][band][id]=33&filters[visibility]=selected%20discography'
     );
-    if (loading) return <p>loading</p>;
-    if (error) return <p>error</p>;
+    if (loading) return <main id="discography">loading</main>;
+    if (error) return <main id="discography">error</main>;
 
     const getReleaseDetails = (release: RawReleaseData): Release => {
         const originalReleaseDate = release.attributes.editions.data?.reduce(
@@ -111,7 +111,9 @@ export default function Page() {
     return (
         <main id="discography">
             {thisRelease ? (
-                <HeaderText text={thisRelease.title} compressor={1.5} />
+                <>
+                    <ReleaseDetails release={thisRelease} />
+                </>
             ) : (
                 <p>Didn't find that release, hm.</p>
             )}

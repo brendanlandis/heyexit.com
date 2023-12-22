@@ -120,7 +120,7 @@ export default function SelectedDiscog() {
                                 <img key={cover.id} src={cover.urlSmall} alt={cover.alt} />
                             ))}
                         </div>
-                        <Link href={'/release/' + release.titleSlug} className="details">
+                        <Link href={'/discography/' + release.titleSlug} className="details">
                             <div className="album-title">{release.title}</div>
                             <div className="album-releasedate">{release.shortYear}</div>
                         </Link>
