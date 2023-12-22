@@ -171,27 +171,23 @@ export interface RawReleaseData {
         spotifyURL: string;
         visibility: string;
         type: string;
-        bands: {
-            data: Array<{
-                id: number;
-                displayBandname: string;
-                band: {
-                    data: {
-                        id: number;
-                        attributes: {
-                            bandname: string;
-                        };
+        bands: Array<{
+            id: number;
+            displayBandname: string;
+            band: {
+                data: {
+                    id: number;
+                    attributes: {
+                        bandname: string;
                     };
                 };
-            }>;
-        };
-        tracklist: {
-            data: Array<{
-                id: number;
-                title: string;
-                note: string;
-            }>;
-        };
+            };
+        }>;
+        tracklist: Array<{
+            id: number;
+            title: string;
+            note: string;
+        }>;
         cover: {
             data: Array<{
                 id: number;
@@ -239,7 +235,7 @@ export interface RawReleaseData {
                     objectDesc: string;
                     label: string;
                     catalogNumber: string;
-                    releaseDate: string;
+                    releaseDate: Date;
                     link: string;
                     soldOut: boolean;
                     photos: {
@@ -265,6 +261,8 @@ export interface RawReleaseData {
 export interface Release {
     id: number;
     title: string;
+    originalReleaseDate: Date;
+    shortYear: string;
     about: string;
     credits: string;
     bandcampURL: string;
@@ -308,7 +306,7 @@ export interface Release {
         objectDesc: string;
         label: string;
         catalogNumber: string;
-        releaseDate: string;
+        releaseDate: Date;
         link: string;
         soldOut: boolean;
         photos: Array<{
