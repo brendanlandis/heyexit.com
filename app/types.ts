@@ -261,6 +261,7 @@ export interface RawReleaseData {
 export interface Release {
     id: number;
     title: string;
+    titleSlug: string;
     originalReleaseDate: Date;
     shortYear: string;
     about: string;

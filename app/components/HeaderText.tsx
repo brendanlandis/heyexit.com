@@ -6,7 +6,7 @@ import FitText from '@kennethormandy/react-fittext';
 export default function HeaderText({ text, compressor }: { text: string; compressor: number; }) {
     return (
         <>
-            <h1 className="hello">
+            <h1>
                 <FitText compressor={compressor}>{text}</FitText>
             </h1>
         </>

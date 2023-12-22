@@ -1,10 +1,12 @@
 'use client';
+import { usePathname } from 'next/navigation';
 import useAxios from 'axios-hooks';
 import { format } from 'date-fns/format';
-import { Release, RawReleaseData } from '../types';
-import Link from 'next/link';
+import { Release, RawReleaseData } from '../../types';
+import HeaderText from '@/app/components/HeaderText';
 
-export default function SelectedDiscog() {
+export default function Page() {
+    const slug = usePathname().replace('/release/', '');
     const [{ data: releases, loading, error }, refetch] = useAxios(
         'https://api.slownames.net/api/releases?populate=deep,3&filters[bands][band][id]=33&filters[visibility]=selected%20discography'
     );
@@ -104,29 +106,15 @@ export default function SelectedDiscog() {
 
     const formattedReleases = releases ? formatReleases(releases) : [];
 
-    const orderedReleases = formattedReleases.sort(
-        (b, a) => new Date(a.originalReleaseDate).getTime() - new Date(b.originalReleaseDate).getTime()
-    );
-
-    // console.log(orderedReleases);
+    const thisRelease = formattedReleases.find((release) => release.titleSlug === slug);
 
     return (
-        <>
-            <div className="releases-grid">
-                {orderedReleases.map((release: Release) => (
-                    <div className="release" key={release.id}>
-                        <div className="cover">
-                            {release.cover.map((cover) => (
-                                <img key={cover.id} src={cover.urlSmall} alt={cover.alt} />
-                            ))}
-                        </div>
-                        <Link href={'/release/' + release.titleSlug} className="details">
-                            <div className="album-title">{release.title}</div>
-                            <div className="album-releasedate">{release.shortYear}</div>
-                        </Link>
-                    </div>
-                ))}
-            </div>
-        </>
+        <main id="discography">
+            {thisRelease ? (
+                <HeaderText text={thisRelease.title} compressor={1.5} />
+            ) : (
+                <p>Didn't find that release, hm.</p>
+            )}
+        </main>
     );
 }
