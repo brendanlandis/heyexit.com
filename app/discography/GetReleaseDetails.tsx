@@ -73,7 +73,7 @@ export const GetReleaseDetails = (release: RawReleaseData): Release => {
             objectDesc: edition.attributes.objectDesc,
             label: edition.attributes.label,
             catalogNumber: edition.attributes.catalogNumber,
-            releaseDate: edition.attributes.releaseDate,
+            releaseDate: format(edition.attributes.releaseDate, 'yyyy'),
             link: edition.attributes.link,
             soldOut: edition.attributes.soldOut,
             photos: edition.attributes.photos.data?.map((photo) => ({
@@ -85,5 +85,14 @@ export const GetReleaseDetails = (release: RawReleaseData): Release => {
                     : `${process.env.NEXT_PUBLIC_STRAPI_URL}${photo.attributes.url}`,
             })),
         })),
+        presses: release.attributes.presses.data?.map((press) => ({
+            id: press.id,
+            type: press.attributes.type,
+            date: press.attributes.date,
+            URL: press.attributes.URL,
+            quote: press.attributes.quote,
+            visibility: press.attributes.visibility,
+            publication: press.attributes.publication,
+        })),
     };
-}
+};

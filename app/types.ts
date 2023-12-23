@@ -255,6 +255,39 @@ export interface RawReleaseData {
                 };
             }>;
         };
+        presses: {
+            data: Array<{
+                id: number;
+                attributes: {
+                    type: string;
+                    date: Date;
+                    URL: string;
+                    quote: string;
+                    visibility: string;
+                    publication: string;
+
+                    label: string;
+                    catalogNumber: string;
+                    releaseDate: Date;
+                    link: string;
+                    soldOut: boolean;
+                    photos: {
+                        data: Array<{
+                            id: number;
+                            attributes: {
+                                alternativeText: string;
+                                url: string;
+                                formats: {
+                                    medium: {
+                                        url: string;
+                                    };
+                                };
+                            };
+                        }>;
+                    };
+                };
+            }>;
+        };
     };
 }
 
@@ -307,7 +340,7 @@ export interface Release {
         objectDesc: string;
         label: string;
         catalogNumber: string;
-        releaseDate: Date;
+        releaseDate: string;
         link: string;
         soldOut: boolean;
         photos: Array<{
@@ -316,5 +349,14 @@ export interface Release {
             urlLarge: string;
             urlSmall: string;
         }>;
+    }>;
+    presses: Array<{
+        id: number;
+        type: string;
+        date: Date;
+        URL: string;
+        quote: string;
+        visibility: string;
+        publication: string;
     }>;
 }

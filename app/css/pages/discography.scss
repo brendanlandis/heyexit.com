@@ -33,4 +33,12 @@
             }
         }
     }
+
+    .release-formats {
+        .format:not(:last-child) {
+            &:after {
+                content: ', ';
+            }
+        }
+    }
 }
