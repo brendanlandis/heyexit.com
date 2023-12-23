@@ -1,7 +1,15 @@
 #discography {
     .releases-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        &.selected {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        &.complete {
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+        &.bands {
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
         gap: 1em;
         .release {
             position: relative;
@@ -50,6 +58,8 @@
             h1 {
                 font-size: 5em;
                 line-height: 0.8em;
+                text-align: left;
+                max-width: 75%
             }
             .header-details {
                 text-align: right;

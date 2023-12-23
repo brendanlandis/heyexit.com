@@ -1,8 +1,8 @@
 'use client';
 import useAxios from 'axios-hooks';
-import { format } from 'date-fns/format';
-import { parseISO } from 'date-fns/parseISO';
-import { Masonry } from 'react-plock';
+import { Release, RawReleaseData } from '../types';
+import Link from 'next/link';
+import { GetReleaseDetails } from './GetReleaseDetails';
 
 export default function CompleteDiscog() {
     const [{ data: releases, loading, error }, refetch] = useAxios(
@@ -11,9 +11,31 @@ export default function CompleteDiscog() {
     if (loading) return <p>loading</p>;
     if (error) return <p>error</p>;
 
+    const formatReleases = (releases: { data: RawReleaseData[] }): Release[] => {
+        return releases.data.map(GetReleaseDetails);
+    };
+
+    const formattedReleases = releases ? formatReleases(releases) : [];
+
+    const orderedReleases = formattedReleases.sort(
+        (b, a) => new Date(a.originalReleaseDate).getTime() - new Date(b.originalReleaseDate).getTime()
+    );
+
     return (
-        <>
-            <pre>{JSON.stringify(releases, null, 2)}</pre>
-        </>
+        <div className="releases-grid complete">
+            {orderedReleases.map((release: Release) => (
+                <div className="release" key={release.id}>
+                    <div className="cover">
+                        {release.cover.map((cover) => (
+                            <img key={cover.id} src={cover.urlSmall} alt={cover.alt} />
+                        ))}
+                    </div>
+                    <Link href={'/discography/' + release.titleSlug} className="details">
+                        <div className="album-title">{release.title}</div>
+                        <div className="album-releasedate">{release.shortYear}</div>
+                    </Link>
+                </div>
+            ))}
+        </div>
     );
 }

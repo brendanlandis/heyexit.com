@@ -22,22 +22,20 @@ export default function SelectedDiscog() {
     );
 
     return (
-        <>
-            <div className="releases-grid">
-                {orderedReleases.map((release: Release) => (
-                    <div className="release" key={release.id}>
-                        <div className="cover">
-                            {release.cover.map((cover) => (
-                                <img key={cover.id} src={cover.urlSmall} alt={cover.alt} />
-                            ))}
-                        </div>
-                        <Link href={'/discography/' + release.titleSlug} className="details">
-                            <div className="album-title">{release.title}</div>
-                            <div className="album-releasedate">{release.shortYear}</div>
-                        </Link>
+        <div className="releases-grid selected">
+            {orderedReleases.map((release: Release) => (
+                <div className="release" key={release.id}>
+                    <div className="cover">
+                        {release.cover.map((cover) => (
+                            <img key={cover.id} src={cover.urlSmall} alt={cover.alt} />
+                        ))}
                     </div>
-                ))}
-            </div>
-        </>
+                    <Link href={'/discography/' + release.titleSlug} className="details">
+                        <div className="album-title">{release.title}</div>
+                        <div className="album-releasedate">{release.shortYear}</div>
+                    </Link>
+                </div>
+            ))}
+        </div>
     );
 }

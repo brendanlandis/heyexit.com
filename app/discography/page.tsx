@@ -14,10 +14,10 @@ export default function Discography() {
             <main id="discography">
                 <HeaderText text="selected discography" compressor={1} />
                 <SelectedDiscog />
-                {/* <HeaderText text="complete discography" compressor={1} />
+                <HeaderText text="complete discography" compressor={1} />
                 <CompleteDiscog />
                 <HeaderText text="other bands" compressor={1} />
-                <OtherBands /> */}
+                <OtherBands />
             </main>
         </>
     );

@@ -20,7 +20,8 @@ export const GetReleaseDetails = (release: RawReleaseData): Release => {
 
     const shortYear = originalReleaseDate ? format(originalReleaseDate, 'yyyy') : '';
 
-    const bandcampEmbedHeight = 130 + (35 * (release.attributes.tracklist.length || 0));
+    const filteredTracklist = release.attributes.tracklist.filter((entry) => entry.note !== 'digital bonus track');
+    const bandcampEmbedHeight = 145 + 35 * (filteredTracklist.length || 0);
 
     return {
         id: release.id,
