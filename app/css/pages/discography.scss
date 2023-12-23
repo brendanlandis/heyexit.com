@@ -34,11 +34,89 @@
         }
     }
 
-    .release-formats {
-        .format:not(:last-child) {
-            &:after {
-                content: ', ';
+    .release-container {
+        display: grid;
+        gap: 1em;
+        grid-template-columns: 1fr 1fr;
+        a {
+            text-decoration: underline;
+        }
+        .release-header {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            h1 {
+                font-size: 5em;
+                line-height: 0.8em;
             }
+            .header-details {
+                text-align: right;
+                font-size: 0.8em;
+                a {
+                    font-weight: bold;
+                }
+                .release-edition {
+                    .format:not(:last-child) {
+                        &:after {
+                            content: ', ';
+                        }
+                    }
+                    &:not(:first-child) {
+                        margin-top: 0.5em;
+                        padding-top: 0.5em;
+                        border-top: 1px solid #ddd;
+                    }
+                    &:nth-child(n+2):last-of-type {
+                        margin-bottom: 0.5em;
+                    }
+                }
+            }
+        }
+        .release-cover img {
+            margin-bottom: 1em;
+        }
+        .release-attachments {
+            margin-bottom: 1em;
+            .attachment {
+                text-align: center;
+                span {
+                    font-size: 0.8em;
+                    display: block;
+                }
+                &:not(:first-child) {
+                    margin-top: 0.5em;
+                }
+            }
+        }
+        .release-edition-photos {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1em;
+            margin-bottom: 1em;
+            align-items: center;
+        }
+        iframe {
+            width: 100%;
+            min-height: 165px;
+            margin-bottom: 1em;
+        }
+        .release-tracklist {
+            list-style-type: decimal-leading-zero;
+            padding-left: 2.4em;
+            margin-bottom: 1em;
+        }
+        .release-about, .release-credits {
+            margin-bottom: 1em;
+            p:not(:last-child) {
+                margin-bottom: 0.5em;
+            }
+        }
+        .release-presses {
+            padding-top: 1em;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
         }
     }
 }

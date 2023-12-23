@@ -20,6 +20,8 @@ export const GetReleaseDetails = (release: RawReleaseData): Release => {
 
     const shortYear = originalReleaseDate ? format(originalReleaseDate, 'yyyy') : '';
 
+    const bandcampEmbedHeight = 130 + (35 * (release.attributes.tracklist.length || 0));
+
     return {
         id: release.id,
         title: release.attributes.title,
@@ -31,6 +33,7 @@ export const GetReleaseDetails = (release: RawReleaseData): Release => {
         bandcampURL: release.attributes.bandcampURL,
         bandcampEmbedID: release.attributes.bandcampEmbedID,
         bandcampAlbumOrTrack: release.attributes.bandcampAlbumOrTrack,
+        bandcampEmbedHeight: bandcampEmbedHeight,
         spotifyURL: release.attributes.spotifyURL,
         visibility: release.attributes.visibility,
         type: release.attributes.type,
@@ -60,9 +63,11 @@ export const GetReleaseDetails = (release: RawReleaseData): Release => {
                 ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${note.attributes.formats.medium.url}`
                 : `${process.env.NEXT_PUBLIC_STRAPI_URL}${note.attributes.url}`,
         })),
-        attachments: release.attributes.attachments.data?.map((attachment) => ({
+        attachments: release.attributes.attachments?.map((attachment) => ({
             id: attachment.id,
-            url: attachment.attributes.url,
+            url: `${process.env.NEXT_PUBLIC_STRAPI_URL}${attachment.file.data.attributes.url}`,
+            linkText: attachment.linkText,
+            mime: attachment.file.data.attributes.mime,
         })),
         editions: release.attributes.editions.data?.map((edition) => ({
             id: edition.id,

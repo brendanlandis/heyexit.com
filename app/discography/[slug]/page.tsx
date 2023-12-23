@@ -25,7 +25,7 @@ export default function Page() {
         <main id="discography">
             {thisRelease ? (
                 <>
-                    <ReleaseDetails release={thisRelease} />
+                    <ReleaseDetails key={thisRelease.id} release={thisRelease} />
                 </>
             ) : (
                 <p>Didn't find that release, hm.</p>

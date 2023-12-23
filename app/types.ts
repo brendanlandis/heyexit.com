@@ -216,14 +216,19 @@ export interface RawReleaseData {
                 };
             }>;
         };
-        attachments: {
-            data: Array<{
-                id: number;
-                attributes: {
-                    url: string;
+        attachments: Array<{
+            id: number;
+            linkText: string;
+            file: {
+                data: {
+                    id: number;
+                    attributes: {
+                        url: string;
+                        mime: string;
+                    };
                 };
-            }>;
-        };
+            };
+        }>;
         editions: {
             data: Array<{
                 id: number;
@@ -302,6 +307,7 @@ export interface Release {
     bandcampURL: string;
     bandcampEmbedID: string;
     bandcampAlbumOrTrack: string;
+    bandcampEmbedHeight: number;
     spotifyURL: string;
     visibility: string;
     type: string;
@@ -329,7 +335,9 @@ export interface Release {
     }>;
     attachments: Array<{
         id: number;
+        linkText: string;
         url: string;
+        mime: string;
     }>;
     editions: Array<{
         id: number;
