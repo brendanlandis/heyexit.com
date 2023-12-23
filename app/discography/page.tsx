@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 import HeaderText from '../components/HeaderText';
-import SelectedDiscog from '../components/SelectedDiscog';
-import CompleteDiscog from '../components/CompleteDiscog';
-import OtherBands from '../components/OtherBands';
+import SelectedDiscog from './SelectedDiscog';
+import CompleteDiscog from './CompleteDiscog';
+import OtherBands from './OtherBands';
 
 export const metadata: Metadata = {
     title: 'Hey Exit :: discography',

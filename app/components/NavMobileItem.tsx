@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 export default function NavMobileItem({ url, name, onClick } : {url:any, name:any, onClick:any }) {
     const pathname = usePathname();
     return (
-        <li className={pathname.startsWith(url) ? 'nav-item active' : 'nav-item'}>
+        <li className={(pathname === url || (url != '/' && pathname.startsWith(url))) ? 'nav-item active' : 'nav-item'}>
             <Link href={url} onClick={onClick}>
                 {name}
             </Link>
