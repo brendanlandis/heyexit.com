@@ -12,12 +12,18 @@ export default function Discography() {
     return (
         <>
             <main id="discography">
-                <HeaderText text="selected discography" compressor={1} />
-                <SelectedDiscog />
-                <HeaderText text="complete discography" compressor={1} />
-                <CompleteDiscog />
-                <HeaderText text="other bands" compressor={1} />
-                <OtherBands />
+                <div className="discography-selected">
+                    <HeaderText text="selected discography" compressor={1} />
+                    <SelectedDiscog />
+                </div>
+                <div className="discography-complete">
+                    <HeaderText text="complete discography" compressor={1.5} />
+                    <CompleteDiscog />
+                </div>
+                <div className="discography-bands">
+                    <HeaderText text="other projects from around the same time" compressor={1.5} />
+                    <OtherBands />
+                </div>
             </main>
         </>
     );

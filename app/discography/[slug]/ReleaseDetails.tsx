@@ -8,27 +8,26 @@ interface ReleaseDetailsProps {
 }
 
 export default function ReleaseDetails({ release }: ReleaseDetailsProps) {
+    const headerText = release.bands
+        .map((band) => (
+            <Fragment key={band.id}>
+                {band.displayBandname ? (
+                    <Fragment key={band.id}>{band.displayBandname} - </Fragment>
+                ) : (
+                    band.bandname !== 'Hey Exit' && <Fragment key={band.id}>{band.bandname} - </Fragment>
+                )}
+            </Fragment>
+        ))
+        .concat(
+            <span key="release-title" className="album-title">
+                {release.title}
+            </span>
+        );
+
     return (
         <div className="release-container">
             <div className="release-header">
-                <h1>
-                    {release.bands.map((band) => (
-                        <Fragment key={band.id}>
-                            {band.displayBandname ? (
-                                <span key={band.id} className="album-bandname">
-                                    {band.displayBandname} -{' '}
-                                </span>
-                            ) : (
-                                band.bandname !== 'Hey Exit' && (
-                                    <span key={band.id} className="album-bandname">
-                                        {band.bandname} -{' '}
-                                    </span>
-                                )
-                            )}
-                        </Fragment>
-                    ))}
-                    {release.title}
-                </h1>
+                <h1>{headerText}</h1>
                 <div className="header-details">
                     <div className="editions">
                         {release.editions.map((edition) => (
