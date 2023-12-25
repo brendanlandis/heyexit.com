@@ -3,6 +3,7 @@ import useAxios from 'axios-hooks';
 import { Release, RawReleaseData } from '../types';
 import Link from 'next/link';
 import { GetReleaseDetails } from './GetReleaseDetails';
+import { Fragment } from 'react';
 
 export default function SelectedDiscog() {
     const [{ data: releases, loading, error }, refetch] = useAxios(
@@ -31,6 +32,17 @@ export default function SelectedDiscog() {
                         ))}
                     </div>
                     <Link href={'/discography/' + release.titleSlug} className="details">
+                        {release.bands.map((band) => (
+                            <Fragment key={band.id}>
+                                {band.displayBandname ? (
+                                    <div key={band.id} className="album-bandname">
+                                        {band.displayBandname}
+                                    </div>
+                                ) : (
+                                    ''
+                                )}
+                            </Fragment>
+                        ))}
                         <div className="album-title">{release.title}</div>
                         <div className="album-releasedate">{release.shortYear}</div>
                     </Link>

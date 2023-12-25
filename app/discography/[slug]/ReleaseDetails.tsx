@@ -11,13 +11,32 @@ export default function ReleaseDetails({ release }: ReleaseDetailsProps) {
     return (
         <div className="release-container">
             <div className="release-header">
-                <h1>{release.title}</h1>
+                <h1>
+                    {release.bands.map((band) => (
+                        <Fragment key={band.id}>
+                            {band.displayBandname ? (
+                                <span key={band.id} className="album-bandname">
+                                    {band.displayBandname} -{' '}
+                                </span>
+                            ) : (
+                                band.bandname !== 'Hey Exit' && (
+                                    <span key={band.id} className="album-bandname">
+                                        {band.bandname} -{' '}
+                                    </span>
+                                )
+                            )}
+                        </Fragment>
+                    ))}
+                    {release.title}
+                </h1>
                 <div className="header-details">
                     <div className="editions">
                         {release.editions.map((edition) => (
                             <div className="release-edition" key={edition.id}>
                                 <div className="release-label">
-                                    {edition.label}{edition.catalogNumber && ` #${edition.catalogNumber}`}{', '}
+                                    {edition.label}
+                                    {edition.catalogNumber && ` #${edition.catalogNumber}`}
+                                    {', '}
                                     {edition.releaseDate}
                                 </div>
                                 <div className="release-formats">
@@ -29,7 +48,11 @@ export default function ReleaseDetails({ release }: ReleaseDetailsProps) {
                                             {edition.objectDesc ? `${edition.objectDesc}` : 'object'}
                                         </span>
                                     )}
-                                    {edition.link && <span className="format">digital</span>}
+                                    {edition.link && (
+                                        <Link href={edition.link}>
+                                            <span className="format">digital</span>
+                                        </Link>
+                                    )}
                                 </div>
                                 {edition.soldOut && <div className="release-soldout">physical edition sold out</div>}
                             </div>
@@ -41,9 +64,11 @@ export default function ReleaseDetails({ release }: ReleaseDetailsProps) {
                                 listen on <Link href={release.bandcampURL}>bandcamp</Link>
                             </>
                         )}
+
                         {release.spotifyURL && (
                             <>
-                                {' '}or <Link href={release.spotifyURL}>spotify</Link>
+                                {' '}
+                                or <Link href={release.spotifyURL}>spotify</Link>
                             </>
                         )}
                     </div>

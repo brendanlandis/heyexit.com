@@ -23,10 +23,17 @@ export const GetReleaseDetails = (release: RawReleaseData): Release => {
     const filteredTracklist = release.attributes.tracklist.filter((entry) => entry.note !== 'digital bonus track');
     const bandcampEmbedHeight = 145 + 35 * (filteredTracklist.length || 0);
 
+    const normalizedTitle = release.attributes.title
+        .normalize('NFD') // Normalize accented characters
+        .replace(/[\u0300-\u036f]/g, '') // Remove diacritic marks
+        .toLowerCase() // Convert to lowercase
+        .replace(/[^\w\s]/g, '') // Remove non-alphanumeric characters
+        .replace(/\s+/g, '-'); // Convert spaces to dashes
+
     return {
         id: release.id,
         title: release.attributes.title,
-        titleSlug: release.attributes.title.toLowerCase().replace(/\s+/g, '-'),
+        titleSlug: normalizedTitle,
         originalReleaseDate,
         shortYear,
         about: release.attributes.about,

@@ -4,6 +4,7 @@ import useAxios from 'axios-hooks';
 import { GetReleaseDetails } from '../GetReleaseDetails';
 import { Release, RawReleaseData } from '../../types';
 import ReleaseDetails from './ReleaseDetails';
+import Head from 'next/head';
 
 export default function Page() {
     const slug = usePathname().replace('/discography/', '');
@@ -23,6 +24,9 @@ export default function Page() {
 
     return (
         <main id="discography">
+            <head>
+                <title key="title">{thisRelease ? `Hey Exit :: ${thisRelease.title}` : 'Hey Exit'}</title>
+            </head>
             {thisRelease ? (
                 <>
                     <ReleaseDetails key={thisRelease.id} release={thisRelease} />

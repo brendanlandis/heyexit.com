@@ -3,10 +3,11 @@ import useAxios from 'axios-hooks';
 import { Release, RawReleaseData } from '../types';
 import Link from 'next/link';
 import { GetReleaseDetails } from './GetReleaseDetails';
+import { Fragment } from 'react';
 
 export default function CompleteDiscog() {
     const [{ data: releases, loading, error }, refetch] = useAxios(
-        'https://api.slownames.net/api/releases?populate=deep,3&filters[bands][band][id]=33&pagination[pageSize]=100'
+        'https://api.slownames.net/api/releases?populate=deep,3&filters[bands][band][id]=33&filters[visibility][$ne]=hidden&pagination[pageSize]=100'
     );
     if (loading) return <p>loading</p>;
     if (error) return <p>error</p>;
@@ -31,6 +32,13 @@ export default function CompleteDiscog() {
                         ))}
                     </div>
                     <Link href={'/discography/' + release.titleSlug} className="details">
+                        {release.bands.map((band) => (
+                            <Fragment key={band.id}>
+                                {band.displayBandname
+                                    ? <div key={band.id} className="album-bandname">{band.displayBandname}</div>
+                                    : ''}
+                            </Fragment>
+                        ))}
                         <div className="album-title">{release.title}</div>
                         <div className="album-releasedate">{release.shortYear}</div>
                     </Link>

@@ -1,15 +1,3 @@
-- Wire Tapper #40 should link to the Wire web site
-- also should be able to put a "#" in the title
-- As Nights Breathe should say "digital"
-- Bands grid should say what band it was
-- look at Gymnopedie - text spacing should be clearer
-- http://localhost:3000/discography/steve-/-steve doesn't work (also should put the artist name somewhere)
-- http://localhost:3000/discography/i-heart-noise-winter-2019 embed should work, also it's hidden and shouldn't show up in the grid
-- http://localhost:3000/discography/music-for-programming should show the link to the edition, also it's hidden and shouldn't be there
-- http://localhost:3000/discography/caudata-(live-on-wfmu) shouldn't say listen on bandcamp, also should be hidden
-- http://localhost:3000/discography/fur-alina needs an umlaut
-- http://localhost:3000/discography/old-sight-ep-(reknowing-1/5) can't find any of these
-
 # notes for current steps
 - HOME PAGE
     - one photo
