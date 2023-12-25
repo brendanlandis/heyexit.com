@@ -17,7 +17,7 @@ export default function ReleaseDetails({ release }: ReleaseDetailsProps) {
                         {release.editions.map((edition) => (
                             <div className="release-edition" key={edition.id}>
                                 <div className="release-label">
-                                    {edition.label} {edition.catalogNumber && `#${edition.catalogNumber}`},{' '}
+                                    {edition.label}{edition.catalogNumber && ` #${edition.catalogNumber}`}{', '}
                                     {edition.releaseDate}
                                 </div>
                                 <div className="release-formats">

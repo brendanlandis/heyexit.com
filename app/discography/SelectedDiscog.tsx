@@ -6,7 +6,7 @@ import { GetReleaseDetails } from './GetReleaseDetails';
 
 export default function SelectedDiscog() {
     const [{ data: releases, loading, error }, refetch] = useAxios(
-        'https://api.slownames.net/api/releases?populate=deep,3&filters[bands][band][id]=33&filters[visibility]=selected%20discography'
+        'https://api.slownames.net/api/releases?populate=deep,3&filters[bands][band][id]=33&filters[visibility]=selected%20discography&pagination[pageSize]=100'
     );
     if (loading) return <p>loading</p>;
     if (error) return <p>error</p>;
