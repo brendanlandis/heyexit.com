@@ -3,4 +3,10 @@
     img {
         margin: 0 auto;
     }
+    .image, p {
+        max-width: 640px;
+        margin: 0 auto;
+        font-size: 0.85em;
+        text-align: right;
+    }
 }

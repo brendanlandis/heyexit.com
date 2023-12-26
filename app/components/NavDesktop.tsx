@@ -6,6 +6,7 @@ export default function NavDesktop() {
             <ul id="primary">
                 <NavDesktopItem url="/" name="home" />
                 <NavDesktopItem url="/about" name="about" />
+                <NavDesktopItem url="/press" name="press" />
                 <NavDesktopItem url="/discography" name="discography" />
                 <NavDesktopItem url="/live" name="live" />
                 <NavDesktopItem url="/contact" name="contact" />

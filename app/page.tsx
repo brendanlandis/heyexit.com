@@ -10,6 +10,7 @@ export default function Home() {
             <main id="home">
                 <div className="image">
                     <img src="/img/home.jpg" alt="hey exit live in 2015" />
+                    <p>photo by Emy Sena</p>
                 </div>
             </main>
         </>
