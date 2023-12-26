@@ -109,6 +109,56 @@ export default function ReleaseDetails({ release }: ReleaseDetailsProps) {
                 )}
             </div>
             <div>
+                {release.presses && release.presses.length > 0 && (
+                    <div className="release-presses">
+                        {release.presses.map((press) => (
+                            <Fragment key={press.id}>
+                                {press.visibility != 'hidden' && (
+                                    <div className="press">
+                                        {press.type === 'interview' ? (
+                                            <>
+                                                {press.URL && (
+                                                    <div>
+                                                        <Link href={press.URL} className="press-publication">
+                                                            {press.publication} interview
+                                                        </Link>
+                                                    </div>
+                                                )}
+                                            </>
+                                        ) : (
+                                            <>
+                                                {press.quote && <div className="press-quote">{`"${press.quote}"`}</div>}
+                                                <div>
+                                                    &mdash;
+                                                    {press.URL && (
+                                                        <Link href={press.URL} className="press-publication">
+                                                            {press.publication}
+                                                        </Link>
+                                                    )}
+                                                    {!press.URL && press.attachments && (
+                                                        <>
+                                                            {press.attachments.map((attachment) => (
+                                                                <Link
+                                                                    href={attachment.urlLarge}
+                                                                    className="press-publication"
+                                                                >
+                                                                    {press.publication}
+                                                                </Link>
+                                                            ))}
+                                                        </>
+                                                    )}
+                                                    {!press.URL && !press.attachments && (
+                                                        <span className="press-publication">{press.publication}</span>
+                                                    )}
+                                                </div>
+                                            </>
+                                        )}
+                                    </div>
+                                )}
+                            </Fragment>
+                        ))}
+                    </div>
+                )}
                 <div className="release-embed">
                     {release.bandcampEmbedID ? (
                         <iframe
@@ -132,21 +182,6 @@ export default function ReleaseDetails({ release }: ReleaseDetailsProps) {
                 <div className="release-credits">
                     <Markdown>{release.credits}</Markdown>
                 </div>
-                {release.presses && release.presses.length > 0 && (
-                    <div className="release-presses">
-                        {release.presses.map((press) => (
-                            <div className="press" key={press.id}>
-                                <div className="press-quote">"{press.quote}"</div>
-                                <div>
-                                    &mdash;
-                                    <Link href={press.URL} className="press-publication">
-                                        {press.publication}
-                                    </Link>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                )}
             </div>
         </div>
     );

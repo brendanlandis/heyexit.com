@@ -106,6 +106,14 @@ export const GetReleaseDetails = (release: RawReleaseData): Release => {
             quote: press.attributes.quote,
             visibility: press.attributes.visibility,
             publication: press.attributes.publication,
+            attachments: press.attributes.attachments.data?.map((attachment) => ({
+                id: attachment.id,
+                alt: attachment.attributes.alternativeText,
+                urlLarge: `${process.env.NEXT_PUBLIC_STRAPI_URL}${attachment.attributes.url}`,
+                urlSmall: attachment.attributes.formats.medium
+                    ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${attachment.attributes.formats.medium.url}`
+                    : `${process.env.NEXT_PUBLIC_STRAPI_URL}${attachment.attributes.url}`,
+            })),
         })),
     };
 };

@@ -276,7 +276,7 @@ export interface RawReleaseData {
                     releaseDate: Date;
                     link: string;
                     soldOut: boolean;
-                    photos: {
+                    attachments: {
                         data: Array<{
                             id: number;
                             attributes: {
@@ -366,5 +366,11 @@ export interface Release {
         quote: string;
         visibility: string;
         publication: string;
+        attachments: Array<{
+            id: number;
+            alt: string;
+            urlLarge: string;
+            urlSmall: string;
+        }>;
     }>;
 }
