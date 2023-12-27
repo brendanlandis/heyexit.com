@@ -374,3 +374,161 @@ export interface Release {
         }>;
     }>;
 }
+
+export interface RawPressData {
+    id: number;
+    attributes: {
+        type: string;
+        date: Date;
+        URL: string;
+        quote: string;
+        visibility: string;
+        publication: string;
+        label: string;
+        catalogNumber: string;
+        releaseDate: Date;
+        link: string;
+        soldOut: boolean;
+        attachments: {
+            data: Array<{
+                id: number;
+                attributes: {
+                    alternativeText: string;
+                    url: string;
+                    formats: {
+                        medium: {
+                            url: string;
+                        };
+                    };
+                };
+            }>;
+        };
+        bands: Array<{
+            id: number;
+            band: {
+                data: {
+                    attributes: {
+                        bandname: string;
+                    };
+                };
+            };
+        }>;
+        releases: {
+            data: Array<{
+                id: number;
+                attributes: {
+                    bands: Array<{
+                        id: number;
+                        band: {
+                            data: {
+                                attributes: {
+                                    bandname: string;
+                                };
+                            };
+                        };
+                    }>;
+                };
+            }>;
+        };
+        editions: {
+            data: Array<{
+                id: number;
+                attributes: {
+                    releases: {
+                        data: Array<{
+                            attributes: {
+                                bands: Array<{
+                                    id: number;
+                                    band: {
+                                        data: {
+                                            attributes: {
+                                                bandname: string;
+                                            };
+                                        };
+                                    };
+                                }>;
+                            };
+                        }>;
+                    };
+                };
+            }>;
+        };
+        videos: {
+            data: Array<{
+                id: number;
+                attributes: {
+                    bands: Array<{
+                        id: number;
+                        band: {
+                            data: {
+                                attributes: {
+                                    bandname: string;
+                                };
+                            };
+                        };
+                    }>;
+                };
+            }>;
+        };
+        shows: {
+            data: Array<{
+                id: number;
+                attributes: {
+                    myBand: Array<{
+                        id: number;
+                        band: {
+                            data: {
+                                attributes: {
+                                    bandname: string;
+                                };
+                            };
+                        };
+                    }>;
+                };
+            }>;
+        };
+        tours: {
+            data: Array<{
+                id: number;
+                attributes: {
+                    shows: {
+                        data: Array<{
+                            id: number;
+                            attributes: {
+                                myBand: Array<{
+                                    id: number;
+                                    band: {
+                                        data: {
+                                            attributes: {
+                                                bandname: string;
+                                            };
+                                        };
+                                    };
+                                }>;
+                            };
+                        }>;
+                    };
+                };
+            }>;
+        };
+    };
+}
+
+export interface Press {
+    id: number;
+    type: string;
+    date: Date;
+    URL: string;
+    quote: string;
+    visibility: string;
+    publication: string;
+    attachments: Array<{
+        id: number;
+        alt: string;
+        urlLarge: string;
+        urlSmall: string;
+    }>;
+    bands: Array<{
+        bandname: string;
+    }>;
+}
