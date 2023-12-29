@@ -20,6 +20,7 @@ export interface RawShowData {
         city: string;
         notes: string;
         otherBands: string;
+        cancelled: boolean;
         eventLinks: Array<{
             id: number;
             url: string;
@@ -76,6 +77,7 @@ export interface Show {
     city: string;
     notes: string;
     otherBands: string;
+    cancelled: boolean;
     eventLinks: Array<{
         id: number;
         url: string;

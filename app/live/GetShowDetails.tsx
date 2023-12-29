@@ -20,6 +20,7 @@ export const GetShowDetails = (show: RawShowData): Show => {
         city: show.attributes.city,
         notes: show.attributes.notes,
         otherBands: show.attributes.otherBands,
+        cancelled: show.attributes.cancelled,
         eventLinks: show.attributes.eventLinks.map((link) => ({
             id: link.id,
             url: link.url,

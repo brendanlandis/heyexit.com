@@ -1,5 +1,13 @@
 #live {
-    .show-list {
-        
+    .show-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+        font-size: 0.8em;
+    }
+    .shows-otherbands {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1em;
     }
 }
