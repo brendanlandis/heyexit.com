@@ -1,3 +1,8 @@
+- add new shows to db
+- add Fav Color Magazine mention
+- add Poppy @ 88
+- add cancelled DJ Mojo gig
+
 # notes for current steps
 - HOME PAGE
     - one photo

@@ -3,7 +3,6 @@ import { format } from 'date-fns/format';
 import { parseISO } from 'date-fns/parseISO';
 
 export const GetShowDetails = (show: RawShowData): Show => {
-
     return {
         id: show.id,
         bands: show.attributes.myBand.map((band) => ({
@@ -34,15 +33,13 @@ export const GetShowDetails = (show: RawShowData): Show => {
                 ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${flyer.attributes.formats.medium.url}`
                 : `${process.env.NEXT_PUBLIC_STRAPI_URL}${flyer.attributes.url}`,
         })),
-        documentation: show.attributes.documentation.data?.map(
-            (document) => ({
-                id: document.id,
-                alt: document.attributes.alternativeText,
-                urlLarge: `${process.env.NEXT_PUBLIC_STRAPI_URL}${document.attributes.url}`,
-                urlSmall: document.attributes.formats.medium
-                    ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${document.attributes.formats.medium.url}`
-                    : `${process.env.NEXT_PUBLIC_STRAPI_URL}${document.attributes.url}`,
-            })
-        ),
+        photoDocumentation: show.attributes.photoDocumentation?.photosToShow.data?.map((photo) => ({
+            id: photo.id,
+            alt: photo.attributes.alternativeText,
+            urlLarge: `${process.env.NEXT_PUBLIC_STRAPI_URL}${photo.attributes.url}`,
+            urlSmall: photo.attributes.formats.medium
+                ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${photo.attributes.formats.medium.url}`
+                : `${process.env.NEXT_PUBLIC_STRAPI_URL}${photo.attributes.url}`,
+        })),
     };
 };

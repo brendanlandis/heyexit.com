@@ -109,6 +109,26 @@ export default function ReleaseDetails({ release }: ReleaseDetailsProps) {
                 )}
             </div>
             <div>
+                {release.videos && release.videos.length > 0 && (
+                    <div className="release-videos">
+                        {release.videos.map((video) => (
+                            <Fragment key={video.id}>
+                                {video.visibility != 'hidden' && (
+                                    <div className="video">
+                                        <iframe
+                                            src={`https://www.youtube.com/embed/${video.videoID}`}
+                                            title=""
+                                            frameBorder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowFullScreen
+                                        ></iframe>
+                                        <div className="video-credits">{video.credits}</div>
+                                    </div>
+                                )}
+                            </Fragment>
+                        ))}
+                    </div>
+                )}
                 {release.presses && release.presses.length > 0 && (
                     <div className="release-presses">
                         {release.presses.map((press) => (

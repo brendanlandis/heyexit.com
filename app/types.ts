@@ -39,19 +39,22 @@ export interface RawShowData {
                 };
             }>;
         };
-        documentation: {
-            data: Array<{
-                id: number;
-                attributes: {
-                    alternativeText: string;
-                    url: string;
-                    formats: {
-                        medium: {
-                            url: string;
+        photoDocumentation: {
+            id: number;
+            photosToShow: {
+                data: Array<{
+                    id: number;
+                    attributes: {
+                        alternativeText: string;
+                        url: string;
+                        formats: {
+                            medium: {
+                                url: string;
+                            };
                         };
                     };
-                };
-            }>;
+                }>;
+            };
         };
     };
 }
@@ -84,7 +87,7 @@ export interface Show {
         urlLarge: string;
         urlSmall: string;
     }>;
-    documentation: Array<{
+    photoDocumentation: Array<{
         id: number;
         alt: string;
         urlLarge: string;
@@ -293,6 +296,26 @@ export interface RawReleaseData {
                 };
             }>;
         };
+        videos: {
+            data: Array<{
+                id: number;
+                attributes: {
+                    name: string;
+                    credits: string;
+                    visibility: string;
+                    file: {
+                        data: {
+                            id: number;
+                            attributes: {
+                                url: string;
+                            };
+                        };
+                    };
+                    videoHost: string;
+                    videoID: string;
+                };
+            }>;
+        };
     };
 }
 
@@ -372,6 +395,16 @@ export interface Release {
             urlLarge: string;
             urlSmall: string;
         }>;
+    }>;
+    videos: Array<{
+        id: number;
+        name: string;
+        credits: string;
+        visibility: string;
+        videoHost: string;
+        videoID: string;
+        fileID: number;
+        fileURL: string;
     }>;
 }
 

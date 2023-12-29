@@ -6,6 +6,14 @@ import { GetShowDetails } from './GetShowDetails';
 
 // TODO if two of our bands are playing, the one that isn't Receive should be added to the otherBands field
 
+// const shuffleArray = (array: any[]) => {
+//     for (let i = array.length - 1; i > 0; i--) {
+//         const j = Math.floor(Math.random() * (i + 1));
+//         [array[i], array[j]] = [array[j], array[i]];
+//     }
+//     return array;
+// };
+
 export default function OldFlyers() {
     const [{ data: shows, loading, error }, refetch] = useAxios(
         'https://api.slownames.net/api/shows?populate=deep&filters[myBand][band][id]=35&filters[myBand][band][id]=40&filters[myBand][band][id]=36&filters[myBand][band][id]=33&filters[myBand][band][id]=38&filters[myBand][band][id]=39&filters[myBand][band][id]=37&pagination[pageSize]=999'
@@ -20,13 +28,15 @@ export default function OldFlyers() {
 
     const formattedShows = shows ? formatShows(shows) : [];
 
-    formattedShows.sort(
-        (b, a) => new Date(a.date).getTime() - new Date(b.date).getTime()
-    );
-    const currentDate = new Date();
-    const filteredShows = formattedShows.filter(
-        (show) => new Date(show.date) <= currentDate
-    );
+    formattedShows.sort((b, a) => new Date(a.date).getTime() - new Date(b.date).getTime());
+    const cutOffDate = new Date('2022-10-01');
+    const filteredShows = formattedShows.filter((show) => {
+        const showDate = new Date(show.date);
+        const hasHeyExit = show.bands.some((band) => band.bandname === 'Hey Exit');
+        return showDate <= cutOffDate || hasHeyExit;
+    });
+
+    // const shuffledShows = shuffleArray(filteredShows);
 
     const MasonryImages = filteredShows.reduce(
         (images: { urlSmall: string; urlLarge: string }[], show) =>
@@ -51,11 +61,7 @@ export default function OldFlyers() {
                 render={(item, idx) => (
                     <>
                         <a href={item.urlLarge}>
-                            <img
-                                key={idx}
-                                src={item.urlSmall}
-                                style={{ width: '100%', height: 'auto' }}
-                            />
+                            <img key={idx} src={item.urlSmall} style={{ width: '100%', height: 'auto' }} />
                         </a>
                     </>
                 )}

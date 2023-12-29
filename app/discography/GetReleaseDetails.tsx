@@ -115,5 +115,15 @@ export const GetReleaseDetails = (release: RawReleaseData): Release => {
                     : `${process.env.NEXT_PUBLIC_STRAPI_URL}${attachment.attributes.url}`,
             })),
         })),
+        videos: release.attributes.videos.data?.map((video) => ({
+            id: video.id,
+            name: video.attributes.name,
+            credits: video.attributes.credits,
+            visibility: video.attributes.visibility,
+            videoHost: video.attributes.videoHost,
+            videoID: video.attributes.videoID,
+            fileID: video.attributes.file.data?.id,
+            fileURL: video.attributes.file.data?.attributes.url,
+        })),
     };
 };

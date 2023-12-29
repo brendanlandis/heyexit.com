@@ -92,7 +92,7 @@
                     margin-bottom: 0em;
                     font-size: 5em;
                     line-height: 1em;
-                    max-width: 75%
+                    max-width: 75%;
                 }
             }
             .header-details {
@@ -112,7 +112,7 @@
                         padding-top: 0.5em;
                         border-top: 1px solid #ddd;
                     }
-                    &:nth-child(n+2):last-of-type {
+                    &:nth-child(n + 2):last-of-type {
                         margin-bottom: 0.5em;
                     }
                 }
@@ -141,17 +141,33 @@
             margin-bottom: 1em;
             align-items: center;
         }
-        iframe {
-            width: 100%;
-            min-height: 165px;
-            margin-bottom: 1em;
+        .release-videos {
+            iframe {
+                width: 100%;
+                min-height: 315px;
+            }
+            .video-credits {
+                font-size: 0.85em;
+                text-align: right;
+            }
+            .video {
+                margin-bottom: 1em;
+            }
+        }
+        .release-embed {
+            iframe {
+                width: 100%;
+                min-height: 165px;
+                margin-bottom: 1em;
+            }
         }
         .release-tracklist {
             list-style-type: decimal-leading-zero;
             padding-left: 2.4em;
             margin-bottom: 1em;
         }
-        .release-about, .release-credits {
+        .release-about,
+        .release-credits {
             margin-bottom: 1em;
             p:not(:last-child) {
                 margin-bottom: 0.5em;
