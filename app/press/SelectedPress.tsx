@@ -61,7 +61,7 @@ export default function SelectedPress() {
                                         {!press.URL && press.attachments && (
                                             <>
                                                 {press.attachments.map((attachment) => (
-                                                    <Link href={attachment.urlLarge} className="press-publication">
+                                                    <Link key={attachment.id} href={attachment.urlLarge} className="press-publication">
                                                         {press.publication}
                                                     </Link>
                                                 ))}

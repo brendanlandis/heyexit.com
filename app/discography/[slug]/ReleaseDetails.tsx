@@ -161,6 +161,7 @@ export default function ReleaseDetails({ release }: ReleaseDetailsProps) {
                                                                 <Link
                                                                     href={attachment.urlLarge}
                                                                     className="press-publication"
+                                                                    key={attachment.id}
                                                                 >
                                                                     {press.publication}
                                                                 </Link>

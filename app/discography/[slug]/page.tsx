@@ -32,7 +32,7 @@ export default function Page() {
                     <ReleaseDetails key={thisRelease.id} release={thisRelease} />
                 </>
             ) : (
-                <p>Didn't find that release, hm.</p>
+                <p>Didn&#39;t find that release, hm.</p>
             )}
         </main>
     );

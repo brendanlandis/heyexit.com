@@ -12,7 +12,7 @@ export default function About() {
             <main id="about">
                 <HeaderText text="about" compressor={0.6} />
                 <p>
-                    Hey Exit was Brendan Landis' primary musical project from 2009 - 2021. Over this time the project
+                    Hey Exit was Brendan Landis&#39; primary musical project from 2009 - 2021. Over this time the project
                     covered quite a lot of ground, working in several musical traditions and drawing from many different
                     styles within each:
                 </p>
@@ -53,7 +53,7 @@ export default function About() {
                         plays lead guitar in Receive).
                     </li>
                     <li>
-                        <Link href="https://slownames.bandcamp.com/album/stairs-ep">Advection</Link> is Brendan's solo
+                        <Link href="https://slownames.bandcamp.com/album/stairs-ep">Advection</Link> is Brendan&#39;s solo
                         project for electronic music and short-form instrumentals.
                     </li>
                     <li>
