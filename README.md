@@ -2,6 +2,7 @@
 - add Fav Color Magazine mention
 - add Poppy @ 88
 - add cancelled DJ Mojo gig
+- add Hey Exit sampler
 
 # notes for current steps
 - HOME PAGE

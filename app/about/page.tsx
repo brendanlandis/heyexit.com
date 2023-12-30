@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import HeaderText from '../components/HeaderText';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'Hey Exit :: shows',
@@ -17,11 +18,11 @@ export default function About() {
                 </p>
                 <ul>
                     <li>
-                        <strong>art music</strong> (new age doom, electroacoustic composition, free improvisation,
+                        <strong>art music & long-form instrumentals</strong> (new age doom, electroacoustic composition, free improvisation,
                         prepared guitar, plunderphonics)
                     </li>
                     <li>
-                        <strong>heavy music</strong> (harsh noise, industrial music, grindcore)
+                        <strong>heavy music & non-music</strong> (harsh noise, industrial, grindcore)
                     </li>
                     <li>
                         <strong>songwriting & short-form instrumentals</strong> (downer pop, airs for solo instruments
@@ -39,23 +40,23 @@ export default function About() {
                 </p>
                 <ul>
                     <li>
-                        <strong>Receive</strong> is his current primary creative output &mdash; a heavy art rock quartet
+                        <Link href="https://receive.blue/">Receive</Link> is his current primary creative output &mdash; a heavy art rock quartet
                         in which he sings and plays baritone guitar.
                     </li>
                     <li>
-                        <strong>Star Card</strong> is an alt rock band in which all members of Receive play different
+                        <Link href="https://www.instagram.com/_starcard">Star Card</Link> is an alt rock band in which all members of Receive play different
                         instruments. Brendan plays drums (hell yeah).
                     </li>
                     <li>
-                        <strong>Receiver</strong> is a downer-pop-slash-noise-table duo involving Brendan and Calley
+                        <Link href="https://www.instagram.com/__receiver/">Receiver</Link> is a downer-pop-slash-noise-table duo involving Brendan and Calley
                         Nelson (who sings in Star Card and plays lead guitar in Receive).
                     </li>
                     <li>
-                        <strong>Advection</strong> is Brendan's solo project for electronic music and short-form
+                        <Link href="https://slownames.bandcamp.com/album/stairs-ep">Advection</Link> is Brendan's solo project for electronic music and short-form
                         instrumentals.
                     </li>
                     <li>
-                        <strong>Anura</strong> is a bedroom songwriting project that preceded Receive by a year or two.
+                        <Link href="https://slownames.bandcamp.com/album/deluge">Anura</Link> is a bedroom songwriting project that preceded Receive by a year or two.
                         It sometimes threatens to resurface in one form or another.
                     </li>
                 </ul>

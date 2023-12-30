@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import HeaderText from '../components/HeaderText';
+import Email from './email';
 
 export const metadata: Metadata = {
     title: 'Hey Exit :: contact',
@@ -10,7 +11,7 @@ export default function Contact() {
         <>
             <main id="contact">
                 <HeaderText text="contact" compressor={0.6} />
-                contact goes here
+                <Email />
             </main>
         </>
     );
