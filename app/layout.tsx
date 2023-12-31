@@ -2,6 +2,7 @@ import './css/screen.scss';
 import type { Metadata } from 'next';
 import NavMobile from './components/NavMobile';
 import NavDesktop from './components/NavDesktop';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
     title: 'Hey Exit',
@@ -38,7 +39,7 @@ export default function RootLayout({
             <body>
                 <header>
                     <div className="logo">
-                        <img src="/img/logo.png" alt="Hey Exit logo" />
+                        <Image src="/img/logo.png" alt="Hey Exit logo" width={400} height={262.8} />
                     </div>
                     <NavDesktop />
                     <NavMobile />

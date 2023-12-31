@@ -4,6 +4,7 @@ import { Release, RawReleaseData } from '../types';
 import Link from 'next/link';
 import { GetReleaseDetails } from './GetReleaseDetails';
 import { Fragment } from 'react';
+import Image from 'next/image';
 
 export default function CompleteDiscog() {
     const [{ data: releases, loading, error }, refetch] = useAxios(
@@ -26,12 +27,12 @@ export default function CompleteDiscog() {
         <div className="releases-grid complete">
             {orderedReleases.map((release: Release) => (
                 <div className="release" key={release.id}>
-                    <div className="cover">
+                    <Link href={'/discography/' + release.titleSlug} className="cover">
                         {release.cover.map((cover) => (
-                            <img key={cover.id} src={cover.urlSmall} alt={cover.alt} />
+                            <Image key={cover.id} src={cover.urlSmall} alt={cover.alt} width={400} height={400} />
                         ))}
-                    </div>
-                    <Link href={'/discography/' + release.titleSlug} className="details">
+                    </Link>
+                    <Link href={'/discography/' + release.titleSlug} className="details complete">
                         {release.bands.map((band) => (
                             <Fragment key={band.id}>
                                 {band.displayBandname

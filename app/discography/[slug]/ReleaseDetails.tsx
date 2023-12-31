@@ -2,6 +2,7 @@ import { Release } from '@/app/types';
 import Link from 'next/link';
 import { Fragment } from 'react';
 import Markdown from 'react-markdown';
+import Image from 'next/image';
 
 interface ReleaseDetailsProps {
     release: Release;
@@ -76,21 +77,21 @@ export default function ReleaseDetails({ release }: ReleaseDetailsProps) {
             <div>
                 {release.cover.map((cover) => (
                     <Link key={cover.id} href={cover.urlLarge} className="release-cover">
-                        <img src={cover.urlSmall} alt={cover.alt} />
+                        <Image src={cover.urlLarge} alt={cover.alt} width={730} height={730} />
                     </Link>
                 ))}
 
                 <div className="release-edition-photos">
                     {release.linerNotes?.map((note) => (
                         <Link href={note.urlLarge} key={note.id}>
-                            <img key={note.id} src={note.urlSmall} alt={note.alt} />
+                            <Image key={note.id} src={note.urlSmall} width={250} height={250} alt={note.alt} />
                         </Link>
                     ))}
                     {release.editions.map((edition) => (
                         <Fragment key={edition.id}>
                             {edition.photos?.map((photo) => (
                                 <Link href={photo.urlLarge} key={photo.id}>
-                                    <img key={photo.id} src={photo.urlSmall} alt={photo.alt} />
+                                    <Image key={photo.id} src={photo.urlSmall} width={250} height={250} alt={photo.alt} />
                                 </Link>
                             ))}
                         </Fragment>

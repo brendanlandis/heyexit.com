@@ -39,11 +39,12 @@ export default function OldFlyers() {
     // const shuffledShows = shuffleArray(filteredShows);
 
     const MasonryImages = filteredShows.reduce(
-        (images: { urlSmall: string; urlLarge: string }[], show) =>
+        (images: { urlSmall: string; urlLarge: string; alt: string }[], show) =>
             images.concat(
                 show.flyers?.map((flyer) => ({
                     urlSmall: flyer.urlSmall,
                     urlLarge: flyer.urlLarge,
+                    alt: flyer.alt,
                 }))
             ),
         []
@@ -61,7 +62,7 @@ export default function OldFlyers() {
                 render={(item, idx) => (
                     <>
                         <a href={item.urlLarge}>
-                            <img key={idx} src={item.urlSmall} style={{ width: '100%', height: 'auto' }} />
+                            <img key={idx} src={item.urlSmall} alt={item.alt} style={{ width: '100%', height: 'auto' }} />
                         </a>
                     </>
                 )}

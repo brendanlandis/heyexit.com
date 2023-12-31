@@ -3,6 +3,7 @@ import useAxios from 'axios-hooks';
 import { Release, RawReleaseData } from '../types';
 import Link from 'next/link';
 import { GetReleaseDetails } from './GetReleaseDetails';
+import Image from 'next/image';
 
 export default function OtherBands() {
     const [{ data: releases, loading, error }, refetch] = useAxios(
@@ -25,11 +26,11 @@ export default function OtherBands() {
         <div className="releases-grid bands">
             {orderedReleases.map((release: Release) => (
                 <div className="release" key={release.id}>
-                    <div className="cover">
+                    <Link href={'/discography/' + release.titleSlug} className="cover">
                         {release.cover.map((cover) => (
-                            <img key={cover.id} src={cover.urlSmall} alt={cover.alt} />
+                            <Image key={cover.id} src={cover.urlSmall} alt={cover.alt} width={400} height={400} />
                         ))}
-                    </div>
+                    </Link>
                     <Link href={'/discography/' + release.titleSlug} className="details">
                         {release.bands.map((band) => (
                             <div key={band.id} className="album-bandname">
