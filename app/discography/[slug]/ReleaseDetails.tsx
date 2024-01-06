@@ -77,7 +77,7 @@ export default function ReleaseDetails({ release }: ReleaseDetailsProps) {
             <div>
                 {release.cover.map((cover) => (
                     <Link key={cover.id} href={cover.urlLarge} className="release-cover">
-                        <Image src={cover.urlLarge} alt={cover.alt} width={730} height={730} />
+                        <img src={cover.urlLarge} alt={cover.alt} />
                     </Link>
                 ))}
 

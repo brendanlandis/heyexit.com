@@ -1,5 +1,4 @@
 - live page should be cleaned up a bit so it's faster
-- add new shows to db
 - add Fav Color Magazine mention
 - add Poppy @ 88
 - add cancelled DJ Mojo gig
