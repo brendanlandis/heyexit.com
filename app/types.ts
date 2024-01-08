@@ -40,13 +40,16 @@ export interface RawShowData {
                 };
             }>;
         };
-        documentationUploads: {
+        documentation: Array<{
             id: number;
-            usableDocumentation: {
-                data: Array<{
+            usable: boolean;
+            credit: string;
+            media: {
+                data: {
                     id: number;
                     attributes: {
                         alternativeText: string;
+                        mime: string;
                         url: string;
                         formats: {
                             medium: {
@@ -54,9 +57,9 @@ export interface RawShowData {
                             };
                         };
                     };
-                }>;
+                };
             };
-        };
+        }>;
     };
 }
 
@@ -89,9 +92,12 @@ export interface Show {
         urlLarge: string;
         urlSmall: string;
     }>;
-    documentationUploads: Array<{
+    documentation: Array<{
         id: number;
+        usable: boolean;
+        credit: string;
         alt: string;
+        mime: string;
         urlLarge: string;
         urlSmall: string;
     }>;
