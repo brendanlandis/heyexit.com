@@ -5,7 +5,7 @@ import { GetShowDetails } from './live/GetShowDetails';
 
 export default function RandomLivePic() {
     const [{ data: shows, loading, error }, refetch] = useAxios(
-        'https://api.slownames.net/api/shows?populate=deep&filters[myBand][band][id]=35&filters[myBand][band][id]=40&filters[myBand][band][id]=36&filters[myBand][band][id]=33&filters[myBand][band][id]=38&filters[myBand][band][id]=39&filters[myBand][band][id]=37&pagination[pageSize]=999'
+        'https://api.slownames.net/api/shows?populate=deep,3&filters[myBand][band][id]=35&filters[myBand][band][id]=40&filters[myBand][band][id]=36&filters[myBand][band][id]=33&filters[myBand][band][id]=38&filters[myBand][band][id]=39&filters[myBand][band][id]=37&pagination[pageSize]=999'
     );
 
     if (loading) return <p>loading</p>;
