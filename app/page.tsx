@@ -10,9 +10,7 @@ export default function Home() {
     return (
         <>
             <main id="home">
-                <div className="image">
-                    <RandomLivePic />
-                </div>
+                <RandomLivePic />
             </main>
         </>
     );

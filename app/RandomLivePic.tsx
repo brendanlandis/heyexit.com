@@ -2,7 +2,6 @@
 import useAxios from 'axios-hooks';
 import { Show, RawShowData } from '@/app/types';
 import { GetShowDetails } from './live/GetShowDetails';
-import Image from 'next/image';
 
 export default function RandomLivePic() {
     const [{ data: shows, loading, error }, refetch] = useAxios(
@@ -30,11 +29,10 @@ export default function RandomLivePic() {
             : randomShow.documentation[0];
 
     return (
-        <>
-            {/* <pre>{JSON.stringify(randomDocument, null, 2)}</pre> */}
-
-            <img src={randomDocument.urlSmall} alt={randomDocument.alt} />
+        
+        <div className="image">
+            <img src={randomDocument.urlLarge} alt={randomDocument.alt} />
             {randomDocument.credit && <p>photo by {randomDocument.credit}</p>}
-        </>
+        </div>
     );
 }
