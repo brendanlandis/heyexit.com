@@ -11,7 +11,7 @@ export default function Live() {
     return (
         <>
             <main id="live">
-                <HeaderText text="old show flyers" compressor={1.5} />
+                <HeaderText text="old flyers" compressor={1.5} />
                 <OldFlyers />
                 <HeaderText text="gigography" compressor={1.5} />
                 <OldShows />
