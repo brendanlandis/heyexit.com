@@ -23,13 +23,14 @@ export default function RandomLivePic() {
 
     const randomShow = filteredShows[Math.floor(Math.random() * filteredShows.length)];
 
+    const usableImageDocuments = randomShow.documentation.filter((doc) => doc.usable && doc.mime.includes('image'));
+
     const randomDocument =
-        randomShow.documentation.length > 1
-            ? randomShow.documentation[Math.floor(Math.random() * randomShow.documentation.length)]
-            : randomShow.documentation[0];
+        usableImageDocuments.length > 1
+            ? usableImageDocuments[Math.floor(Math.random() * usableImageDocuments.length)]
+            : usableImageDocuments[0];
 
     return (
-        
         <div className="image">
             <img src={randomDocument.urlLarge} alt={randomDocument.alt} />
             {randomDocument.credit && <p>photo by {randomDocument.credit}</p>}
