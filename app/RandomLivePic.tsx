@@ -17,23 +17,54 @@ export default function RandomLivePic() {
 
     const formattedShows = shows ? formatShows(shows) : [];
 
-    const filteredShows = formattedShows
-        .filter((show) => show.documentation && show.documentation.length > 0)
-        .filter((show) => show.documentation.some((doc) => doc.usable && doc.mime.includes('image')));
+    const getRandomDocument = (show: Show, selectedDocumentIds: Set<number>): Show | undefined => {
+        const usableImageDocuments = show.documentation.filter(
+            (doc) => doc.usable && doc.mime.includes('image') && !selectedDocumentIds.has(doc.id)
+        );
 
-    const randomShow = filteredShows[Math.floor(Math.random() * filteredShows.length)];
+        return usableImageDocuments.length > 0
+            ? {
+                  ...show,
+                  documentation: [usableImageDocuments[Math.floor(Math.random() * usableImageDocuments.length)]],
+              }
+            : undefined;
+    };
 
-    const usableImageDocuments = randomShow.documentation.filter((doc) => doc.usable && doc.mime.includes('image'));
+    const getRandomDocuments = (): Show[] => {
+        const selectedDocumentIds = new Set<number>();
+        const selectedShowIds = new Set<number>();
+        const selectedShows: Show[] = [];
 
-    const randomDocument =
-        usableImageDocuments.length > 1
-            ? usableImageDocuments[Math.floor(Math.random() * usableImageDocuments.length)]
-            : usableImageDocuments[0];
+        while (selectedDocumentIds.size < 3) {
+            const randomShow = formattedShows[Math.floor(Math.random() * formattedShows.length)];
+
+            // Avoid selecting the same show again
+            if (!selectedShowIds.has(randomShow.id)) {
+                const randomDocument = getRandomDocument(randomShow, selectedDocumentIds);
+
+                if (randomDocument) {
+                    const selectedDocumentId = randomDocument.documentation[0].id;
+                    selectedDocumentIds.add(selectedDocumentId);
+                    selectedShowIds.add(randomShow.id);
+                    selectedShows.push(randomDocument);
+                }
+            }
+        }
+
+        return selectedShows;
+    };
+
+    const randomDocuments = getRandomDocuments();
 
     return (
-        <div className="image">
-            <img src={randomDocument.urlLarge} alt={randomDocument.alt} />
-            {randomDocument.credit && <p>photo by {randomDocument.credit}</p>}
+        <div className="images">
+            {randomDocuments.map((randomDocument, index) => (
+                <div key={index} className="image">
+                    {/* <pre>{JSON.stringify(randomDocument.documentation, null, 2)}</pre> */}
+                    <img src={randomDocument.documentation[0].urlLarge} alt={randomDocument.documentation[0].alt} />
+                    {randomDocument.documentation[0].credit && <p>photo by {randomDocument.documentation[0].credit}</p>}
+                </div>
+            ))}
         </div>
     );
 }
