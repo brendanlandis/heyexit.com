@@ -3,11 +3,22 @@
     img {
         margin: 0 auto;
     }
-    p {
-        max-width: 640px;
+    .intro-text {
         margin: 0 auto;
-        font-size: 0.85em;
-        text-align: right;
+        max-width: 525px;
+        text-align: justify;
+        padding: 0 1em;
+        @media (min-width: $lg) {
+            padding: 0;
+        }
+        p {
+            margin: 0 auto 2em auto;
+        }
+    }
+    a {
+        font-weight: bold;
+        display: inline-block;
+        text-decoration: underline;
     }
     .images {
         display: grid;
@@ -15,12 +26,20 @@
         grid-template-columns: 1fr;
         padding: 0 1em;
         align-items: start;
+        margin-bottom: 3em;
+        p {
+            max-width: 640px;
+            margin: 0 auto;
+            font-size: 0.85em;
+            text-align: right;
+        }
         img {
-            max-height: 400px;
+            width: 100%;
         }
         @media (min-width: $lg) {
             padding: 0;
             grid-template-columns: 1fr 1fr 1fr;
+            justify-items: space-around;
         }
     }
 }

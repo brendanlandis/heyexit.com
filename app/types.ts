@@ -73,6 +73,7 @@ export interface Show {
     date: string;
     shortMonth: string;
     shortDay: string;
+    shortYear: string;
     shortDate: string;
     doors: string;
     sound: string;

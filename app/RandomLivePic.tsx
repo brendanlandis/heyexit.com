@@ -8,7 +8,7 @@ export default function RandomLivePic() {
         'https://api.slownames.net/api/shows?populate=deep,3&filters[myBand][band][id]=35&filters[myBand][band][id]=40&filters[myBand][band][id]=36&filters[myBand][band][id]=33&filters[myBand][band][id]=38&filters[myBand][band][id]=39&filters[myBand][band][id]=37&pagination[pageSize]=999'
     );
 
-    if (loading) return <p>loading</p>;
+    if (loading) return <p>loading photos...</p>;
     if (error) return <p>error {JSON.stringify(error, null, 2)}</p>;
 
     const formatShows = (shows: { data: RawShowData[] }): Show[] => {
@@ -60,9 +60,19 @@ export default function RandomLivePic() {
         <div className="images">
             {randomDocuments.map((randomDocument, index) => (
                 <div key={index} className="image">
-                    {/* <pre>{JSON.stringify(randomDocument.documentation, null, 2)}</pre> */}
+                    {/* <pre>{JSON.stringify(randomDocument, null, 2)}</pre> */}
                     <img src={randomDocument.documentation[0].urlLarge} alt={randomDocument.documentation[0].alt} />
-                    {randomDocument.documentation[0].credit && <p>photo by {randomDocument.documentation[0].credit}</p>}
+                    <p>
+                        {randomDocument.bands[0].displayBandname ? (
+                            <>{randomDocument.bands[0].displayBandname} in </>
+                        ) : (
+                            randomDocument.bands[0].bandname && <>{randomDocument.bands[0].bandname} in </>
+                        )}
+                        {randomDocument.city} ({randomDocument.shortYear})
+                    </p>
+                    {randomDocument.documentation[0].credit && (
+                        <p className="credit">photo by {randomDocument.documentation[0].credit}</p>
+                    )}
                 </div>
             ))}
         </div>
