@@ -19,7 +19,7 @@ export default function Home() {
                         <Link href="/press">read a few reviews</Link>, or <Link href="/contact">get in touch</Link>.
                     </p>
                     <p>
-                        These days Brendan plays in <Link href="https://receive.blue/">Receive</Link>,{' '}
+                        These days, Brendan plays in <Link href="https://receive.blue/">Receive</Link>,{' '}
                         <Link href="https://www.instagram.com/_starcard">Star Card</Link>, and{' '}
                         <Link href="https://www.instagram.com/__receiver/">Receiver</Link>.
                     </p>
