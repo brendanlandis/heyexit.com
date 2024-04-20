@@ -1,13 +1,14 @@
 'use client';
 import React from 'react';
 // @ts-ignore
-import FitText from '@kennethormandy/react-fittext';
+// import FitText from '@kennethormandy/react-fittext';
 
-export default function HeaderText({ text, compressor }: { text: string; compressor: number; }) {
+export default function HeaderText({ text, compressor }: { text: string; compressor: number }) {
     return (
         <>
             <h1>
-                <FitText compressor={compressor}>{text}</FitText>
+                {text}
+                {/* <FitText compressor={compressor}>{text}</FitText> */}
             </h1>
         </>
     );
