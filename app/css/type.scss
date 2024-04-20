@@ -31,9 +31,16 @@ h6 {
 }
 
 h1 {
-    div {
-        line-height: 1em;
-        margin-bottom: 0.3em;
+    line-height: 1em;
+    margin-bottom: 0.3em;
+    white-space: wrap;
+    overflow: hidden;
+    font-size: 3em;
+    @media (min-width: $sm) {
+        font-size: 5em;
+    }
+    @media (min-width: $lg) {
+        font-size: 9em;
     }
 }
 
