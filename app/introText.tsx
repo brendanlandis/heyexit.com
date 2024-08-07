@@ -8,7 +8,7 @@ export default function IntroText() {
     <>
       <p>
         This site is an archive for the now-defunct Hey Exit project, plus some related bands and projects from around
-        the same time. Usually there's a lot of archival material to dig through here, but I'm moving the backend around
+        the same time. Usually there&apos;s a lot of archival material to dig through here, but I&apos;m moving the backend around
         right now, so I expect this site to be down for about a month.
       </p>
       <p>
@@ -17,7 +17,7 @@ export default function IntroText() {
         context on <Link href="https://slownames.bandcamp.com/music">Bandcamp</Link>.
       </p>
       <p>
-        These days, I've been playing in <Link href="https://receive.blue/">Receive</Link>,{' '}
+        These days, I&apos;ve been playing in <Link href="https://receive.blue/">Receive</Link>,{' '}
         <Link href="https://www.instagram.com/_starcard">Star Card</Link>, and{' '}
         <Link href="https://www.instagram.com/__receiver/">Receiver</Link>.
       </p>
