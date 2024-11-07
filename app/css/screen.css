@@ -9,41 +9,12 @@ body {
   @apply font-mono;
 }
 
-.logo {
-  margin-top: 15px;
-  margin-left: 20px;
-  position: fixed;
-}
-
-#mainNav {
-  text-align: center;
-  position: fixed;
-  left: 20px;
-  width: 200px;
-  top: 170px;
-  ul {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2em;
-  }
-  a {
-    font-size: 1.2em;
-    line-height: 1.1em;
-    transition: transform 100ms;
-    display: block;
-    transform: scaleY(1);
-    margin-top: -0.1em;
-    &:hover {
-      color: #fff;
-      transform: scaleY(1.7);
-    }
-  }
-}
-
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2em 0;
+#wrapper {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2em;
+  max-width: 1600px;
+  padding: 2em;
 }
 
 .font-circles {
@@ -62,4 +33,36 @@ h1 {
   @apply font-circles;
   text-align: center;
   padding: 0.3em 0;
+}
+
+.logo {
+  position: fixed;
+}
+
+#mainNav {
+  ul {
+    text-align: center;
+    position: fixed;
+    top: 170px;
+    display: grid;
+    width: 200px;
+    grid-template-columns: 1fr;
+    gap: 2em;
+  }
+  a {
+    font-size: 1.2em;
+    line-height: 1.1em;
+    transition: transform 100ms;
+    display: block;
+    transform: scaleY(1);
+    margin-top: -0.1em;
+    &:hover {
+      color: #fff;
+      transform: scaleY(1.7);
+    }
+  }
+}
+
+main {
+  margin: 0 auto;
 }

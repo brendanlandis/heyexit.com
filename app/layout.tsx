@@ -33,35 +33,37 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${dm_mono.variable} ${charlottenburgCircles.variable} ${lofiForest.variable}`}>
-        <header>
-          <Image
-            src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/hey_exit_white_on_transparent_88200168d9.png"
-            alt="Hey Exit logo"
-            width={200}
-            height={100}
-            className="logo"
-          />
-          <nav id="mainNav">
-            <ul>
-              <li>
-                <Link href="/">home</Link>
-              </li>
-              <li>
-                <Link href="/">listen</Link>
-              </li>
-              <li>
-                <Link href="/">shows</Link>
-              </li>
-              <li>
-                <Link href="/">adjacent projects</Link>
-              </li>
-              <li>
-                <Link href="/">current projects</Link>
-              </li>
-            </ul>
-          </nav>
-        </header>
-        <main>{children}</main>
+        <div id="wrapper">
+          <header>
+            <Image
+              src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/hey_exit_white_on_transparent_88200168d9.png"
+              alt="Hey Exit logo"
+              width={200}
+              height={100}
+              className="logo"
+            />
+            <nav id="mainNav">
+              <ul>
+                <li>
+                  <Link href="/">home</Link>
+                </li>
+                <li>
+                  <Link href="/">listen</Link>
+                </li>
+                <li>
+                  <Link href="/">shows</Link>
+                </li>
+                <li>
+                  <Link href="/">related</Link>
+                </li>
+                <li>
+                  <Link href="/">current</Link>
+                </li>
+              </ul>
+            </nav>
+          </header>
+          <main>{children}</main>
+        </div>
       </body>
     </html>
   );
