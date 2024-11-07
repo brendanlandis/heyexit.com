@@ -35,8 +35,8 @@ export default function RootLayout({
         <Image
           src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/hey_exit_white_on_transparent_88200168d9.png"
           alt="Hey Exit logo"
-          width={500}
-          height={500}
+          width={640}
+          height={420}
         />
         {children}
       </body>

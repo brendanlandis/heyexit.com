@@ -3,23 +3,24 @@
 @tailwind utilities;
 
 body {
-  font-size: 10em;
+  font-size: 1em;
   font-weight: 100;
   line-height: 1em;
+  @apply font-mono;
 }
 
-strong {
-  font-weight: 900;
+.font-circles {
+  line-height: 1.1em;
+  margin-bottom: -0.4em;
+  word-spacing: 0.3em;
+}
+
+.font-lofi {
+  line-height: 1.1em;
+  margin-bottom: -0.34em;
 }
 
 h1 {
+  font-size: 6em;
   @apply font-circles;
-}
-
-h2 {
-  @apply font-lofi;
-}
-
-p {
-  @apply font-mono;
 }
