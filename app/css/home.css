@@ -1,10 +1,47 @@
-.selectedPress {
+.content-home {
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 1em;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
   .pressList {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1em;
+    align-content: space-between;
+  }
+  .press-quote {
+    line-height: 1.1em;
+    margin-bottom: 0.5em;
+    text-align: justify;
+    font-style: italic;
+  }
+
+  .press-credit {
+    text-align: right;
+  }
+}
+
+.about {
+  font-size: 1.2em;
+  line-height: 1.4em;
+  margin-top: 1em;
+  color: #ddd;
+  p, ul, li {
+      margin: 0 auto 1em auto;
+  }
+  ul {
+      list-style-type: disc;
+      padding-left: 1.5em;
+  }
+  a {
+      font-weight: 500;
+      text-decoration: underline;
+      letter-spacing: 0.05em;
+  }
+  strong {
+    font-weight: bold;
+    letter-spacing: 0.05em;
+  }
+  em {
+    font-weight: 100;
   }
 }

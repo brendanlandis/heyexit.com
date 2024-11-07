@@ -43,6 +43,7 @@ body {
 main {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 2em 0;
 }
 
 .font-circles {
