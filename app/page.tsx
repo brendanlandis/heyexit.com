@@ -1,7 +1,9 @@
 export default function Home() {
   return (
     <>
-      hello
+      <h1>Hey Exit</h1>
+      <h2>Hey Exit</h2>
+      <p>mono</p>
     </>
   );
 }

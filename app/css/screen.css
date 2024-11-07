@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-size: 10em;
+  font-weight: 100;
+  line-height: 1em;
+}
+
+strong {
+  font-weight: 900;
+}
+
+h1 {
+  @apply font-circles;
+}
+
+h2 {
+  @apply font-lofi;
+}
+
+p {
+  @apply font-mono;
+}

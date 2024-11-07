@@ -12,8 +12,16 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        mono: ['var(--font-dm-mono)'],
+        circles: ['var(--font-charlottenburg-circles)'],
+        lofi: ['var(--font-lofi-forest)'],
+      },
     },
   },
-  plugins: [],
+  plugins: [require('daisyui')],
+  daisyui: {
+    themes: ["black"],
+  },
 };
 export default config;
