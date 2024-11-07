@@ -35,7 +35,7 @@ export default function Home() {
       <div className="content-home">
         <div>
           <Image
-            src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/160116_empty_lot_Katya_Ekimoto_01_2c504069e7.jpg"
+            src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/170116_lot_in_japan_Petra_Magno_01_20be880764.jpg"
             alt="photo of Brendan Landis"
             width={900}
             height={100}
@@ -44,8 +44,8 @@ export default function Home() {
           />
           <div className="about">
             <p>
-              Hey Exit was an active musical project from 2009-2021. It covered quite a lot of stylistic
-              ground, working in several musical traditions and drawing from many different genres within each:
+              Hey Exit was an active musical project from 2009-2021. It covered quite a lot of stylistic ground, working
+              in several musical traditions and drawing from many different genres within each:
             </p>
             <ul>
               <li>
@@ -61,15 +61,20 @@ export default function Home() {
               </li>
             </ul>
             <p>
-              Despite this restless approach to style and tradition, there are several throughlines in the work: <em>music
-              as spiritual practice, contrasting extremes presented as necessary opposites, and the dilemma of making
-              space for hope and horror in equal measure</em>.
+              Despite this restless approach to style and tradition, there are several throughlines in the work:{' '}
+              <em>
+                music as spiritual practice, contrasting extremes presented as necessary opposites, and the dilemma of
+                making space for hope and horror in equal measure
+              </em>
+              .
             </p>
             <p>
               After forty five releases and one or two hundred shows, Hey Exit is retired for the foreseeable future.
             </p>
 
-            <p>Feel free to get in touch at <Obfuscate email="b@slownames.net" />.</p>
+            <p>
+              Feel free to get in touch at <Obfuscate email="b@slownames.net" />.
+            </p>
           </div>
         </div>
         <ul className="pressList">
@@ -82,6 +87,10 @@ export default function Home() {
                     &mdash;
                     <Link href={press.URL} className="press-publication">
                       {press.publication}
+                    </Link>{' '}
+                    on{' '}
+                    <Link href="https://heyexit.com/">
+                      <em>{press.recordings[0].title}</em>
                     </Link>
                   </>
                 )}
@@ -92,13 +101,22 @@ export default function Home() {
                         &mdash;
                         <Link key={attachment.id} href={attachment.url} className="press-publication">
                           {press.publication}
+                        </Link>{' '}
+                        on{' '}
+                        <Link href="https://heyexit.com/">
+                          <em>{press.recordings[0].title}</em>
                         </Link>
                       </Fragment>
                     ))}
                   </>
                 )}
                 {!press.URL && !press.attachments && (
-                  <span className="press-publication">&mdash;{press.publication}</span>
+                  <>
+                    <span className="press-publication">&mdash;{press.publication}</span> on{' '}
+                    <Link href="https://heyexit.com/">
+                      <em>{press.recordings[0].title}</em>
+                    </Link>
+                  </>
                 )}
               </div>
             </li>
