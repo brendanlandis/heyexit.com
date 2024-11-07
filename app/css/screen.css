@@ -9,9 +9,45 @@ body {
   @apply font-mono;
 }
 
+.logo {
+  margin-top: 15px;
+  margin-left: 20px;
+  position: fixed;
+}
+
+#mainNav {
+  text-align: center;
+  position: fixed;
+  left: 20px;
+  width: 200px;
+  top: 170px;
+  ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2em;
+  }
+  a {
+    font-size: 1.2em;
+    line-height: 1.1em;
+    transition: transform 100ms;
+    display: block;
+    transform: scaleY(1);
+    margin-top: -0.1em;
+    &:hover {
+      color: #fff;
+      transform: scaleY(1.7);
+    }
+  }
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .font-circles {
   line-height: 1.1em;
-  margin-bottom: -0.4em;
+  margin-bottom: -0.3em;
   word-spacing: 0.3em;
 }
 
@@ -21,6 +57,8 @@ body {
 }
 
 h1 {
-  font-size: 6em;
+  font-size: 9vw;
   @apply font-circles;
+  text-align: center;
+  padding: 0.3em 0;
 }

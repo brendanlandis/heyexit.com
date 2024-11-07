@@ -3,6 +3,7 @@ import { DM_Mono } from 'next/font/google';
 import localFont from 'next/font/local';
 import './css/screen.css';
 import Image from 'next/image';
+import Link from 'next/link';
 
 // fonts
 const dm_mono = DM_Mono({
@@ -32,13 +33,35 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${dm_mono.variable} ${charlottenburgCircles.variable} ${lofiForest.variable}`}>
-        <Image
-          src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/hey_exit_white_on_transparent_88200168d9.png"
-          alt="Hey Exit logo"
-          width={640}
-          height={420}
-        />
-        {children}
+        <header>
+          <Image
+            src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/hey_exit_white_on_transparent_88200168d9.png"
+            alt="Hey Exit logo"
+            width={200}
+            height={100}
+            className="logo"
+          />
+          <nav id="mainNav">
+            <ul>
+              <li>
+                <Link href="/">home</Link>
+              </li>
+              <li>
+                <Link href="/">listen</Link>
+              </li>
+              <li>
+                <Link href="/">shows</Link>
+              </li>
+              <li>
+                <Link href="/">adjacent projects</Link>
+              </li>
+              <li>
+                <Link href="/">current projects</Link>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <main>{children}</main>
       </body>
     </html>
   );

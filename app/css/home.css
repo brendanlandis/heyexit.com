@@ -1,0 +1,10 @@
+.selectedPress {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 1em;
+  .pressList {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+}
