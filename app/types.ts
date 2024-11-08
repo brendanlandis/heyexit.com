@@ -42,6 +42,7 @@ export interface Show {
   documentId: string;
   documentation: Array <{
     id: number;
+    alternativeText: string;
     mime: string;
     url: string;
     documentId: string;
