@@ -23,3 +23,15 @@ export interface Press {
   quote: string;
   fullText: BlocksContent;
 }
+
+export interface Media {
+  id: number;
+  name: string;
+  alternativeText: string;
+  caption: string;
+  width: number;
+  height: number;
+  mime: string;
+  size: number;
+  url: string;
+}

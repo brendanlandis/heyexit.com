@@ -4,20 +4,14 @@ import Image from 'next/image';
 import Obfuscate from 'react-obfuscate';
 import PressList from './components/PressList';
 import Link from 'next/link';
+import RandomPic from './components/RandomPic';
 
 export default function Home() {
   return (
     <>
       <div className="content-home">
         <div>
-          <Image
-            src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/170116_lot_in_japan_Petra_Magno_01_20be880764.jpg"
-            alt="photo of Brendan Landis"
-            width={900}
-            height={100}
-            className="headerPhoto"
-            priority
-          />
+          <RandomPic />
           <div className="about">
             <p>
               Hey Exit was an active musical project from 2009-2021. It featured a number of collaborators at different
