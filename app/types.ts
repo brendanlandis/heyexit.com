@@ -35,3 +35,15 @@ export interface Media {
   size: number;
   url: string;
 }
+
+export interface Show {
+  id: number;
+  date: Date;
+  documentId: string;
+  documentation: Array <{
+    id: number;
+    mime: string;
+    url: string;
+    documentId: string;
+  }>;
+}

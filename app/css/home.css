@@ -32,6 +32,11 @@
   }
 }
 
+.headerPhoto {
+  max-height: 500px;
+  object-fit: cover;
+}
+
 .about {
   font-size: 1.3em;
   line-height: 1.4em;
