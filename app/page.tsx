@@ -29,15 +29,15 @@ export default function Home() {
             </p>
             <ul>
               <li>
-                <strong>art music & long-form instrumentals</strong> (new age doom, electroacoustic composition, free
+                <strong>art music and long-form instrumentals</strong> (new age doom, electroacoustic composition, free
                 improvisation, prepared guitar, plunderphonics)
               </li>
               <li>
-                <strong>heavy music & non-music</strong> (harsh noise, industrial, grindcore)
+                <strong>songwriting and short-form instrumentals</strong> (slowcore, downer pop, airs for solo instruments
+                and small ensembles)
               </li>
               <li>
-                <strong>songwriting & short-form instrumentals</strong> (slowcore, downer pop, airs for solo instruments
-                and small ensembles)
+                <strong>heavy music and non-music</strong> (harsh noise, industrial, grindcore)
               </li>
             </ul>
             <p>

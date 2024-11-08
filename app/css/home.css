@@ -19,7 +19,7 @@
   .press-quote {
     line-height: 1.1em;
     margin-bottom: 0.5em;
-    text-align: justify;
+    /* text-align: justify; */
     font-style: italic;
   }
 
@@ -33,10 +33,11 @@
 }
 
 .about {
-  font-size: 1.5em;
+  font-size: 1.3em;
   line-height: 1.4em;
   margin-top: 1em;
   color: #ccc;
+  text-align: justify;
   p,
   ul,
   li {
@@ -44,7 +45,7 @@
   }
   ul {
     list-style-type: disc;
-    padding-left: 1.5em;
+    padding-left: 1em;
   }
   a {
     font-weight: 500;
