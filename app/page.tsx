@@ -1,10 +1,8 @@
-'use client';
 import './css/home.css';
-import Image from 'next/image';
-import Obfuscate from 'react-obfuscate';
 import PressList from './components/PressList';
 import Link from 'next/link';
 import RandomPic from './components/RandomPic';
+import EmailLink from './components/EmailLink';
 
 export default function Home() {
   return (
@@ -12,12 +10,12 @@ export default function Home() {
       <h1>Archival Storage</h1>
       <div className="content-home">
         <div>
-          <RandomPic />
           <div className="about">
             <p>
               Hey Exit was an active musical project from 2009-2021. It featured a number of collaborators at different
               points, but mainly belonged to Brendan Landis.
             </p>
+            <RandomPic />
             <p>
               The project covered quite a lot of stylistic ground, working in several musical traditions and drawing
               from many different genres within each:
@@ -54,7 +52,7 @@ export default function Home() {
             </p>
 
             <p>
-              Feel free to get in touch at <Obfuscate email="b@slownames.net" />.
+              Feel free to get in touch at <EmailLink email='b@slownames.net' />.
             </p>
           </div>
         </div>

@@ -27,7 +27,7 @@ export default function RandomPic() {
           {/* <pre>{JSON.stringify(randomMedia, null, 2)}</pre> */}
         </div>
       ) : (
-        <p>no media. denied!</p>
+        <p>...</p>
       )}
     </div>
   );

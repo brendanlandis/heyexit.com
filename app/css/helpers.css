@@ -16,3 +16,8 @@
     opacity: 0;
   }
 }
+
+/* fix for Obfuscate spacing glitch */
+.emailLink a {
+  letter-spacing: initial !important;
+}

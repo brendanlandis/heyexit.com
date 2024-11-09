@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @import 'helpers.css';
 
 body {
@@ -97,7 +96,6 @@ body {
 
 .font-circles {
   line-height: 1.1em;
-  margin-bottom: -0.3em;
   word-spacing: 0.3em;
 }
 
@@ -109,11 +107,16 @@ body {
 h1, h2 {
   font-size: 9vw;
   @apply font-circles;
-  padding: 0.1em 0 0.3em 0;
+  padding: 0;
+  margin: 0;
   text-align: center;
   @media (min-width: 1024px) {
     text-align: right;
   }
+}
+
+h2 {
+  margin-top: 1em;
 }
 
 main {

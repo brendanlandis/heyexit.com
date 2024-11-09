@@ -10,11 +10,12 @@
     grid-template-columns: 1fr;
     gap: 2em;
     align-content: space-between;
-    li:nth-child(odd) {
+    padding: 1em 0;
+    li:nth-child(even) {
       padding-right: 16%;
       transform: rotate(2deg);
     }
-    li:nth-child(even) {
+    li:nth-child(odd) {
       padding-left: 16%;
       transform: rotate(-2deg);
     }
@@ -37,12 +38,12 @@
 .headerPhoto {
   max-height: 600px;
   object-fit: cover;
+  margin: 1em 0;
 }
 
 .about {
   font-size: 1em;
   line-height: 1.4em;
-  margin-top: 1em;
   color: #ccc;
   text-align: left;
   @media (min-width: 500px) {
@@ -62,6 +63,9 @@
   ul,
   li {
     margin: 0 auto 1em auto;
+  }
+  p:last-child {
+    margin-bottom: 0;
   }
   ul {
     list-style-type: disc;
