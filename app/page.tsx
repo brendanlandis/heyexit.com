@@ -9,6 +9,7 @@ import RandomPic from './components/RandomPic';
 export default function Home() {
   return (
     <>
+      <h1>Archival Storage</h1>
       <div className="content-home">
         <div>
           <RandomPic />
