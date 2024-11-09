@@ -27,6 +27,7 @@ export interface Press {
 export interface Media {
   id: number;
   name: string;
+  documentId: string;
   alternativeText: string;
   caption: string;
   width: number;

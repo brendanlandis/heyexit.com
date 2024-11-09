@@ -1,6 +1,9 @@
 .content-home {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  @media (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+  }
   gap: 2em;
   .pressList {
     display: grid;
@@ -19,7 +22,6 @@
   .press-quote {
     line-height: 1.1em;
     margin-bottom: 0.5em;
-    /* text-align: justify; */
     font-style: italic;
   }
 
@@ -38,11 +40,24 @@
 }
 
 .about {
-  font-size: 1.3em;
+  font-size: 1em;
   line-height: 1.4em;
   margin-top: 1em;
   color: #ccc;
-  text-align: justify;
+  text-align: left;
+  @media (min-width: 500px) {
+    text-align: justify;
+  }
+  @media (min-width: 600px) {
+    text-align: left;
+  }
+  @media (min-width: 666px) {
+    font-size: 1.3em;
+    text-align: left;
+  }
+  @media (min-width: 1200px) {
+    text-align: justify;
+  }
   p,
   ul,
   li {

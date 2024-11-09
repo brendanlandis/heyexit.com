@@ -35,13 +35,31 @@ export default function RootLayout({
       <body className={`${dm_mono.variable} ${charlottenburgCircles.variable} ${lofiForest.variable}`}>
         <div id="wrapper">
           <header>
-            <Image
-              src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/hey_exit_white_on_transparent_88200168d9.png"
-              alt="Hey Exit logo"
-              width={200}
-              height={100}
-              className="logo"
-            />
+            <Image src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/hey_exit_white_on_transparent_88200168d9.png" alt="Hey Exit logo" width={200} height={100} className="logo" />
+            <div id="navToggle" className="dropdown">
+              <div tabIndex={0} role="button">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block h-5 w-5 stroke-current">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+              </div>
+              <ul tabIndex={0} className="menu dropdown-content">
+                <li>
+                  <Link href="/">home</Link>
+                </li>
+                <li>
+                  <Link href="/">listen</Link>
+                </li>
+                <li>
+                  <Link href="/">shows</Link>
+                </li>
+                <li>
+                  <Link href="/">related</Link>
+                </li>
+                <li>
+                  <Link href="/">current</Link>
+                </li>
+              </ul>
+            </div>
             <nav id="mainNav">
               <ul>
                 <li>
