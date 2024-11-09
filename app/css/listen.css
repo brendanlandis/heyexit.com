@@ -1,10 +1,25 @@
 .content-listen {
-  
 }
 .releases-grid {
   display: grid;
-  gap: 2em;
-  grid-template-columns: 1fr 1fr 1fr;
+  &.selected {
+    grid-template-columns: 1fr;
+    gap: 0;
+    @media (min-width: 1024px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  &.complete {
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    .recording .details .album-title {
+      font-size: 1.8vw;
+      line-height: 1.3em;
+    }
+    @media (min-width: 1024px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
   .recording {
     position: relative;
     .details {
