@@ -1,5 +1,18 @@
 import { type BlocksContent } from '@strapi/blocks-react-renderer';
 
+export interface Media {
+  id: number;
+  name: string;
+  documentId: string;
+  alternativeText: string;
+  caption: string;
+  width: number;
+  height: number;
+  mime: string;
+  size: number;
+  url: string;
+}
+
 export interface Press {
   id: number;
   bands: Array<{
@@ -24,24 +37,30 @@ export interface Press {
   fullText: BlocksContent;
 }
 
-export interface Media {
+export interface RecordingSummary {
   id: number;
-  name: string;
-  documentId: string;
-  alternativeText: string;
-  caption: string;
-  width: number;
-  height: number;
-  mime: string;
-  size: number;
-  url: string;
+  bands: Array<{
+    id: number;
+    name: string;
+  }>;
+  alias: string;
+  title: string;
+  releaseDate: Date;
+  type: string;
+  visibility: string;
+  cover: Array<{
+    id: number;
+    alternativeText: string;
+    caption: string;
+    url: string;
+  }>;
 }
 
 export interface Show {
   id: number;
   date: Date;
   documentId: string;
-  documentation: Array <{
+  documentation: Array<{
     id: number;
     alternativeText: string;
     mime: string;
