@@ -4,6 +4,7 @@ import localFont from 'next/font/local';
 import './css/screen.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import NavItems from './components/NavItems';
 
 // fonts
 const dm_mono = DM_Mono({
@@ -43,40 +44,12 @@ export default function RootLayout({
                 </svg>
               </div>
               <ul tabIndex={0} className="menu dropdown-content">
-                <li>
-                  <Link href="/">home</Link>
-                </li>
-                <li>
-                  <Link href="/">listen</Link>
-                </li>
-                <li>
-                  <Link href="/">shows</Link>
-                </li>
-                <li>
-                  <Link href="/">related</Link>
-                </li>
-                <li>
-                  <Link href="/">current</Link>
-                </li>
+                <NavItems />
               </ul>
             </div>
             <nav id="mainNav">
               <ul>
-                <li>
-                  <Link href="/">home</Link>
-                </li>
-                <li>
-                  <Link href="/">listen</Link>
-                </li>
-                <li>
-                  <Link href="/">shows</Link>
-                </li>
-                <li>
-                  <Link href="/">related</Link>
-                </li>
-                <li>
-                  <Link href="/">current</Link>
-                </li>
+                <NavItems />
               </ul>
             </nav>
           </header>
