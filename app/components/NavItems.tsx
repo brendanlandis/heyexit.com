@@ -7,7 +7,7 @@ export default function NavItems() {
   return (
     <>
       <li className={pathname === '/' ? 'active' : ''}>
-        <Link href="/">home</Link>
+        <Link href="/">hello</Link>
       </li>
       <li className={pathname === '/listen' ? 'active' : ''}>
         <Link href="/listen">listen</Link>
