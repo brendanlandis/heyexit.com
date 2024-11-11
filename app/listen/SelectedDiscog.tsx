@@ -3,6 +3,7 @@ import useAxios from 'axios-hooks';
 import { RecordingSummary } from '../types';
 import Link from 'next/link';
 import Image from 'next/image';
+import classNames from 'classnames';
 
 function LoadingOrError({ loading, error }: { loading: boolean; error: any }) {
   if (loading) return <p>loading covers...</p>;
@@ -32,7 +33,11 @@ export default function SelectedDiscog() {
             ))}
           </Link>
           <Link href={`/discography/${recording.title}`} className="details">
-            <div className="album-title">{recording.title}</div>
+            <div className={classNames('album-title', {
+              'long-title': recording.title.length > 40 || /\b\w{9,}\b/.test(recording.title),
+              })}>
+              {recording.title}
+            </div>
             <div className="album-releasedate">{new Date(recording.releaseDate).toISOString().slice(0, 4)}</div>
           </Link>
         </div>

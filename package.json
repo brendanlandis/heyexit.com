@@ -13,11 +13,12 @@
     "autoprefixer": "^10.4.20",
     "axios": "^1.7.7",
     "axios-hooks": "^5.0.2",
+    "classnames": "^2.5.1",
     "daisyui": "^4.12.14",
     "date-fns": "^4.1.0",
     "husky": "^9.1.6",
-    "next": "15.0.2",
-    "postcss": "^8.4.47",
+    "next": "15.0.3",
+    "postcss": "^8.4.48",
     "react": "19.0.0-rc-02c0e824-20241028",
     "react-dom": "19.0.0-rc-02c0e824-20241028",
     "react-obfuscate": "^3.7.0",
@@ -28,7 +29,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^9",
-    "eslint-config-next": "15.0.2",
+    "eslint-config-next": "15.0.3",
     "typescript": "^5"
   }
 }
