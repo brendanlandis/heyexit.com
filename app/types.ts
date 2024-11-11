@@ -39,6 +39,7 @@ export interface Press {
 
 export interface RecordingSummary {
   id: number;
+  documentId: string;
   bands: Array<{
     id: number;
     name: string;

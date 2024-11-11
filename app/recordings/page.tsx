@@ -1,8 +1,8 @@
-import '../css/listen.css';
+import '../css/recordings.css';
 import CompleteDiscog from './CompleteDiscog';
 import SelectedDiscog from './SelectedDiscog';
 
-export default function Listen() {
+export default function Recordings() {
   return (
     <>
       <div className="content-listen">
