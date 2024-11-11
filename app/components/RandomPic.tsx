@@ -3,6 +3,7 @@ import useAxios from 'axios-hooks';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 export default function RandomPic() {
   const [{ data: media, loading, error }, refetch] = useAxios(
@@ -13,7 +14,12 @@ export default function RandomPic() {
 
   useEffect(() => {
     setIsMounted(true);
-    refetch();
+
+    refetch().catch((err) => {
+      if (!axios.isCancel(err)) {
+        console.error("Refetch error, girl!", err);
+      }
+    });
   }, []);
 
   if (!isMounted) return null;
