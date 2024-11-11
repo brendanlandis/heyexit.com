@@ -35,7 +35,10 @@ export default function CompleteDiscog() {
           <Link href={`/discography/${recording.title}`} className="details">
             <div
               className={classNames('album-title', {
-                'long-title': recording.title.length > 22 || /\b\w{9,}\b/.test(recording.title),
+                'long-title':
+                  recording.title.length > 22 ||
+                  /\b\w{9,}\b/.test(recording.title) ||
+                  recording.title.includes('Steve'),
                 'really-long-title': recording.title.length > 50,
                 'long-word': /\b\w{15,}\b/.test(recording.title),
               })}
