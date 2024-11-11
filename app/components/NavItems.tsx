@@ -13,7 +13,7 @@ export default function NavItems() {
       <li className={pathname === '/' ? 'active' : ''} onClick={closeDrawer}>
         <Link href="/">hello</Link>
       </li>
-      <li className={pathname === '/recordings' ? 'active' : ''} onClick={closeDrawer}>
+      <li className={pathname.includes('/recordings') ? 'active' : ''} onClick={closeDrawer}>
         <Link href="/recordings">recordings</Link>
       </li>
       <li className={pathname === '/shows' ? 'active' : ''} onClick={closeDrawer}>
