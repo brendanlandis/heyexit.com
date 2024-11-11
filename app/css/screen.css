@@ -27,14 +27,7 @@ body {
       width: 50px;
       justify-self: end;
       margin-right: 30px;
-      summary::marker {
-        content: none;
-      }
-      summary {
-        z-index: 2;
-        position: relative;
-        cursor: pointer;
-      }
+      cursor: pointer;
       svg {
         height: 50px;
         width: 50px;
@@ -113,7 +106,8 @@ body {
   container-type: inline-size;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-size: 14cqi;
   @apply font-circles;
   padding: 0;
@@ -130,4 +124,46 @@ h2 {
 
 main {
   margin: 0 auto;
+}
+
+/* mobile menu */
+.drawer-side ul.menu {
+  padding-top: 5em;
+  a {
+    font-size: 1.5em;
+  }
+  li {
+    margin-bottom: 1em;
+  }
+  li.active {
+    font-weight: 900;
+    a {
+      display: inline-block;
+      text-indent: -0.3em;
+    }
+    a::before {
+      content: '[';
+    }
+    a::after {
+      content: ']';
+    }
+  }
+}
+#closeMobileNav {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 2;
+  top: 1em;
+  right: 1em;
+  cursor: pointer;
+  svg {
+    &:hover {
+      background: transparent;
+    }
+    height: 50px;
+    width: 50px;
+    margin: 0;
+    padding: 0;
+  }
 }
