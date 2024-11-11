@@ -7,7 +7,9 @@ import EmailLink from './components/EmailLink';
 export default function Home() {
   return (
     <>
-      <h1>Archival Storage</h1>
+      <div className="header-container">
+        <h1>Archival Storage</h1>
+      </div>
       <div className="content-home">
         <div>
           <div className="about">
@@ -26,8 +28,8 @@ export default function Home() {
                 improvisation, prepared guitar, plunderphonics)
               </li>
               <li>
-                <strong>songwriting and short-form instrumentals</strong> (slowcore, downer pop, airs for solo instruments
-                and small ensembles)
+                <strong>songwriting and short-form instrumentals</strong> (slowcore, downer pop, airs for solo
+                instruments and small ensembles)
               </li>
               <li>
                 <strong>heavy music and non-music</strong> (harsh noise, industrial, grindcore)
@@ -52,7 +54,7 @@ export default function Home() {
             </p>
 
             <p>
-              Feel free to get in touch at <EmailLink email='b@slownames.net' />.
+              Feel free to get in touch at <EmailLink email="b@slownames.net" />.
             </p>
           </div>
         </div>

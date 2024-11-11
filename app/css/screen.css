@@ -108,16 +108,19 @@ body {
   line-height: 1.1em;
   margin-bottom: -0.34em;
 }
+.header-container {
+  container-name: header-container;
+  container-type: inline-size;
+}
 
 h1, h2 {
-  font-size:16vw;
+  font-size: 14cqi;
   @apply font-circles;
   padding: 0;
   margin: 0;
   text-align: center;
   @media (min-width: 1024px) {
     text-align: right;
-    font-size: 9vw;
   }
 }
 

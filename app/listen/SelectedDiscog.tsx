@@ -29,12 +29,12 @@ export default function SelectedDiscog() {
         <div className="recording" key={recording.id}>
           <Link href={`/discography/${recording.title}`} className="cover">
             {recording.cover.map((cover) => (
-              <Image key={cover.id} src={cover.url} alt={recording.title} width={750} height={750} />
+              <Image key={cover.id} src={cover.url} alt={recording.title} width={1024} height={1024} />
             ))}
           </Link>
           <Link href={`/discography/${recording.title}`} className="details">
             <div className={classNames('album-title', {
-              'long-title': recording.title.length > 40 || /\b\w{9,}\b/.test(recording.title),
+              'long-title': recording.title.length > 25 || /\b\w{9,}\b/.test(recording.title),
               })}>
               {recording.title}
             </div>
