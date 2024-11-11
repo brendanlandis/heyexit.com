@@ -63,7 +63,7 @@ export default function RootLayout({
               </nav>
             </header>
             <main>{children}</main>
-            <footer>footer</footer>
+            <footer></footer>
           </div>
           <div className="drawer-side lg:hidden">
             <label htmlFor="mobile-menu-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
