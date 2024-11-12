@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Fragment } from 'react';
 import { Media, Attachment, Track, Edition, VideoEmbed, Press } from '@/app/types';
 import { BlocksRenderer, type BlocksContent } from '@strapi/blocks-react-renderer';
 
