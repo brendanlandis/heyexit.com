@@ -1,6 +1,6 @@
 'use client';
 import useAxios from 'axios-hooks';
-import { RecordingSummary } from '../types';
+import { Recording } from '../types';
 import Link from 'next/link';
 import Image from 'next/image';
 import classNames from 'classnames';
@@ -21,12 +21,12 @@ export default function SelectedDiscog() {
   if (loading || error) return loadingOrError;
 
   const orderedRecordings = (recordings?.data || []).sort(
-    (b: RecordingSummary, a: RecordingSummary) => new Date(a.releaseDate).getTime() - new Date(b.releaseDate).getTime()
+    (b: Recording, a: Recording) => new Date(a.releaseDate).getTime() - new Date(b.releaseDate).getTime()
   );
 
   return (
     <div className="releases-grid selected">
-      {orderedRecordings.map((recording: RecordingSummary) => {
+      {orderedRecordings.map((recording: Recording) => {
         const normalizedTitle = getNormalizedTitle(recording.title);
         return (
           <div className="recording" key={recording.id}>

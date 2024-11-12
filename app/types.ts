@@ -37,7 +37,7 @@ export interface Press {
   fullText: BlocksContent;
 }
 
-export interface RecordingSummary {
+export interface Recording {
   id: number;
   documentId: string;
   bands: Array<{
@@ -55,6 +55,65 @@ export interface RecordingSummary {
     caption: string;
     url: string;
   }>;
+  linerNotes: Array<{
+    id: number;
+    alternativeText: string;
+    caption: string;
+    url: string;
+  }>;
+  bandcampURL: string;
+  bandcampEmbedID: string;
+  spotifyURL: string;
+  bandcampAlbumOrTrack: string;
+  about: BlocksContent;
+  credits: BlocksContent;
+  attachments: Array<{
+    id: number;
+    alternativeText: string;
+    caption: string;
+    url: string;
+  }>;
+  tracklist: Array<{
+    id: number;
+    title: string;
+    note: string;
+    length: string;
+  }>;
+  editions: Array<{
+    id: number;
+    label: string;
+    catalogNumber: string;
+    releaseDate: Date;
+    onlineOnly: boolean;
+    soldOut: boolean;
+    link: string;
+    printedCassettes: number;
+    printedRecords: number;
+    printedCDs: number;
+    printedObjects: number;
+    objectDescription: string;
+    photos: Array<{
+      id: number;
+      alternativeText: string;
+      caption: string;
+      url: string;
+    }>;
+  }>;
+  promoVideos: Array<{
+    id: number;
+    name: string;
+    file: Array<{
+      id: number;
+      alternativeText: string;
+      caption: string;
+      url: string;
+    }>;
+    videoID: string;
+    videoHost: string;
+    credit: string;
+    visibility: string;
+  }>;
+  presses: Array<Press>;
 }
 
 export interface Show {

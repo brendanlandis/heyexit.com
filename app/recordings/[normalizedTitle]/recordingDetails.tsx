@@ -25,5 +25,10 @@ export default function RecordingDetails({ documentId }: { documentId: string })
   if (loading) return <p>loading media...</p>;
   if (error) return <p>error {JSON.stringify(error, null, 2)}</p>;
 
-  return <pre>{JSON.stringify(recording, null, 2)}</pre>;
+  return (
+    <>
+      <p>id: {recording.data.id}</p>
+      <p>band: {recording.data.bands[0].name}</p>
+    </>
+  );
 }

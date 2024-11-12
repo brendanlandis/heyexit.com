@@ -1,6 +1,6 @@
 import axios from 'axios';
 import getNormalizedTitle from '@/app/components/getNormalizedTitle';
-import { RecordingSummary } from '@/app/types';
+import { Recording } from '@/app/types';
 import RecordingDetails from './RecordingDetails';
 
 export default async function RecordingPage({ params }: { params: { normalizedTitle: string } }) {
@@ -9,7 +9,7 @@ export default async function RecordingPage({ params }: { params: { normalizedTi
     const response = await axios.get(
       'https://slownames.net/api/recordings?populate=*&filters[bands][name]=Hey%20Exit&filters[visibility][$ne]=hidden&pagination[pageSize]=100'
     );
-    const recordings: RecordingSummary[] = response.data.data;
+    const recordings: Recording[] = response.data.data;
 
     // find the one that matches
     const matchingRecording = recordings.find((recording) => {
