@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Media, Attachment, Track, Edition, VideoEmbed, Press } from '@/app/types';
 import { BlocksRenderer, type BlocksContent } from '@strapi/blocks-react-renderer';
+import { format } from 'date-fns';
 
 export default function RecordingDetails({ documentId }: { documentId: string }) {
   const [{ data: recordingData, loading, error }, refetch] = useAxios(
@@ -26,7 +27,7 @@ export default function RecordingDetails({ documentId }: { documentId: string })
 
   if (!isMounted) return null;
 
-  if (loading) return <p>loading media...</p>;
+  if (loading) return <p>loading release...</p>;
   if (error) return <p>error {JSON.stringify(error, null, 2)}</p>;
 
   const recording = recordingData?.data;
@@ -71,11 +72,11 @@ export default function RecordingDetails({ documentId }: { documentId: string })
       <p>spotify URL: {recording.spotifyURL}</p>
       <div>
         about:
-        <BlocksRenderer content={recording.about} />
+        {recording.about ? <BlocksRenderer content={recording.about} /> : <></>}
       </div>
       <div>
         credits:
-        <BlocksRenderer content={recording.credits} />
+        {recording.credits ? <BlocksRenderer content={recording.credits} /> : <></>}
       </div>
       <div>
         attachments:
@@ -100,7 +101,7 @@ export default function RecordingDetails({ documentId }: { documentId: string })
         <ul>
           {recording.tracklist.map((track: Track, index: number) => (
             <li key={index}>
-              {track.id} / {track.title} / {track.note} / {track.length}
+              {index + 1} / {track.id} / {track.title} / {track.note} / {track.length}
             </li>
           ))}
         </ul>
@@ -112,7 +113,7 @@ export default function RecordingDetails({ documentId }: { documentId: string })
             <p>id: {edition.id}</p>
             <p>label: {edition.label}</p>
             <p>catalog number: {edition.catalogNumber}</p>
-            {/* <p>release date: {edition.releaseDate}</p> */}
+            <p>release date: {format(edition.releaseDate, 'yyyy')}</p>
             <p>online only: {edition.onlineOnly}</p>
             <p>sold out: {edition.soldOut}</p>
             <p>link: {edition.link}</p>
@@ -158,7 +159,7 @@ export default function RecordingDetails({ documentId }: { documentId: string })
         {recording.reviews?.map((press: Press, index: number) => (
           <div key={press.id}>
             <p>id: {press.id}</p>
-            {/* <p>date: {press.date}</p> */}
+            <p>date: {format(press.date, 'yyyy')}</p>
             <p>publication: {press.publication}</p>
             <p>type: {press.type}</p>
             <p>visibility: {press.visibility}</p>
@@ -166,7 +167,7 @@ export default function RecordingDetails({ documentId }: { documentId: string })
             <p>quote: {press.quote}</p>
             <div>
               fullText:
-              <BlocksRenderer content={press.fullText} />
+              {recording.fullText ? <BlocksRenderer content={recording.fullText} /> : <></>}
             </div>
             <div>
               review attachments:
