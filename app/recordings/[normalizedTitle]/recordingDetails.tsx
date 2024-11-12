@@ -2,11 +2,13 @@
 import useAxios from 'axios-hooks';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import '../../css/recordingDetail.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Media, Attachment, Track, Edition, VideoEmbed, Press } from '@/app/types';
 import { BlocksRenderer, type BlocksContent } from '@strapi/blocks-react-renderer';
 import { format } from 'date-fns';
+import classNames from 'classnames';
 
 export default function RecordingDetails({ documentId }: { documentId: string }) {
   const [{ data: recordingData, loading, error }, refetch] = useAxios(
@@ -34,7 +36,24 @@ export default function RecordingDetails({ documentId }: { documentId: string })
 
   return (
     <>
-      <p>id: {recording.id}</p>
+      <div className="content-recordingDetails">
+        <div className="header-container">
+          <h1
+            className={classNames({
+              [`letters-${recording.title.length}`]: true,
+              [`words-${recording.title.split(/\s+/).length}`]: true,
+            })}
+          >
+            {recording.title}
+          </h1>
+        </div>
+        asdf asdiufhsa askjhfa dhjkadasdf asdiufhsa askjhfa dhjkadasdf asdiufhsa askjhfa dhjkadasdf asdiufhsa askjhfa
+        dhjkadasdf asdiufhsa askjhfa dhjkadasdf asdiufhsa askjhfa dhjkadasdf asdiufhsa askjhfa dhjkadasdf asdiufhsa
+        askjhfa dhjkadasdf asdiufhsa askjhfa dhjkadasdf asdiufhsa askjhfa dhjkadasdf asdiufhsa askjhfa dhjkadasdf
+        asdiufhsa askjhfa dhjkadasdf asdiufhsa askjhfa dhjkadasdf asdiufhsa askjhfa dhjkadasdf asdiufhsa askjhfa
+        dhjkadasdf asdiufhsa askjhfa dhjkad
+      </div>
+      {/* <p>id: {recording.id}</p>
       <p>documentId: {recording.documentId}</p>
       <p>band: {recording.bands[0].name}</p>
       <p>alias: {recording.alias}</p>
@@ -183,7 +202,7 @@ export default function RecordingDetails({ documentId }: { documentId: string })
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </>
   );
 }

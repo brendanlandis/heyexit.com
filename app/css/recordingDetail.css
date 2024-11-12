@@ -1,0 +1,88 @@
+.content-recordingDetails {
+  h1 {
+    @apply font-lofi;
+    font-size: 13cqi;
+    line-height: 0.7em;
+    margin-top: 0.3em;
+    text-align: left;
+    &.letters-4 {
+      font-size: 23cqi;
+    }
+    &.letters-6 {
+      font-size: 22cqi;
+    }
+    &.letters-7 {
+      font-size: 18cqi;
+    }
+    &.letters-8 {
+      font-size: 17cqi;
+    }
+    &.letters-9 {
+      font-size: 16cqi;
+      &.words-1 {
+        font-size: 15cqi;
+      }
+    }
+    &.letters-10 {
+      font-size: 14cqi;
+      &.words-2 {
+        font-size: 13cqi;
+      }
+    }
+    &.letters-11 {
+      font-size: 13cqi;
+    }
+    &.letters-12 {
+      font-size: 13cqi;
+      &.words-3 {
+        font-size: 11cqi;
+      }
+    }
+    &.letters-13 {
+      font-size: 12cqi;
+    }
+    &.letters-15,
+    &.letters-16,
+    &.letters-17 {
+      font-size: 14cqi;
+    }
+    &.letters-18 {
+      font-size: 16cqi;
+    }
+    &.letters-19,
+    &.letters-20 {
+      font-size: 13cqi;
+    }
+    &.letters-21,
+    &.letters-22 {
+      font-size: 11cqi;
+    }
+    &.letters-23,
+    &.letters-24,
+    &.letters-25 {
+      font-size: 10cqi;
+    }
+    &.letters-27 {
+      font-size: 9cqi;
+    }
+    &.letters-28 {
+      font-size: 10cqi;
+    }
+    &.letters-31 {
+      font-size: 9cqi;
+      &.words-4 {
+        font-size: 7cqi;
+      }
+    }
+    &.letters-34,
+    &.letters-35 {
+      font-size: 8cqi;
+    }
+    &.letters-47 {
+      font-size: 6cqi;
+    }
+    &.letters-64 {
+      font-size: 5cqi;
+    }
+  }
+}
