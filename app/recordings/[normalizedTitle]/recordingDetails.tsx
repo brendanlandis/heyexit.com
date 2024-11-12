@@ -43,36 +43,28 @@ export default function RecordingDetails({ documentId }: { documentId: string })
       <p>type: {recording.type}</p>
       <p>visibility: {recording.visibility}</p>
       <div>
-        covers:
-        {recording.linerNotes?.length > 0 && (
-          <>
-            {recording.cover.map((cover: Media, index: number) => (
-              <div key={cover.id || index}>
-                <Link href={cover.url}>
-                  <Image src={cover.url} alt={`cover art for ${recording.title}`} width={750} height={750} />
-                </Link>
-                <p>alt: {cover.alternativeText}</p>
-                <p>caption: {cover.caption}</p>
-              </div>
-            ))}
-          </>
-        )}
+        cover:
+        {recording.cover?.map((cover: Media, index: number) => (
+          <div key={cover.id || index}>
+            <Link href={cover.url}>
+              <Image src={cover.url} alt={`cover art for ${recording.title}`} width={750} height={750} />
+            </Link>
+            <p>alt: {cover.alternativeText}</p>
+            <p>caption: {cover.caption}</p>
+          </div>
+        ))}
       </div>
       <div>
         liner notes:
-        {recording.linerNotes?.length > 0 && (
-          <>
-            {recording.linerNotes.map((note: Media, index: number) => (
-              <div key={note.id || index}>
-                <Link href={note.url}>
-                  <Image src={note.url} alt={recording.title} width={750} height={750} />
-                </Link>
-                <p>alt: {note.alternativeText}</p>
-                <p>caption: {note.caption}</p>
-              </div>
-            ))}
-          </>
-        )}
+        {recording.linerNotes?.map((note: Media, index: number) => (
+          <div key={note.id || index}>
+            <Link href={note.url}>
+              <Image src={note.url} alt={recording.title} width={750} height={750} />
+            </Link>
+            <p>alt: {note.alternativeText}</p>
+            <p>caption: {note.caption}</p>
+          </div>
+        ))}
       </div>
       <p>bandcamp URL: {recording.bandcampURL}</p>
       <p>bandcamp embed ID: {recording.bandcampEmbedID}</p>
@@ -88,13 +80,11 @@ export default function RecordingDetails({ documentId }: { documentId: string })
       </div>
       <div>
         attachments:
-        {recording.attachments?.length > 0 && (
-          <>
-            {recording.attachments.map((attachment: Attachment, index: number) => (
-              <div key={attachment.id || index}>
-                <p>id: {attachment.id}</p>
-                <p>link text: {attachment.linkText}</p>
-                {/* <p>file id: {attachment.file[0].id}</p>
+        {recording.attachments.map((attachment: Attachment, index: number) => (
+          <div key={attachment.id || index}>
+            <p>id: {attachment.id}</p>
+            <p>link text: {attachment.linkText}</p>
+            {/* <p>file id: {attachment.file[0].id}</p>
                 <p>file name: {attachment.file[0].name}</p>
                 <p>file document Id: {attachment.file[0].documentId}</p>
                 <p>file alt text: {attachment.file[0].alternativeText}</p>
@@ -104,10 +94,8 @@ export default function RecordingDetails({ documentId }: { documentId: string })
                 <p>file size: {attachment.file[0].size}</p>
                 <p>file width: {attachment.file[0].width}</p>
                 <p>file height: {attachment.file[0].height}</p> */}
-              </div>
-            ))}
-          </>
-        )}
+          </div>
+        ))}
       </div>
       <div>
         tracklist:
@@ -137,9 +125,7 @@ export default function RecordingDetails({ documentId }: { documentId: string })
             <p>object description: {edition.objectDescription}</p>
             <div>
               photos:
-              {/* {edition.photos?.length > 0 && (
-                <>
-                  {edition.photos.map((photo: Media, index: number) => (
+              {/* {edition.photos?.map((photo: Media, index: number) => (
                     <div key={photo.id || index}>
                       <Link href={photo.url}>
                         <Image src={photo.url} alt={recording.title} width={750} height={750} />
@@ -147,56 +133,46 @@ export default function RecordingDetails({ documentId }: { documentId: string })
                       <p>alt: {photo.alternativeText}</p>
                       <p>caption: {photo.caption}</p>
                     </div>
-                  ))}
-                </>
-              )} */}
+                  ))} */}
             </div>
           </div>
         ))}
       </div>
       <div>
         promo videos:
-        {recording.promoVideos?.length > 0 && (
-          <Fragment>
-            {recording.promoVideos.map((video: VideoEmbed, index: number) => (
-              <>
-                <p>id: {video.id}</p>
-                <p>name: {video.name}</p>
-                {/* <p>file id: {video.file[0].id}</p>
+        {recording.promoVideos?.map((video: VideoEmbed, index: number) => (
+          <>
+            <p>id: {video.id}</p>
+            <p>name: {video.name}</p>
+            {/* <p>file id: {video.file[0].id}</p>
                 <p>file alt text: {video.file[0].alternativeText}</p>
                 <p>file caption: {video.file[0].caption}</p>
                 <p>file url: {video.file[0].url}</p> */}
-                <p>videoID: {video.videoID}</p>
-                <p>videoHost: {video.videoHost}</p>
-                <p>credit: {video.credit}</p>
-                <p>visibility: {video.visibility}</p>
-              </>
-            ))}
-          </Fragment>
-        )}
+            <p>videoID: {video.videoID}</p>
+            <p>videoHost: {video.videoHost}</p>
+            <p>credit: {video.credit}</p>
+            <p>visibility: {video.visibility}</p>
+          </>
+        ))}
       </div>
       <div>
         press:
-        {recording.presses?.length > 0 && (
-          <Fragment>
-            {recording.presses.map((press: Press, index: number) => (
-              <>
-                <p>id: {press.id}</p>
-                {/* <p>date: {press.date}</p> */}
-                <p>publication: {press.publication}</p>
-                <p>type: {press.type}</p>
-                <p>visibility: {press.visibility}</p>
-                <p>URL: {press.URL}</p>
-                <p>quote: {press.quote}</p>
-                <div>
-                  fullText:
-                  <BlocksRenderer content={press.fullText} />
-                </div>
-                {/* <div>
+        {recording.presses?.map((press: Press, index: number) => (
+          <>
+            <p>id: {press.id}</p>
+            {/* <p>date: {press.date}</p> */}
+            <p>publication: {press.publication}</p>
+            <p>type: {press.type}</p>
+            <p>visibility: {press.visibility}</p>
+            <p>URL: {press.URL}</p>
+            <p>quote: {press.quote}</p>
+            <div>
+              fullText:
+              <BlocksRenderer content={press.fullText} />
+            </div>
+            {/* <div>
                   attachments:
-                  {press.attachments?.length > 0 && (
-                    <>
-                      {press.attachments.map((attachment: Media, index: number) => (
+                      {press.attachments?.map((attachment: Media, index: number) => (
                         <div key={attachment.id || index}>
                           <Link href={attachment.url}>
                             <Image src={attachment.url} alt={`cover art for ${recording.title}`} width={750} height={750} />
@@ -205,13 +181,9 @@ export default function RecordingDetails({ documentId }: { documentId: string })
                           <p>caption: {attachment.caption}</p>
                         </div>
                       ))}
-                    </>
-                  )}
                 </div> */}
-              </>
-            ))}
-          </Fragment>
-        )}
+          </>
+        ))}
       </div>
     </>
   );
