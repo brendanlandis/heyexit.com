@@ -16,7 +16,7 @@ export interface Media {
 export interface Attachment {
   id: number;
   linkText: string;
-  file: Array<Media>;
+  file: Media;
 }
 
 export interface Track {
@@ -45,7 +45,7 @@ export interface Edition {
 export interface VideoEmbed {
   id: number;
   name: string;
-  file: Array<Media>;
+  file: Media;
   videoID: string;
   videoHost: string;
   credit: string;

@@ -9,7 +9,7 @@ import { BlocksRenderer, type BlocksContent } from '@strapi/blocks-react-rendere
 
 export default function RecordingDetails({ documentId }: { documentId: string }) {
   const [{ data: recordingData, loading, error }, refetch] = useAxios(
-    `https://slownames.net/api/recordings/${documentId}?populate=*`
+    `https://slownames.net/api/recordings/${documentId}?pLevel`
   );
 
   const [isMounted, setIsMounted] = useState(false);
@@ -79,20 +79,19 @@ export default function RecordingDetails({ documentId }: { documentId: string })
       </div>
       <div>
         attachments:
-        {recording.attachments.map((attachment: Attachment, index: number) => (
+        {recording.attachments?.map((attachment: Attachment, index: number) => (
           <div key={attachment.id || index}>
             <p>id: {attachment.id}</p>
-            <p>link text: {attachment.linkText}</p>
-            {/* <p>file id: {attachment.file[0].id}</p>
-                <p>file name: {attachment.file[0].name}</p>
-                <p>file document Id: {attachment.file[0].documentId}</p>
-                <p>file alt text: {attachment.file[0].alternativeText}</p>
-                <p>file caption: {attachment.file[0].caption}</p>
-                <p>file mime: {attachment.file[0].mime}</p>
-                <p>file url: {attachment.file[0].url}</p>
-                <p>file size: {attachment.file[0].size}</p>
-                <p>file width: {attachment.file[0].width}</p>
-                <p>file height: {attachment.file[0].height}</p> */}
+            <p>file id: {attachment.file.id}</p>
+            <p>file name: {attachment.file.name}</p>
+            <p>file document Id: {attachment.file.documentId}</p>
+            <p>file alt text: {attachment.file.alternativeText}</p>
+            <p>file caption: {attachment.file.caption}</p>
+            <p>file mime: {attachment.file.mime}</p>
+            <p>file url: {attachment.file.url}</p>
+            <p>file size: {attachment.file.size}</p>
+            <p>file width: {attachment.file.width}</p>
+            <p>file height: {attachment.file.height}</p>
           </div>
         ))}
       </div>
@@ -124,15 +123,15 @@ export default function RecordingDetails({ documentId }: { documentId: string })
             <p>object description: {edition.objectDescription}</p>
             <div>
               photos:
-              {/* {edition.photos?.map((photo: Media, index: number) => (
-                    <div key={photo.id || index}>
-                      <Link href={photo.url}>
-                        <Image src={photo.url} alt={recording.title} width={750} height={750} />
-                      </Link>
-                      <p>alt: {photo.alternativeText}</p>
-                      <p>caption: {photo.caption}</p>
-                    </div>
-                  ))} */}
+              {edition.photos?.map((photo: Media, index: number) => (
+                <div key={photo.id || index}>
+                  <Link href={photo.url}>
+                    <Image src={photo.url} alt={recording.title} width={750} height={750} />
+                  </Link>
+                  <p>alt: {photo.alternativeText}</p>
+                  <p>caption: {photo.caption}</p>
+                </div>
+              ))}
             </div>
           </div>
         ))}
@@ -143,10 +142,10 @@ export default function RecordingDetails({ documentId }: { documentId: string })
           <>
             <p>id: {video.id}</p>
             <p>name: {video.name}</p>
-            {/* <p>file id: {video.file[0].id}</p>
-                <p>file alt text: {video.file[0].alternativeText}</p>
-                <p>file caption: {video.file[0].caption}</p>
-                <p>file url: {video.file[0].url}</p> */}
+            <p>file id: {video.file.id}</p>
+            <p>file alt text: {video.file.alternativeText}</p>
+            <p>file caption: {video.file.caption}</p>
+            <p>file url: {video.file.url}</p>
             <p>videoID: {video.videoID}</p>
             <p>videoHost: {video.videoHost}</p>
             <p>credit: {video.credit}</p>
@@ -156,8 +155,8 @@ export default function RecordingDetails({ documentId }: { documentId: string })
       </div>
       <div>
         press:
-        {recording.presses?.map((press: Press, index: number) => (
-          <>
+        {recording.reviews?.map((press: Press, index: number) => (
+          <div key={press.id}>
             <p>id: {press.id}</p>
             {/* <p>date: {press.date}</p> */}
             <p>publication: {press.publication}</p>
@@ -169,19 +168,19 @@ export default function RecordingDetails({ documentId }: { documentId: string })
               fullText:
               <BlocksRenderer content={press.fullText} />
             </div>
-            {/* <div>
-                  attachments:
-                      {press.attachments?.map((attachment: Media, index: number) => (
-                        <div key={attachment.id || index}>
-                          <Link href={attachment.url}>
-                            <Image src={attachment.url} alt={`cover art for ${recording.title}`} width={750} height={750} />
-                          </Link>
-                          <p>alt: {attachment.alternativeText}</p>
-                          <p>caption: {attachment.caption}</p>
-                        </div>
-                      ))}
-                </div> */}
-          </>
+            <div>
+              review attachments:
+              {press.attachments?.map((attachment: Media, index: number) => (
+                <div key={attachment.id || index}>
+                  <Link href={attachment.url}>
+                    <Image src={attachment.url} alt={`cover art for ${recording.title}`} width={750} height={750} />
+                  </Link>
+                  <p>alt: {attachment.alternativeText}</p>
+                  <p>caption: {attachment.caption}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </>
