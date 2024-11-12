@@ -1,6 +1,7 @@
 import axios from 'axios';
 import getNormalizedTitle from '@/app/components/getNormalizedTitle';
 import { RecordingSummary } from '@/app/types';
+import RecordingDetails from './RecordingDetails';
 
 export default async function RecordingPage({ params }: { params: { normalizedTitle: string } }) {
   try {
@@ -22,7 +23,7 @@ export default async function RecordingPage({ params }: { params: { normalizedTi
     // anyway, display it
     return (
       <>
-        <div>{matchingRecording.documentId}</div>
+        <RecordingDetails documentId={matchingRecording.documentId} />
       </>
     );
   } catch (error: any) {
