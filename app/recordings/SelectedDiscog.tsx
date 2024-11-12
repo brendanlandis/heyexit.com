@@ -31,7 +31,9 @@ export default function SelectedDiscog() {
           .replace(/[\u0300-\u036f]/g, '') // Remove diacritic marks
           .toLowerCase() // Convert to lowercase
           .replace(/[^\w\s]/g, '') // Remove non-alphanumeric characters
-          .replace(/\s+/g, '-'); // Convert spaces to dashes
+          .replace(/\s+/g, '-') // Convert spaces to dashes
+          .replace(/-?reknowing.*$/, '') // Remove "reknowing" from some URLs
+          .replace(/-?a\-luvsound.*$/, ''); // Shorten long title "Soothing Sounds for Baby"
         return (
           <div className="recording" key={recording.id}>
             <Link href={`/recordings/${normalizedTitle}`} className="cover">
