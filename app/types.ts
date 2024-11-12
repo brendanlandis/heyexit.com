@@ -13,6 +13,45 @@ export interface Media {
   url: string;
 }
 
+export interface Attachment {
+  id: number;
+  linkText: string;
+  file: Array<Media>;
+}
+
+export interface Track {
+  id: number;
+  title: string;
+  note: string;
+  length: string;
+}
+
+export interface Edition {
+  id: number;
+  label: string;
+  catalogNumber: string;
+  releaseDate: Date;
+  onlineOnly: boolean;
+  soldOut: boolean;
+  link: string;
+  printedCassettes: number;
+  printedRecords: number;
+  printedCDs: number;
+  printedObjects: number;
+  objectDescription: string;
+  photos: Array<Media>;
+}
+
+export interface VideoEmbed {
+  id: number;
+  name: string;
+  file: Array<Media>;
+  videoID: string;
+  videoHost: string;
+  credit: string;
+  visibility: string;
+}
+
 export interface Press {
   id: number;
   bands: Array<{
@@ -28,11 +67,7 @@ export interface Press {
   type: string;
   visibility: string;
   URL: string;
-  attachments: Array<{
-    id: number;
-    alternativeText: string;
-    url: string;
-  }>;
+  attachments: Array<Media>;
   quote: string;
   fullText: BlocksContent;
 }
@@ -49,70 +84,18 @@ export interface Recording {
   releaseDate: Date;
   type: string;
   visibility: string;
-  cover: Array<{
-    id: number;
-    alternativeText: string;
-    caption: string;
-    url: string;
-  }>;
-  linerNotes: Array<{
-    id: number;
-    alternativeText: string;
-    caption: string;
-    url: string;
-  }>;
+  cover: Array<Media>;
+  linerNotes: Array<Media>;
   bandcampURL: string;
   bandcampEmbedID: string;
   spotifyURL: string;
   bandcampAlbumOrTrack: string;
   about: BlocksContent;
   credits: BlocksContent;
-  attachments: Array<{
-    id: number;
-    alternativeText: string;
-    caption: string;
-    url: string;
-  }>;
-  tracklist: Array<{
-    id: number;
-    title: string;
-    note: string;
-    length: string;
-  }>;
-  editions: Array<{
-    id: number;
-    label: string;
-    catalogNumber: string;
-    releaseDate: Date;
-    onlineOnly: boolean;
-    soldOut: boolean;
-    link: string;
-    printedCassettes: number;
-    printedRecords: number;
-    printedCDs: number;
-    printedObjects: number;
-    objectDescription: string;
-    photos: Array<{
-      id: number;
-      alternativeText: string;
-      caption: string;
-      url: string;
-    }>;
-  }>;
-  promoVideos: Array<{
-    id: number;
-    name: string;
-    file: Array<{
-      id: number;
-      alternativeText: string;
-      caption: string;
-      url: string;
-    }>;
-    videoID: string;
-    videoHost: string;
-    credit: string;
-    visibility: string;
-  }>;
+  attachments: Array<Attachment>;
+  tracklist: Array<Track>;
+  editions: Array<Edition>;
+  promoVideos: Array<VideoEmbed>;
   presses: Array<Press>;
 }
 

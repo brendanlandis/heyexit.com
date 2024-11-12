@@ -2,9 +2,14 @@
 import useAxios from 'axios-hooks';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Fragment } from 'react';
+import { Media, Attachment, Track, Edition, VideoEmbed, Press } from '@/app/types';
+import { BlocksRenderer, type BlocksContent } from '@strapi/blocks-react-renderer';
 
 export default function RecordingDetails({ documentId }: { documentId: string }) {
-  const [{ data: recording, loading, error }, refetch] = useAxios(
+  const [{ data: recordingData, loading, error }, refetch] = useAxios(
     `https://slownames.net/api/recordings/${documentId}?populate=*`
   );
 
@@ -25,10 +30,189 @@ export default function RecordingDetails({ documentId }: { documentId: string })
   if (loading) return <p>loading media...</p>;
   if (error) return <p>error {JSON.stringify(error, null, 2)}</p>;
 
+  const recording = recordingData?.data;
+
   return (
     <>
-      <p>id: {recording.data.id}</p>
-      <p>band: {recording.data.bands[0].name}</p>
+      <p>id: {recording.id}</p>
+      <p>documentId: {recording.documentId}</p>
+      <p>band: {recording.bands[0].name}</p>
+      <p>alias: {recording.alias}</p>
+      <p>title: {recording.title}</p>
+      <p>release date: {recording.releaseDate}</p>
+      <p>type: {recording.type}</p>
+      <p>visibility: {recording.visibility}</p>
+      <div>
+        covers:
+        {recording.linerNotes?.length > 0 && (
+          <>
+            {recording.cover.map((cover: Media, index: number) => (
+              <div key={cover.id || index}>
+                <Link href={cover.url}>
+                  <Image src={cover.url} alt={`cover art for ${recording.title}`} width={750} height={750} />
+                </Link>
+                <p>alt: {cover.alternativeText}</p>
+                <p>caption: {cover.caption}</p>
+              </div>
+            ))}
+          </>
+        )}
+      </div>
+      <div>
+        liner notes:
+        {recording.linerNotes?.length > 0 && (
+          <>
+            {recording.linerNotes.map((note: Media, index: number) => (
+              <div key={note.id || index}>
+                <Link href={note.url}>
+                  <Image src={note.url} alt={recording.title} width={750} height={750} />
+                </Link>
+                <p>alt: {note.alternativeText}</p>
+                <p>caption: {note.caption}</p>
+              </div>
+            ))}
+          </>
+        )}
+      </div>
+      <p>bandcamp URL: {recording.bandcampURL}</p>
+      <p>bandcamp embed ID: {recording.bandcampEmbedID}</p>
+      <p>bandcamp album or track: {recording.bandcampAlbumOrTrack}</p>
+      <p>spotify URL: {recording.spotifyURL}</p>
+      <div>
+        about:
+        <BlocksRenderer content={recording.about} />
+      </div>
+      <div>
+        credits:
+        <BlocksRenderer content={recording.credits} />
+      </div>
+      <div>
+        attachments:
+        {recording.attachments?.length > 0 && (
+          <>
+            {recording.attachments.map((attachment: Attachment, index: number) => (
+              <div key={attachment.id || index}>
+                <p>id: {attachment.id}</p>
+                <p>link text: {attachment.linkText}</p>
+                {/* <p>file id: {attachment.file[0].id}</p>
+                <p>file name: {attachment.file[0].name}</p>
+                <p>file document Id: {attachment.file[0].documentId}</p>
+                <p>file alt text: {attachment.file[0].alternativeText}</p>
+                <p>file caption: {attachment.file[0].caption}</p>
+                <p>file mime: {attachment.file[0].mime}</p>
+                <p>file url: {attachment.file[0].url}</p>
+                <p>file size: {attachment.file[0].size}</p>
+                <p>file width: {attachment.file[0].width}</p>
+                <p>file height: {attachment.file[0].height}</p> */}
+              </div>
+            ))}
+          </>
+        )}
+      </div>
+      <div>
+        tracklist:
+        <ul>
+          {recording.tracklist.map((track: Track, index: number) => (
+            <li key={index}>
+              {track.id} / {track.title} / {track.note} / {track.length}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        editions:
+        {recording.editions.map((edition: Edition, index: number) => (
+          <div key={index}>
+            <p>id: {edition.id}</p>
+            <p>label: {edition.label}</p>
+            <p>catalog number: {edition.catalogNumber}</p>
+            {/* <p>release date: {edition.releaseDate}</p> */}
+            <p>online only: {edition.onlineOnly}</p>
+            <p>sold out: {edition.soldOut}</p>
+            <p>link: {edition.link}</p>
+            <p>printed cassettes: {edition.printedCassettes}</p>
+            <p>printed records: {edition.printedRecords}</p>
+            <p>printed CDs: {edition.printedCDs}</p>
+            <p>printed objects: {edition.printedObjects}</p>
+            <p>object description: {edition.objectDescription}</p>
+            <div>
+              photos:
+              {/* {edition.photos?.length > 0 && (
+                <>
+                  {edition.photos.map((photo: Media, index: number) => (
+                    <div key={photo.id || index}>
+                      <Link href={photo.url}>
+                        <Image src={photo.url} alt={recording.title} width={750} height={750} />
+                      </Link>
+                      <p>alt: {photo.alternativeText}</p>
+                      <p>caption: {photo.caption}</p>
+                    </div>
+                  ))}
+                </>
+              )} */}
+            </div>
+          </div>
+        ))}
+      </div>
+      <div>
+        promo videos:
+        {recording.promoVideos?.length > 0 && (
+          <Fragment>
+            {recording.promoVideos.map((video: VideoEmbed, index: number) => (
+              <>
+                <p>id: {video.id}</p>
+                <p>name: {video.name}</p>
+                {/* <p>file id: {video.file[0].id}</p>
+                <p>file alt text: {video.file[0].alternativeText}</p>
+                <p>file caption: {video.file[0].caption}</p>
+                <p>file url: {video.file[0].url}</p> */}
+                <p>videoID: {video.videoID}</p>
+                <p>videoHost: {video.videoHost}</p>
+                <p>credit: {video.credit}</p>
+                <p>visibility: {video.visibility}</p>
+              </>
+            ))}
+          </Fragment>
+        )}
+      </div>
+      <div>
+        press:
+        {recording.presses?.length > 0 && (
+          <Fragment>
+            {recording.presses.map((press: Press, index: number) => (
+              <>
+                <p>id: {press.id}</p>
+                {/* <p>date: {press.date}</p> */}
+                <p>publication: {press.publication}</p>
+                <p>type: {press.type}</p>
+                <p>visibility: {press.visibility}</p>
+                <p>URL: {press.URL}</p>
+                <p>quote: {press.quote}</p>
+                <div>
+                  fullText:
+                  <BlocksRenderer content={press.fullText} />
+                </div>
+                {/* <div>
+                  attachments:
+                  {press.attachments?.length > 0 && (
+                    <>
+                      {press.attachments.map((attachment: Media, index: number) => (
+                        <div key={attachment.id || index}>
+                          <Link href={attachment.url}>
+                            <Image src={attachment.url} alt={`cover art for ${recording.title}`} width={750} height={750} />
+                          </Link>
+                          <p>alt: {attachment.alternativeText}</p>
+                          <p>caption: {attachment.caption}</p>
+                        </div>
+                      ))}
+                    </>
+                  )}
+                </div> */}
+              </>
+            ))}
+          </Fragment>
+        )}
+      </div>
     </>
   );
 }
