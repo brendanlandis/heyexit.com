@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../../css/recordingDetail.css';
 import Link from 'next/link';
-import { Track, Press } from '@/app/types';
+import { Press } from '@/app/types';
 import { BlocksRenderer, type BlocksContent } from '@strapi/blocks-react-renderer';
 import classNames from 'classnames';
 import RecordingGraphics from './RecordingGraphics';
@@ -13,6 +13,7 @@ import RecordingPromoVideos from './RecordingPromoVideos';
 import RecordingIcons from './RecordingIcons';
 import RecordingEditions from './RecordingEditions';
 import TopPress from './TopPress';
+import Tracks from './Tracks';
 
 export default function RecordingDetails({ documentId }: { documentId: string }) {
   const baseUrl = `https://slownames.net/api/recordings/${documentId}`;
@@ -50,7 +51,6 @@ export default function RecordingDetails({ documentId }: { documentId: string })
   if (error) return <p>error {JSON.stringify(error, null, 2)}</p>;
 
   const recording = recordingData?.data;
-  const bandcampEmbedHeight = 145 + 35 * (recording.tracklist.length || 0);
 
   const title = recording.alias ? `${recording.alias} - ${recording.title}` : recording.title;
 
@@ -77,22 +77,7 @@ export default function RecordingDetails({ documentId }: { documentId: string })
             <RecordingEditions {...recording} />
             <RecordingIcons {...recording} />
             {recording.reviews?.some((press: Press) => press.visibility === 'highlight') && <TopPress {...recording} />}
-            {recording.bandcampEmbedID ? (
-              <iframe
-                src={`https://bandcamp.com/EmbeddedPlayer/${recording.bandcampAlbumOrTrack}=${recording.bandcampEmbedID}/size=large/bgcol=ffffff/linkcol=000000/artwork=none/transparent=true/`}
-                seamless
-                style={{ minHeight: bandcampEmbedHeight }}
-              ></iframe>
-            ) : (
-              <ol className="release-tracklist">
-                {recording.tracklist.map((track: Track) => (
-                  <li key={track.id}>
-                    {track.title} {track.note ? <span>{`(${track.note})`}</span> : ''}
-                    {track.length}
-                  </li>
-                ))}
-              </ol>
-            )}
+            <Tracks {...recording} />
             <div className="about">{recording.about ? <BlocksRenderer content={recording.about} /> : <></>}</div>
             <div>
               credits:
