@@ -130,6 +130,12 @@
   }
 }
 
+.recordingPromoVideos {
+  video {
+    width: 100%;
+  }
+}
+
 .content-recordingDetails {
   .recording-stats {
     display: flex;

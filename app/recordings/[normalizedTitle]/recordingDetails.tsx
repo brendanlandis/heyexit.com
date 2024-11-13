@@ -4,15 +4,14 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../../css/recordingDetail.css';
 import Link from 'next/link';
-import Image from 'next/image';
-import { Recording, Media, Attachment, Track, Edition, VideoEmbed, Press } from '@/app/types';
+import { Track, Edition, Press } from '@/app/types';
 import { BlocksRenderer, type BlocksContent } from '@strapi/blocks-react-renderer';
 import { format } from 'date-fns';
 import classNames from 'classnames';
 import { FaBandcamp, FaSpotify } from 'react-icons/fa';
 import RecordingGraphics from './RecordingGraphics';
-import { Fragment } from 'react';
 import RecordingAttachments from './RecordingAttachments';
+import RecordingPromoVideos from './RecordingPromoVideos';
 
 export default function RecordingDetails({ documentId }: { documentId: string }) {
   const baseUrl = `https://slownames.net/api/recordings/${documentId}`;
@@ -71,23 +70,7 @@ export default function RecordingDetails({ documentId }: { documentId: string })
           <div className="recordingDetail-column">
             <RecordingGraphics {...recording} />
             {recording.attachments.length ? <RecordingAttachments {...recording} /> : ''}
-            <div>
-              promo videos:
-              {recording.promoVideos?.map((video: VideoEmbed, index: number) => (
-                <Fragment key={index}>
-                  <p>id: {video.id}</p>
-                  <p>name: {video.name}</p>
-                  <p>file id: {video.file?.id}</p>
-                  <p>file alt text: {video.file?.alternativeText}</p>
-                  <p>file caption: {video.file?.caption}</p>
-                  <p>file url: {video.file?.url}</p>
-                  <p>videoID: {video.videoID}</p>
-                  <p>videoHost: {video.videoHost}</p>
-                  <p>credit: {video.credit}</p>
-                  <p>visibility: {video.visibility}</p>
-                </Fragment>
-              ))}
-            </div>
+            {recording.promoVideos.length ? <RecordingPromoVideos {...recording} /> : ''}
           </div>
           <div className="recordingDetail-column">
             <div className="recording-stats">
