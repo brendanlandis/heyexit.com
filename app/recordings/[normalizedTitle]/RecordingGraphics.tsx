@@ -35,7 +35,7 @@ export default function RecordingGraphics(recording: Recording) {
           const nextIndex = index === graphicUrls.length - 1 ? 0 : index + 1;
           return (
             <div id={`item${index + 1}`} className="carousel-item relative w-full" key={index}>
-              <Image src={url} alt={`item number ${index + 1}`} width={750} height={750} className="w-full cover" />
+              <Image src={url} alt={`item number ${index + 1}`} width={750} height={750} className="w-full detailCover" />
               <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
                 <button onClick={() => scrollCarousel(prevIndex + 1)} className="btn btn-circle">
                   ❮

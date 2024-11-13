@@ -12,6 +12,7 @@ import classNames from 'classnames';
 import { FaBandcamp, FaSpotify } from 'react-icons/fa';
 import RecordingGraphics from './RecordingGraphics';
 import { Fragment } from 'react';
+import RecordingAttachments from './RecordingAttachments';
 
 export default function RecordingDetails({ documentId }: { documentId: string }) {
   const baseUrl = `https://slownames.net/api/recordings/${documentId}`;
@@ -69,25 +70,7 @@ export default function RecordingDetails({ documentId }: { documentId: string })
         <div className="recordingDetail">
           <div className="recordingDetail-column">
             <RecordingGraphics {...recording} />
-            <div>
-              attachments:
-              {recording.attachments?.map((attachment: Attachment, index: number) => (
-                <div key={attachment.id || index}>
-                  <p>id: {attachment.id}</p>
-                  <p>linkText: {attachment.linkText}</p>
-                  <p>file id: {attachment.file.id}</p>
-                  <p>file name: {attachment.file?.name}</p>
-                  <p>file document Id: {attachment.file?.documentId}</p>
-                  <p>file alt text: {attachment.file?.alternativeText}</p>
-                  <p>file caption: {attachment.file?.caption}</p>
-                  <p>file mime: {attachment.file?.mime}</p>
-                  <p>file url: {attachment.file?.url}</p>
-                  <p>file size: {attachment.file?.size}</p>
-                  <p>file width: {attachment.file?.width}</p>
-                  <p>file height: {attachment.file?.height}</p>
-                </div>
-              ))}
-            </div>
+            {recording.attachments.length ? <RecordingAttachments {...recording} /> : ''}
             <div>
               promo videos:
               {recording.promoVideos?.map((video: VideoEmbed, index: number) => (

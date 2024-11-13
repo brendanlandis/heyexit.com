@@ -116,9 +116,18 @@
   }
 }
 
-.cover {
+.detailCover {
   border: 1px solid #333;
   object-fit: contain;
+}
+
+.recordingAttachments {
+  a {
+    text-decoration: underline;
+    font-size: 1.5em;
+    display: block;
+    text-align: center;
+  }
 }
 
 .content-recordingDetails {
