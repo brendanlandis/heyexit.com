@@ -5,15 +5,31 @@ import axios from 'axios';
 import '../../css/recordingDetail.css';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Media, Attachment, Track, Edition, VideoEmbed, Press } from '@/app/types';
+import { Recording, Media, Attachment, Track, Edition, VideoEmbed, Press } from '@/app/types';
 import { BlocksRenderer, type BlocksContent } from '@strapi/blocks-react-renderer';
 import { format } from 'date-fns';
 import classNames from 'classnames';
+import { FaBandcamp, FaSpotify } from 'react-icons/fa';
+import RecordingGraphics from './RecordingGraphics';
+import { Fragment } from 'react';
 
 export default function RecordingDetails({ documentId }: { documentId: string }) {
-  const [{ data: recordingData, loading, error }, refetch] = useAxios(
-    `https://slownames.net/api/recordings/${documentId}?pLevel`
-  );
+  const baseUrl = `https://slownames.net/api/recordings/${documentId}`;
+  const query = [
+    `populate[0]=editions`,
+    `populate[1]=editions.photos`,
+    `populate[2]=tracklist`,
+    `populate[3]=cover`,
+    `populate[4]=linerNotes`,
+    `populate[5]=attachments`,
+    `populate[6]=attachments.file`,
+    `populate[7]=promoVideos`,
+    `populate[8]=promoVideos.file`,
+    `populate[9]=reviews`,
+    `populate[10]=reviews.attachments`,
+  ].join('&');
+
+  const [{ data: recordingData, loading, error }, refetch] = useAxios(`${baseUrl}?${query}`);
 
   const [isMounted, setIsMounted] = useState(false);
 
@@ -33,6 +49,9 @@ export default function RecordingDetails({ documentId }: { documentId: string })
   if (error) return <p>error {JSON.stringify(error, null, 2)}</p>;
 
   const recording = recordingData?.data;
+  const bandcampEmbedHeight = 145 + 35 * (recording.tracklist.length || 0);
+
+  const title = recording.alias ? `${recording.alias} - ${recording.title}` : recording.title;
 
   return (
     <>
@@ -40,169 +59,149 @@ export default function RecordingDetails({ documentId }: { documentId: string })
         <div className="header-container">
           <h1
             className={classNames({
-              [`letters-${recording.title.length}`]: true,
-              [`words-${recording.title.split(/\s+/).length}`]: true,
+              [`letters-${title.length}`]: true,
+              [`words-${title.split(/\s+/).length}`]: true,
             })}
           >
-            {recording.title}
+            {title}
           </h1>
         </div>
-        asdf asdiufhsa askjhfa dhjkadasdf asdiufhsa askjhfa dhjkadasdf asdiufhsa askjhfa dhjkadasdf asdiufhsa askjhfa
-        dhjkadasdf asdiufhsa askjhfa dhjkadasdf asdiufhsa askjhfa dhjkadasdf asdiufhsa askjhfa dhjkadasdf asdiufhsa
-        askjhfa dhjkadasdf asdiufhsa askjhfa dhjkadasdf asdiufhsa askjhfa dhjkadasdf asdiufhsa askjhfa dhjkadasdf
-        asdiufhsa askjhfa dhjkadasdf asdiufhsa askjhfa dhjkadasdf asdiufhsa askjhfa dhjkadasdf asdiufhsa askjhfa
-        dhjkadasdf asdiufhsa askjhfa dhjkad
-      </div>
-      {/* <p>id: {recording.id}</p>
-      <p>documentId: {recording.documentId}</p>
-      <p>band: {recording.bands[0].name}</p>
-      <p>alias: {recording.alias}</p>
-      <p>title: {recording.title}</p>
-      <p>release date: {recording.releaseDate}</p>
-      <p>type: {recording.type}</p>
-      <p>visibility: {recording.visibility}</p>
-      <div>
-        cover:
-        {recording.cover?.map((cover: Media, index: number) => (
-          <div key={cover.id || index}>
-            <Link href={cover.url}>
-              <Image src={cover.url} alt={`cover art for ${recording.title}`} width={750} height={750} />
-            </Link>
-            <p>alt: {cover.alternativeText}</p>
-            <p>caption: {cover.caption}</p>
-          </div>
-        ))}
-      </div>
-      <div>
-        liner notes:
-        {recording.linerNotes?.map((note: Media, index: number) => (
-          <div key={note.id || index}>
-            <Link href={note.url}>
-              <Image src={note.url} alt={recording.title} width={750} height={750} />
-            </Link>
-            <p>alt: {note.alternativeText}</p>
-            <p>caption: {note.caption}</p>
-          </div>
-        ))}
-      </div>
-      <p>bandcamp URL: {recording.bandcampURL}</p>
-      <p>bandcamp embed ID: {recording.bandcampEmbedID}</p>
-      <p>bandcamp album or track: {recording.bandcampAlbumOrTrack}</p>
-      <p>spotify URL: {recording.spotifyURL}</p>
-      <div>
-        about:
-        {recording.about ? <BlocksRenderer content={recording.about} /> : <></>}
-      </div>
-      <div>
-        credits:
-        {recording.credits ? <BlocksRenderer content={recording.credits} /> : <></>}
-      </div>
-      <div>
-        attachments:
-        {recording.attachments?.map((attachment: Attachment, index: number) => (
-          <div key={attachment.id || index}>
-            <p>id: {attachment.id}</p>
-            <p>file id: {attachment.file.id}</p>
-            <p>file name: {attachment.file.name}</p>
-            <p>file document Id: {attachment.file.documentId}</p>
-            <p>file alt text: {attachment.file.alternativeText}</p>
-            <p>file caption: {attachment.file.caption}</p>
-            <p>file mime: {attachment.file.mime}</p>
-            <p>file url: {attachment.file.url}</p>
-            <p>file size: {attachment.file.size}</p>
-            <p>file width: {attachment.file.width}</p>
-            <p>file height: {attachment.file.height}</p>
-          </div>
-        ))}
-      </div>
-      <div>
-        tracklist:
-        <ul>
-          {recording.tracklist.map((track: Track, index: number) => (
-            <li key={index}>
-              {index + 1} / {track.id} / {track.title} / {track.note} / {track.length}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        editions:
-        {recording.editions.map((edition: Edition, index: number) => (
-          <div key={index}>
-            <p>id: {edition.id}</p>
-            <p>label: {edition.label}</p>
-            <p>catalog number: {edition.catalogNumber}</p>
-            <p>release date: {format(edition.releaseDate, 'yyyy')}</p>
-            <p>online only: {edition.onlineOnly}</p>
-            <p>sold out: {edition.soldOut}</p>
-            <p>link: {edition.link}</p>
-            <p>printed cassettes: {edition.printedCassettes}</p>
-            <p>printed records: {edition.printedRecords}</p>
-            <p>printed CDs: {edition.printedCDs}</p>
-            <p>printed objects: {edition.printedObjects}</p>
-            <p>object description: {edition.objectDescription}</p>
+        <div className="recordingDetail">
+          <div className="recordingDetail-column">
+            <RecordingGraphics {...recording} />
             <div>
-              photos:
-              {edition.photos?.map((photo: Media, index: number) => (
-                <div key={photo.id || index}>
-                  <Link href={photo.url}>
-                    <Image src={photo.url} alt={recording.title} width={750} height={750} />
-                  </Link>
-                  <p>alt: {photo.alternativeText}</p>
-                  <p>caption: {photo.caption}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-      <div>
-        promo videos:
-        {recording.promoVideos?.map((video: VideoEmbed, index: number) => (
-          <>
-            <p>id: {video.id}</p>
-            <p>name: {video.name}</p>
-            <p>file id: {video.file.id}</p>
-            <p>file alt text: {video.file.alternativeText}</p>
-            <p>file caption: {video.file.caption}</p>
-            <p>file url: {video.file.url}</p>
-            <p>videoID: {video.videoID}</p>
-            <p>videoHost: {video.videoHost}</p>
-            <p>credit: {video.credit}</p>
-            <p>visibility: {video.visibility}</p>
-          </>
-        ))}
-      </div>
-      <div>
-        press:
-        {recording.reviews?.map((press: Press, index: number) => (
-          <div key={press.id}>
-            <p>id: {press.id}</p>
-            <p>date: {format(press.date, 'yyyy')}</p>
-            <p>publication: {press.publication}</p>
-            <p>type: {press.type}</p>
-            <p>visibility: {press.visibility}</p>
-            <p>URL: {press.URL}</p>
-            <p>quote: {press.quote}</p>
-            <div>
-              fullText:
-              {recording.fullText ? <BlocksRenderer content={recording.fullText} /> : <></>}
-            </div>
-            <div>
-              review attachments:
-              {press.attachments?.map((attachment: Media, index: number) => (
+              attachments:
+              {recording.attachments?.map((attachment: Attachment, index: number) => (
                 <div key={attachment.id || index}>
-                  <Link href={attachment.url}>
-                    <Image src={attachment.url} alt={`cover art for ${recording.title}`} width={750} height={750} />
-                  </Link>
-                  <p>alt: {attachment.alternativeText}</p>
-                  <p>caption: {attachment.caption}</p>
+                  <p>id: {attachment.id}</p>
+                  <p>linkText: {attachment.linkText}</p>
+                  <p>file id: {attachment.file.id}</p>
+                  <p>file name: {attachment.file?.name}</p>
+                  <p>file document Id: {attachment.file?.documentId}</p>
+                  <p>file alt text: {attachment.file?.alternativeText}</p>
+                  <p>file caption: {attachment.file?.caption}</p>
+                  <p>file mime: {attachment.file?.mime}</p>
+                  <p>file url: {attachment.file?.url}</p>
+                  <p>file size: {attachment.file?.size}</p>
+                  <p>file width: {attachment.file?.width}</p>
+                  <p>file height: {attachment.file?.height}</p>
                 </div>
               ))}
             </div>
+            <div>
+              promo videos:
+              {recording.promoVideos?.map((video: VideoEmbed, index: number) => (
+                <Fragment key={index}>
+                  <p>id: {video.id}</p>
+                  <p>name: {video.name}</p>
+                  <p>file id: {video.file?.id}</p>
+                  <p>file alt text: {video.file?.alternativeText}</p>
+                  <p>file caption: {video.file?.caption}</p>
+                  <p>file url: {video.file?.url}</p>
+                  <p>videoID: {video.videoID}</p>
+                  <p>videoHost: {video.videoHost}</p>
+                  <p>credit: {video.credit}</p>
+                  <p>visibility: {video.visibility}</p>
+                </Fragment>
+              ))}
+            </div>
           </div>
-        ))}
-      </div> */}
+          <div className="recordingDetail-column">
+            <div className="recording-stats">
+              <div className="icons">
+                <Link href={recording.bandcampURL}>
+                  <FaBandcamp />
+                </Link>
+                <Link href={recording.spotifyURL}>
+                  <FaSpotify />
+                </Link>
+              </div>
+              <div>
+                {recording.editions.map((edition: Edition, index: number) => (
+                  <div key={index} className="edition">
+                    {edition.link ? (
+                      <Link href={edition.link}>{`${edition.label} (${format(edition.releaseDate, 'yyyy')})`}</Link>
+                    ) : (
+                      `${edition.label} (${format(edition.releaseDate, 'yyyy')})`
+                    )}
+                    {', '}
+                    {edition.onlineOnly ? 'streaming' : ''}
+                    {edition.printedCassettes ? `${edition.printedCassettes} cassettes` : ''}
+                    {edition.printedRecords ? `${edition.printedRecords} records` : ''}
+                    {edition.printedCDs ? `${edition.printedCDs} CDs` : ''}
+                    {edition.printedObjects ? `${edition.printedObjects} ${edition.objectDescription}` : ''}
+                  </div>
+                ))}
+              </div>
+            </div>
+            {recording.reviews?.some((press: Press) => press.visibility === 'highlight') && (
+              <>
+                <hr />
+                <div className="press">
+                  {recording.reviews
+                    ?.filter((press: Press) => press.visibility === 'highlight')
+                    .map((press: Press, index: number) => (
+                      <div key={press.id}>
+                        <p>"{press.quote}"</p>
+                        <p>
+                          &mdash;
+                          <Link href={press.URL ? press.URL : press.attachments?.[0]?.url}>{press.publication}</Link>
+                        </p>
+                      </div>
+                    ))}
+                </div>
+                <hr />
+              </>
+            )}
+            {recording.bandcampEmbedID ? (
+              <iframe
+                src={`https://bandcamp.com/EmbeddedPlayer/${recording.bandcampAlbumOrTrack}=${recording.bandcampEmbedID}/size=large/bgcol=333333/linkcol=ffffff/artwork=none/transparent=true/`}
+                seamless
+                style={{ minHeight: bandcampEmbedHeight }}
+              ></iframe>
+            ) : (
+              <ol className="release-tracklist">
+                {recording.tracklist.map((track: Track) => (
+                  <li key={track.id}>
+                    {track.title} {track.note ? <span>{`(${track.note})`}</span> : ''}
+                    {track.length}
+                  </li>
+                ))}
+              </ol>
+            )}
+            <div className="about">{recording.about ? <BlocksRenderer content={recording.about} /> : <></>}</div>
+            <div>
+              credits:
+              {recording.credits ? <BlocksRenderer content={recording.credits} /> : <></>}
+            </div>
+            <div className="press">
+              {recording.reviews &&
+              recording.reviews.some((press: Press) => press.visibility === 'deep cut') &&
+              recording.reviews.some((press: Press) => press.visibility === 'highlight') ? (
+                <div className="header-container">
+                  <h2>additional press for {title}</h2>
+                </div>
+              ) : (
+                recording.reviews?.some((press: Press) => press.visibility === 'deep cut') && (
+                  <div className="header-container">
+                    <h2>press for {title}</h2>
+                  </div>
+                )
+              )}
+              {recording.reviews
+                ?.filter((press: Press) => press.visibility === 'deep cut')
+                .map((press: Press, index: number) => (
+                  <div key={press.id}>
+                    <p>"{press.quote}"</p>
+                    <p>
+                      &mdash;<Link href={press.URL ? press.URL : press.attachments?.[0]?.url}>{press.publication}</Link>
+                    </p>
+                  </div>
+                ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
