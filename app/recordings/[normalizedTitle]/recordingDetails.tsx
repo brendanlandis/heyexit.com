@@ -102,7 +102,14 @@ export default function RecordingDetails({ documentId }: { documentId: string })
                   <div key={press.id}>
                     <p>"{press.quote}"</p>
                     <p>
-                      &mdash;<Link href={press.URL ? press.URL : press.attachments?.[0]?.url}>{press.publication}</Link>
+                      &mdash;
+                      {press.URL || press.attachments?.[0]?.url ? (
+                        <Link href={press.URL || press.attachments?.[0]?.url}>
+                          {press.publication}
+                        </Link>
+                      ) : (
+                        press.publication
+                      )}
                     </p>
                   </div>
                 ))}
