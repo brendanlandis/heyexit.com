@@ -29,32 +29,50 @@ export default function RecordingGraphics(recording: Recording) {
 
   return (
     <>
-      <div ref={carouselRef} className="carousel w-full">
-        {graphicUrls.map((url, index) => {
-          const prevIndex = index === 0 ? graphicUrls.length - 1 : index - 1;
-          const nextIndex = index === graphicUrls.length - 1 ? 0 : index + 1;
-          return (
-            <div id={`item${index + 1}`} className="carousel-item relative w-full" key={index}>
-              <Image src={url} alt={`item number ${index + 1}`} width={750} height={750} className="w-full detailCover" />
-              <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                <button onClick={() => scrollCarousel(prevIndex + 1)} className="btn btn-circle">
-                  ❮
-                </button>
-                <button onClick={() => scrollCarousel(nextIndex + 1)} className="btn btn-circle">
-                  ❯
-                </button>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-      <div className="flex w-full justify-center gap-2 py-2">
-        {graphicUrls.map((_, index) => (
-          <button onClick={() => scrollCarousel(index + 1)} className="btn btn-xs" key={index}>
-            {index + 1}
-          </button>
-        ))}
-      </div>
+      {graphicUrls.length === 1 ? (
+        <Image
+          src={graphicUrls[0]}
+          alt={`cover of ${recording.title}`}
+          width={750}
+          height={750}
+          className="w-full detailCover"
+        />
+      ) : (
+        <>
+          <div ref={carouselRef} className="carousel w-full">
+            {graphicUrls.map((url, index) => {
+              const prevIndex = index === 0 ? graphicUrls.length - 1 : index - 1;
+              const nextIndex = index === graphicUrls.length - 1 ? 0 : index + 1;
+              return (
+                <div id={`item${index + 1}`} className="carousel-item relative w-full" key={index}>
+                  <Image
+                    src={url}
+                    alt={`item number ${index + 1}`}
+                    width={750}
+                    height={750}
+                    className="w-full detailCover"
+                  />
+                  <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                    <button onClick={() => scrollCarousel(prevIndex + 1)} className="btn btn-circle">
+                      ❮
+                    </button>
+                    <button onClick={() => scrollCarousel(nextIndex + 1)} className="btn btn-circle">
+                      ❯
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="flex w-full justify-center gap-2 py-2">
+            {graphicUrls.map((_, index) => (
+              <button onClick={() => scrollCarousel(index + 1)} className="btn btn-xs" key={index}>
+                {index + 1}
+              </button>
+            ))}
+          </div>
+        </>
+      )}
     </>
   );
 }

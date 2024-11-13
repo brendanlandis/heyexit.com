@@ -79,8 +79,7 @@ export default function RecordingDetails({ documentId }: { documentId: string })
             {recording.reviews?.some((press: Press) => press.visibility === 'highlight') && <TopPress {...recording} />}
             <Tracks {...recording} />
             <div className="about">{recording.about ? <BlocksRenderer content={recording.about} /> : <></>}</div>
-            <div>
-              credits:
+            <div className="credits">
               {recording.credits ? <BlocksRenderer content={recording.credits} /> : <></>}
             </div>
             <div className="press">
