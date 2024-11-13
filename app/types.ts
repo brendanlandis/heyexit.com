@@ -96,7 +96,7 @@ export interface Recording {
   tracklist: Array<Track>;
   editions: Array<Edition>;
   promoVideos: Array<VideoEmbed>;
-  presses: Array<Press>;
+  reviews: Array<Press>;
 }
 
 export interface Show {

@@ -4,14 +4,15 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../../css/recordingDetail.css';
 import Link from 'next/link';
-import { Track, Edition, Press } from '@/app/types';
+import { Track, Press } from '@/app/types';
 import { BlocksRenderer, type BlocksContent } from '@strapi/blocks-react-renderer';
-import { format } from 'date-fns';
 import classNames from 'classnames';
-import { FaBandcamp, FaSpotify } from 'react-icons/fa';
 import RecordingGraphics from './RecordingGraphics';
 import RecordingAttachments from './RecordingAttachments';
 import RecordingPromoVideos from './RecordingPromoVideos';
+import RecordingIcons from './RecordingIcons';
+import RecordingEditions from './RecordingEditions';
+import TopPress from './TopPress';
 
 export default function RecordingDetails({ documentId }: { documentId: string }) {
   const baseUrl = `https://slownames.net/api/recordings/${documentId}`;
@@ -73,55 +74,12 @@ export default function RecordingDetails({ documentId }: { documentId: string })
             {recording.promoVideos.length ? <RecordingPromoVideos {...recording} /> : ''}
           </div>
           <div className="recordingDetail-column">
-            <div className="recording-stats">
-              <div className="icons">
-                <Link href={recording.bandcampURL}>
-                  <FaBandcamp />
-                </Link>
-                <Link href={recording.spotifyURL}>
-                  <FaSpotify />
-                </Link>
-              </div>
-              <div>
-                {recording.editions.map((edition: Edition, index: number) => (
-                  <div key={index} className="edition">
-                    {edition.link ? (
-                      <Link href={edition.link}>{`${edition.label} (${format(edition.releaseDate, 'yyyy')})`}</Link>
-                    ) : (
-                      `${edition.label} (${format(edition.releaseDate, 'yyyy')})`
-                    )}
-                    {', '}
-                    {edition.onlineOnly ? 'streaming' : ''}
-                    {edition.printedCassettes ? `${edition.printedCassettes} cassettes` : ''}
-                    {edition.printedRecords ? `${edition.printedRecords} records` : ''}
-                    {edition.printedCDs ? `${edition.printedCDs} CDs` : ''}
-                    {edition.printedObjects ? `${edition.printedObjects} ${edition.objectDescription}` : ''}
-                  </div>
-                ))}
-              </div>
-            </div>
-            {recording.reviews?.some((press: Press) => press.visibility === 'highlight') && (
-              <>
-                <hr />
-                <div className="press">
-                  {recording.reviews
-                    ?.filter((press: Press) => press.visibility === 'highlight')
-                    .map((press: Press, index: number) => (
-                      <div key={press.id}>
-                        <p>"{press.quote}"</p>
-                        <p>
-                          &mdash;
-                          <Link href={press.URL ? press.URL : press.attachments?.[0]?.url}>{press.publication}</Link>
-                        </p>
-                      </div>
-                    ))}
-                </div>
-                <hr />
-              </>
-            )}
+            <RecordingEditions {...recording} />
+            <RecordingIcons {...recording} />
+            {recording.reviews?.some((press: Press) => press.visibility === 'highlight') && <TopPress {...recording} />}
             {recording.bandcampEmbedID ? (
               <iframe
-                src={`https://bandcamp.com/EmbeddedPlayer/${recording.bandcampAlbumOrTrack}=${recording.bandcampEmbedID}/size=large/bgcol=333333/linkcol=ffffff/artwork=none/transparent=true/`}
+                src={`https://bandcamp.com/EmbeddedPlayer/${recording.bandcampAlbumOrTrack}=${recording.bandcampEmbedID}/size=large/bgcol=ffffff/linkcol=000000/artwork=none/transparent=true/`}
                 seamless
                 style={{ minHeight: bandcampEmbedHeight }}
               ></iframe>

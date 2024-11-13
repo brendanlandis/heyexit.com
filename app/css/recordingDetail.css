@@ -108,11 +108,37 @@
   }
   iframe {
     width: 100%;
+    filter: invert(1);
+    border: 1px solid #222;
+    border-radius: 1em;
+    overflow: hidden;
   }
   .recordingDetail-column {
     display: flex;
     flex-direction: column;
     gap: 2em;
+  }
+  .press {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    align-content: space-between;
+    &.articles-1 {
+      li {
+        padding: 0 8%;
+        transform: rotate(2deg);
+      }
+    }
+    &:not(.articles-1) {
+      li:nth-child(even) {
+        padding-right: 16%;
+        transform: rotate(-2deg);
+      }
+      li:nth-child(odd) {
+        padding-left: 16%;
+        transform: rotate(2deg);
+      }
+    }
   }
 }
 
@@ -137,29 +163,27 @@
 }
 
 .content-recordingDetails {
-  .recording-stats {
+  .icons {
     display: flex;
-    flex-wrap: nowrap;
     gap: 1em;
-    justify-content: space-between;
     align-items: center;
-    .icons {
-      display: flex;
-      gap: 1em;
-      align-items: center;
-      justify-content: center;
-      svg {
-        height: 3em;
-        width: 3em;
-      }
+    justify-content: center;
+    svg {
+      height: 3em;
+      width: 3em;
     }
+  }
+  .editions {
     .edition {
-      text-align: right;
+      text-align: center;
       font-size: 1.3em;
       line-height: 1em;
       & + .edition {
         margin-top: 0.5em;
       }
+    }
+    a {
+      text-decoration: underline;
     }
   }
   .about {
@@ -172,7 +196,7 @@
       margin-top: 1em;
     }
     p {
-      width: 80%;
+      width: 90%;
       margin: 0 auto 1em auto;
     }
   }
