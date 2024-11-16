@@ -80,6 +80,9 @@ export default function RecordingDetails({ documentId }: { documentId: string })
             <Tracks {...recording} />
             <div className="about">{recording.about ? <BlocksRenderer content={recording.about} /> : <></>}</div>
             <div className="credits">
+              <div className="header-container">
+                <h2>credits</h2>
+              </div>
               {recording.credits ? <BlocksRenderer content={recording.credits} /> : <></>}
             </div>
             <div className="press">
@@ -87,7 +90,7 @@ export default function RecordingDetails({ documentId }: { documentId: string })
               recording.reviews.some((press: Press) => press.visibility === 'deep cut') &&
               recording.reviews.some((press: Press) => press.visibility === 'highlight') ? (
                 <div className="header-container">
-                  <h2>additional press for {title}</h2>
+                  <h2>additional press</h2>
                 </div>
               ) : (
                 recording.reviews?.some((press: Press) => press.visibility === 'deep cut') && (
@@ -104,9 +107,7 @@ export default function RecordingDetails({ documentId }: { documentId: string })
                     <p>
                       &mdash;
                       {press.URL || press.attachments?.[0]?.url ? (
-                        <Link href={press.URL || press.attachments?.[0]?.url}>
-                          {press.publication}
-                        </Link>
+                        <Link href={press.URL || press.attachments?.[0]?.url}>{press.publication}</Link>
                       ) : (
                         press.publication
                       )}
