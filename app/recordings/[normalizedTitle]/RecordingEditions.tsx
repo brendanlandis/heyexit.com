@@ -4,7 +4,7 @@ import { format } from 'date-fns';
 
 export default function RecordingEditions(recording: Recording) {
   return (
-    <div className="editions">
+    <div className="recording-editions">
       {recording.editions.map((edition: Edition, index: number) => (
         <div key={index} className="edition header-container">
           {edition.link ? (

@@ -6,7 +6,7 @@ import Vimeo from '@u-wave/react-vimeo';
 export default function RecordingPromoVideos(recording: Recording) {
   return (
     <>
-      <div className="recordingPromoVideos">
+      <div className="recording-promo-videos">
         {recording.promoVideos?.map((video: VideoEmbed, index: number) => {
           // what type of video is it
           const getVideoType = () => {

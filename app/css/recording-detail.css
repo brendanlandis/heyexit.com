@@ -1,4 +1,4 @@
-.content-recordingDetails {
+.content-recording-details {
   h1 {
     @apply font-lofi;
     font-size: 13cqi;
@@ -89,65 +89,32 @@
   }
 }
 
-.recordingDetail {
+.recording-detail {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2em;
   margin-top: 2em;
-  hr {
-    opacity: 0.5;
-    margin: 2em auto;
-    width: 70%;
-  }
   h2 {
-    text-align: left;
     font-size: 7cqi;
     line-height: 1em;
     margin: 0;
-    text-align: right;
+    text-align: center;
   }
-  iframe {
-    width: 100%;
-    filter: invert(1);
-    border: 1px solid #222;
-    border-radius: 1em;
-    overflow: hidden;
-  }
-  .recordingDetail-column {
+  .recording-detail-column {
     display: flex;
     flex-direction: column;
     gap: 2em;
   }
-  .press {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0;
-    align-content: space-between;
-    &.articles-1 {
-      li {
-        padding: 0 8%;
-        transform: rotate(2deg);
-      }
-    }
-    &:not(.articles-1) {
-      li:nth-child(even) {
-        padding-right: 16%;
-        transform: rotate(-2deg);
-      }
-      li:nth-child(odd) {
-        padding-left: 16%;
-        transform: rotate(2deg);
-      }
-    }
-  }
 }
 
-.detailCover {
+/* graphics */
+.detail-cover {
   border: 1px solid #333;
   object-fit: contain;
 }
 
-.recordingAttachments {
+/* attachments */
+.recording-attachments {
   a {
     text-decoration: underline;
     font-size: 1.5em;
@@ -156,65 +123,103 @@
   }
 }
 
-.recordingPromoVideos {
+/* promo videos */
+.recording-promo-videos {
   video {
     width: 100%;
   }
 }
 
-.content-recordingDetails {
-  .icons {
-    display: flex;
-    gap: 1em;
-    align-items: center;
-    justify-content: center;
-    svg {
-      height: 3em;
-      width: 3em;
+/* editions */
+.recording-editions {
+  .edition {
+    text-align: center;
+    font-size: 1.3em;
+    line-height: 1em;
+    & + .edition {
+      margin-top: 0.5em;
     }
   }
-  .editions {
-    .edition {
-      text-align: center;
-      font-size: 1.3em;
-      line-height: 1em;
-      & + .edition {
-        margin-top: 0.5em;
-      }
-    }
-    a {
-      text-decoration: underline;
-    }
+  a {
+    text-decoration: underline;
   }
-  .about {
-    font-size: 1.4em;
-    line-height: 1.3em;
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-    margin: 1em auto;
+}
+
+/* icons */
+.recording-icons {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  svg {
+    height: 3em;
+    width: 3em;
   }
-  .credits {
-    line-height: 1.3em;
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
+}
+
+/* press */
+.recording-press {
+  line-height: 1.1em;
+  p + p {
+    margin-top: 1em;
+  }
+  p {
+    width: 90%;
     margin: 0 auto 1em auto;
-    h2 {
-      text-align: center;
+  }
+  h2 {
+    text-align: center;
+  }
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  align-content: space-between;
+  &.articles-1 {
+    li {
+      padding: 0 8%;
+      transform: rotate(2deg);
     }
   }
-  .press {
-    line-height: 1.1em;
-    p + p {
-      margin-top: 1em;
+  &:not(.articles-1) {
+    li:nth-child(even) {
+      padding-right: 16%;
+      transform: rotate(-2deg);
     }
-    p {
-      width: 90%;
-      margin: 0 auto 1em auto;
-    }
-    h2 {
-      text-align: center;
+    li:nth-child(odd) {
+      padding-left: 16%;
+      transform: rotate(2deg);
     }
   }
+}
+
+/* embed & tracklist */
+
+.recording-embed {
+  width: 100%;
+  filter: invert(1);
+  border: 1px solid #222;
+  border-radius: 1em;
+  overflow: hidden;
+}
+.recording-tracklist {
+}
+
+/* about */
+.recording-about {
+  font-size: 1.4em;
+  line-height: 1.3em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  margin: 1em auto;
+}
+
+/* credits */
+.recording-credits {
+  line-height: 1.3em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  margin: 0 auto 1em auto;
 }

@@ -2,18 +2,19 @@
 import useAxios from 'axios-hooks';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import '../../css/recordingDetail.css';
-import Link from 'next/link';
+import '../../css/recording-detail.css';
 import { Press } from '@/app/types';
-import { BlocksRenderer, type BlocksContent } from '@strapi/blocks-react-renderer';
 import classNames from 'classnames';
 import RecordingGraphics from './RecordingGraphics';
 import RecordingAttachments from './RecordingAttachments';
 import RecordingPromoVideos from './RecordingPromoVideos';
 import RecordingIcons from './RecordingIcons';
 import RecordingEditions from './RecordingEditions';
-import TopPress from './TopPress';
-import Tracks from './Tracks';
+import PressTop from './PressTop';
+import RecordingTracks from './RecordingTracks';
+import RecordingAbout from './RecordingAbout';
+import RecordingCredits from './RecordingCredits';
+import PressBottom from './PressBottom';
 
 export default function RecordingDetails({ documentId }: { documentId: string }) {
   const baseUrl = `https://slownames.net/api/recordings/${documentId}`;
@@ -56,7 +57,7 @@ export default function RecordingDetails({ documentId }: { documentId: string })
 
   return (
     <>
-      <div className="content-recordingDetails">
+      <div className="content-recording-details">
         <div className="header-container">
           <h1
             className={classNames({
@@ -67,54 +68,20 @@ export default function RecordingDetails({ documentId }: { documentId: string })
             {title}
           </h1>
         </div>
-        <div className="recordingDetail">
-          <div className="recordingDetail-column">
+        <div className="recording-detail">
+          <div className="recording-detail-column">
             <RecordingGraphics {...recording} />
             {recording.attachments.length ? <RecordingAttachments {...recording} /> : ''}
             {recording.promoVideos.length ? <RecordingPromoVideos {...recording} /> : ''}
           </div>
-          <div className="recordingDetail-column">
+          <div className="recording-detail-column">
             <RecordingEditions {...recording} />
             <RecordingIcons {...recording} />
-            {recording.reviews?.some((press: Press) => press.visibility === 'highlight') && <TopPress {...recording} />}
-            <Tracks {...recording} />
-            <div className="about">{recording.about ? <BlocksRenderer content={recording.about} /> : <></>}</div>
-            <div className="credits">
-              <div className="header-container">
-                <h2>credits</h2>
-              </div>
-              {recording.credits ? <BlocksRenderer content={recording.credits} /> : <></>}
-            </div>
-            <div className="press">
-              {recording.reviews &&
-              recording.reviews.some((press: Press) => press.visibility === 'deep cut') &&
-              recording.reviews.some((press: Press) => press.visibility === 'highlight') ? (
-                <div className="header-container">
-                  <h2>additional press</h2>
-                </div>
-              ) : (
-                recording.reviews?.some((press: Press) => press.visibility === 'deep cut') && (
-                  <div className="header-container">
-                    <h2>press for {title}</h2>
-                  </div>
-                )
-              )}
-              {recording.reviews
-                ?.filter((press: Press) => press.visibility === 'deep cut')
-                .map((press: Press, index: number) => (
-                  <div key={press.id}>
-                    <p>"{press.quote}"</p>
-                    <p>
-                      &mdash;
-                      {press.URL || press.attachments?.[0]?.url ? (
-                        <Link href={press.URL || press.attachments?.[0]?.url}>{press.publication}</Link>
-                      ) : (
-                        press.publication
-                      )}
-                    </p>
-                  </div>
-                ))}
-            </div>
+            {recording.reviews?.some((press: Press) => press.visibility === 'highlight') && <PressTop {...recording} />}
+            <RecordingTracks {...recording} />
+            <RecordingAbout {...recording} />
+            <RecordingCredits {...recording} />
+            {recording.reviews?.some((press: Press) => press.visibility === 'deep cut') && <PressBottom {...recording} />}
           </div>
         </div>
       </div>

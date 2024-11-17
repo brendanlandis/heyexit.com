@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function RecordingAttachments(recording: Recording) {
   return (
     <>
-      <div className="recordingAttachments">
+      <div className="recording-attachments">
         {recording.attachments?.map((attachment: Attachment, index: number) => {
           const mimeSubType = attachment.file?.mime.split('/')[1] || attachment.file?.mime;
 

@@ -35,7 +35,7 @@ export default function RecordingGraphics(recording: Recording) {
           alt={`cover of ${recording.title}`}
           width={750}
           height={750}
-          className="w-full detailCover"
+          className="w-full detail-cover"
         />
       ) : (
         <>
@@ -50,7 +50,7 @@ export default function RecordingGraphics(recording: Recording) {
                     alt={`item number ${index + 1}`}
                     width={750}
                     height={750}
-                    className="w-full detailCover"
+                    className="w-full detail-cover"
                   />
                   <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
                     <button onClick={() => scrollCarousel(prevIndex + 1)} className="btn btn-circle">
