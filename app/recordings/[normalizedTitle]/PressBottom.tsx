@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function PressBottom(recording: Recording) {
   // how many are we talkin here
-  const numberOfArticles = recording.reviews.filter((press: Press) => press.visibility === 'highlight').length;
+  const numberOfArticles = recording.reviews.filter((press: Press) => press.visibility === 'deep cut').length;
   return (
     <>
       <div className="header-container">
@@ -14,11 +14,23 @@ export default function PressBottom(recording: Recording) {
           ?.filter((press: Press) => press.visibility === 'deep cut')
           .map((press: Press, index: number) => (
             <li key={press.id}>
-              <p>"{press.quote}"</p>
-              <p>
-                &mdash;
-                <Link href={press.URL ? press.URL : press.attachments?.[0]?.url}>{press.publication}</Link>
-              </p>
+              {press.type === 'review' ? (
+                <>
+                  <p>"{press.quote}"</p>
+                  <p>
+                    &mdash;
+                    <Link href={press.URL ? press.URL : press.attachments?.[0]?.url}>{press.publication}</Link>
+                  </p>
+                </>
+              ) : press.type === 'interview' ? (
+                <p>
+                  <Link href={press.URL ? press.URL : press.attachments?.[0]?.url}>
+                    interview with {press.publication}
+                  </Link>
+                </p>
+              ) : (
+                <>nope</>
+              )}
             </li>
           ))}
       </ul>
