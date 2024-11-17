@@ -16,11 +16,20 @@ export default function PressBottom(recording: Recording) {
             <li key={press.id}>
               {press.type === 'review' ? (
                 <>
-                  <p>"{press.quote}"</p>
-                  <p>
-                    &mdash;
-                    <Link href={press.URL ? press.URL : press.attachments?.[0]?.url}>{press.publication}</Link>
-                  </p>
+                  {press.URL || press.attachments?.[0]?.url ? (
+                    <>
+                      <p>"{press.quote}"</p>
+                      <p>
+                        &mdash;
+                        <Link href={press.URL ? press.URL : press.attachments?.[0]?.url}>{press.publication}</Link>
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p>"{press.quote}"</p>
+                      <p>&mdash; {press.publication}</p>
+                    </>
+                  )}
                 </>
               ) : press.type === 'interview' ? (
                 <p>
