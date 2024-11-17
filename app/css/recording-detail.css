@@ -115,6 +115,9 @@
 
 /* attachments */
 .recording-attachments {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
   a {
     text-decoration: underline;
     font-size: 1.5em;
@@ -202,7 +205,6 @@
 }
 
 /* embed & tracklist */
-
 .recording-embed {
   width: 100%;
   filter: invert(1);
@@ -211,6 +213,22 @@
   overflow: hidden;
 }
 .recording-tracklist {
+  list-style-type: decimal-leading-zero;
+  margin-left: 2.4em;
+  li > div {
+    display: grid;
+    grid-template-columns: 1fr 4em;
+    justify-content: space-between;
+    gap: 1em;
+  }
+  .track-length:not(:empty) {
+    &:before {
+      content: '(';
+    }
+    &:after {
+      content: ')';
+    }
+  }
 }
 
 /* about */

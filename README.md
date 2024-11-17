@@ -13,20 +13,6 @@ when the time comes:
 might not need these any more:
 - https://remarkjs.github.io/react-markdown/
 
-current projects page
-- glifter
-- receive
-- star card
-
-other projects page
-- advection
-- anura
-- big hiatus
-- esther chlorine
-- it breaks
-- rough weather
-- tethers
-
 shows page
 - masonry bits of flyers & live pics
 - then a text record of everything at the bottom maybe

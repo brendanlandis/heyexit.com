@@ -1,3 +1,6 @@
 .content-related {
-  
+  .band-list {
+    display: flex;
+    gap: 3em;
+  }
 }
