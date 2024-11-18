@@ -16,7 +16,7 @@ export default function PressItem({ press }: { press: Press }) {
         ) : (
           <>
             <p>"{press.quote}"</p>
-            <p>&mdash; {press.publication}</p>
+            <p>&mdash;{press.publication}</p>
           </>
         )}
       </>

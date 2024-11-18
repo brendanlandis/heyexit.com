@@ -181,11 +181,12 @@
   a {
     text-decoration: underline;
   }
-
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2em;
-  align-content: space-between;
+  ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2em;
+    align-content: space-between;
+  }
   &.articles-1 {
     li {
       padding: 0 8%;
@@ -193,14 +194,47 @@
     }
   }
   &:not(.articles-1) {
-    li:nth-child(even) {
+    li.even {
       padding-right: 16%;
       transform: rotate(-2deg);
     }
-    li:nth-child(odd) {
+    li.odd {
       padding-left: 16%;
       transform: rotate(2deg);
     }
+  }
+  .collapse {
+    margin-top: 1em;
+  }
+  .more-reviews {
+    margin: 0 auto;
+    padding: 0;
+    padding-inline-end: 0;
+    min-height: initial;
+    width: initial;
+    text-align: center;
+    height: auto;
+    .more-reviews-button {
+      font-weight: 900;
+      text-decoration: underline;
+      display: inline-block;
+    }
+    svg {
+      display: inline-block;
+      height: 2em;
+      width: 2em;
+      margin-right: -0.4em;
+      margin-top: -0.3em;
+      transition-duration: 100ms;
+    }
+  }
+  .collapse:has(input:checked) .more-reviews {
+    svg {
+      transform: rotate(-180deg);
+    }
+  }
+  .collapse:has(input:not(:checked)) .more-reviews {
+    transform: rotate(0deg);
   }
 }
 
