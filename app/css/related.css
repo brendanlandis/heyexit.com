@@ -1,6 +1,15 @@
 .content-related {
   .band-list {
     display: flex;
-    gap: 3em;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+    li {
+      text-align: center;
+      font-size: 3em;
+      line-height: 1em;
+      white-space: nowrap;
+    }
   }
 }

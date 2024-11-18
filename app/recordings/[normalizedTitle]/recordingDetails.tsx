@@ -10,11 +10,10 @@ import RecordingAttachments from './RecordingAttachments';
 import RecordingPromoVideos from './RecordingPromoVideos';
 import RecordingIcons from './RecordingIcons';
 import RecordingEditions from './RecordingEditions';
-import PressTop from './PressTop';
 import RecordingTracks from './RecordingTracks';
 import RecordingAbout from './RecordingAbout';
 import RecordingCredits from './RecordingCredits';
-import PressBottom from './PressBottom';
+import RecordingPress from './RecordingPress';
 
 export default function RecordingDetails({ documentId }: { documentId: string }) {
   const baseUrl = `https://slownames.net/api/recordings/${documentId}`;
@@ -77,11 +76,10 @@ export default function RecordingDetails({ documentId }: { documentId: string })
           <div className="recording-detail-column">
             <RecordingEditions {...recording} />
             <RecordingIcons {...recording} />
-            {recording.reviews?.some((press: Press) => press.visibility === 'highlight') && <PressTop {...recording} />}
+            {recording.reviews?.some((press: Press) => press.visibility != 'hidden') && <RecordingPress {...recording} />}
             <RecordingTracks {...recording} />
             <RecordingAbout {...recording} />
             <RecordingCredits {...recording} />
-            {recording.reviews?.some((press: Press) => press.visibility === 'deep cut') && <PressBottom {...recording} />}
           </div>
         </div>
       </div>
