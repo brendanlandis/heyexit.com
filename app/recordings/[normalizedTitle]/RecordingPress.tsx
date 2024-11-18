@@ -1,44 +1,23 @@
 import { Recording, Press } from '@/app/types';
-import Link from 'next/link';
+import PressItem from './RecordingPressItem';
+
+function filterAndShufflePress(reviews: Press[], visibility: string): Press[] {
+  const filtered = reviews.filter((press) => press.visibility === visibility);
+  return filtered.sort(() => Math.random() - 0.5);
+}
 
 export default function RecordingPress(recording: Recording) {
-  // how many are we talkin here
-  const numberOfArticles = recording.reviews.filter((press: Press) => press.visibility != 'hidden').length;
+  const highlightPress = filterAndShufflePress(recording.reviews, 'highlight');
+  const deepCutPress = filterAndShufflePress(recording.reviews, 'deep cut');
+  const allPress = [...highlightPress, ...deepCutPress];
+
   return (
-    <ul className={`recording-press articles-${numberOfArticles}`}>
-      {recording.reviews
-        ?.filter((press: Press) => press.visibility != 'hidden')
-        .sort(() => Math.random() - 0.5)
-        .map((press: Press, index: number) => (
-          <li key={press.id}>
-            {press.type === 'review' ? (
-              <>
-                {press.URL || press.attachments?.[0]?.url ? (
-                  <>
-                    <p>"{press.quote}"</p>
-                    <p>
-                      &mdash;
-                      <Link href={press.URL ? press.URL : press.attachments?.[0]?.url}>{press.publication}</Link>
-                    </p>
-                  </>
-                ) : (
-                  <>
-                    <p>"{press.quote}"</p>
-                    <p>&mdash; {press.publication}</p>
-                  </>
-                )}
-              </>
-            ) : press.type === 'interview' ? (
-              <p>
-                <Link href={press.URL ? press.URL : press.attachments?.[0]?.url}>
-                  interview with {press.publication}
-                </Link>
-              </p>
-            ) : (
-              <>nope</>
-            )}
-          </li>
-        ))}
+    <ul className={`recording-press articles-${allPress.length}`}>
+      {allPress.map((press, index) => (
+        <li key={index}>
+          <PressItem press={press} />
+        </li>
+      ))}
     </ul>
   );
 }
