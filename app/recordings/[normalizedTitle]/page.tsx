@@ -1,7 +1,6 @@
 import getNormalizedTitle from '@/app/components/getNormalizedTitle';
 import RecordingDetails from './RecordingDetails';
 import { format } from 'date-fns';
-import { Recording } from '@/app/types';
 
 async function fetchRecordings() {
   const response = await fetch(

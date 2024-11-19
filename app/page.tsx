@@ -29,15 +29,24 @@ export default function Home() {
             </p>
             <ul>
               <li>
-                <strong>art music and long-form instrumentals</strong> (new age doom, electroacoustic composition, free
-                improvisation, prepared guitar, plunderphonics)
+                <strong>art music and long-form instrumentals:</strong>
+                <Link href="/recordings/reading-a-moments-dust">new age doom</Link>,{' '}
+                <Link href="/recordings/eulogy-for-land">very long solo works</Link>,{' '}
+                <Link href="/recordings/arms-reach">free improvisation</Link>,{' '}
+                <Link href="/recordings/every-recording-of-gymnopedie-1">plunderphonics</Link>
               </li>
               <li>
-                <strong>songwriting and short-form instrumentals</strong> (slowcore, downer pop, airs for solo
-                instruments and small ensembles)
+                <strong>songwriting and short-form instrumentals:</strong>
+                <Link href="/recordings/inhale-ep">slowcore and downer pop</Link>,{' '}
+                <Link href="/recordings/the-bitter-scent-of-light">airs for solo instruments and small ensembles</Link>
               </li>
               <li>
-                <strong>heavy music and non-music</strong> (harsh noise, industrial, grindcore)
+                <strong>heavy music and non-music:</strong>
+                <Link href="/recordings/caudata">harsh noise</Link>,{' '}
+                <Link href="/recordings/then-i-might-could-too">industrial</Link>,{' '}
+                <Link href="/recordings/nothing-is-what-you-deserve">grindcore</Link>,{' '}
+                <Link href="/recordings/pushing-waves">electroacoustic composition</Link>,{' '}
+                <Link href="/recordings/slow-names-2">prepared guitar</Link>
               </li>
             </ul>
             <p>

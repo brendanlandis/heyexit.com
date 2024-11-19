@@ -70,6 +70,15 @@
   ul {
     list-style-type: disc;
     padding-left: 1em;
+    text-align: left;
+    strong {
+      display: block;
+    }
+    a {
+      font-weight: 400;
+      font-size: 0.8em;
+      letter-spacing: initial;
+    }
   }
   a {
     font-weight: 500;
