@@ -1,23 +1,58 @@
-'use client';
-import useAxios from 'axios-hooks';
 import getNormalizedTitle from '@/app/components/getNormalizedTitle';
-import { Recording } from '@/app/types';
 import RecordingDetails from './RecordingDetails';
-import { usePathname } from 'next/navigation';
+import { format } from 'date-fns';
+import { Recording } from '@/app/types';
 
-export default function RecordingPage() {
-  const normalizedTitle = usePathname().replace('/recordings/', '');
-  const [{ data: recordings, loading, error }] = useAxios<{ data: Recording[] }>(
-    'https://slownames.net/api/recordings?filters[bands][name]=Hey%20Exit&filters[visibility][$ne]=hidden&pagination[pageSize]=100'
+async function fetchRecordings() {
+  const response = await fetch(
+    'https://slownames.net/api/recordings?filters[bands][name]=Hey%20Exit&populate=bands&filters[visibility][$ne]=hidden&pagination[pageSize]=100',
+    { cache: 'no-store' }
   );
-  if (loading) return <p>finding release...</p>;
-  if (error) return <p>error: {error.message || "no one even knows what happened"}</p>;
+  if (!response.ok) throw new Error('Failed to fetch recordings');
+  const data = await response.json();
+  if (!data || !data.data || data.data.length === 0) {
+    throw new Error('API response is missing expected data');
+  }
+  return data;
+}
 
-  const matchingRecording = recordings?.data?.find((recording: Recording) => {
-    return getNormalizedTitle(recording.title) === normalizedTitle;
-  });
+export async function generateMetadata({
+  params,
+}: {
+  params: { normalizedTitle: string };
+}) {
+  const resolvedParams = await params;
+  const recordings = await fetchRecordings();
 
-  if (!matchingRecording) return <p>Recording not found</p>;
+  const matchingRecording = recordings.data.find(
+    (recording: any) => getNormalizedTitle(recording.title) === resolvedParams.normalizedTitle
+  );
+
+  if (matchingRecording) {
+    const bandname = matchingRecording.alias ? `${matchingRecording.alias}` : matchingRecording.bands[0].name;
+
+    return {
+      title: `Hey Exit :: Recordings :: ${matchingRecording.title}`,
+      description: `${bandname}'s ${format(matchingRecording.releaseDate, 'yyyy')} release, ${matchingRecording.title}`,
+    };
+  }
+}
+
+export default async function RecordingPage({ params }: { params: { normalizedTitle: string } }) {
+  const resolvedParams = await params;
+  const recordings = await fetchRecordings();
+
+  if (!recordings || !recordings.data) {
+    return <>oh no, no recordings</>;
+  }
+
+  const matchingRecording = recordings.data.find(
+    (recording: any) => getNormalizedTitle(recording.title) === resolvedParams.normalizedTitle
+  );
+
+  if (!matchingRecording) {
+    return <p>Recording not found</p>;
+  }
 
   return (
     <>

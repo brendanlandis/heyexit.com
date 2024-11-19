@@ -4,6 +4,11 @@ import Link from 'next/link';
 import RandomPic from './components/RandomPic';
 import EmailLink from './components/EmailLink';
 
+export const metadata = {
+  title: 'Hey Exit :: Archival Storage',
+  description: 'Weird music from 2009-2021',
+};
+
 export default function Home() {
   return (
     <>

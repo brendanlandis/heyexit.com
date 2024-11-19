@@ -21,12 +21,6 @@ const charlottenburgCircles = localFont({
 });
 const lofiForest = localFont({ src: './fonts/LofiForest_W-Bold.woff2', variable: '--font-lofi-forest' });
 
-// metadata
-export const metadata: Metadata = {
-  title: 'Hey Exit',
-  description: '',
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{

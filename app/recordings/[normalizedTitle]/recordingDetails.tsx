@@ -1,7 +1,5 @@
 'use client';
 import useAxios from 'axios-hooks';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 import '../../css/recording-detail.css';
 import { Press } from '@/app/types';
 import classNames from 'classnames';
@@ -31,58 +29,42 @@ export default function RecordingDetails({ documentId }: { documentId: string })
     `populate[10]=reviews.attachments`,
   ].join('&');
 
-  const [{ data: recordingData, loading, error }, refetch] = useAxios(`${baseUrl}?${query}`);
+  const [{ data: recordingData, loading, error }] = useAxios(`${baseUrl}?${query}`);
 
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-
-    refetch().catch((err) => {
-      if (!axios.isCancel(err)) {
-        console.error('Refetch error, girl!', err);
-      }
-    });
-  }, []);
-
-  if (!isMounted) return null;
-
-  if (loading) return <p>loading release...</p>;
-  if (error) return <p>error {JSON.stringify(error, null, 2)}</p>;
+  if (loading) return <p>Loading release...</p>;
+  if (error) return <p>Error: {JSON.stringify(error, null, 2)}</p>;
 
   const recording = recordingData?.data;
 
   const title = recording.alias ? `${recording.alias} - ${recording.title}` : recording.title;
 
   return (
-    <>
-      <div className="content-recording-details">
-        <div className="header-container">
-          <h1
-            className={classNames({
-              [`letters-${title.length}`]: true,
-              [`words-${title.split(/\s+/).length}`]: true,
-            })}
-          >
-            {title}
-          </h1>
+    <div className="content-recording-details">
+      <div className="header-container">
+        <h1
+          className={classNames({
+            [`letters-${title.length}`]: true,
+            [`words-${title.split(/\s+/).length}`]: true,
+          })}
+        >
+          {title}
+        </h1>
+      </div>
+      <div className="recording-detail">
+        <div className="recording-detail-column">
+          <RecordingGraphics {...recording} />
+          {recording.attachments.length ? <RecordingAttachments {...recording} /> : ''}
+          {recording.promoVideos.length ? <RecordingPromoVideos {...recording} /> : ''}
         </div>
-        <div className="recording-detail">
-          <div className="recording-detail-column">
-            <RecordingGraphics {...recording} />
-            {recording.attachments.length ? <RecordingAttachments {...recording} /> : ''}
-            {recording.promoVideos.length ? <RecordingPromoVideos {...recording} /> : ''}
-          </div>
-          <div className="recording-detail-column">
-            <RecordingEditions {...recording} />
-            <RecordingIcons {...recording} />
-            {recording.reviews?.some((press: Press) => press.visibility != 'hidden') && <RecordingPress {...recording} />}
-            <RecordingTracks {...recording} />
-            <RecordingAbout {...recording} />
-            <RecordingCredits {...recording} />
-          </div>
+        <div className="recording-detail-column">
+          <RecordingEditions {...recording} />
+          <RecordingIcons {...recording} />
+          {recording.reviews?.some((press: Press) => press.visibility != 'hidden') && <RecordingPress {...recording} />}
+          <RecordingTracks {...recording} />
+          <RecordingAbout {...recording} />
+          <RecordingCredits {...recording} />
         </div>
       </div>
-    </>
+    </div>
   );
 }

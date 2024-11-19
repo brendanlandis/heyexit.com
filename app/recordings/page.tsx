@@ -2,6 +2,11 @@ import '../css/recordings.css';
 import CompleteDiscog from './CompleteDiscog';
 import SelectedDiscog from './SelectedDiscog';
 
+export const metadata = {
+  title: 'Hey Exit :: Recordings',
+  description: "Hey Exit's discography",
+};
+
 export default function Recordings() {
   return (
     <>

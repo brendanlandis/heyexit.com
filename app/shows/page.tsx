@@ -1,5 +1,10 @@
 import '../css/shows.css';
 
+export const metadata = {
+  title: 'Hey Exit :: Shows',
+  description: "Hey Exit's gigography",
+};
+
 export default function Shows() {
   return (
     <>
