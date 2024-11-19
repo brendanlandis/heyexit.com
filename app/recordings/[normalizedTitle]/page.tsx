@@ -16,11 +16,7 @@ async function fetchRecordings() {
   return data;
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { normalizedTitle: string };
-}) {
+export async function generateMetadata({ params }: { params: { normalizedTitle: string } }) {
   const resolvedParams = await params;
   const recordings = await fetchRecordings();
 

@@ -1,5 +1,10 @@
 import '../css/current.css';
 
+export const metadata = {
+  title: 'Hey Exit :: Current Projects',
+  description: "current projects of Brendan Landis",
+};
+
 export default function Current() {
   return (
     <>

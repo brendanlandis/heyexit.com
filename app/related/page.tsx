@@ -1,5 +1,10 @@
 import '../css/related.css';
 
+export const metadata = {
+  title: 'Hey Exit :: Related Projects',
+  description: "bands and projects related to Hey Exit",
+};
+
 export default function Related() {
   return (
     <>
