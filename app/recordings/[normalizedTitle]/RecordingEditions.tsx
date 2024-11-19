@@ -9,19 +9,19 @@ export default function RecordingEditions(recording: Recording) {
         <div key={index} className="edition">
           {edition.link ? (
             <>
-              <Link href={edition.link}>{edition.label}</Link> / {format(edition.releaseDate, 'yyyy')}
+              <span><Link href={edition.link}>{edition.label}</Link></span> / <span>{format(edition.releaseDate, 'yyyy')}</span>
             </>
           ) : (
             <>
-              {edition.label} / {format(edition.releaseDate, 'yyyy')}
+              <span>{edition.label}</span> / <span>{format(edition.releaseDate, 'yyyy')}</span>
             </>
           )}
           {' / '}
-          {edition.onlineOnly ? 'streaming' : ''}
+          <span className='edition-of'>{edition.onlineOnly ? 'streaming' : ''}
           {edition.printedCassettes ? (<span>{edition.printedCassettes} cassettes</span>) : null}
           {edition.printedRecords ? (<span>{edition.printedRecords} records</span>) : null}
           {edition.printedCDs ? (<span>{edition.printedCDs} CDs</span>) : null}
-          {edition.printedObjects ? (<span>{edition.printedObjects} {edition.objectDescription}</span>) : null}
+          {edition.printedObjects ? (<span>{edition.printedObjects} {edition.objectDescription}</span>) : null}</span>
         </div>
       ))}
     </div>

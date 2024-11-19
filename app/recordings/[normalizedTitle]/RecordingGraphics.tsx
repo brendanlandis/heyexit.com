@@ -48,8 +48,8 @@ export default function RecordingGraphics(recording: Recording) {
                   <Image
                     src={url}
                     alt={`item number ${index + 1}`}
-                    width={750}
-                    height={750}
+                    width={2048}
+                    height={2048}
                     className="w-full detail-cover"
                   />
                   <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">

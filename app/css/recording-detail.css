@@ -91,9 +91,12 @@
 
 .recording-detail {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 2em;
   margin-top: 2em;
+  grid-template-columns: 1fr;
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
   h2 {
     font-size: 7cqi;
     line-height: 1em;
@@ -142,10 +145,12 @@
     & + .edition {
       margin-top: 0.5em;
     }
-    span + span {
-      &:before {
-        content: ', ';
-      }
+    > span {
+      display: inline-block;
+      line-height: 1.2em;
+    }
+    .edition-of span:nth-child(n + 2):before {
+      content: ', ';
     }
   }
   a {
@@ -245,15 +250,26 @@
   border: 1px solid #222;
   border-radius: 1em;
   overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
 }
 .recording-tracklist {
   list-style-type: decimal-leading-zero;
-  margin-left: 2.4em;
+  li {
+    margin-left: 2.4em;
+  }
+  li:nth-child(n + 2) {
+    margin-top: 0.5em;
+  }
   li > div {
     display: grid;
     grid-template-columns: 1fr 4em;
     justify-content: space-between;
     gap: 1em;
+    &:has(.track-length:empty) {
+      grid-template-columns: 1fr 0;
+    }
   }
   .track-length:not(:empty) {
     &:before {
@@ -289,4 +305,8 @@
   gap: 2em;
   margin: 0 auto 1em auto;
   width: 100%;
+  h2 {
+    font-size: 15cqi;
+    letter-spacing: 0.1em;
+  }
 }

@@ -17,7 +17,7 @@ export default function RandomPic() {
 
     refetch().catch((err) => {
       if (!axios.isCancel(err)) {
-        console.error("Refetch error, girl!", err);
+        console.error('Refetch error, girl!', err);
       }
     });
   }, []);
@@ -33,19 +33,19 @@ export default function RandomPic() {
     <div className="images">
       {randomMedia ? (
         <div>
-          <Link
+          {/* <Link
             href={`https://slownames.net/admin/plugins/upload?sort=createdAt:DESC&page=1&pageSize=50&_q=${randomMedia.documentId}`}
             target="blank_"
-          >
-            <Image
-              src={randomMedia.url}
-              alt="photo of Hey Exit"
-              width={1800}
-              height={100}
-              className="headerPhoto"
-              priority
-            />
-          </Link>
+          > */}
+          <Image
+            src={randomMedia.url}
+            alt="photo of Brendan Landis / Hey Exit"
+            width={1800}
+            height={100}
+            className="headerPhoto"
+            priority
+          />
+          {/* </Link> */}
         </div>
       ) : (
         <p>...</p>
