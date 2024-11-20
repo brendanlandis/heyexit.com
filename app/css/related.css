@@ -1,15 +1,29 @@
 .content-related {
+  /* border: 1px solid #ff0; */
+  .band-list-container {
+    container-name: related-container;
+    container-type: inline-size;
+  }
   .band-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(7, 12cqi);
     align-items: center;
-    gap: 5em;
+    /* border: 1px solid #f0f; */
+    margin: 5cqi 0 15cqi 0;
+    gap: 1cqi;
     li {
-      text-align: center;
-      font-size: 3em;
-      line-height: 1em;
+      /* border: 1px solid #0f0; */
+      transform: rotate(35deg);
+      text-align: left;
+      font-size: 3.5cqi;
+      line-height: 3cqi;
       white-space: nowrap;
+      transition: border-color(1s);
+      border-bottom: 1px solid transparent;
+      a:hover {
+        /* text-decoration: underline; */
+        border-bottom: 1px solid #0f0;
+      }
     }
   }
 }

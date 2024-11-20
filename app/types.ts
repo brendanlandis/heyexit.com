@@ -102,6 +102,12 @@ export interface Recording {
 export interface Show {
   id: number;
   date: Date;
+  band: {
+    id: number;
+    name: string;
+  };
+  showName: string;
+  alias: string;
   documentId: string;
   documentation: Array<{
     id: number;
@@ -109,5 +115,15 @@ export interface Show {
     mime: string;
     url: string;
     documentId: string;
+    caption: string;
   }>;
+  flyers: Array<{
+    id: number;
+    alternativeText: string;
+    mime: string;
+    url: string;
+    documentId: string;
+    caption: string;
+  }>;
+  
 }

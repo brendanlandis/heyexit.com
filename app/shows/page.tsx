@@ -1,3 +1,4 @@
+import LivePics from './LivePics';
 import '../css/shows.css';
 
 export const metadata = {
@@ -12,6 +13,16 @@ export default function Shows() {
         <div className="header-container">
           <h1>Show Archive</h1>
         </div>
+        <p>
+          sfsh asfha sukhfuasd fask fkhashfuashf skhdfaksjh sfsh asfha sukhfuasd fask fkhashfuashf skhdfaksjh sfsh asfha
+          sukhfuasd fask fkhashfuashf skhdfaksjh sfsh asfha sukhfuasd fask fkhashfuashf skhdfaksjh sfsh asfha sukhfuasd
+          fask fkhashfuashf skhdfaksjh sfsh asfha sukhfuasd fask fkhashfuashf skhdfaksjh sfsh asfha sukhfuasd fask
+          fkhashfuashf skhdfaksjh sfsh asfha sukhfuasd fask fkhashfuashf skhdfaksjh sfsh asfha sukhfuasd fask
+          fkhashfuashf skhdfaksjh sfsh asfha sukhfuasd fask fkhashfuashf skhdfaksjh sfsh asfha sukhfuasd fask
+          fkhashfuashf skhdfaksjh sfsh asfha sukhfuasd fask fkhashfuashf skhdfaksjh sfsh asfha sukhfuasd fask
+          fkhashfuashf skhdfaksjh{' '}
+        </p>
+        <LivePics />
       </div>
     </>
   );

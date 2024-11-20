@@ -6,9 +6,9 @@ CSS stack
 + https://daisyui.com/
 
 when the time comes:
-- https://react-icons.github.io/react-icons/
++ https://react-icons.github.io/react-icons/
 + https://www.npmjs.com/package/react-obfuscate
-- https://github.com/askides/react-plock
++ https://github.com/askides/react-plock
 
 might not need these any more:
 - https://remarkjs.github.io/react-markdown/
