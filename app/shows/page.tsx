@@ -1,4 +1,4 @@
-import LivePics from './LivePics';
+import ShowArchive from './ShowArchive';
 import '../css/shows.css';
 
 export const metadata = {
@@ -14,7 +14,7 @@ export default function Shows() {
           <h1>Show Archive</h1>
         </div>
         <p>Here are some old show flyers and photos. It definitely feels a little weird to be plastering my face here, but on the other hand fuck it, this was a decade of my life.</p>
-        <LivePics />
+        <ShowArchive />
       </div>
     </>
   );

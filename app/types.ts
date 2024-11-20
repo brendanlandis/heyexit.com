@@ -108,6 +108,8 @@ export interface Show {
   };
   showName: string;
   alias: string;
+  venue: string;
+  city: string;
   documentId: string;
   documentation: Array<{
     id: number;
