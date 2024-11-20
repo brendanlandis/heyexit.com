@@ -22,12 +22,12 @@ export default function Related() {
         <div className="band-list-container">
           <ul className="band-list">
             <li><Link href="projects/advection">Advection</Link></li>
-            <li>Anura</li>
-            <li>Big Hiatus</li>
-            <li>Esther Chlorine</li>
-            <li>It Breaks</li>
-            <li>Rough Weather</li>
-            <li>Tethers</li>
+            <li><Link href="projects/anura">Anura</Link></li>
+            <li><Link href="projects/bighiatus">Big Hiatus</Link></li>
+            <li><Link href="projects/estherchlorine">Esther Chlorine</Link></li>
+            <li><Link href="projects/itbreaks">It Breaks</Link></li>
+            <li><Link href="projects/roughweather">Rough Weather</Link></li>
+            <li><Link href="projects/tethers">Tethers</Link></li>
           </ul>
         </div>
       </div>

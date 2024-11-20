@@ -31,9 +31,10 @@ export default function Home() {
               <li>
                 <strong>art music and long-form instrumentals:</strong>
                 <Link href="/recordings/reading-a-moments-dust">new age doom</Link>,{' '}
-                <Link href="/recordings/eulogy-for-land">very long solo works</Link>,{' '}
+                <Link href="/recordings/eulogy-for-land">very long solo pieces</Link>,{' '}
                 <Link href="/recordings/arms-reach">free improvisation</Link>,{' '}
-                <Link href="/recordings/every-recording-of-gymnopedie-1">plunderphonics</Link>
+                <Link href="/recordings/every-recording-of-gymnopedie-1">plunderphonics</Link>,{' '}
+                <Link href="/recordings/pushing-waves">electroacoustic composition</Link>
               </li>
               <li>
                 <strong>songwriting and short-form instrumentals:</strong>
@@ -45,8 +46,7 @@ export default function Home() {
                 <Link href="/recordings/caudata">harsh noise</Link>,{' '}
                 <Link href="/recordings/then-i-might-could-too">industrial</Link>,{' '}
                 <Link href="/recordings/nothing-is-what-you-deserve">grindcore</Link>,{' '}
-                <Link href="/recordings/pushing-waves">electroacoustic composition</Link>,{' '}
-                <Link href="/recordings/slow-names-2">prepared guitar</Link>
+                <Link href="/recordings/slow-names-2">works for prepared guitar</Link>
               </li>
             </ul>
             <p>

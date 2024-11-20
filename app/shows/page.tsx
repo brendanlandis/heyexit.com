@@ -13,15 +13,7 @@ export default function Shows() {
         <div className="header-container">
           <h1>Show Archive</h1>
         </div>
-        <p>
-          sfsh asfha sukhfuasd fask fkhashfuashf skhdfaksjh sfsh asfha sukhfuasd fask fkhashfuashf skhdfaksjh sfsh asfha
-          sukhfuasd fask fkhashfuashf skhdfaksjh sfsh asfha sukhfuasd fask fkhashfuashf skhdfaksjh sfsh asfha sukhfuasd
-          fask fkhashfuashf skhdfaksjh sfsh asfha sukhfuasd fask fkhashfuashf skhdfaksjh sfsh asfha sukhfuasd fask
-          fkhashfuashf skhdfaksjh sfsh asfha sukhfuasd fask fkhashfuashf skhdfaksjh sfsh asfha sukhfuasd fask
-          fkhashfuashf skhdfaksjh sfsh asfha sukhfuasd fask fkhashfuashf skhdfaksjh sfsh asfha sukhfuasd fask
-          fkhashfuashf skhdfaksjh sfsh asfha sukhfuasd fask fkhashfuashf skhdfaksjh sfsh asfha sukhfuasd fask
-          fkhashfuashf skhdfaksjh{' '}
-        </p>
+        <p>Here are some old show flyers and photos. It definitely feels a little weird to be plastering my face here, but on the other hand fuck it, this was a decade of my life.</p>
         <LivePics />
       </div>
     </>
