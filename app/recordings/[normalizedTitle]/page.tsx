@@ -4,7 +4,7 @@ import { format } from 'date-fns';
 
 async function fetchRecordings() {
   const response = await fetch(
-    'https://slownames.net/api/recordings?filters[bands][name]=Hey%20Exit&populate=bands&filters[visibility][$ne]=hidden&pagination[pageSize]=100',
+    'https://slownames.net/api/recordings?populate=bands&filters[visibility][$ne]=hidden&pagination[pageSize]=100',
     { cache: 'no-store' }
   );
   if (!response.ok) throw new Error('Failed to fetch recordings');

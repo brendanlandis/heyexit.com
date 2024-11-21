@@ -1,4 +1,4 @@
-import '../css/related.css';
+import '../css/projects.css';
 import Link from 'next/link';
 
 export const metadata = {
@@ -6,10 +6,10 @@ export const metadata = {
   description: 'bands and projects related to Hey Exit',
 };
 
-export default function Related() {
+export default function Projects() {
   return (
     <>
-      <div className="content-related">
+      <div className="content-projects">
         <div className="header-container">
           <h1>Related Projects</h1>
         </div>

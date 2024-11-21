@@ -60,7 +60,7 @@ export default function Home() {
             <p>
               Many of the creative threads explored throughout the Hey Exit catalog went on to become their own
               projects. These, as well as several noise bands Brendan played in aroud the same time, are detailed on the{' '}
-              <Link href="https://heyexit.com/">related</Link> page.
+              <Link href="https://heyexit.com/">related projects</Link> page.
             </p>
             <p>
               After forty five releases and one or two hundred shows, Hey Exit is retired for the foreseeable future.

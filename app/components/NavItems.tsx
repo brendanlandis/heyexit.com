@@ -19,8 +19,8 @@ export default function NavItems() {
       <li className={pathname === '/shows' ? 'active' : ''} onClick={closeDrawer}>
         <Link href="/shows">shows</Link>
       </li>
-      <li className={pathname === '/related' ? 'active' : ''} onClick={closeDrawer}>
-        <Link href="/related">related</Link>
+      <li className={pathname === '/projects' ? 'active' : ''} onClick={closeDrawer}>
+        <Link href="/projects">related projects</Link>
       </li>
       <li className={pathname === '/current' ? 'active' : ''} onClick={closeDrawer}>
         <Link href="/current">current</Link>
