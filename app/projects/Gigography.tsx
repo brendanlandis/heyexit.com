@@ -14,7 +14,6 @@ export default function Gigography({ band }: { band: string }) {
   if (error) return <p>error {JSON.stringify(error, null, 2)}</p>;
 
   const relevantShows = shows.data.filter(isRelevantShow(band));
-  console.log(band);
   const images: [string, string, Date, string][] = relevantShows
     .sort((a: Show, b: Show) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .flatMap(reduceImages);

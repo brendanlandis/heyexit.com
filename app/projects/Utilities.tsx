@@ -20,8 +20,8 @@ export const reduceImages = (show: Show): [string, string, Date, string][] => {
   const pics =
     show.documentation?.filter(
       (doc) =>
-        doc.mime?.includes('image') &&
-        doc.caption?.includes('heyExitShowArchive')
+        doc.mime?.includes('image')
+        // doc.caption?.includes('heyExitShowArchive')
     ) || [];
 
   // Select up to 3 random pics

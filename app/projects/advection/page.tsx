@@ -17,7 +17,7 @@ export default function AdvectionPage() {
         </div>
         <p>Advection was more of a dumping ground for electronic music than an intentional project in and of itself.</p>
         <div className="advection-container">
-          <Discography band="advection" />
+          <Discography band="Advection" />
         </div>
       </div>
     </>

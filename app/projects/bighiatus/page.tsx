@@ -1,6 +1,8 @@
 import '../../css/projects.css';
+import '../../css/recordings.css';
 import Link from 'next/link';
 import Discography from '../Discography';
+import Gigography from '../Gigography';
 
 export const metadata = {
   title: 'Hey Exit :: Related Projects :: Big Hiatus',
@@ -16,7 +18,8 @@ export default function BigHiatusPage() {
         </div>
         <p></p>
         <div className="bighiatus-container">
-          <Discography band="big hiatus" />
+          <Discography band="Big Hiatus" />
+          <Gigography band="Big Hiatus" />
         </div>
       </div>
     </>

@@ -1,6 +1,8 @@
 import '../../css/projects.css';
+import '../../css/recordings.css';
 import Link from 'next/link';
 import Discography from '../Discography';
+import Gigography from '../Gigography';
 
 export const metadata = {
   title: 'Hey Exit :: Related Projects :: It Breaks',
@@ -16,7 +18,8 @@ export default function ItBreaksPage() {
         </div>
         <p></p>
         <div className="itbreaks-container">
-          <Discography band="it breaks" />
+          <Discography band="It Breaks" />
+          <Gigography band="It Breaks" />
         </div>
       </div>
     </>

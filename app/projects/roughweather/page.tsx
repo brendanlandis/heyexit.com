@@ -1,6 +1,8 @@
 import '../../css/projects.css';
+import '../../css/recordings.css';
 import Link from 'next/link';
 import Discography from '../Discography';
+import Gigography from '../Gigography';
 
 export const metadata = {
   title: 'Hey Exit :: Related Projects :: Rough Weather',
@@ -16,7 +18,8 @@ export default function RoughWeatherPage() {
         </div>
         <p></p>
         <div className="roughweather-container">
-          <Discography band="rough weather" />
+          <Discography band="Rough Weather" />
+          <Gigography band="Rough Weather" />
         </div>
       </div>
     </>

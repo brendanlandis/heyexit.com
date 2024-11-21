@@ -1,6 +1,8 @@
 import '../../css/projects.css';
+import '../../css/recordings.css';
 import Link from 'next/link';
 import Discography from '../Discography';
+import Gigography from '../Gigography';
 
 export const metadata = {
   title: 'Hey Exit :: Related Projects :: Esther Chlorine',
@@ -14,9 +16,9 @@ export default function EstherChlorinePage() {
         <div className="header-container">
           <h1>Esther Chlorine</h1>
         </div>
-        <p></p>
         <div className="estherchlorine-container">
-          <Discography band="esther chlorine" />
+          <Discography band="Esther Chlorine" />
+          <Gigography band="Esther Chlorine" />
         </div>
       </div>
     </>
