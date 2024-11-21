@@ -179,3 +179,10 @@ main {
     padding: 0;
   }
 }
+
+.header-text {
+  line-height: 1.3em;
+  font-size: 1.3em;
+  width: 80%;
+  margin: 0 auto 2em auto;
+}

@@ -111,6 +111,7 @@ export interface Show {
   venue: string;
   city: string;
   documentId: string;
+  notes: string;
   documentation: Array<{
     id: number;
     alternativeText: string;

@@ -1,28 +1,30 @@
 .content-projects {
-  /* border: 1px solid #ff0; */
   .band-list-container {
     container-name: related-container;
     container-type: inline-size;
   }
   .band-list {
     display: grid;
-    grid-template-columns: repeat(7, 12cqi);
+    grid-template-columns: repeat(7, 9cqi);
     align-items: center;
-    /* border: 1px solid #f0f; */
     margin: 5cqi 0 15cqi 0;
     gap: 1cqi;
+    width: 78cqi;
+    margin-right: auto;
+    margin-left: auto;
     li {
-      /* border: 1px solid #0f0; */
       transform: rotate(35deg);
-      text-align: left;
+      text-align: center;
       font-size: 3.5cqi;
       line-height: 3cqi;
       white-space: nowrap;
       transition: border-color(1s);
-      border-bottom: 1px solid transparent;
+      a {
+        text-decoration: underline;
+        text-decoration-color: #fff;
+      }
       a:hover {
-        /* text-decoration: underline; */
-        border-bottom: 1px solid #0f0;
+        text-decoration-color: #0f0;
       }
     }
   }
