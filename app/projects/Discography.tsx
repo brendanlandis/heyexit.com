@@ -26,7 +26,6 @@ export default function Discography({ band }: { band: string }) {
 
   return (
     <>
-      <h2>discography</h2>
       <div className="releases-grid complete">
         {orderedRecordings.map((recording: Recording) => {
           const normalizedTitle = getNormalizedTitle(recording.title);

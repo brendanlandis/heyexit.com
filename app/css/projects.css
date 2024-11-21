@@ -48,9 +48,6 @@
       img {
         transform: rotate(-3deg);
       }
-      p {
-        background: #333;
-      }
     }
   }
 }

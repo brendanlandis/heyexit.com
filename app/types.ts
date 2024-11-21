@@ -112,6 +112,7 @@ export interface Show {
   city: string;
   documentId: string;
   notes: string;
+  cancelled: boolean;
   documentation: Array<{
     id: number;
     alternativeText: string;
