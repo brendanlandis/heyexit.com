@@ -13,7 +13,12 @@ export default function Shows() {
         <div className="header-container">
           <h1>Gigography</h1>
         </div>
-        {/* <p className='header-text'>Here are some old show flyers and photos. It definitely feels a little weird to be plastering my face here, but on the other hand fuck it, this was a decade of my life.</p> */}
+        <p className="header-text">
+          Hey Exit played a lot of shows over the years. I've collected a lot of
+          photos and flyers here, and while it definitely feels a weird to
+          plaster my face all over this page, on the other hand fuck it &mdash;
+          this project was over a decade of my life.
+        </p>
         <ShowArchive />
       </div>
     </>

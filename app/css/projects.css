@@ -3,31 +3,6 @@
     container-name: related-container;
     container-type: inline-size;
   }
-  .band-list {
-    display: grid;
-    grid-template-columns: repeat(7, 9.5cqi);
-    align-items: center;
-    margin: 5cqi 0 15cqi 0;
-    gap: 1cqi;
-    width: 78cqi;
-    margin-right: auto;
-    margin-left: auto;
-    li {
-      transform: rotate(35deg);
-      text-align: center;
-      font-size: 3.5cqi;
-      line-height: 3cqi;
-      white-space: nowrap;
-      transition: border-color(1s);
-      a {
-        text-decoration: underline;
-        text-decoration-color: #fff;
-      }
-      a:hover {
-        text-decoration-color: #0f0;
-      }
-    }
-  }
 }
 
 .project-summaries {
@@ -73,6 +48,20 @@
       img {
         transform: rotate(-3deg);
       }
+      p {
+        background: #333;
+      }
     }
+  }
+}
+
+.project-summary-tethers {
+  img {
+    object-position: 29% 0;
+  }
+}
+.project-summary-roughweather {
+  img {
+    object-position: 100% 0;
   }
 }

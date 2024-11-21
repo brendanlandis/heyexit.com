@@ -34,16 +34,16 @@ export default function NavItems() {
         <Link href="/projects">related projects</Link>
         <ul className="subnav">
           <li
-            className={pathname.includes('/projects/advection') ? 'active' : ''}
-            onClick={closeDrawer}
-          >
-            <Link href="/projects/advection">Advection</Link>
-          </li>
-          <li
             className={pathname.includes('/projects/anura') ? 'active' : ''}
             onClick={closeDrawer}
           >
             <Link href="/projects/anura">Anura</Link>
+          </li>
+          <li
+            className={pathname.includes('/projects/advection') ? 'active' : ''}
+            onClick={closeDrawer}
+          >
+            <Link href="/projects/advection">Advection</Link>
           </li>
           <li
             className={pathname.includes('/projects/tethers') ? 'active' : ''}
@@ -66,18 +66,18 @@ export default function NavItems() {
             <Link href="/projects/estherchlorine">Esther Chlorine</Link>
           </li>
           <li
+            className={pathname.includes('/projects/itbreaks') ? 'active' : ''}
+            onClick={closeDrawer}
+          >
+            <Link href="/projects/itbreaks">It Breaks</Link>
+          </li>
+          <li
             className={
               pathname.includes('/projects/roughweather') ? 'active' : ''
             }
             onClick={closeDrawer}
           >
             <Link href="/projects/roughweather">Rough Weather</Link>
-          </li>
-          <li
-            className={pathname.includes('/projects/itbreaks') ? 'active' : ''}
-            onClick={closeDrawer}
-          >
-            <Link href="/projects/itbreaks">It Breaks</Link>
           </li>
         </ul>
       </li>
