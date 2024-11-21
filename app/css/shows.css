@@ -30,7 +30,7 @@
       font-size: 1em;
       line-height: 1.3em;
       padding: 0.5em 1em;
-      /* opacity: 0.3; */
+      opacity: 0.3;
       transition: transform 0.4s ease-out, opacity 0.3s;
       &:hover {
         opacity: 1;
@@ -43,11 +43,6 @@
     .show-date {
       &::after {
         content: ' -';
-      }
-    }
-    .show-band {
-      &::after {
-        /* content: ' '; */
       }
     }
     .show-notes {

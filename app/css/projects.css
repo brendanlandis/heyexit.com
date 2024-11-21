@@ -5,7 +5,7 @@
   }
   .band-list {
     display: grid;
-    grid-template-columns: repeat(7, 9cqi);
+    grid-template-columns: repeat(7, 9.5cqi);
     align-items: center;
     margin: 5cqi 0 15cqi 0;
     gap: 1cqi;
