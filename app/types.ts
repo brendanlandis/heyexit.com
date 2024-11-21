@@ -128,5 +128,10 @@ export interface Show {
     documentId: string;
     caption: string;
   }>;
-  
+}
+
+export interface Shoot {
+  id: number;
+  documentId: string;
+  pics: Array<Media>;
 }
