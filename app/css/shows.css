@@ -10,6 +10,38 @@
     video {
       width: 100%;
     }
+    img,
+    video {
+      filter: grayscale(1) contrast(100) brightness(0.7);
+      transition: all 100ms;
+      position: relative;
+      &:hover {
+        filter: none;
+      }
+    }
+    .show-image-wrapper {
+      position: relative;
+      span {
+        background: #ce78ff;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        opacity: 0.1;
+      }
+      &:hover span {
+        display: none;
+      }
+    }
+  }
+  &:has(.shows-images:hover),
+  &:has(.shows-images:hover) {
+    .shows-text li {
+      opacity: 0;
+      z-index: 0;
+    }
   }
   .shows-text {
     text-align: center;
@@ -30,12 +62,6 @@
       font-size: 1em;
       line-height: 1.3em;
       padding: 0.5em 1em;
-      /* opacity: 0.3; */
-      transition: transform 0.4s ease-out, opacity 0.3s;
-      &:hover {
-        /* opacity: 1; */
-        /* transform: scale(1.05); */
-      }
       span {
         display: inline-block;
       }

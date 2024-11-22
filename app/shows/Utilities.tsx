@@ -10,14 +10,20 @@ export const reduceImages = (show: Show): [string, string, Date, string][] => {
 
   // Collect flyers
   if (show.flyers) {
-    const flyer = show.flyers.length > 1 ? show.flyers[Math.floor(Math.random() * show.flyers.length)] : show.flyers[0];
+    const flyer =
+      show.flyers.length > 1
+        ? show.flyers[Math.floor(Math.random() * show.flyers.length)]
+        : show.flyers[0];
     if (flyer) tempUrls.push([flyer.url, flyer.documentId, show.date, 'flyer']);
   }
 
   // Collect pics
   const pics =
-    show.documentation?.filter((doc) => doc.mime?.includes('image') && doc.caption?.includes('heyExitShowArchive')) ||
-    [];
+    show.documentation?.filter(
+      (doc) =>
+        doc.mime?.includes('image') &&
+        doc.caption?.includes('heyExitShowArchive')
+    ) || [];
 
   // Select up to 3 random pics
   const selectedPics = [];
@@ -32,15 +38,35 @@ export const reduceImages = (show: Show): [string, string, Date, string][] => {
   }
 
   tempUrls.push(
-    ...selectedPics.map((doc) => [doc.url, doc.documentId, show.date, 'pic'] as [string, string, Date, string])
+    ...selectedPics.map(
+      (doc) =>
+        [doc.url, doc.documentId, show.date, 'pic'] as [
+          string,
+          string,
+          Date,
+          string
+        ]
+    )
   );
 
   // collect vids
-  const vids = show.documentation?.filter((doc) => doc.mime?.includes('video') && doc.caption?.includes('heyExitShowArchive')) ||
-  [];
+  const vids =
+    show.documentation?.filter(
+      (doc) =>
+        doc.mime?.includes('video') &&
+        doc.caption?.includes('heyExitShowArchive')
+    ) || [];
 
   tempUrls.push(
-    ...vids.map((doc) => [doc.url, doc.documentId, show.date, 'vid'] as [string, string, Date, string])
+    ...vids.map(
+      (doc) =>
+        [doc.url, doc.documentId, show.date, 'vid'] as [
+          string,
+          string,
+          Date,
+          string
+        ]
+    )
   );
 
   return tempUrls;
