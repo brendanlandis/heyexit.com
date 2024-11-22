@@ -2,7 +2,7 @@ import '../../css/projects.css';
 import '../../css/recordings.css';
 import Link from 'next/link';
 import Image from 'next/image';
-import Discography from '../Discography';
+import SingleRelease from '../SingleRelease';
 
 export const metadata = {
   title: 'Hey Exit :: Related Projects :: Advection',
@@ -27,8 +27,12 @@ export default function AdvectionPage() {
             Advection was more of a dumping ground for electronic music than an
             intentional project in and of itself.
           </p>
-
-          <Discography band="Advection" />
+          <SingleRelease id="vymkfdtzdzrbawkmwzt8ws17" position="left" />
+          <SingleRelease id="r02cjr0zz5de4tgqbw0biyke" position="left" />
+          <SingleRelease id="bwpl69xzd4hd4qlyvrr2755o" position="left" />
+          <SingleRelease id="ygzpy9i783j4q4ziy7ctimkb" position="left" />
+          <SingleRelease id="gqczm6y6moxvwux1y9qb70ww" position="left" />
+          <SingleRelease id="lf6b1e7ke7zze04rhif3ojwl" position="left" />
         </div>
       </div>
     </>

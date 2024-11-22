@@ -85,7 +85,7 @@ export default function NavItems() {
         className={pathname === '/current' ? 'active' : ''}
         onClick={closeDrawer}
       >
-        <Link href="/current">current</Link>
+        <Link href="/current">current projects</Link>
       </li>
     </>
   );

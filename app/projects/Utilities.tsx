@@ -28,7 +28,7 @@ export const reduceImages = (show: Show): [string, string, Date, string][] => {
   const selectedPics = [];
   const selectedIndexes = new Set<number>();
 
-  while (selectedPics.length < 3 && selectedIndexes.size < pics.length) {
+  while (selectedPics.length < 30 && selectedIndexes.size < pics.length) {
     const randomIndex = Math.floor(Math.random() * pics.length);
     if (!selectedIndexes.has(randomIndex)) {
       selectedIndexes.add(randomIndex);

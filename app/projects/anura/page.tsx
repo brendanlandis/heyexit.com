@@ -26,7 +26,7 @@ export default function AnuraPage() {
         </div>
         <div className="project-content">
           <p>
-            Anura spent some time incubating 
+            Anura was active from about 2018 - 2021.
           </p>
           <Gigography band="Anura" displayImages={false} shortList={true} />
           <SingleRelease id="nj88gcsynle0v3l1qxtxa215" position="left" />

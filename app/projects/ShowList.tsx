@@ -32,7 +32,7 @@ export default function ShowList({
             )}
             <span className="show-where">{showWhere}</span>
             {show.notes ? (
-              <span className="show-notes">{show.notes}</span>
+              <span className="show-notes"> ({show.notes})</span>
             ) : null}
           </li>
         );

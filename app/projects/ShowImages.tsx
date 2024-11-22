@@ -1,5 +1,5 @@
 import { Masonry } from 'react-plock';
-// import Link from 'next/link';
+import Link from 'next/link';
 import Image from 'next/image';
 
 export default function ShowImages({
@@ -20,19 +20,19 @@ export default function ShowImages({
           const [url, documentId, date, type] = item;
           if (type === 'pic' || type === 'flyer') {
             return (
-              // <Link
-              //   href={`https://slownames.net/admin/plugins/upload?sort=createdAt:DESC&page=1&pageSize=50&folder=3&folderPath=/1&_q=${documentId}`}
-              //   key={idx}
-              //   target="_blank"
-              // >
-              <Image
-                alt="photo of Hey Exit"
-                src={url}
-                width={600}
-                height={600}
+              <Link
+                href={`https://slownames.net/admin/plugins/upload?sort=createdAt:DESC&page=1&pageSize=50&folder=3&folderPath=/1&_q=${documentId}`}
                 key={idx}
-              />
-              // </Link>
+                target="_blank"
+              >
+                <Image
+                  alt="photo of Hey Exit"
+                  src={url}
+                  width={600}
+                  height={600}
+                  key={idx}
+                />
+              </Link>
             );
           } else if (type === 'vid') {
             return (
