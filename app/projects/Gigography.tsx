@@ -5,7 +5,14 @@ import { isRelevantShow, reduceImages } from './Utilities';
 import ShowList from './ShowList';
 import ShowImages from './ShowImages';
 
-export default function Gigography({ band }: { band: string }) {
+export default function Gigography({
+  band,
+  displayImages, shortList,
+}: {
+  band: string;
+  displayImages: boolean;
+  shortList: boolean;
+}) {
   const [{ data: shows, loading, error }, refetch] = useAxios(
     `https://slownames.net/api/shows?pagination[pageSize]=300&populate[0]=documentation&populate[1]=flyers&populate[2]=band&filters[band][name]=${band}`
   );
@@ -15,13 +22,16 @@ export default function Gigography({ band }: { band: string }) {
 
   const relevantShows = shows.data.filter(isRelevantShow(band));
   const images: [string, string, Date, string][] = relevantShows
-    .sort((a: Show, b: Show) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .sort(
+      (a: Show, b: Show) =>
+        new Date(b.date).getTime() - new Date(a.date).getTime()
+    )
     .flatMap(reduceImages);
 
   return (
     <div className="show-archive">
-      <ShowList shows={relevantShows} />
-      <ShowImages images={images} />
+      <ShowList shows={relevantShows} shortList={shortList} />
+      {displayImages ? <ShowImages images={images} /> : null}
     </div>
   );
 }

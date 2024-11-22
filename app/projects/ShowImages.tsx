@@ -2,7 +2,11 @@ import { Masonry } from 'react-plock';
 // import Link from 'next/link';
 import Image from 'next/image';
 
-export default function ShowImages({ images }: { images: [string, string, Date, string][] }) {
+export default function ShowImages({
+  images,
+}: {
+  images: [string, string, Date, string][];
+}) {
   return (
     <div className="shows-images">
       <Masonry
@@ -14,14 +18,20 @@ export default function ShowImages({ images }: { images: [string, string, Date, 
         }}
         render={(item, idx) => {
           const [url, documentId, date, type] = item;
-          if ((type === 'pic') || (type === 'flyer')) {
+          if (type === 'pic' || type === 'flyer') {
             return (
               // <Link
               //   href={`https://slownames.net/admin/plugins/upload?sort=createdAt:DESC&page=1&pageSize=50&folder=3&folderPath=/1&_q=${documentId}`}
               //   key={idx}
               //   target="_blank"
               // >
-              <Image alt="photo of Hey Exit" src={url} width={600} height={600} key={idx} />
+              <Image
+                alt="photo of Hey Exit"
+                src={url}
+                width={600}
+                height={600}
+                key={idx}
+              />
               // </Link>
             );
           } else if (type === 'vid') {

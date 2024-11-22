@@ -1,8 +1,9 @@
 import { Show } from '../types';
 
-export const isRelevantShow = (bandname: string) => (show: Show): boolean => 
-  show.band.name === bandname &&
-  show.cancelled === !true;
+export const isRelevantShow =
+  (bandname: string) =>
+  (show: Show): boolean =>
+    show.band.name === bandname && show.cancelled === !true;
 
 export const reduceImages = (show: Show): [string, string, Date, string][] => {
   const tempUrls: [string, string, Date, string][] = [];
@@ -19,9 +20,8 @@ export const reduceImages = (show: Show): [string, string, Date, string][] => {
   // Collect pics
   const pics =
     show.documentation?.filter(
-      (doc) =>
-        doc.mime?.includes('image')
-        // doc.caption?.includes('heyExitShowArchive')
+      (doc) => doc.mime?.includes('image')
+      // doc.caption?.includes('heyExitShowArchive')
     ) || [];
 
   // Select up to 3 random pics
@@ -51,9 +51,7 @@ export const reduceImages = (show: Show): [string, string, Date, string][] => {
   // collect vids
   const vids =
     show.documentation?.filter(
-      (doc) =>
-        doc.mime?.includes('video') &&
-        doc.caption?.includes('heyExitShowArchive')
+      (doc) => doc.mime?.includes('video')
     ) || [];
 
   tempUrls.push(
