@@ -28,7 +28,7 @@ export default function Recordings() {
           <h2>Complete Discography</h2>
         </div>
         <p className="header-text">
-          For a more extensive listen, here's the entire catalog of forty six releases,
+          For a more extensive listen, here's the entire catalog of forty-plus releases,
           from 2010-2021. Deep listening yields deep results.
         </p>
         <CompleteDiscog />
