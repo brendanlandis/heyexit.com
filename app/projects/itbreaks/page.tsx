@@ -33,6 +33,7 @@ export default function ItBreaksPage() {
           </p>
           <Gigography band="It Breaks" displayImages={false} shortList={true} />
           <SingleRelease id="d001u3hv85kt3p0v9sgtku22" position="left" />
+          <SingleRelease id="q3w3nyz29tkneiqjfkeqrsf8" position="left" />
         </div>
       </div>
     </>

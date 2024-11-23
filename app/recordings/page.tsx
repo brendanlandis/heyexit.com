@@ -14,10 +14,23 @@ export default function Recordings() {
         <div className="header-container">
           <h1>Selected Discography</h1>
         </div>
+        <p className="header-text">
+          Hey Exit produced a <em>lot</em> of music over the years. These albums
+          are the best starting points. Note that, being the type of music that
+          it is, most of these recordings work best when heard as a complete
+          album from start to finish. Listening on random or in a playlist will
+          mostly sound frustrating and unpleasant, or will simply pass you by
+          like nothing at all &mdash; which is fine I guess, but then why
+          bother?
+        </p>
         <SelectedDiscog />
         <div className="header-container">
           <h2>Complete Discography</h2>
         </div>
+        <p className="header-text">
+          For a more extensive listen, here's the entire catalog of forty six releases,
+          from 2010-2021. Deep listening yields deep results.
+        </p>
         <CompleteDiscog />
       </div>
     </>

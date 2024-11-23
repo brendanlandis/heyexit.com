@@ -20,11 +20,11 @@ export default function Home() {
           <div className="about">
             <p>
               Hey Exit was my solo music project from 2009-2021. It was mostly
-              me, but also involved a bunch of my friends at different points.
-              This site is an archive for Hey Exit's recordings, shows, press,
-              and related projects.
+              me (Brendan), but also involved a number of my friends at
+              different points. This site is an archive for Hey Exit's
+              recordings, shows, press, and related projects.
             </p>
-            <p className='disclaimer'>
+            <p className="disclaimer">
               (It feels a little weird to be make such an involved and thorough
               archive of my old noise music, but on the other hand, it{' '}
               <em>was</em> over ten years of my life, and I believe very
@@ -96,14 +96,15 @@ export default function Home() {
             <p>
               Some of the creative threads explored throughout the Hey Exit
               catalog went on to become their own projects. These, as well as
-              several collaborative projects I played in aroud the same time,
-              are detailed on the <Link href="/projects">related projects</Link>{' '}
+              several collaborative projects from aroud the same time, are
+              detailed on the <Link href="/projects">related projects</Link>{' '}
               page.
             </p>
             <p>
-              After forty five releases and one or two hundred shows, Hey Exit
-              is retired for the foreseeable future. Active projects are linked
-              from the <Link href="/current">current projects</Link> page.
+              After forty-plus releases and one or two hundred shows, Hey Exit
+              is retired for the foreseeable future. I still play a lot of
+              music; active projects are linked from the{' '}
+              <Link href="/current">current projects</Link> page.
             </p>
 
             <p>

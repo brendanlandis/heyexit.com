@@ -8,13 +8,14 @@
 .project-summaries {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2em;
+  gap: 0;
   > a {
     display: grid;
     gap: 2em;
     align-items: center;
     width: 65%;
     margin: 0 auto;
+    max-height: 150px;
     &:nth-child(even) {
       grid-template-columns: 250px 1fr;
       grid-template-areas: 'image text';
@@ -67,8 +68,11 @@
         opacity: 0;
       }
       img {
-        filter: grayscale(0) brightness(0.7);
+        filter: none;
       }
+    }
+    &:a {
+      margin-top: -20em;
     }
   }
 }
@@ -86,7 +90,7 @@
 
 /* project detail page */
 
-.content-projects {
+.content-projects:not(.generic-container) {
   .header-container {
     position: relative;
     margin-bottom: 2em;

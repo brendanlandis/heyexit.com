@@ -11,15 +11,16 @@ export const metadata = {
 export default function Projects() {
   return (
     <>
-      <div className="content-projects">
+      <div className="content-projects generic-container">
         <div className="header-container">
           <h1>Related Projects</h1>
         </div>
         <p className="header-text">
-          As is standard fare for very active noise projects, there was a{' '}
-          <em>lot</em> of music tangential to Hey Exit. Some of these projects
-          are still active to some degree; others spontaneously grow a new limb
-          every few years; still others are probably down for the count.
+          As is standard fare for very active noise projects, there was a lot of
+          music tangential to Hey Exit, plus a lot of collaborative projects
+          with friends. Some of these projects are still active to some degree;
+          others spontaneously grow a new limb every few years; still others are
+          probably down for the count.
         </p>
         <div className="project-summaries">
           <Link href="/projects/anura" className="project-summary-anura">
@@ -35,8 +36,9 @@ export default function Projects() {
             <div className="text">
               <p>
                 <em>Anura</em> is a downer pop, loud-but-soft songwriting
-                project. Heartfelt lyrics washed out between drum machines,
-                guitars, and synths.
+                project, and was my path into the traditional popular forms that
+                I've been exploring since. Washed out vocals over drum machines,
+                guitars, and synths, very bedroom'd-out.
               </p>
             </div>
           </Link>
@@ -56,7 +58,9 @@ export default function Projects() {
             <div className="text">
               <p>
                 <em>Advection</em> is a solo electronic music affair, leaning
-                towards ambient and downtempo headphone beats.
+                towards ambient and downtempo headphone beats. Laptop music was
+                a first love of mine in the late 90s, and it remains some of my
+                favorite music to make.
               </p>
             </div>
           </Link>
@@ -72,7 +76,11 @@ export default function Projects() {
             </div>
             <div className="text">
               <p>
-                <em>Tethers</em> is an instrumental duo with Andrew Weathers.
+                <em>Tethers</em> is an instrumental project with the supreme
+                dude Andrew Weathers (Tamarisk, Wind Tide). What started as a
+                spare, spikey instrumental duo turned gradually into something
+                more mountainous and expansive, sometimes a glacier, other times
+                a distant cloud.
               </p>
             </div>
           </Link>
@@ -91,9 +99,10 @@ export default function Projects() {
             </div>
             <div className="text">
               <p>
-                <em>Big Hiatus</em> is a sometimes-hazy-sometimes-sharp psych
-                journey between nothing and nowhere. A duo with David Drucker
-                (Painted Faces, Bad Trips).
+                <em>Big Hiatus</em> is a hazy-but-sharp psych journey between
+                nothing and nowhere. A duo with David Drucker (Painted Faces,
+                Bad Trips), a spiritual brother and absolute hero of underground
+                music.
               </p>
             </div>
           </Link>
@@ -112,8 +121,11 @@ export default function Projects() {
             </div>
             <div className="text">
               <p>
-                <em>Esther Chlorine</em> is an industrial music / murky dark
-                ambient project, a duo with Greg Garbage.
+                <em>Esther Chlorine</em> is an industrial / murky dark ambient
+                project, a duo with Bay Area legend and major homie Greg Garbage
+                (Black Thread, Vibrating Garbage, Birds You Once Knew, Turmeric
+                Magnitudes, Cascading Fragments, Unless, Rose Buried in Sand,
+                Von Himmel, Spitting Falcons, Wires &amp; Relays, et. al.).
               </p>
             </div>
           </Link>
@@ -130,7 +142,8 @@ export default function Projects() {
             <div className="text">
               <p>
                 <em>It Breaks</em> was a high-speed acoustic harsh noise trio
-                with David Grollman and Lucio Menegon.
+                with creative powerhouse David Grollman (aka Steve) and
+                unflinching mondo shredder Lucio Menegon.
               </p>
             </div>
           </Link>
@@ -149,9 +162,12 @@ export default function Projects() {
             </div>
             <div className="text">
               <p>
-                <em>Rough Weather</em> was an electroacoustic / free improv
-                project, a duo between Eric Schoster's live computer music and
-                my rocks-and-sticks approach to prepared guitar.
+                <em>Rough Weather</em> was an electroacoustic / free improv duo
+                with computer music standard-bearer and rad dude Eric Schoster.
+                A bit of a Jetsons-Meet-the-Flinstones affair in terms of
+                instruments, the project juxtaposed Schoster's live computer
+                music with my rocks-and-sticks approach to prepared guitar and
+                amplified objects.
               </p>
             </div>
           </Link>
