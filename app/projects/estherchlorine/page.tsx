@@ -25,17 +25,56 @@ export default function EstherChlorinePage() {
           <h1>Esther Chlorine</h1>
         </div>
         <div className="project-content">
-          <p>Estherrrrr</p>
-          <Gigography
-            band="Esther Chlorine"
-            displayImages={false}
-            shortList={true}
-          />
-          <SingleRelease id="hk2qknpq4nzztqaygnw3ih2k" position="left" />
-          <SingleRelease id="ws9zwt1fzbhaalm9lgeoa6zb" position="left" />
-          <SingleRelease id="oeikprflqcfwvevafodywbze" position="left" />
-          <SingleRelease id="adow7g00osk3dn00j7xlo2rj" position="left" />
-          <SingleRelease id="fvn4a90nryt9inehvguehbo3" position="left" />
+          <div className="project-shows">
+            <h3>shows</h3>
+            <Gigography
+              band="Esther Chlorine"
+              displayImages={false}
+              shortList={true}
+            />
+          </div>
+          <div className="project-release">
+            <div className="project-release-cover">
+              <SingleRelease id="hk2qknpq4nzztqaygnw3ih2k" position="left" />
+              <SingleRelease id="ws9zwt1fzbhaalm9lgeoa6zb" position="left" />
+            </div>
+            <div className="project-release-description">
+              <h3>Retiform &amp; Lapse</h3>
+              <p>
+                fneh asdkfasdhf askhg askljfas faskjh as fneh asdkfasdhf askhg
+                askljfas faskjh as fneh asdkfasdhf askhg askljfas faskjh as fneh
+                asdkfasdhf askhg askljfas faskjh as fneh asdkfasdhf askhg
+                askljfas faskjh as fneh asdk
+              </p>
+            </div>
+          </div>
+          <div className="project-release">
+            <div className="project-release-cover">
+              <SingleRelease id="adow7g00osk3dn00j7xlo2rj" position="left" />
+            </div>
+            <div className="project-release-description">
+              <h3>Penumbra</h3>
+              <p></p>
+            </div>
+          </div>
+          <div className="project-release">
+            <div className="project-release-cover">
+              <SingleRelease id="fvn4a90nryt9inehvguehbo3" position="left" />
+            </div>
+            <div className="project-release-description">
+              <h3>World of Prophecy</h3>
+              <p></p>
+            </div>
+          </div>
+          <div className="project-release">
+            <div className="project-release-cover">
+              <SingleRelease id="oeikprflqcfwvevafodywbze" position="left" />
+            </div>
+            <div className="project-release-description">
+              <h3>split with Dark Spring</h3>
+              <p></p>
+            </div>
+          </div>
         </div>
       </div>
     </>

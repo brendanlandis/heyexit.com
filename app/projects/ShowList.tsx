@@ -22,7 +22,7 @@ export default function ShowList({
           : '';
         return (
           <li key={show.id}>
-            <span className="show-date">{format(show.date, 'LL/ii/yy')}</span>{' '}
+            <span className="show-date">{format(show.date, 'LL/dd/yy')}</span>{' '}
             {shortList ? null : (
               <>
                 <span className="show-band">

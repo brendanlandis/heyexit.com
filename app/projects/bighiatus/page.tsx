@@ -25,19 +25,24 @@ export default function BigHiatusPage() {
           <h1>Big Hiatus</h1>
         </div>
         <div className="project-content">
-          <p>
-            Big Hiatus? Definitely a band. Big Hiatus? Definitely a band. Big
-            Hiatus? Definitely a band. Big Hiatus? Definitely a band. Big
-            Hiatus? Definitely a band. Big Hiatus? Definitely a band. Big
-            Hiatus? Definitely a band. Big Hiatus? Definitely a band. Big
-            Hiatus? Definitely a band.
-          </p>
-          <Gigography
-            band="Big Hiatus"
-            displayImages={false}
-            shortList={true}
-          />
-          <SingleRelease id="mukz8w9810tle26oc0kwld3h" position="left" />
+          <div className="project-shows">
+            <h3>shows</h3>
+            <Gigography band="Big Hiatus" displayImages={false} shortList={true} />
+          </div>
+          <div className="project-release">
+            <div className="project-release-cover">
+              <SingleRelease id="mukz8w9810tle26oc0kwld3h" position="left" />
+            </div>
+            <div className="project-release-description">
+              <h3>Towards It</h3>
+              <p>
+                fneh asdkfasdhf askhg askljfas faskjh as fneh asdkfasdhf askhg
+                askljfas faskjh as fneh asdkfasdhf askhg askljfas faskjh as fneh
+                asdkfasdhf askhg askljfas faskjh as fneh asdkfasdhf askhg
+                askljfas faskjh as fneh asdk
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </>

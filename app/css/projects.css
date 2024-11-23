@@ -178,7 +178,6 @@
 .project-release {
   display: grid;
   gap: 1em;
-  clear: both;
   grid-template-areas: 'cover description';
   grid-template-columns: 24% 1fr;
   .project-release-cover {

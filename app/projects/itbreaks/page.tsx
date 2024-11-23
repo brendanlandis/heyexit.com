@@ -25,15 +25,37 @@ export default function ItBreaksPage() {
           <h1>It Breaks</h1>
         </div>
         <div className="project-content">
-          <p>
-            It Breakszzzzzzzzz. It Breakszzzzzzzzz. It Breakszzzzzzzzz. It
-            Breakszzzzzzzzz. It Breakszzzzzzzzz. It Breakszzzzzzzzz. It
-            Breakszzzzzzzzz. It Breakszzzzzzzzz. It Breakszzzzzzzzz. It
-            Breakszzzzzzzzz.{' '}
-          </p>
-          <Gigography band="It Breaks" displayImages={false} shortList={true} />
-          <SingleRelease id="d001u3hv85kt3p0v9sgtku22" position="left" />
-          <SingleRelease id="q3w3nyz29tkneiqjfkeqrsf8" position="left" />
+          <div className="project-shows">
+            <h3>shows</h3>
+            <Gigography
+              band="It Breaks"
+              displayImages={false}
+              shortList={true}
+            />
+          </div>
+          <div className="project-release">
+            <div className="project-release-cover">
+              <SingleRelease id="d001u3hv85kt3p0v9sgtku22" position="left" />
+            </div>
+            <div className="project-release-description">
+              <h3>It Breaks</h3>
+              <p>
+                fneh asdkfasdhf askhg askljfas faskjh as fneh asdkfasdhf askhg
+                askljfas faskjh as fneh asdkfasdhf askhg askljfas faskjh as fneh
+                asdkfasdhf askhg askljfas faskjh as fneh asdkfasdhf askhg
+                askljfas faskjh as fneh asdk
+              </p>
+            </div>
+          </div>
+          <div className="project-release">
+            <div className="project-release-cover">
+              <SingleRelease id="q3w3nyz29tkneiqjfkeqrsf8" position="left" />
+            </div>
+            <div className="project-release-description">
+              <h3>David Grollman + Hey Exit - Steve/Steve</h3>
+              <p></p>
+            </div>
+          </div>
         </div>
       </div>
     </>

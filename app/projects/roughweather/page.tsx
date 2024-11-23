@@ -20,25 +20,29 @@ export default function RoughWeatherPage() {
             src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/110407_Rough_Weather_La_Paloma_Coffee_House_unknown_03_985188befd.jpg"
             height={2048}
             width={2048}
-            alt="photo of Big Hiatus"
+            alt="photo of Rough Weather"
           />
           <h1>Rough Weather</h1>
         </div>
         <div className="project-content">
-          <p>
-            Some pretty rough weather wouldn't you say Some pretty rough weather
-            wouldn't you say Some pretty rough weather wouldn't you say Some
-            pretty rough weather wouldn't you say Some pretty rough weather
-            wouldn't you say Some pretty rough weather wouldn't you say Some
-            pretty rough weather wouldn't you say Some pretty rough weather
-            wouldn't you say
-          </p>
-          <Gigography
-            band="Rough Weather"
-            displayImages={false}
-            shortList={true}
-          />
-          <SingleRelease id="spc4uk5ka4pwm37kizm9c1lc" position="left" />
+          <div className="project-shows">
+            <h3>shows</h3>
+            <Gigography band="Rough Weather" displayImages={false} shortList={true} />
+          </div>
+          <div className="project-release">
+            <div className="project-release-cover">
+            <SingleRelease id="spc4uk5ka4pwm37kizm9c1lc" position="left" />
+            </div>
+            <div className="project-release-description">
+              <h3>Area</h3>
+              <p>
+                fneh asdkfasdhf askhg askljfas faskjh as fneh asdkfasdhf askhg
+                askljfas faskjh as fneh asdkfasdhf askhg askljfas faskjh as fneh
+                asdkfasdhf askhg askljfas faskjh as fneh asdkfasdhf askhg
+                askljfas faskjh as fneh asdk
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </>
