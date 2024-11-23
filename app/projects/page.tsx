@@ -37,8 +37,8 @@ export default function Projects() {
               <p>
                 <em>Anura</em> is a downer pop, loud-but-soft songwriting
                 project, and was my path into the traditional popular forms that
-                I've been exploring since. Washed out vocals over drum machines,
-                guitars, and synths, very bedroom'd-out.
+                I've been exploring with various bands since. Washed out vocals
+                over drum machines, guitars, and synths, very bedroom'd-out.
               </p>
             </div>
           </Link>
