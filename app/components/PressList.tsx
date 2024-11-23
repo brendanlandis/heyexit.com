@@ -3,6 +3,7 @@ import { Press } from '../types';
 import useAxios from 'axios-hooks';
 import { Fragment } from 'react';
 import Link from 'next/link';
+import getNormalizedTitle from './getNormalizedTitle';
 
 const shuffleArray = (array: any[]) => {
   for (let i = array.length - 1; i > 0; i--) {
@@ -35,7 +36,7 @@ export default function PressList() {
                   {press.publication}
                 </Link>{' '}
                 on{' '}
-                <Link href="https://heyexit.com/">
+                <Link href={`/recordings/${getNormalizedTitle(press.recordings[0].title)}`}>
                   <em>{press.recordings[0].title}</em>
                 </Link>
               </>
@@ -47,7 +48,7 @@ export default function PressList() {
                     {press.publication}
                   </Link>{' '}
                   on{' '}
-                  <Link href="https://heyexit.com/">
+                  <Link href={`/recordings/${getNormalizedTitle(press.recordings[0].title)}`}>
                     <em>{press.recordings[0].title}</em>
                   </Link>
                 </Fragment>
@@ -55,7 +56,7 @@ export default function PressList() {
             ) : (
               <>
                 <span className="press-publication">&mdash;{press.publication}</span> on{' '}
-                <Link href="https://heyexit.com/">
+                <Link href={`/recordings/${getNormalizedTitle(press.recordings[0].title)}`}>
                   <em>{press.recordings[0].title}</em>
                 </Link>
               </>

@@ -19,11 +19,18 @@ export default function Home() {
         <div>
           <div className="about">
             <p>
-              Hey Exit was an active musical project from 2009-2021. It was
-              mainly my solo project, but also involved a bunch of my friends at
-              different points. This site is an archive for Hey Exit's
-              recordings and live shows. There's a lot of different stuff here,
-              so feel free to wander through.
+              Hey Exit was my solo music project from 2009-2021. It was mostly
+              me, but also involved a bunch of my friends at different points.
+              This site is an archive for Hey Exit's recordings, shows, press,
+              and related projects.
+            </p>
+            <p className='disclaimer'>
+              (It feels a little weird to be make such an involved and thorough
+              archive of my old noise music, but on the other hand, it{' '}
+              <em>was</em> over ten years of my life, and I believe very
+              strongly in using the web this way &mdash; for documenting
+              underground culture and the arts, relatively unmediated by
+              corporations. Plus, I still like most of the music.)
             </p>
             <RandomPic />
             <p>
@@ -87,16 +94,16 @@ export default function Home() {
               .
             </p>
             <p>
-              Many of the creative threads explored throughout the Hey Exit
+              Some of the creative threads explored throughout the Hey Exit
               catalog went on to become their own projects. These, as well as
-              several noise bands Brendan played in aroud the same time, are
-              detailed on the{' '}
-              <Link href="https://heyexit.com/">related projects</Link> page.
+              several collaborative projects I played in aroud the same time,
+              are detailed on the <Link href="/projects">related projects</Link>{' '}
+              page.
             </p>
             <p>
               After forty five releases and one or two hundred shows, Hey Exit
               is retired for the foreseeable future. Active projects are linked
-              from the <Link href="https://heyexit.com/">current</Link> page.
+              from the <Link href="/current">current projects</Link> page.
             </p>
 
             <p>
