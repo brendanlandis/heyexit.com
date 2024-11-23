@@ -129,6 +129,14 @@ export interface Show {
     documentId: string;
     caption: string;
   }>;
+  related: Array <{
+    __type: string;
+    id: number;
+    publishedAt: Date;
+    date: Date;
+    venue: string;
+    city: string;
+  }>;
 }
 
 export interface Shoot {
