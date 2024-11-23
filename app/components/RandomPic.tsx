@@ -37,13 +37,17 @@ export default function RandomPic() {
     (entry: any) =>
       entry.__type === 'api::show.show' && entry.publishedAt !== null
   );
-  const year = format(show.date, 'yyyy');
-  const city = show.city.replace(/,/g, '');
+  const shoot = randomMedia.related.find(
+    (entry: any) =>
+      entry.__type === 'api::shoot.shoot' && entry.publishedAt !== null
+  );
+  const year = format(show?.date || shoot?.date, 'yyyy');
+  const city = show?.city ? `${show.city.replace(/,/g, '')}, ` : null;
   const credit =
     randomMedia.alternativeText === 'unknown' ? (
       <>
         Photo credit unknown -{' '}
-        <Obfuscate email="b@slownames.net" aria-label="Email Me">
+        <Obfuscate email="b@slownames.net" aria-label="email me">
           lmk?
         </Obfuscate>
       </>
@@ -68,7 +72,7 @@ export default function RandomPic() {
             priority
           />
           <div className="random-image-caption">
-            {city}, {year}. {credit}
+            {city ? city : null} {year}. {credit}
           </div>
           {/* </Link> */}
         </div>

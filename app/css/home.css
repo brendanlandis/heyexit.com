@@ -95,6 +95,7 @@
     font-size: 0.7em;
     text-align: right;
     margin: 0;
+    text-transform: lowercase;
     a {
       letter-spacing: initial;
     }
