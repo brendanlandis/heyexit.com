@@ -1,7 +1,10 @@
 .content-current {
   .band-list {
-    display: flex;
+    display: grid;
     gap: 3em;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr;
   }
   
 }

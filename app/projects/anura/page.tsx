@@ -36,7 +36,13 @@ export default function AnuraPage() {
             </div>
             <div className="project-release-description">
               <h3>Deluge</h3>
-              <p>This was really the main release for this project.</p>
+              <p>
+                This was really the main release for this project.This was
+                really the main release for this project.This was really the
+                main release for this project.This was really the main release
+                for this project.This was really the main release for this
+                project.
+              </p>
             </div>
           </div>
 

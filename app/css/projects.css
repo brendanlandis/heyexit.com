@@ -176,15 +176,25 @@
 }
 
 .project-release {
-  display: grid;
-  gap: 1em;
-  grid-template-areas: 'cover description';
-  grid-template-columns: 24% 1fr;
+  clear: left;
+  & + .project-release {
+    padding-top: 3em;
+  }
   .project-release-cover {
-    grid-area: cover;
+    float: left;
+    max-width: 250px;
+    max-height: 250px;
+    aspect-ratio: 1;
+    margin-right: 1em;
+    margin-bottom: 0em;
     &:has(.recording + .recording) {
+      aspect-ratio: 2;
       display: grid;
+      gap: 1em;
       grid-template-columns: 1fr 1fr;
+    }
+    .recording {
+      aspect-ratio: 1;
     }
   }
   .project-release-description {
