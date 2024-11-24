@@ -36,10 +36,7 @@ export default function RoughWeatherPage() {
             <div className="project-release-description">
               <h3>Area</h3>
               <p>
-                fneh asdkfasdhf askhg askljfas faskjh as fneh asdkfasdhf askhg
-                askljfas faskjh as fneh asdkfasdhf askhg askljfas faskjh as fneh
-                asdkfasdhf askhg askljfas faskjh as fneh asdkfasdhf askhg
-                askljfas faskjh as fneh asdk
+                fneh
               </p>
             </div>
           </div>

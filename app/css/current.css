@@ -5,6 +5,10 @@
     align-items: center;
     justify-content: center;
     grid-template-columns: 1fr;
+    img {
+      max-width: 768px;
+      margin: 0 auto 1em auto;
+    }
   }
   
 }

@@ -1,4 +1,7 @@
 .content-projects {
+  h1 {
+    color: #fff;
+  }
   .band-list-container {
     container-name: related-container;
     container-type: inline-size;
@@ -177,6 +180,9 @@
 
 .project-release {
   clear: left;
+  h3 {
+    @apply font-lofi;
+  }
   & + .project-release {
     padding-top: 3em;
   }

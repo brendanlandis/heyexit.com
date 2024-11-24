@@ -24,6 +24,15 @@ export default function Current() {
                 height={1024}
               />
             </Link>
+            <p>
+              Glifter is blah blah ablaasfas sadifhasihflajsd asdjofal jdsjl
+              Glifter is blah blah ablaasfas sadifhasihflajsd asdjofal jdsjl
+              Glifter is blah blah ablaasfas sadifhasihflajsd asdjofal jdsjl
+              Glifter is blah blah ablaasfas sadifhasihflajsd asdjofal jdsjl
+              Glifter is blah blah ablaasfas sadifhasihflajsd asdjofal jdsjl
+              Glifter is blah blah ablaasfas sadifhasihflajsd asdjofal jdsjl
+              Glifter is blah blah ablaasfas sadifhasihflajsd asdjofal jdsjl{' '}
+            </p>
           </li>
           <li>
             <Link href="https://receive.blue/">
