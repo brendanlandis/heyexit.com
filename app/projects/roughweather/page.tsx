@@ -25,21 +25,15 @@ export default function RoughWeatherPage() {
           <h1>Rough Weather</h1>
         </div>
         <div className="project-content">
-          <div className="project-shows">
-            <h3>shows</h3>
-            <Gigography band="Rough Weather" displayImages={false} shortList={true} />
-          </div>
-          <div className="project-release">
-            <div className="project-release-cover">
-            <SingleRelease id="spc4uk5ka4pwm37kizm9c1lc" position="left" />
-            </div>
-            <div className="project-release-description">
-              <h3>Area</h3>
-              <p>
-                fneh
-              </p>
-            </div>
-          </div>
+          <Gigography
+            band="Rough Weather"
+            displayImages={false}
+            shortList={true}
+          />
+          <SingleRelease id="spc4uk5ka4pwm37kizm9c1lc">
+            <p>hello one</p>
+            <p>two</p>
+          </SingleRelease>
         </div>
       </div>
     </>

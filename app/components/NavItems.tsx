@@ -10,71 +10,156 @@ export default function NavItems() {
     ) as HTMLInputElement;
     if (drawerCheckbox) drawerCheckbox.checked = false;
   };
+
+  // handle menu's active state
+  const activePage = () => {
+    // special cases for recordings by artists other than Hey Exit
+    if (
+      pathname === '/recordings/deluge' ||
+      pathname === '/recordings/a-clearing-ep' ||
+      pathname === '/recordings/deluge-ep' ||
+      pathname === '/recordings/folds-ep' ||
+      pathname === '/recordings/audiobulb-plays-he-can-jog-vol-2'
+    ) {
+      return 'projectsAnura';
+    }
+    if (
+      pathname === '/recordings/stairs-ep' ||
+      pathname === '/recordings/arterial' ||
+      pathname === '/recordings/teen-trax-lp' ||
+      pathname === '/recordings/teen-trax-ep-1-lo' ||
+      pathname === '/recordings/teen-trax-ep-2-hi'
+    ) {
+      return 'projectsAdvection';
+    }
+    if (
+      pathname === '/recordings/it-bows-by-day' ||
+      pathname === '/recordings/fur-alina' ||
+      pathname === '/recordings/we-walked-there' ||
+      pathname === '/recordings/yeah-we-get-along' ||
+      pathname === '/recordings/two-remixes'
+    ) {
+      return 'projectsTethers';
+    }
+    if (pathname === '/recordings/towards-it') {
+      return 'projectsBigHiatus';
+    }
+    if (
+      pathname === '/recordings/retiform' ||
+      pathname === '/recordings/lapse' ||
+      pathname === '/recordings/penumbra' ||
+      pathname === '/recordings/world-of-prophecy' ||
+      pathname === '/recordings/split-with-dark-spring'
+    ) {
+      return 'projectsEstherChlorine';
+    }
+    if (pathname === '/recordings/it-breaks') {
+      return 'projectsItBreaks';
+    }
+    if (pathname === '/recordings/area') {
+      return 'projectsRoughWeather';
+    }
+
+    // other recordings
+    if (pathname.startsWith('/recordings/')) {
+      return 'recordings';
+    }
+
+    // options in the actual menu
+    switch (pathname) {
+      case '/':
+        return 'home';
+      case '/recordings':
+        return 'recordings';
+      case '/shows':
+        return 'shows';
+      case '/projects':
+        return 'projects';
+      case '/projects/anura':
+        return 'projectsAnura';
+      case '/projects/advection':
+        return 'projectsAdvection';
+      case '/projects/tethers':
+        return 'projectsTethers';
+      case '/projects/bighiatus':
+        return 'projectsBigHiatus';
+      case '/projects/estherchlorine':
+        return 'projectsEstherChlorine';
+      case '/projects/itbreaks':
+        return 'projectsItBreaks';
+      case '/projects/roughweather':
+        return 'projectsRoughWeather';
+      case '/current':
+        return 'current';
+      default:
+        return null;
+    }
+  };
+
   return (
     <>
-      <li className={pathname === '/' ? 'active' : ''} onClick={closeDrawer}>
+      <li
+        className={activePage() === 'home' ? 'active' : ''}
+        onClick={closeDrawer}
+      >
         <Link href="/">hello</Link>
       </li>
       <li
-        className={pathname.includes('/recordings') ? 'active' : ''}
+        className={activePage() === 'recordings' ? 'active' : ''}
         onClick={closeDrawer}
       >
         <Link href="/recordings">recordings</Link>
       </li>
       <li
-        className={pathname === '/shows' ? 'active' : ''}
+        className={activePage() === 'shows' ? 'active' : ''}
         onClick={closeDrawer}
       >
         <Link href="/shows">shows</Link>
       </li>
       <li
-        className={pathname.includes('/projects') ? 'active' : ''}
+        className={activePage()?.includes('projects') ? 'active' : ''}
         onClick={closeDrawer}
       >
         <Link href="/projects">related projects</Link>
         <ul className="subnav">
           <li
-            className={pathname.includes('/projects/anura') ? 'active' : ''}
+            className={activePage()?.includes('Anura') ? 'active' : ''}
             onClick={closeDrawer}
           >
             <Link href="/projects/anura">Anura</Link>
           </li>
           <li
-            className={pathname.includes('/projects/advection') ? 'active' : ''}
+            className={activePage()?.includes('Advection') ? 'active' : ''}
             onClick={closeDrawer}
           >
             <Link href="/projects/advection">Advection</Link>
           </li>
           <li
-            className={pathname.includes('/projects/tethers') ? 'active' : ''}
+            className={activePage()?.includes('Tethers') ? 'active' : ''}
             onClick={closeDrawer}
           >
             <Link href="/projects/tethers">Tethers</Link>
           </li>
           <li
-            className={pathname.includes('/projects/bighiatus') ? 'active' : ''}
+            className={activePage()?.includes('BigHiatus') ? 'active' : ''}
             onClick={closeDrawer}
           >
             <Link href="/projects/bighiatus">Big Hiatus</Link>
           </li>
           <li
-            className={
-              pathname.includes('/projects/estherchlorine') ? 'active' : ''
-            }
+            className={activePage()?.includes('EstherChlorine') ? 'active' : ''}
             onClick={closeDrawer}
           >
             <Link href="/projects/estherchlorine">Esther Chlorine</Link>
           </li>
           <li
-            className={pathname.includes('/projects/itbreaks') ? 'active' : ''}
+            className={activePage()?.includes('ItBreaks') ? 'active' : ''}
             onClick={closeDrawer}
           >
             <Link href="/projects/itbreaks">It Breaks</Link>
           </li>
           <li
-            className={
-              pathname.includes('/projects/roughweather') ? 'active' : ''
-            }
+            className={activePage()?.includes('RoughWeather') ? 'active' : ''}
             onClick={closeDrawer}
           >
             <Link href="/projects/roughweather">Rough Weather</Link>
@@ -82,7 +167,7 @@ export default function NavItems() {
         </ul>
       </li>
       <li
-        className={pathname === '/current' ? 'active' : ''}
+        className={activePage() === 'current' ? 'active' : ''}
         onClick={closeDrawer}
       >
         <Link href="/current">current projects</Link>

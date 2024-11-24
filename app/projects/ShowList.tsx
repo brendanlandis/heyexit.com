@@ -12,13 +12,15 @@ export default function ShowList({
     <ul className="shows-text">
       {shows.map((show) => {
         const showWhere = shortList
-          ? `at ${show.venue}, ${show.city}`
+          ? show.city
+            ? `- ${show.city} - ${show.venue}`
+            : `- ${show.venue}`
           : show.showName
           ? show.venue && show.venue !== 'unknown'
-            ? `at ${show.showName} (held at ${show.venue} in ${show.city})`
-            : `at ${show.showName}`
+            ? `- ${show.showName} - ${show.city}, ${show.venue}`
+            : `- ${show.showName}`
           : show.venue && show.venue !== 'unknown'
-          ? `at ${show.venue}, ${show.city}`
+          ? `- ${show.city} - ${show.venue}`
           : '';
         return (
           <li key={show.id}>

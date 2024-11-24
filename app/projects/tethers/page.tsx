@@ -24,69 +24,16 @@ export default function TethersPage() {
           <h1>Tethers</h1>
         </div>
         <div className="project-content">
-          <div className="project-shows">
-            <h3>shows</h3>
-            <Gigography band="Tethers" displayImages={false} shortList={true} />
-          </div>
-          <div className="project-release">
-            <div className="project-release-cover">
-              <SingleRelease id="dsl01ulm53esw6mnyqdsyrx9" position="left" />
-            </div>
-            <div className="project-release-description">
-              <h3>It Bows By Day</h3>
-              <p>
-                fneh asdkfasdhf askhg askljfas faskjh as fneh asdkfasdhf askhg
-                askljfas faskjh as fneh asdkfasdhf askhg askljfas faskjh as fneh
-                asdkfasdhf askhg askljfas faskjh as fneh asdkfasdhf askhg
-                askljfas faskjh as fneh asdk
-              </p>
-            </div>
-          </div>
-          <div className="project-release">
-            <div className="project-release-cover">
-              <SingleRelease id="y2e8v4phxa3udlwqok212zzy" position="left" />
-            </div>
-            <div className="project-release-description">
-              <h3>F&uuml;r Alina</h3>
-              <p></p>
-            </div>
-          </div>
-          <div className="project-release">
-            <div className="project-release-cover">
-              <SingleRelease id="j304fh1m8e4tstpf39b9s8vv" position="left" />
-            </div>
-            <div className="project-release-description">
-              <h3>Hey Exit - Reading a Moment's Dust</h3>
-              <p></p>
-            </div>
-          </div>
-          <div className="project-release">
-            <div className="project-release-cover">
-              <SingleRelease id="xcfr9c0qbpc4k63hylvu2vsn" position="left" />
-            </div>
-            <div className="project-release-description">
-              <h3>We Walked There</h3>
-              <p></p>
-            </div>
-          </div>
-          <div className="project-release">
-            <div className="project-release-cover">
-              <SingleRelease id="n5pb9a3o9n0l34tbdq9y6irs" position="left" />
-            </div>
-            <div className="project-release-description">
-              <h3>Yeah We Get Along</h3>
-              <p></p>
-            </div>
-          </div>
-          <div className="project-release">
-            <div className="project-release-cover">
-              <SingleRelease id="wa7m70wnx20ciulexs5elr6b" position="left" />
-            </div>
-            <div className="project-release-description">
-              <h3>Two Remixes</h3>
-              <p></p>
-            </div>
-          </div>
+          <Gigography band="Tethers" displayImages={false} shortList={true} />
+
+          <SingleRelease id="dsl01ulm53esw6mnyqdsyrx9">asdf</SingleRelease>
+          <SingleRelease id="y2e8v4phxa3udlwqok212zzy">asdf</SingleRelease>
+          <h2>honorable mention</h2>
+          <SingleRelease id="j304fh1m8e4tstpf39b9s8vv">asdf</SingleRelease>
+          <h2>older stuff</h2>
+          <SingleRelease id="xcfr9c0qbpc4k63hylvu2vsn">asdf</SingleRelease>
+          <SingleRelease id="n5pb9a3o9n0l34tbdq9y6irs">asdf</SingleRelease>
+          <SingleRelease id="wa7m70wnx20ciulexs5elr6b">asdf</SingleRelease>
         </div>
       </div>
     </>

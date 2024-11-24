@@ -23,57 +23,14 @@ export default function AdvectionPage() {
           <h1>Advection</h1>
         </div>
         <div className="project-content">
-          <div className="project-release">
-            <div className="project-release-cover">
-              <SingleRelease id="vymkfdtzdzrbawkmwzt8ws17" position="left" />
-            </div>
-            <div className="project-release-description">
-              <h3>Stairs EP</h3>
-              <p>zzzzz</p>
-            </div>
-          </div>
-          <div className="project-release">
-            <div className="project-release-cover">
-              <SingleRelease id="gqczm6y6moxvwux1y9qb70ww" position="left" />
-            </div>
-            <div className="project-release-description">
-              <h3>Arterial</h3>
-              <p>
-                zzzzz asd asd ga g a azzzzz asd asd ga g a azzzzz asd asd ga g a
-                azzzzz asd asd ga g a azzzzz asd asd ga g a azzzzz asd asd ga g
-                a azzzzz asd asd ga g a azzzzz asd asd ga g a azzzzz asd asd ga
-                g a azzzzz asd asd ga g a azzzzz asd asd ga g a a
-              </p>
-            </div>
-          </div>
-          <div className="project-release">
-            <div className="project-release-cover">
-              <SingleRelease id="lf6b1e7ke7zze04rhif3ojwl" position="left" />
-            </div>
-            <div className="project-release-description">
-              <h3>Hey Exit - Advection</h3>
-              <p>zzzzz</p>
-            </div>
-          </div>
-          <div className="project-release">
-            <div className="project-release-cover">
-              <SingleRelease id="ygzpy9i783j4q4ziy7ctimkb" position="left" />
-            </div>
-            <div className="project-release-description">
-              <h3>Teen Trax LP</h3>
-              <p>zzzzz</p>
-            </div>
-          </div>
-          <div className="project-release">
-            <div className="project-release-cover">
-              <SingleRelease id="bwpl69xzd4hd4qlyvrr2755o" position="left" />
-              <SingleRelease id="r02cjr0zz5de4tgqbw0biyke" position="left" />
-            </div>
-            <div className="project-release-description">
-              <h3>Teen Trax EPs 1 (lo) &amp; 2 (hi)</h3>
-              <p>zzzzz</p>
-            </div>
-          </div>
+          <SingleRelease id="vymkfdtzdzrbawkmwzt8ws17">asdf</SingleRelease>
+          <SingleRelease id="gqczm6y6moxvwux1y9qb70ww">asdf</SingleRelease>
+          <h2>precursors</h2>
+          <SingleRelease id="lf6b1e7ke7zze04rhif3ojwl">asdf</SingleRelease>
+          <h2>extreme precursors</h2>
+          <SingleRelease id="ygzpy9i783j4q4ziy7ctimkb">asdf</SingleRelease>
+          <SingleRelease id="bwpl69xzd4hd4qlyvrr2755o">asdf</SingleRelease>
+          <SingleRelease id="r02cjr0zz5de4tgqbw0biyke">asdf</SingleRelease>
         </div>
       </div>
     </>
