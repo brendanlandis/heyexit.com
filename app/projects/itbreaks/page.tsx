@@ -25,6 +25,11 @@ export default function ItBreaksPage() {
           <h1>It Breaks</h1>
         </div>
         <div className="project-content">
+          <p className="project-intro">
+            A high-speed acoustic harsh noise trio with creative powerhouse
+            David Grollman (aka Steve) and unflinching mondo shredder Lucio
+            Menegon.
+          </p>
           <Gigography band="It Breaks" displayImages={false} shortList={true} />
           <div className="project-releases">
             <SingleRelease id="d001u3hv85kt3p0v9sgtku22" displayArtist={false}>

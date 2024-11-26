@@ -23,6 +23,12 @@ export default function AdvectionPage() {
           <h1>Advection</h1>
         </div>
         <div className="project-content">
+          <p className="project-intro">
+            The requisite electronics side project, leaning towards ambient and
+            downtempo headphone beats. Laptop music was a first love of mine in
+            the late 90s, and even though it's not my main focus any more, it
+            remains some of my favorite music to make.
+          </p>
           <div className="project-releases">
             <SingleRelease id="vymkfdtzdzrbawkmwzt8ws17" displayArtist={false}>
               <p>

@@ -57,10 +57,11 @@ export default function Projects() {
             </div>
             <div className="text">
               <p>
-                <em>Advection</em> is a solo electronic music affair, leaning
-                towards ambient and downtempo headphone beats. Laptop music was
-                a first love of mine in the late 90s, and it remains some of my
-                favorite music to make.
+                <em>Advection</em> is my requisite electronics side project,
+                leaning towards ambient and downtempo headphone beats. Laptop
+                music was a first love of mine in the late 90s, and even though
+                it's not my main focus any more, it remains some of my favorite
+                music to make.
               </p>
             </div>
           </Link>
@@ -76,11 +77,11 @@ export default function Projects() {
             </div>
             <div className="text">
               <p>
-                <em>Tethers</em> is an instrumental project with the supreme
-                dude Andrew Weathers (Tamarisk, Wind Tide). What started as a
-                spare, spikey instrumental duo turned gradually into something
-                more mountainous and expansive, sometimes a glacier, other times
-                a distant cloud.
+                <em>Tethers</em> is an instrumental duo with the supreme dude
+                Andrew Weathers (Tamarisk, Wind Tide). What started as a spare,
+                spikey instrumental duo turned gradually into something more
+                mountainous and expansive, sometimes a glacier, other times a
+                distant cloud.
               </p>
             </div>
           </Link>
@@ -100,9 +101,9 @@ export default function Projects() {
             <div className="text">
               <p>
                 <em>Big Hiatus</em> is a hazy-but-sharp psych journey between
-                nothing and nowhere. A duo with David Drucker (Painted Faces,
-                Bad Trips), a spiritual brother and absolute hero of underground
-                music.
+                nothing and nowhere. A duo with spiritual brother and absolute
+                hero of underground outsider music David Drucker (Painted Faces,
+                Bad Trips).
               </p>
             </div>
           </Link>
@@ -122,8 +123,8 @@ export default function Projects() {
             <div className="text">
               <p>
                 <em>Esther Chlorine</em> is an industrial / murky dark ambient
-                project, a duo with Bay Area legend and major homie Greg Garbage
-                (Black Thread, Vibrating Garbage, Birds You Once Knew, Turmeric
+                duo with Bay Area legend and major homie Greg Garbage (Black
+                Thread, Vibrating Garbage, Birds You Once Knew, Turmeric
                 Magnitudes, Cascading Fragments, Unless, Rose Buried in Sand,
                 Von Himmel, Spitting Falcons, Wires &amp; Relays, et. al.).
               </p>

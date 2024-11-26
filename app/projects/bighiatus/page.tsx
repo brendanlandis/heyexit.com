@@ -25,6 +25,11 @@ export default function BigHiatusPage() {
           <h1>Big Hiatus</h1>
         </div>
         <div className="project-content">
+          <p className="project-intro">
+            A hazy-but-sharp psych journey between nothing and nowhere. A duo
+            with spiritual brother and absolute hero of underground outsider
+            music David Drucker (Painted Faces, Bad Trips).
+          </p>
           <Gigography
             band="Big Hiatus"
             displayImages={false}

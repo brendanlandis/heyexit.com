@@ -24,6 +24,12 @@ export default function TethersPage() {
           <h1>Tethers</h1>
         </div>
         <div className="project-content">
+          <p className="project-intro">
+            An instrumental duo with the supreme dude Andrew Weathers (Tamarisk,
+            Wind Tide). What started as a spare, spikey instrumental duo turned
+            gradually into something more mountainous and expansive, sometimes a
+            glacier, other times a distant cloud.
+          </p>
           <Gigography band="Tethers" displayImages={false} shortList={true} />
           <div className="project-releases">
             <SingleRelease id="dsl01ulm53esw6mnyqdsyrx9" displayArtist={false}>

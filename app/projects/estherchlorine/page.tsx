@@ -25,6 +25,13 @@ export default function EstherChlorinePage() {
           <h1>Esther Chlorine</h1>
         </div>
         <div className="project-content">
+          <p className="project-intro">
+            An industrial / murky dark ambient duo with Bay Area legend and
+            major homie Greg Garbage (Black Thread, Vibrating Garbage, Birds You
+            Once Knew, Turmeric Magnitudes, Cascading Fragments, Unless, Rose
+            Buried in Sand, Von Himmel, Spitting Falcons, Wires &amp; Relays,
+            et. al.).
+          </p>
           <Gigography
             band="Esther Chlorine"
             displayImages={false}

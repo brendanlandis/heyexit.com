@@ -179,13 +179,27 @@
   @media (max-width: 1449px) {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-areas: 'releases' 'shows';
+    grid-template-areas: 'intro' 'releases' 'shows';
+    .project-intro {
+      grid-area: intro;
+    }
     .project-shows {
       grid-area: shows;
     }
     .project-releases {
       grid-area: releases;
     }
+  }
+}
+
+.project-intro {
+  line-height: 1.2em;
+  font-size: 1.2em;
+  margin: 1em auto 3em auto;
+  width: 90%;
+  @media (min-width: 1024px) {
+    text-align: center;
+    width: 80%;
   }
 }
 

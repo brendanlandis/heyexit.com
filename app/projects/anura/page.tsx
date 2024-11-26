@@ -25,13 +25,19 @@ export default function AnuraPage() {
           <h1>Anura</h1>
         </div>
         <div className="project-content">
+          <p className="project-intro">
+            A downer pop, loud-but-soft songwriting project, and my entry point
+            into the traditional popular forms that I've been exploring with
+            various bands since. Washed out vocals over drum machines, guitars,
+            and synths, very bedroom'd-out.
+          </p>
           <Gigography band="Anura" displayImages={false} shortList={true} />
           <div className="project-releases">
             <SingleRelease id="hy78nty4ro38zdbe3fjm8ueh" displayArtist={false}>
               <p>
-                My first real album of downer pop bedroom songwriting, complete
-                with all the signs of struggle that accompany such a thing.
-                Still, some of these songs aren't half bad.
+                My first real songwriting album, complete with all the signs of
+                struggle that accompany such a thing. Still, some of these songs
+                aren't half bad.
               </p>
             </SingleRelease>
             <SingleRelease id="ah63jy4x92r3dmyazcux2xdr" displayArtist={false}>
