@@ -15,9 +15,11 @@ function LoadingOrError({ loading, error }: { loading: boolean; error: any }) {
 
 export default function SingleRelease({
   id,
+  displayArtist,
   children,
 }: {
   id: string;
+  displayArtist: boolean;
   children: ReactNode;
 }) {
   const [{ data: recording, loading, error }] = useAxios(
@@ -31,27 +33,37 @@ export default function SingleRelease({
   return (
     <>
       <div className="project-release">
-        <div className="project-release-cover">
-          <div className="recording cover">
-            {recording.data.cover && recording.data.cover[0] && (
-              <Image
-                src={recording.data.cover[0].url}
-                alt={`cover art for ${recording.data.title}`}
-                width={750}
-                height={750}
-              />
-            )}
+        <Link href={`/recordings/${normalizedTitle}`}>
+          <div className="project-release-cover">
+            <div className="recording cover">
+              {recording.data.cover && recording.data.cover[0] && (
+                <Image
+                  src={recording.data.cover[0].url}
+                  alt={`cover art for ${recording.data.title}`}
+                  width={750}
+                  height={750}
+                />
+              )}
+            </div>
           </div>
-        </div>
-        <div className="project-release-description">
-          <h3>
-            <Link href={`/recordings/${normalizedTitle}`}>
-              {recording.data.title} (
-              {new Date(recording.data.releaseDate).toISOString().slice(0, 4)})
-            </Link>
-          </h3>
-          <div>{children}</div>
-        </div>
+          <div className="project-release-description">
+            <h3>
+              {displayArtist
+                ? recording.data.alias
+                  ? `${recording.data.alias} - `
+                  : `${recording.data.bands[0].name} - `
+                : null}
+              {recording.data.title}
+              <span>
+                {' '}
+                (
+                {new Date(recording.data.releaseDate).toISOString().slice(0, 4)}
+                )
+              </span>
+            </h3>
+            <div>{children}</div>
+          </div>
+        </Link>
       </div>
     </>
   );

@@ -30,11 +30,34 @@ export default function EstherChlorinePage() {
             displayImages={false}
             shortList={true}
           />
-          <SingleRelease id="hk2qknpq4nzztqaygnw3ih2k">asdf</SingleRelease>
-          <SingleRelease id="ws9zwt1fzbhaalm9lgeoa6zb">asdf</SingleRelease>
-          <SingleRelease id="adow7g00osk3dn00j7xlo2rj">asdf</SingleRelease>
-          <SingleRelease id="fvn4a90nryt9inehvguehbo3">asdf</SingleRelease>
-          <SingleRelease id="oeikprflqcfwvevafodywbze">asdf</SingleRelease>
+          <SingleRelease id="hk2qknpq4nzztqaygnw3ih2k" displayArtist={false}>
+            <p>
+              A longform, semi-composed piece for guitar and electronics. The
+              takes here are each single performances with only one or two
+              edits. In them, I'm playing through Greg's 8-channel custom
+              broken-cassette-player system.
+            </p>
+          </SingleRelease>
+          <SingleRelease id="ws9zwt1fzbhaalm9lgeoa6zb" displayArtist={false}>
+            <p>
+              Eight shorter pieces from the same sessions as <em>Retiform</em>.
+              The lighter side of Esther Chlorine.
+            </p>
+          </SingleRelease>
+          <SingleRelease id="fvn4a90nryt9inehvguehbo3" displayArtist={false}>
+            <p>
+              A deeply murky world of old school industrial and dark ambient.
+              These sessions set the tone for much of our remaining work.
+            </p>
+          </SingleRelease>
+          <SingleRelease id="adow7g00osk3dn00j7xlo2rj" displayArtist={false}>
+            <p>
+              The sharp follow-up to <em>World of Prophecy</em>.
+            </p>
+          </SingleRelease>
+          <SingleRelease id="oeikprflqcfwvevafodywbze" displayArtist={false}>
+            <p>A live recording from 2013.</p>
+          </SingleRelease>
         </div>
       </div>
     </>

@@ -17,7 +17,7 @@ export default function RoughWeatherPage() {
       <div className="content-projects roughweather-container">
         <div className="header-container">
           <Image
-            src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/110407_Rough_Weather_La_Paloma_Coffee_House_unknown_03_985188befd.jpg"
+            src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/110406_Rough_Weather_house_show_unknown_03_489e784c9f.jpg"
             height={2048}
             width={2048}
             alt="photo of Rough Weather"
@@ -30,9 +30,13 @@ export default function RoughWeatherPage() {
             displayImages={false}
             shortList={true}
           />
-          <SingleRelease id="spc4uk5ka4pwm37kizm9c1lc">
-            <p>hello one</p>
-            <p>two</p>
+          <SingleRelease id="spc4uk5ka4pwm37kizm9c1lc" displayArtist={false}>
+            <p>
+              Graphic scores, amplified objects, electroacoustics. Listening
+              back over a decade later, it's interesting how the materials of
+              this music feel harsh or heavy to me, but the form is somehow so
+              gentle. Ecstatic abstraction.
+            </p>
           </SingleRelease>
         </div>
       </div>

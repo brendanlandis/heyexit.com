@@ -26,9 +26,23 @@ export default function ItBreaksPage() {
         </div>
         <div className="project-content">
           <Gigography band="It Breaks" displayImages={false} shortList={true} />
-          <SingleRelease id="d001u3hv85kt3p0v9sgtku22">asdf</SingleRelease>
+          <SingleRelease id="d001u3hv85kt3p0v9sgtku22" displayArtist={false}>
+            <p>
+              A one-day recording session birthed this tour EP of miniature
+              noise trio workouts. Tight turns and abstract projectiles, a
+              collection of loose darts.
+            </p>
+          </SingleRelease>
           <h2>see also</h2>
-          <SingleRelease id="q3w3nyz29tkneiqjfkeqrsf8">asdf</SingleRelease>
+          <SingleRelease id="q3w3nyz29tkneiqjfkeqrsf8" displayArtist={true}>
+            <p>
+              Six years and several lifetimes later, David and I put together
+              this noise tape internet-style, trading sounds and assembling each
+              other's material into fixed pieces. Classic c20 format, featuring
+              David reading works from <em>Straight to Hell</em> #25. Not for
+              the faint of heart.
+            </p>
+          </SingleRelease>
         </div>
       </div>
     </>

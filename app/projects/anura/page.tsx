@@ -27,26 +27,45 @@ export default function AnuraPage() {
         <div className="project-content">
           <Gigography band="Anura" displayImages={false} shortList={true} />
 
-          <SingleRelease id="hy78nty4ro38zdbe3fjm8ueh">asdf</SingleRelease>
-          <SingleRelease id="ah63jy4x92r3dmyazcux2xdr">
-            The LP was released alongside two EPs with some additional b-sides
-            on each.
+          <SingleRelease id="hy78nty4ro38zdbe3fjm8ueh" displayArtist={false}>
+            <p>
+              My first real album of downer pop bedroom songwriting, complete
+              with all the signs of struggle that accompany such a thing. Still,
+              some of these songs aren't half bad.
+            </p>
           </SingleRelease>
-          <SingleRelease id="dvtopqkkycfgu4gse3mbnl9v">asdf</SingleRelease>
-          <SingleRelease id="t6sli9i1oz0ybulh68i1d8jz">
-            Shortly thereafter came the Folds EP, more of a post-rock affair.
+          <SingleRelease id="ah63jy4x92r3dmyazcux2xdr" displayArtist={false}>
+            The LP was released alongside two EPs...
           </SingleRelease>
-          <SingleRelease id="nj88gcsynle0v3l1qxtxa215">
+          <SingleRelease id="dvtopqkkycfgu4gse3mbnl9v" displayArtist={false}>
+            ...each with a couple b-sides.
+          </SingleRelease>
+          <SingleRelease id="t6sli9i1oz0ybulh68i1d8jz" displayArtist={false}>
+            Shortly after <em>Deluge</em> came the Folds EP, a quarantine jammer
+            and more of a post-rock affair. Also my first project with the homie
+            Andrew Nault on drums.
+          </SingleRelease>
+          <SingleRelease id="nj88gcsynle0v3l1qxtxa215" displayArtist={false}>
             Contains a cover of He Can Jog's <em>Suite Part 4</em>.
           </SingleRelease>
           <h2>precursors</h2>
-          <SingleRelease id="r4pnlwx4i48tyzc2blaho499">
-            The EP that represented the first expression of this creative
-            impulse.
+          <SingleRelease id="r4pnlwx4i48tyzc2blaho499" displayArtist={true}>
+            This EP was the first reaching-out from noise music toward the
+            songwriting style of Anura. After this EP, it would be another few
+            years before I settled on the name as a project in and of itself.
           </SingleRelease>
-          <SingleRelease id="a1hsosqpdf899gchps9xkv3p">asdf</SingleRelease>
-          <SingleRelease id="rnt5fctb00stqhfz5y4cszif">asdf</SingleRelease>
-          <SingleRelease id="txl896z4eh32xc8yfsowsfu6">asdf</SingleRelease>
+          <SingleRelease id="a1hsosqpdf899gchps9xkv3p" displayArtist={true}>
+            A 7" single of two quiet-but-noisy downer pop tunes. The first
+            stayed in the live set for several years thereafter.
+          </SingleRelease>
+          <SingleRelease id="rnt5fctb00stqhfz5y4cszif" displayArtist={true}>
+            A compilation of tunes from various releases, inching closer to the
+            songwriting style of Anura.
+          </SingleRelease>
+          <SingleRelease id="txl896z4eh32xc8yfsowsfu6" displayArtist={true}>
+            A couple tunes written and recorded for David Grollman's{' '}
+            <em>5 Minute Tapes</em> series.
+          </SingleRelease>
         </div>
       </div>
     </>
