@@ -30,12 +30,14 @@ export default function BigHiatusPage() {
             displayImages={false}
             shortList={true}
           />
-          <SingleRelease id="mukz8w9810tle26oc0kwld3h" displayArtist={false}>
-            <p>
-              Towering, deep fried psych noise, heavily influenced by the east
-              coast experimental underground.
-            </p>
-          </SingleRelease>
+          <div className="project-releases">
+            <SingleRelease id="mukz8w9810tle26oc0kwld3h" displayArtist={false}>
+              <p>
+                Towering, deep fried psych noise, heavily influenced by the east
+                coast experimental underground.
+              </p>
+            </SingleRelease>
+          </div>
         </div>
       </div>
     </>

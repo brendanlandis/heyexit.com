@@ -30,14 +30,16 @@ export default function RoughWeatherPage() {
             displayImages={false}
             shortList={true}
           />
-          <SingleRelease id="spc4uk5ka4pwm37kizm9c1lc" displayArtist={false}>
-            <p>
-              Graphic scores, amplified objects, electroacoustics. Listening
-              back over a decade later, it's interesting how the materials of
-              this music feel harsh or heavy to me, but the form is somehow so
-              gentle. Ecstatic abstraction.
-            </p>
-          </SingleRelease>
+          <div className="project-releases">
+            <SingleRelease id="spc4uk5ka4pwm37kizm9c1lc" displayArtist={false}>
+              <p>
+                Graphic scores, amplified objects, electroacoustics. Listening
+                back over a decade later, it's interesting how the materials of
+                this music feel harsh or heavy to me, but the form is somehow so
+                gentle. Ecstatic abstraction.
+              </p>
+            </SingleRelease>
+          </div>
         </div>
       </div>
     </>

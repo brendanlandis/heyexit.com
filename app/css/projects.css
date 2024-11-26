@@ -127,11 +127,11 @@
       left: 0;
       right: 0;
       width: 100%;
-      height: 30cqi;
+      height: 65cqi;
       object-fit: cover;
       margin-bottom: 1em;
       .anura-container & {
-        object-position: 0 48%;
+        object-position: 0 69%;
       }
       .advection-container & {
         object-position: 0 28%;
@@ -143,7 +143,7 @@
         object-position: 0 32%;
       }
       .estherchlorine-container & {
-        object-position: 0 32%;
+        object-position: 88% 32%;
       }
       .itbreaks-container & {
         object-position: 0 45%;
@@ -151,26 +151,56 @@
       .roughweather-container & {
         object-position: 0 42%;
       }
+      @media (min-width: 1024px) {
+        height: 30cqi;
+        .anura-container & {
+          object-position: 0 48%;
+        }
+        .estherchlorine-container & {
+          object-position: 0 32%;
+        }
+      }
     }
     h1 {
       position: relative;
+      text-align: right;
       top: 2cqi;
       right: 2.3cqi;
       z-index: 20;
-      height: 30cqi;
+      height: 65cqi;
+      @media (min-width: 1024px) {
+        height: 30cqi;
+      }
+    }
+  }
+}
+
+.project-content {
+  @media (max-width: 1449px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 'releases' 'shows';
+    .project-shows {
+      grid-area: shows;
+    }
+    .project-releases {
+      grid-area: releases;
     }
   }
 }
 
 .project-shows {
-  float: right;
-  margin: 0 0 1em 1em;
-  border: 1px solid #333;
-  border-radius: 2em;
-  padding: 1em 2em;
-  max-width: 500px;
+  margin-top: 5em;
   h3 {
     text-align: left;
+  }
+  @media (min-width: 1450px) {
+    float: right;
+    margin: 0 0 1em 1em;
+    border: 1px solid #333;
+    border-radius: 2em;
+    padding: 1em 2em;
+    max-width: 500px;
   }
 }
 
@@ -191,7 +221,7 @@
       font-size: 0.7em;
     }
   }
-  a:hover {
+  a {
     h3 {
       color: #fff;
       text-decoration: underline;
@@ -204,12 +234,8 @@
     padding-top: 3em;
   }
   .project-release-cover {
-    float: left;
-    max-width: 250px;
-    max-height: 250px;
     aspect-ratio: 1;
-    margin-right: 1em;
-    margin-bottom: 0em;
+    margin-bottom: 1em;
     &:has(.recording + .recording) {
       aspect-ratio: 2;
       display: grid;
@@ -220,13 +246,31 @@
       aspect-ratio: 1;
     }
   }
+  @media (min-width: 650px) {
+    .project-release-cover {
+      float: left;
+      max-width: 250px;
+      max-height: 250px;
+      margin-right: 1em;
+      margin-bottom: 0em;
+    }
+    a h3 {
+      text-decoration: none;
+    }
+    a:hover h3 {
+      text-decoration: underline;
+      text-decoration-color: rgba(255, 255, 255, 0.4);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.1em;
+    }
+  }
   .project-release-description {
     grid-area: description;
   }
   p {
     line-height: 1.2em;
   }
-  p+p {
+  p + p {
     margin-top: 1.5em;
   }
 }
