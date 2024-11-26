@@ -12,7 +12,7 @@
     "@strapi/blocks-react-renderer": "^1.0.1",
     "@u-wave/react-vimeo": "^0.9.11",
     "autoprefixer": "^10.4.20",
-    "axios": "^1.7.7",
+    "axios": "^1.7.8",
     "axios-hooks": "^5.0.2",
     "classnames": "^2.5.1",
     "daisyui": "^4.12.14",
