@@ -16,29 +16,20 @@ export default function Current() {
         </div>
         <ul className="band-list">
           <li>
-            <Link href="https://glifter.bandcamp.com/">
-              <Image
-                src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/glifter_logo_cutup_faded_white_on_transparent_9618051f84.png"
-                alt="Glifter logo"
-                width={1024}
-                height={1024}
-              />
-            </Link>
-            <p>
-              Glifter is blah blah ablaasfas sadifhasihflajsd asdjofal jdsjl
-              Glifter is blah blah ablaasfas sadifhasihflajsd asdjofal jdsjl
-              Glifter is blah blah ablaasfas sadifhasihflajsd asdjofal jdsjl
-              Glifter is blah blah ablaasfas sadifhasihflajsd asdjofal jdsjl
-              Glifter is blah blah ablaasfas sadifhasihflajsd asdjofal jdsjl
-              Glifter is blah blah ablaasfas sadifhasihflajsd asdjofal jdsjl
-              Glifter is blah blah ablaasfas sadifhasihflajsd asdjofal jdsjl{' '}
-            </p>
-          </li>
-          <li>
             <Link href="https://receive.blue/">
               <Image
                 src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/receive_white_on_transparent_dd5c3a65ee.png"
                 alt="Receive logo"
+                width={1024}
+                height={1024}
+              />
+            </Link>
+          </li>
+          <li>
+            <Link href="https://glifter.bandcamp.com/">
+              <Image
+                src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/glifter_logo_cutup_faded_white_on_transparent_9618051f84.png"
+                alt="Glifter logo"
                 width={1024}
                 height={1024}
               />

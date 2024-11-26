@@ -1,14 +1,26 @@
 .content-current {
   .band-list {
     display: grid;
-    gap: 3em;
+    gap: 1em;
     align-items: center;
     justify-content: center;
     grid-template-columns: 1fr;
+    max-width: 100%;
     img {
-      max-width: 768px;
-      margin: 0 auto 1em auto;
+      width: 500px;
+      max-width: 100%;
+      margin: 0 auto 3em auto;
+      transform: rotate(-5deg);
+    }
+    @media (min-width: 1024px) {
+      li:nth-child(1) img {
+        margin-left: 0;
+      }
+      li:nth-child(2) img {
+      }
+      li:nth-child(3) img {
+        margin-right: 0;
+      }
     }
   }
-  
 }
