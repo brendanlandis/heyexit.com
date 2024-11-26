@@ -8,9 +8,9 @@ export default function RecordingGraphics(recording: Recording) {
   function scrollCarousel(targetImageNumber: number) {
     const carouselElement = carouselRef.current;
     if (carouselElement) {
-      let carouselWidth = carouselElement.clientWidth;
-      let targetImage = targetImageNumber - 1;
-      let targetXPixel = carouselWidth * targetImage + 1;
+      const carouselWidth = carouselElement.clientWidth;
+      const targetImage = targetImageNumber - 1;
+      const targetXPixel = carouselWidth * targetImage + 1;
       carouselElement.scrollTo(targetXPixel, 0);
     }
   }
@@ -24,8 +24,6 @@ export default function RecordingGraphics(recording: Recording) {
     return [...coverUrls, ...linerNoteUrls, ...editionPhotoUrls];
   };
   const graphicUrls = getGraphics();
-
-  let carouselElement = document.getElementById('carouselWrapper');
 
   return (
     <>

@@ -1,7 +1,5 @@
 import '../../css/projects.css';
 import '../../css/recordings.css';
-import Link from 'next/link';
-import Discography from '../Discography';
 import Gigography from '../Gigography';
 import Image from 'next/image';
 import SingleRelease from '../SingleRelease';

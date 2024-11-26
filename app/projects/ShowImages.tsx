@@ -26,7 +26,7 @@ export default function ShowImages({
                 target="_blank"
               >
                 <Image
-                  alt="photo of Hey Exit"
+                  alt={`photo of Hey Exit on ${date}`}
                   src={url}
                   width={600}
                   height={600}

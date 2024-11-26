@@ -1,4 +1,4 @@
-import { Recording, Press, Track } from '@/app/types';
+import { Recording, Track } from '@/app/types';
 
 export default function RecordingTracks(recording: Recording) {
   const bandcampEmbedHeight = 145 + 35 * (recording.tracklist.length || 0);

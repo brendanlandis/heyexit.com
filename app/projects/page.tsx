@@ -1,7 +1,6 @@
 import '../css/projects.css';
 import Link from 'next/link';
 import Image from 'next/image';
-import AllLivePics from '../components/AllLivePics';
 
 export const metadata = {
   title: 'Hey Exit :: Related Projects',

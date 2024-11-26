@@ -21,7 +21,7 @@ export default function Home() {
             <p>
               Hey Exit was my solo music project from 2009-2021. It was mostly
               me (Brendan), but also involved a number of my friends at
-              different points. This site is an archive for Hey Exit's
+              different points. This site is an archive for Hey Exit&apos;s
               recordings, shows, press, and related projects.
             </p>
             <p className="disclaimer">

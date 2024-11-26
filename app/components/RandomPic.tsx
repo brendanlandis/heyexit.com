@@ -7,6 +7,13 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Obfuscate from 'react-obfuscate';
 
+interface RelatedEntry {
+  __type: string;
+  publishedAt: string | null;
+  date?: string;
+  city?: string;
+}
+
 export default function RandomPic() {
   const [{ data: media, loading, error }, refetch] = useAxios(
     'https://slownames.net/api/upload/files?populate=*&filters[caption][$contains]=heyexitfrontpage'
@@ -22,7 +29,7 @@ export default function RandomPic() {
         console.error('Refetch error, girl!', err);
       }
     });
-  }, []);
+  }, [refetch]);
 
   if (!isMounted) return null;
 
@@ -33,15 +40,15 @@ export default function RandomPic() {
   const randomMedia = media && media[Math.floor(Math.random() * media.length)];
 
   // get some metadata from the photo
-  const show = randomMedia.related.find(
+  const show = (randomMedia.related as RelatedEntry[]).find(
     (entry: any) =>
       entry.__type === 'api::show.show' && entry.publishedAt !== null
   );
-  const shoot = randomMedia.related.find(
+  const shoot = (randomMedia.related as RelatedEntry[]).find(
     (entry: any) =>
       entry.__type === 'api::shoot.shoot' && entry.publishedAt !== null
   );
-  const year = format(show?.date || shoot?.date, 'yyyy');
+  const year = format(show?.date || shoot?.date || new Date(), 'yyyy');
   const city = show?.city ? `${show.city.replace(/,/g, '')}, ` : null;
   const credit =
     randomMedia.alternativeText === 'unknown' ? (

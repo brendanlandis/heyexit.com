@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import { DM_Mono } from 'next/font/google';
 import localFont from 'next/font/local';
 import './css/screen.css';

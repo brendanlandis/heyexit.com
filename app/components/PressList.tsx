@@ -5,7 +5,7 @@ import { Fragment } from 'react';
 import Link from 'next/link';
 import getNormalizedTitle from './getNormalizedTitle';
 
-const shuffleArray = (array: any[]) => {
+const shuffleArray = (array: Press[]) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];

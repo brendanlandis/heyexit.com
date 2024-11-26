@@ -1,9 +1,7 @@
 import '../../css/projects.css';
 import '../../css/recordings.css';
-import Link from 'next/link';
 import Image from 'next/image';
 import Gigography from '../Gigography';
-import Discography from '../Discography';
 import SingleRelease from '../SingleRelease';
 
 export const metadata = {

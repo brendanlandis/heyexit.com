@@ -1,12 +1,12 @@
 'use client';
 import useAxios from 'axios-hooks';
-import { Show, Shoot } from '../types';
+import { Shoot } from '../types';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Fragment } from 'react';
 
 export default function AllLivePics() {
-  const [{ data: pics, loading, error }, refetch] = useAxios(
+  const [{ data: pics, loading, error }] = useAxios(
     'https://slownames.net/api/shoots/?filters[documentId]=yzw0i95a3uxarcv3joxr3h18&populate=*'
   );
 
@@ -21,7 +21,7 @@ export default function AllLivePics() {
             <Fragment>
               {shoot.pics.map((doc, index) =>
                 doc.caption?.includes('fav') ? (
-                  <Fragment key={doc.id}>
+                  <Fragment key={index}>
                     <Link
                       href={`https://slownames.net/admin/plugins/upload?sort=createdAt:DESC&page=1&pageSize=50&folder=3&folderPath=/1&_q=${doc.documentId}`}
                       target="blank_"

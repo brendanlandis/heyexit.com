@@ -25,10 +25,10 @@ export default function ShowImages({
               //   key={idx}
               //   target="_blank"
               // >
-              <div className="show-image-wrapper" key={idx}>
+              <div className={`show-image-wrapper ${documentId}`} key={idx}>
                 <span></span>
                 <Image
-                  alt="photo of Hey Exit"
+                  alt={`photo of Hey Exit on ${date}`}
                   src={url}
                   width={600}
                   height={600}

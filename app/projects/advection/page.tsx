@@ -1,6 +1,5 @@
 import '../../css/projects.css';
 import '../../css/recordings.css';
-import Link from 'next/link';
 import Image from 'next/image';
 import SingleRelease from '../SingleRelease';
 
