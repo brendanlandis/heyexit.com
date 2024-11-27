@@ -15,25 +15,40 @@ async function fetchRecordings() {
   return data;
 }
 
-export async function generateMetadata({ params }: { params: { normalizedTitle: string } }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ normalizedTitle: string }>;
+}) {
   const resolvedParams = await params;
   const recordings = await fetchRecordings();
 
   const matchingRecording = recordings.data.find(
-    (recording: any) => getNormalizedTitle(recording.title) === resolvedParams.normalizedTitle
+    (recording: any) =>
+      getNormalizedTitle(recording.title) === resolvedParams.normalizedTitle
   );
 
   if (matchingRecording) {
-    const bandname = matchingRecording.alias ? `${matchingRecording.alias}` : matchingRecording.bands[0].name;
+    const bandname = matchingRecording.alias
+      ? `${matchingRecording.alias}`
+      : matchingRecording.bands[0].name;
 
     return {
       title: `Hey Exit :: Recordings :: ${matchingRecording.title}`,
-      description: `${bandname}'s ${format(matchingRecording.releaseDate, 'yyyy')} release, ${matchingRecording.title}`,
+      description: `${bandname}'s ${format(
+        matchingRecording.releaseDate,
+        'yyyy'
+      )} release, ${matchingRecording.title}`,
     };
   }
+  return null;
 }
 
-export default async function RecordingPage({ params }: { params: { normalizedTitle: string } }) {
+export default async function RecordingPage({
+  params,
+}: {
+  params: Promise<{ normalizedTitle: string }>;
+}) {
   const resolvedParams = await params;
   const recordings = await fetchRecordings();
 
@@ -42,7 +57,8 @@ export default async function RecordingPage({ params }: { params: { normalizedTi
   }
 
   const matchingRecording = recordings.data.find(
-    (recording: any) => getNormalizedTitle(recording.title) === resolvedParams.normalizedTitle
+    (recording: any) =>
+      getNormalizedTitle(recording.title) === resolvedParams.normalizedTitle
   );
 
   if (!matchingRecording) {
