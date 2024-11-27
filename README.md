@@ -1,5 +1,10 @@
-- add Fav Color Magazine mention
-- add Poppy @ 88
-- add cancelled DJ Mojo gig
-- add Hey Exit sampler
-- add mailing list link & socials to contact page
+CSS stack
++ https://tailwindcss.com/
++ https://postcss.org/
++ https://daisyui.com/
+- https://headlessui.com/
+- https://github.com/tailwindlabs/tailwindcss-typography
+
+shows page
+- masonry bits of flyers & live pics
+- then a text record of everything at the bottom maybe

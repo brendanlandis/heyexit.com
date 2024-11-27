@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'helpers.css';
+
+body {
+  font-size: 1em;
+  font-weight: 100;
+  line-height: 1em;
+  @apply font-mono;
+}
+
+#wrapper {
+  display: grid;
+  gap: 2em;
+  max-width: 1600px;
+  padding: 1em;
+  grid-template-columns: 1fr;
+  @media (max-width: 1023px) {
+    #mainNav {
+      display: none;
+    }
+    #navToggle {
+      display: block;
+      text-align: right;
+      height: 50px;
+      width: 50px;
+      justify-self: end;
+      margin-right: 30px;
+      cursor: pointer;
+      svg {
+        height: 50px;
+        width: 50px;
+      }
+      .menu {
+        position: fixed;
+        border-radius: 0.5em;
+        top: 125px;
+        right: 50px;
+        background-color: #222;
+        z-index: 1;
+        min-width: 200px;
+        font-size: 7vw;
+        line-height: 1em;
+        li:first-child {
+          border-radius-top-left: 0.5em;
+        }
+      }
+    }
+    header {
+      text-align: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    padding: 2em;
+    grid-template-columns: 200px 1fr;
+    grid-template-areas:
+      'header main'
+      'header footer';
+    header {
+      grid-area: header;
+    }
+    main {
+      grid-area: main;
+    }
+    footer {
+      grid-area: footer;
+    }
+    #navToggle {
+      display: none;
+    }
+    #mainNav {
+      display: block;
+      > ul {
+        position: fixed;
+        grid-template-columns: 1fr;
+        text-align: center;
+        top: 170px;
+        display: grid;
+        width: 200px;
+        gap: 2em;
+      }
+      > ul > li > a {
+        font-size: 1.2em;
+        line-height: 2em;
+        transition: transform 100ms;
+        display: block;
+        transform: scaleY(1);
+        margin-top: -0.1em;
+      }
+      > ul > li > a:hover,
+      > ul > li.active > a {
+        color: #fff;
+        transform: scaleY(2.7);
+      }
+      .subnav {
+        display: none;
+      }
+      .active .subnav {
+        display: block;
+        margin-top: 1em;
+        font-size: 0.9em;
+        line-height: 1.5em;
+        a {
+          color: #aaa;
+          position: relative;
+          z-index: 2;
+        }
+        a:hover,
+        li.active a {
+          text-decoration: underline;
+          color: #fff;
+        }
+      }
+    }
+    .logo {
+      position: fixed;
+    }
+  }
+}
+
+.font-circles {
+  line-height: 1.1em;
+  word-spacing: 0.3em;
+}
+
+.font-lofi {
+  line-height: 1.1em;
+  margin-bottom: -0.34em;
+}
+.header-container {
+  container-name: header-container;
+  container-type: inline-size;
+}
+
+h1,
+h2 {
+  font-size: 14cqi;
+  @apply font-circles;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  @media (min-width: 1024px) {
+    text-align: right;
+  }
+}
+
+h2 {
+  margin-top: 1em;
+}
+
+h3 {
+  font-size: 3em;
+  line-height: 1em;
+  @apply font-circles;
+}
+
+/* mobile menu */
+.drawer-side ul.menu {
+  padding-top: 5em;
+  > li > a {
+    font-size: 1.5em;
+  }
+  > li {
+    margin-bottom: 1em;
+  }
+  > li.active {
+    font-weight: 900;
+    > a {
+      display: inline-block;
+      text-indent: -0.3em;
+    }
+    > a::before {
+      content: '[';
+    }
+    > a::after {
+      content: ']';
+    }
+  }
+  .subnav {
+    display: none;
+  }
+  .active .subnav {
+    display: block;
+    a {
+      font-weight: 400;
+    }
+    .active a {
+      text-decoration: underline;
+      color: #fff;
+    }
+  }
+}
+#closeMobileNav {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 2;
+  top: 1em;
+  right: 1em;
+  cursor: pointer;
+  svg {
+    &:hover {
+      background: transparent;
+    }
+    height: 50px;
+    width: 50px;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.header-text {
+  line-height: 1.2em;
+  font-size: 1.3em;
+  margin: 0 auto 2em auto;
+  @media (min-width: 1024px) {
+    width: 80%;
+  }
+}

@@ -1,32 +1,71 @@
-import './css/screen.scss';
-import type { Metadata } from 'next';
-import NavMobile from './components/NavMobile';
-import NavDesktop from './components/NavDesktop';
+import { DM_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
+import './css/screen.css';
 import Image from 'next/image';
+import NavItems from './components/NavItems';
+import MobileMenuClose from './components/MobileMenuClose';
 
-export const metadata: Metadata = {
-  title: 'Hey Exit',
-  description: 'noise shit',
-};
+// fonts
+const dm_mono = DM_Mono({
+  weight: ['300', '400', '500'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-dm-mono',
+});
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+const charlottenburgCircles = localFont({
+  src: './fonts/Charlottenburg_W-Circles.woff2',
+  variable: '--font-charlottenburg-circles',
+});
+const lofiForest = localFont({ src: './fonts/LofiForest_W-Bold.woff2', variable: '--font-lofi-forest' });
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="en" data-theme="lofi">
-      <head>
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-      </head>
-      <body>
-        <header>
-          <div className="logo">
-            <Image src="/img/logo.png" alt="Hey Exit logo" width={400} height={262.8} />
+    <html lang="en">
+      <body className={`${dm_mono.variable} ${charlottenburgCircles.variable} ${lofiForest.variable}`}>
+        <div className="drawer drawer-end">
+          <input id="mobile-menu-drawer" type="checkbox" className="drawer-toggle" />
+          <div id="wrapper" className="drawer-content">
+            <header>
+              <Image
+                src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/hey_exit_white_on_transparent_88200168d9.png"
+                alt="Hey Exit logo"
+                width={200}
+                height={100}
+                className="logo"
+              />
+              <label id="navToggle" htmlFor="mobile-menu-drawer" className="drawer-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  className="inline-block h-5 w-5 stroke-current"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+              </label>
+              <nav id="mainNav">
+                <ul>
+                  <NavItems />
+                </ul>
+              </nav>
+            </header>
+            <main>{children}</main>
+            <footer></footer>
           </div>
-          {/* <NavDesktop />
-          <NavMobile /> */}
-        </header>
-        {children}
+          <div className="drawer-side lg:hidden">
+            <label htmlFor="mobile-menu-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
+            <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+              <MobileMenuClose />
+              <NavItems />
+            </ul>
+          </div>
+        </div>
       </body>
     </html>
   );
