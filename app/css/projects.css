@@ -207,6 +207,7 @@
   margin-top: 5em;
   h3 {
     text-align: left;
+    @apply font-charlottenburg;
   }
   @media (min-width: 1450px) {
     float: right;

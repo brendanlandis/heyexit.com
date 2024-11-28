@@ -306,7 +306,7 @@
   margin: 0 auto 1em auto;
   width: 100%;
   h2 {
-    font-size: 15cqi;
-    letter-spacing: 0.1em;
+    font-size: 10cqi;
+    @apply font-charlottenburg;
   }
 }

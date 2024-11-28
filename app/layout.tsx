@@ -18,6 +18,10 @@ const charlottenburgCircles = localFont({
   src: './fonts/Charlottenburg_W-Circles.woff2',
   variable: '--font-charlottenburg-circles',
 });
+const charlottenburgClassic = localFont({
+  src: './fonts/Charlottenburg_W-Classic.woff2',
+  variable: '--font-charlottenburg-classic',
+});
 const lofiForest = localFont({
   src: './fonts/LofiForest_W-Bold.woff2',
   variable: '--font-lofi-forest',
@@ -40,7 +44,7 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body
-        className={`${dm_mono.variable} ${charlottenburgCircles.variable} ${lofiForest.variable}`}
+        className={`${dm_mono.variable} ${charlottenburgCircles.variable} ${charlottenburgClassic.variable} ${lofiForest.variable}`}
       >
         <div className="drawer drawer-end">
           <input
