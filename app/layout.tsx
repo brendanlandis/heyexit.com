@@ -18,7 +18,10 @@ const charlottenburgCircles = localFont({
   src: './fonts/Charlottenburg_W-Circles.woff2',
   variable: '--font-charlottenburg-circles',
 });
-const lofiForest = localFont({ src: './fonts/LofiForest_W-Bold.woff2', variable: '--font-lofi-forest' });
+const lofiForest = localFont({
+  src: './fonts/LofiForest_W-Bold.woff2',
+  variable: '--font-lofi-forest',
+});
 
 export default function RootLayout({
   children,
@@ -27,9 +30,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${dm_mono.variable} ${charlottenburgCircles.variable} ${lofiForest.variable}`}>
+      <head>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="manifest" href="/site.webmanifest" />
+      </head>
+      <body
+        className={`${dm_mono.variable} ${charlottenburgCircles.variable} ${lofiForest.variable}`}
+      >
         <div className="drawer drawer-end">
-          <input id="mobile-menu-drawer" type="checkbox" className="drawer-toggle" />
+          <input
+            id="mobile-menu-drawer"
+            type="checkbox"
+            className="drawer-toggle"
+          />
           <div id="wrapper" className="drawer-content">
             <header>
               <Image
@@ -39,14 +57,23 @@ export default function RootLayout({
                 height={100}
                 className="logo"
               />
-              <label id="navToggle" htmlFor="mobile-menu-drawer" className="drawer-button">
+              <label
+                id="navToggle"
+                htmlFor="mobile-menu-drawer"
+                className="drawer-button"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   className="inline-block h-5 w-5 stroke-current"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
                 </svg>
               </label>
               <nav id="mainNav">
@@ -59,7 +86,11 @@ export default function RootLayout({
             <footer></footer>
           </div>
           <div className="drawer-side lg:hidden">
-            <label htmlFor="mobile-menu-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
+            <label
+              htmlFor="mobile-menu-drawer"
+              aria-label="close sidebar"
+              className="drawer-overlay"
+            ></label>
             <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
               <MobileMenuClose />
               <NavItems />
