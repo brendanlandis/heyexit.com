@@ -25,7 +25,7 @@ export default function RoughWeatherPage() {
         <div className="project-content">
           <p className="project-intro">
             An electroacoustic / free improv duo with computer music
-            standard-bearer and rad dude Eric Schoster. A bit of a
+            standard-bearer and rad dude Erik Schoster. A bit of a
             Jetsons-Meet-the-Flinstones affair in terms of instruments, the
             project juxtaposed Schoster's live computer music with my
             rocks-and-sticks approach to prepared guitar and amplified objects.
