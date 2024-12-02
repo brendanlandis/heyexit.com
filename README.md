@@ -1,6 +1,5 @@
 TODO
 
-- footer
 - 404 and other error pages
 - check content of each recording
 - verify git identity on slowhouse
