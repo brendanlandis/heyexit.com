@@ -231,6 +231,9 @@ footer {
   p {
     margin-bottom: 2em;
   }
+  a {
+    text-decoration: underline;
+  }
 }
 
 #footer-nav {

@@ -4,6 +4,7 @@ import './css/screen.css';
 import Image from 'next/image';
 import NavItems from './components/NavItems';
 import MobileMenuClose from './components/MobileMenuClose';
+import Link from 'next/link';
 
 // fonts
 const dm_mono = DM_Mono({
@@ -88,7 +89,11 @@ export default function RootLayout({
             </header>
             <main>{children}</main>
             <footer>
-              <p>Hey Exit is Brendan Landis, plus a few friends.</p>
+              <p>
+                Hey Exit is{' '}
+                <Link href="https://brendanlandis.com/">Brendan Landis</Link>,
+                plus a few friends.
+              </p>
               <nav id="footer-nav">
                 <ul>
                   <NavItems />
