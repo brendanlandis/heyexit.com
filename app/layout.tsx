@@ -87,7 +87,14 @@ export default function RootLayout({
               </nav>
             </header>
             <main>{children}</main>
-            <footer></footer>
+            <footer>
+              <p>Hey Exit is Brendan Landis, plus a few friends.</p>
+              <nav id="footer-nav">
+                <ul>
+                  <NavItems />
+                </ul>
+              </nav>
+            </footer>
           </div>
           <div className="drawer-side lg:hidden">
             <label

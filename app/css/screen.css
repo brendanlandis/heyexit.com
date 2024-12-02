@@ -222,3 +222,50 @@ h3 {
     width: 80%;
   }
 }
+
+footer {
+  border-top: 1px solid #333;
+  text-align: center;
+  padding-top: 2em;
+  opacity: 0.8;
+  p {
+    margin-bottom: 2em;
+  }
+}
+
+#footer-nav {
+  ul {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  ul.subnav {
+    display: none;
+  }
+  li {
+    display: inline-block;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  a {
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: underline;
+    li.active & {
+      text-decoration: none;
+    }
+  }
+
+  @media (min-width: 500px) {
+    ul {
+      flex-direction: row;
+    }
+    li + li:before {
+      content: '•';
+      margin-right: 1em;
+    }
+  }
+}
