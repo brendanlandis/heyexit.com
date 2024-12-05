@@ -1,6 +1,7 @@
 import getNormalizedTitle from '@/app/components/getNormalizedTitle';
 import RecordingDetails from './RecordingDetails';
 import { format } from 'date-fns';
+import { notFound } from 'next/navigation';
 
 async function fetchRecordings() {
   const response = await fetch(
@@ -62,7 +63,7 @@ export default async function RecordingPage({
   );
 
   if (!matchingRecording) {
-    return <p>Recording not found</p>;
+    notFound();
   }
 
   return (
