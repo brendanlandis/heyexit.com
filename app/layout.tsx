@@ -55,13 +55,15 @@ export default function RootLayout({
           />
           <div id="wrapper" className="drawer-content">
             <header>
-              <Image
-                src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/hey_exit_white_on_transparent_88200168d9.png"
-                alt="Hey Exit logo"
-                width={200}
-                height={100}
-                className="logo"
-              />
+              <Link href="/">
+                <Image
+                  src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/hey_exit_white_on_transparent_88200168d9.png"
+                  alt="Hey Exit logo"
+                  width={200}
+                  height={100}
+                  className="logo"
+                />
+              </Link>
               <label
                 id="navToggle"
                 htmlFor="mobile-menu-drawer"
