@@ -1,7 +1,7 @@
 import { Recording, VideoEmbed } from '@/app/types';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
-import Vimeo from '@u-wave/react-vimeo';
+// import Vimeo from '@u-wave/react-vimeo';
 
 export default function RecordingPromoVideos(recording: Recording) {
   return (
@@ -33,7 +33,7 @@ export default function RecordingPromoVideos(recording: Recording) {
 
               {videoType === 'vimeo' && (
                 <>
-                  <Vimeo video={video.videoID} showByline dnt responsive />
+                  {/* <Vimeo video={video.videoID} showByline dnt responsive /> */}
                 </>
               )}
 

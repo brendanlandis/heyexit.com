@@ -8,3 +8,5 @@ TODO
 - do a typography pass on front page (and really whole site)
 - add analytics
 - do an a11y pass
+- add videos to Anura and Nothing
+- get vimeo working again in RecordingPromoVideos.tsx
