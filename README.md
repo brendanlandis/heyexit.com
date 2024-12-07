@@ -1,6 +1,5 @@
 TODO
 
-
 - check content of each recording
 - verify git identity on slowhouse
 - url doesn’t update on my phone when I navigate around the site. I have to reload the page for the url to update
