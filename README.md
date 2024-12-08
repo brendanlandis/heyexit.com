@@ -1,7 +1,6 @@
 TODO
 
 PLUMBING
-- fwd www to naked domain
 - add analytics (https://umami.is/docs/install)
 - get vimeo working again in RecordingPromoVideos.tsx
 - url doesn’t update on my phone when I navigate around the site. I have to reload the page for the url to update
