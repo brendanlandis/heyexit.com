@@ -5,6 +5,7 @@ import Image from 'next/image';
 import NavItems from './components/NavItems';
 import MobileMenuClose from './components/MobileMenuClose';
 import Link from 'next/link';
+import Script from 'next/script';
 
 // fonts
 const dm_mono = DM_Mono({
@@ -36,6 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <Script defer src="https://stats.slownames.net/script.js" data-website-id="f6ef98a7-f51e-429e-a1a7-c8803865c6c2" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"

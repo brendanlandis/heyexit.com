@@ -2,6 +2,7 @@ TODO
 
 PLUMBING
 - add analytics (https://umami.is/docs/install)
+  - then get heyexit.com plugged into it
 - get vimeo working again in RecordingPromoVideos.tsx
 - url doesn’t update on my phone when I navigate around the site. I have to reload the page for the url to update
 
