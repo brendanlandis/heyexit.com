@@ -92,7 +92,7 @@ export default function Current() {
                 <div className="band-text">
                   <p>
                     <span className="name">Star Card</span> is Calley's main
-                    songwriting project.
+                    project, an alt-rock four-piece. I get to play drums again!
                   </p>
                 </div>
               </div>
