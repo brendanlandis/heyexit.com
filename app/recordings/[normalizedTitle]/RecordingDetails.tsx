@@ -12,6 +12,7 @@ import RecordingTracks from './RecordingTracks';
 import RecordingAbout from './RecordingAbout';
 import RecordingCredits from './RecordingCredits';
 import RecordingPress from './RecordingPress';
+import RecordingVideos from './RecordingVideos';
 
 export default function RecordingDetails({ documentId }: { documentId: string }) {
   const baseUrl = `https://slownames.net/api/recordings/${documentId}`;
@@ -27,6 +28,7 @@ export default function RecordingDetails({ documentId }: { documentId: string })
     `populate[8]=promoVideos.file`,
     `populate[9]=reviews`,
     `populate[10]=reviews.attachments`,
+    `populate[11]=videos`,
   ].join('&');
 
   const [{ data: recordingData, loading, error }] = useAxios(`${baseUrl}?${query}`);
@@ -55,6 +57,7 @@ export default function RecordingDetails({ documentId }: { documentId: string })
           <RecordingGraphics {...recording} />
           {recording.attachments.length ? <RecordingAttachments {...recording} /> : ''}
           {recording.promoVideos.length ? <RecordingPromoVideos {...recording} /> : ''}
+          {recording.videos.length ? <RecordingVideos {...recording} /> : ''}
         </div>
         <div className="recording-detail-column">
           <RecordingEditions {...recording} />

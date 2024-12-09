@@ -1,8 +1,5 @@
 TODO
 
-CONTENT
-- add videos to Anura and Nothing
-
 VISUAL BROAD STROKES
 - do a typography pass on front page (and really whole site)
 

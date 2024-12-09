@@ -13,6 +13,23 @@ export interface Media {
   url: string;
 }
 
+export interface Video {
+  id: number;
+  documentId: string;
+  title: string;
+  visibility: string;
+  credits: string;
+  videoHost: string;
+  videoID: string;
+  date: Date;
+  band: {
+    id: number;
+    name: string;
+  };
+  recordings: Array<Recording>;
+  file: Media;
+}
+
 export interface Attachment {
   id: number;
   linkText: string;
@@ -97,6 +114,7 @@ export interface Recording {
   editions: Array<Edition>;
   promoVideos: Array<VideoEmbed>;
   reviews: Array<Press>;
+  videos: Array<Video>;
 }
 
 export interface Show {
@@ -129,7 +147,7 @@ export interface Show {
     documentId: string;
     caption: string;
   }>;
-  related: Array <{
+  related: Array<{
     __type: string;
     id: number;
     publishedAt: Date;

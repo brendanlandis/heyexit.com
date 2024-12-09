@@ -130,9 +130,16 @@
 }
 
 /* promo videos */
-.recording-promo-videos {
+.recording-promo-videos,
+.recording-videos {
+  .video-wrapper {
+    margin-bottom: 3em;
+  }
   video {
     width: 100%;
+  }
+  p {
+    margin-top: 1em;
   }
 }
 
