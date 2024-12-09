@@ -19,24 +19,27 @@ export default function Home() {
         <div>
           <div className="about">
             <p>
-              Hey Exit was my solo music project from 2009-2021. It was mostly
-              me (Brendan), but also involved a number of my friends at
-              different points. This site is an archive for Hey Exit&apos;s
-              recordings, shows, press, and related projects.
-            </p>
-            <p className="disclaimer">
-              (It feels a little weird to be make such an involved and thorough
-              archive of my old noise music, but on the other hand, it{' '}
-              <em>was</em> over ten years of my life, and I believe very
-              strongly in using the web this way &mdash; for documenting
-              underground culture and the arts, relatively unmediated by
-              corporations. Plus, I still like most of the music.)
+              Hey, I'm Brendan. This site is an archive for the music I made
+              throughout the 2010s, mostly under the name Hey Exit.
             </p>
             <RandomPic />
             <p>
+              Hey Exit was my primary music project for a little over a decade
+              ('09-'21). It was mostly a solo endeavor, but I roped in some
+              friends here and there. This site collects all the recordings,
+              show photos, press, and ephemera from that time.
+            </p>
+            <p className="disclaimer">
+              (It feels a little weird to be make such a thorough archive of my
+              old noise music, but on the other hand, I believe very strongly in
+              using the web this way &mdash; for documenting underground culture
+              and the arts, relatively unmediated by corporations. Plus,
+              honestly I still like most of the music.)
+            </p>
+            <p>
               The project covered quite a lot of stylistic ground, working in
-              several musical traditions and drawing from many different genres
-              within each:
+              several musical traditions and drawing from many genres within
+              each:
             </p>
             <ul>
               <li>
@@ -45,14 +48,14 @@ export default function Home() {
                   new age doom
                 </Link>
                 ,{' '}
-                <Link href="/recordings/eulogy-for-land">
-                  very long solo pieces
-                </Link>
-                , <Link href="/recordings/arms-reach">free improvisation</Link>,{' '}
                 <Link href="/recordings/every-recording-of-gymnopedie-1">
                   plunderphonics
                 </Link>
                 ,{' '}
+                <Link href="/recordings/eulogy-for-land">
+                  very long solo pieces
+                </Link>
+                , <Link href="/recordings/arms-reach">free improvisation</Link>,{' '}
                 <Link href="/recordings/pushing-waves">
                   electroacoustic composition
                 </Link>
@@ -86,11 +89,11 @@ export default function Home() {
             <p>
               Despite this restless approach to style and tradition, there are
               several throughlines in the work:{' '}
-              <em>
+              <strong>
                 music as spiritual practice, contrasting extremes presented as
                 necessary opposites, and the dilemma of making space for hope
                 and horror in equal measure
-              </em>
+              </strong>
               .
             </p>
             <p>
@@ -103,7 +106,7 @@ export default function Home() {
             <p>
               After forty-plus releases and one or two hundred shows, Hey Exit
               is retired for the foreseeable future. I still play a lot of
-              music; active projects are linked from the{' '}
+              music, and my active projects are linked from the{' '}
               <Link href="/current">current projects</Link> page.
             </p>
 

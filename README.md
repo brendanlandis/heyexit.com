@@ -1,8 +1,6 @@
 TODO
 
 CONTENT
-- check writing in each recording
-- revise writing on home page
 - add videos to Anura and Nothing
 
 VISUAL BROAD STROKES

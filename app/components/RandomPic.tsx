@@ -59,7 +59,7 @@ export default function RandomPic() {
         </Obfuscate>
       </>
     ) : (
-      <>Photo by {randomMedia.alternativeText}.</>
+      <>Photo by {randomMedia.alternativeText}</>
     );
 
   return (

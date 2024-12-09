@@ -37,7 +37,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <Script defer src="https://stats.slownames.net/script.js" data-website-id="f6ef98a7-f51e-429e-a1a7-c8803865c6c2" />
+        <Script
+          defer
+          src="https://stats.slownames.net/script.js"
+          data-website-id="f6ef98a7-f51e-429e-a1a7-c8803865c6c2"
+        />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -96,7 +100,7 @@ export default function RootLayout({
               <p>
                 Hey Exit is{' '}
                 <Link href="https://brendanlandis.com/">Brendan Landis</Link>,
-                plus a few friends.
+                plus a few friends sometimes.
               </p>
               <nav id="footer-nav">
                 <ul>
