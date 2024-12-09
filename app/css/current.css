@@ -5,21 +5,85 @@
     align-items: center;
     justify-content: center;
     grid-template-columns: 1fr;
-    max-width: 100%;
-    img {
-      width: 500px;
-      max-width: 100%;
-      margin: 0 auto 3em auto;
-      transform: rotate(-5deg);
+    > li {
+      > a {
+        display: grid;
+        align-items: center;
+        gap: 2em;
+        &:hover {
+          .band-pic {
+            border: 1px solid rgba(206, 120, 255, 0.5);
+            box-shadow: 0 0 1em rgba(206, 120, 255, 0.5);
+          }
+          .name {
+            text-decoration: underline;
+          }
+        }
+      }
+      &:nth-child(even) > a {
+        grid-template-areas: 'pic description';
+        grid-template-columns: 1fr 2fr;
+      }
+      &:nth-child(odd) > a {
+        grid-template-areas: 'description pic';
+        grid-template-columns: 2fr 1fr;
+      }
+      .band-pic {
+        grid-area: pic;
+        border: 1px solid transparent;
+        transition: all 200ms ease;
+      }
+      .band-description {
+        grid-area: description;
+        text-align: center;
+      }
+      .band-logo {
+        max-height: 150px;
+        margin-bottom: 1em;
+        object-fit: contain;
+        &.band-logo-receive {
+          max-height: 250px;
+        }
+        &.band-logo-glifter {
+          max-height: 80px;
+        }
+        &.band-logo-star-card {
+          max-height: 100px;
+        }
+      }
+      .band-text {
+        font-size: 1.5em;
+        line-height: 1.2em;
+        width: 50%;
+        margin: 0 auto;
+        .name {
+          font-style: italic;
+        }
+      }
     }
-    @media (min-width: 1024px) {
-      li:nth-child(1) img {
-        margin-left: 0;
+    .band-pic {
+      border-radius: 50%;
+      aspect-ratio: 1;
+      overflow: hidden;
+      position: relative;
+      img {
+        aspect-ratio: 1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
       }
-      li:nth-child(2) img {
+      &.band-pic-receive img {
+        transform: scale(1);
+        object-position: 0 29%;
       }
-      li:nth-child(3) img {
-        margin-right: 0;
+      &.band-pic-glifter img {
+        transform: scale(2);
+        margin-left: 15%;
+        object-position: 0 25%;
+      }
+      &.band-pic-star-card img {
+        transform: scale(1);
       }
     }
   }

@@ -5,7 +5,7 @@ import RandomPic from './components/RandomPic';
 import EmailLink from './components/EmailLink';
 
 export const metadata = {
-  title: 'Hey Exit :: Archival Storage',
+  title: 'Hey Exit :: Cold Storage',
   description: 'Weird music from 2009-2021',
 };
 
@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <div className="header-container">
-        <h1>Archival Storage</h1>
+        <h1>Cold Storage</h1>
       </div>
       <div className="content-home">
         <div>
