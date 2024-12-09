@@ -1,7 +1,6 @@
 import '../css/current.css';
 import Link from 'next/link';
 import Image from 'next/image';
-import AllLivePics from '../components/AllLivePics';
 
 export const metadata = {
   title: 'Hey Exit :: Current Projects',
@@ -15,7 +14,6 @@ export default function Current() {
         <div className="header-container">
           <h1>Current Projects</h1>
         </div>
-        {/* <AllLivePics /> */}
         <ul className="band-list">
           <li>
             <Link href="https://receive.blue/">

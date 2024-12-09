@@ -1,6 +1,6 @@
 'use client';
 import useAxios from 'axios-hooks';
-import { Shoot, Show } from '../types';
+import { Show } from '../types';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Fragment } from 'react';
