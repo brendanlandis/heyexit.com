@@ -58,7 +58,7 @@ export default function EstherChlorinePage() {
             </SingleRelease>
             <SingleRelease id="adow7g00osk3dn00j7xlo2rj" displayArtist={false}>
               <p>
-                The sharp follow-up to <em>World of Prophecy</em>.
+                A collection of tiny shards of music. The follow-up to <em>World of Prophecy</em>.
               </p>
             </SingleRelease>
             <SingleRelease id="oeikprflqcfwvevafodywbze" displayArtist={false}>

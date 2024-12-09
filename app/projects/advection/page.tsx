@@ -33,8 +33,9 @@ export default function AdvectionPage() {
               <p>
                 A half-hour set of hazy, mid-tempo electronic tunes. Some of
                 these were rescued from ancient folders full of unfinished
-                session files and repurpsed, others were put together during the
-                quarantine era of 2020. A bit of a transitional document.
+                session files and subsequently repurpsed, others were put
+                together during the quarantine era of 2020. A bit of a
+                transitional document.
               </p>
             </SingleRelease>
             <SingleRelease id="gqczm6y6moxvwux1y9qb70ww" displayArtist={false}>
@@ -61,8 +62,8 @@ export default function AdvectionPage() {
                 A hefty chunk of tracks from the dialup days of the internet.
                 Demoscene explorations, chiptune end-credits themes, "idm"
                 scuttles &mdash; all plucked from CD-Rs, mp3s in LiveJournal
-                posts, and of course a wealth of old rotting hard drives. A few
-                hundred tracks have distilled down to what you see here.
+                posts, and of course a wealth of rotting old hard drives. A few
+                hundred tracks have been distilled down to what you see here.
               </p>
               <p>
                 It's always a little funny to post stuff like this &mdash; early
@@ -74,12 +75,13 @@ export default function AdvectionPage() {
             <SingleRelease id="bwpl69xzd4hd4qlyvrr2755o" displayArtist={false}>
               <p>
                 ...while the EPs contain b-sides, miscellany, segues, sketches,
-                ephemera. The Lo EP is more downtempo tracks...
+                ephemera. The <em>Lo</em> EP is more downtempo tracks...
               </p>
             </SingleRelease>
             <SingleRelease id="r02cjr0zz5de4tgqbw0biyke" displayArtist={false}>
               <p>
-                ...while the "Hi" EP is more aggressive and brightly colored.
+                ...while the <em>Hi</em> EP is more aggressive and brightly
+                colored.
               </p>
             </SingleRelease>
           </div>
