@@ -21,7 +21,8 @@ export default function SelectedDiscog() {
   if (loading || error) return loadingOrError;
 
   const orderedRecordings = (recordings?.data || []).sort(
-    (b: Recording, a: Recording) => new Date(a.releaseDate).getTime() - new Date(b.releaseDate).getTime()
+    (b: Recording, a: Recording) =>
+      new Date(a.releaseDate).getTime() - new Date(b.releaseDate).getTime()
   );
 
   return (
@@ -32,18 +33,27 @@ export default function SelectedDiscog() {
           <div className="recording" key={recording.id}>
             <Link href={`/recordings/${normalizedTitle}`} className="cover">
               {recording.cover.map((cover) => (
-                <Image key={cover.id} src={cover.url} alt={recording.title} width={1024} height={1024} />
+                <Image
+                  key={cover.id}
+                  src={cover.url}
+                  alt={recording.title}
+                  width={1024}
+                  height={1024}
+                />
               ))}
             </Link>
             <Link href={`/recordings/${normalizedTitle}`} className="details">
               <div
                 className={classNames('album-title', {
-                  'long-title': recording.title.length > 25 || /\b\w{9,}\b/.test(recording.title),
+                  'long-title':
+                    recording.title.length > 25 ||
+                    /\b\w{9,}\b/.test(recording.title),
                 })}
-              >
-                {recording.title}
+                dangerouslySetInnerHTML={{ __html: recording.title }}
+              ></div>
+              <div className="album-releasedate">
+                {new Date(recording.releaseDate).toISOString().slice(0, 4)}
               </div>
-              <div className="album-releasedate">{new Date(recording.releaseDate).toISOString().slice(0, 4)}</div>
             </Link>
           </div>
         );

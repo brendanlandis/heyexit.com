@@ -6,9 +6,10 @@
   }
   &.complete {
     grid-template-columns: 1fr 1fr;
-    gap: 1em;
+    column-gap: 1em;
+    row-gap: 3em;
   }
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -31,7 +32,7 @@
     object-fit: cover;
   }
   .details {
-    @media (max-width: 1024px) {
+    @media (max-width: 1023px) {
       display: block;
       margin-top: 1em;
     }
@@ -64,47 +65,56 @@
   line-height: 1em;
 }
 .album-releasedate {
-  @apply font-circles;
+  @apply font-charlottenburg;
   text-align: right;
   line-height: 1em;
+}
+@media (min-width: 768px) {
+  .album-releasedate {
+    @apply font-circles;
+  }
 }
 .details {
   container-name: detail-box;
   container-type: inline-size;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   @container (width < 300px) {
     .releases-grid.complete {
-      .album-title {
-        @apply font-mono;
-        line-height: 1.3em;
-        font-weight: 400;
-      }
+      .album-title,
       .album-releasedate {
         @apply font-mono;
+        font-size: 1em;
         line-height: 1.5em;
-        font-weight: 300;
-        font-size: 6.5cqi;
+        overflow-wrap: anywhere;
+        hyphens: manual;
+        hyphenate-character: '—';
       }
+    }
+  }
+  .releases-grid.complete {
+    a {
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.2em;
     }
   }
   .selected .details {
     text-align: center;
   }
   .complete .details {
-    text-align: left;
+    text-align: center;
   }
   .album-title {
     font-size: 8cqi;
     display: inline;
-    color: #fff;
+    /* color: #fff; */
     margin-right: 3cqi;
   }
   .album-releasedate {
     font-size: 8cqi;
     display: inline-block;
-    color: #ccc;
+    /* color: #ccc; */
     &::before {
       content: '(';
     }

@@ -14,7 +14,11 @@ import RecordingCredits from './RecordingCredits';
 import RecordingPress from './RecordingPress';
 import RecordingVideos from './RecordingVideos';
 
-export default function RecordingDetails({ documentId }: { documentId: string }) {
+export default function RecordingDetails({
+  documentId,
+}: {
+  documentId: string;
+}) {
   const baseUrl = `https://slownames.net/api/recordings/${documentId}`;
   const query = [
     `populate[0]=editions`,
@@ -31,14 +35,18 @@ export default function RecordingDetails({ documentId }: { documentId: string })
     `populate[11]=videos`,
   ].join('&');
 
-  const [{ data: recordingData, loading, error }] = useAxios(`${baseUrl}?${query}`);
+  const [{ data: recordingData, loading, error }] = useAxios(
+    `${baseUrl}?${query}`
+  );
 
   if (loading) return <p>Loading release...</p>;
   if (error) return <p>Error: {JSON.stringify(error, null, 2)}</p>;
 
   const recording = recordingData?.data;
 
-  const title = recording.alias ? `${recording.alias} - ${recording.title}` : recording.title;
+  const title = recording.alias
+    ? `${recording.alias} - ${recording.title}`
+    : recording.title;
 
   return (
     <div className="content-recording-details">
@@ -48,21 +56,30 @@ export default function RecordingDetails({ documentId }: { documentId: string })
             [`letters-${title.length}`]: true,
             [`words-${title.split(/\s+/).length}`]: true,
           })}
-        >
-          {title}
-        </h1>
+          dangerouslySetInnerHTML={{ __html: title }}
+        ></h1>
       </div>
       <div className="recording-detail">
         <div className="recording-detail-column">
           <RecordingGraphics {...recording} />
-          {recording.attachments.length ? <RecordingAttachments {...recording} /> : ''}
-          {recording.promoVideos.length ? <RecordingPromoVideos {...recording} /> : ''}
+          {recording.attachments.length ? (
+            <RecordingAttachments {...recording} />
+          ) : (
+            ''
+          )}
+          {recording.promoVideos.length ? (
+            <RecordingPromoVideos {...recording} />
+          ) : (
+            ''
+          )}
           {recording.videos.length ? <RecordingVideos {...recording} /> : ''}
         </div>
         <div className="recording-detail-column">
           <RecordingEditions {...recording} />
           <RecordingIcons {...recording} />
-          {recording.reviews?.some((press: Press) => press.visibility != 'hidden') && <RecordingPress {...recording} />}
+          {recording.reviews?.some(
+            (press: Press) => press.visibility != 'hidden'
+          ) && <RecordingPress {...recording} />}
           <RecordingTracks {...recording} />
           <RecordingAbout {...recording} />
           <RecordingCredits {...recording} />

@@ -21,7 +21,8 @@ export default function Discography({ band }: { band: string }) {
   if (loading || error) return loadingOrError;
 
   const orderedRecordings = (recordings?.data || []).sort(
-    (b: Recording, a: Recording) => new Date(a.releaseDate).getTime() - new Date(b.releaseDate).getTime()
+    (b: Recording, a: Recording) =>
+      new Date(a.releaseDate).getTime() - new Date(b.releaseDate).getTime()
   );
 
   return (
@@ -33,7 +34,12 @@ export default function Discography({ band }: { band: string }) {
             <div className="recording" key={recording.id}>
               <Link href={`/recordings/${normalizedTitle}`} className="cover">
                 {recording.cover && recording.cover[0] && (
-                  <Image src={recording.cover[0].url} alt={recording.title} width={750} height={750} />
+                  <Image
+                    src={recording.cover[0].url}
+                    alt={recording.title}
+                    width={750}
+                    height={750}
+                  />
                 )}
               </Link>
               <Link href={`/recordings/${normalizedTitle}`} className="details">
@@ -46,10 +52,11 @@ export default function Discography({ band }: { band: string }) {
                     'really-long-title': recording.title.length > 50,
                     'long-word': /\b\w{15,}\b/.test(recording.title),
                   })}
-                >
-                  {recording.title}
+                  dangerouslySetInnerHTML={{ __html: recording.title }}
+                ></div>
+                <div className="album-releasedate">
+                  {new Date(recording.releaseDate).toISOString().slice(0, 4)}
                 </div>
-                <div className="album-releasedate">{new Date(recording.releaseDate).toISOString().slice(0, 4)}</div>
               </Link>
             </div>
           );
