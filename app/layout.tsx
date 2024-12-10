@@ -6,6 +6,7 @@ import NavItems from './components/NavItems';
 import MobileMenuClose from './components/MobileMenuClose';
 import Link from 'next/link';
 import Script from 'next/script';
+import SocialNavItems from './components/SocialNavItems';
 
 // fonts
 const dm_mono = DM_Mono({
@@ -89,11 +90,16 @@ export default function RootLayout({
                   ></path>
                 </svg>
               </label>
-              <nav id="mainNav">
-                <ul>
-                  <NavItems />
-                </ul>
-              </nav>
+              <div id="mainNav-wrapper">
+                <nav id="mainNav">
+                  <ul>
+                    <NavItems />
+                  </ul>
+                </nav>
+                <nav id="socialNav">
+                  <SocialNavItems />
+                </nav>
+              </div>
             </header>
             <main>{children}</main>
             <footer>
@@ -107,6 +113,9 @@ export default function RootLayout({
                   <NavItems />
                 </ul>
               </nav>
+              <nav id="footer-socialNav">
+                <SocialNavItems />
+              </nav>
             </footer>
           </div>
           <div className="drawer-side lg:hidden">
@@ -118,6 +127,11 @@ export default function RootLayout({
             <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
               <MobileMenuClose />
               <NavItems />
+              <li id="mobile-social-nav">
+                <ul>
+                  <SocialNavItems />
+                </ul>
+              </li>
             </ul>
           </div>
         </div>

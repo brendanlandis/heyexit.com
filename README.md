@@ -2,8 +2,6 @@ TODO
 
 DESIGN
 - do a typography pass on front page (and really whole site)
-- add social icons to nav and footer
-- do a pass on Current Projects page
 
 VISUAL BUGS
 - phone → it breaks page → recording detail page: carousel: images align-top instead of aligning center
