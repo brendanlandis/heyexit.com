@@ -30,11 +30,11 @@ export default function Home() {
               show photos, press, and ephemera from that time.
             </p>
             <p className="disclaimer">
-              (It feels a little weird to be make such a thorough archive of my
-              old noise music, but on the other hand, I believe very strongly in
-              using the web this way &mdash; for documenting underground culture
-              and the arts, relatively unmediated by corporations. Plus,
-              honestly I still like most of the music.)
+              (It feels a little weird to be making such a thorough archive of
+              my old noise music, but also, I believe very strongly in using the
+              web this way &mdash; for documenting underground culture and the
+              arts, relatively unmediated by corporations. Plus, honestly I
+              still like most of the music.)
             </p>
             <p>
               The project covered quite a lot of stylistic ground, working in
@@ -43,7 +43,7 @@ export default function Home() {
             </p>
             <ul>
               <li>
-                <strong>art music and long-form instrumentals:</strong>
+                <strong>art music and long-form instrumentals</strong>
                 <Link href="/recordings/reading-a-moments-dust">
                   new age doom
                 </Link>
@@ -61,7 +61,7 @@ export default function Home() {
                 </Link>
               </li>
               <li>
-                <strong>songwriting and short-form instrumentals:</strong>
+                <strong>songwriting and short-form instrumentals</strong>
                 <Link href="/recordings/inhale-ep">
                   slowcore and downer pop
                 </Link>
@@ -71,7 +71,7 @@ export default function Home() {
                 </Link>
               </li>
               <li>
-                <strong>heavy music and non-music:</strong>
+                <strong>heavy music and non-music</strong>
                 <Link href="/recordings/caudata">harsh noise</Link>,{' '}
                 <Link href="/recordings/then-i-might-could-too">
                   industrial
@@ -89,11 +89,11 @@ export default function Home() {
             <p>
               Despite this restless approach to style and tradition, there are
               several throughlines in the work:{' '}
-              <strong>
+              <em>
                 music as spiritual practice, contrasting extremes presented as
                 necessary opposites, and the dilemma of making space for hope
                 and horror in equal measure
-              </strong>
+              </em>
               .
             </p>
             <p>
@@ -106,7 +106,7 @@ export default function Home() {
             <p>
               After forty-plus releases and one or two hundred shows, Hey Exit
               is retired for the foreseeable future. I still play a lot of
-              music, and my active projects are linked from the{' '}
+              music, which you can check out on the{' '}
               <Link href="/current">current projects</Link> page.
             </p>
 

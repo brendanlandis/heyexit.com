@@ -15,7 +15,7 @@ export default function Recordings() {
           <h1>Selected Discography</h1>
         </div>
         <p className="header-text">
-          Hey Exit produced a <em>lot</em> of music over the years. These albums
+          Hey Exit made a <em>lot</em> of music over the years. These albums
           are the best starting points. Note that, being the type of music that
           it is, most of these recordings work best when heard as a complete
           album from start to finish. Listening on random or in a playlist will

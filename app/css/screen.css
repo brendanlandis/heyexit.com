@@ -8,6 +8,7 @@ body {
   font-weight: 100;
   line-height: 1em;
   @apply font-mono;
+  text-wrap: pretty;
 }
 
 #wrapper {
@@ -93,6 +94,8 @@ body {
         display: block;
         transform: scaleY(1);
         margin-top: -0.1em;
+        text-decoration: none;
+        color: #999;
       }
       > ul > li > a:hover,
       > ul > li.active > a {
@@ -132,6 +135,9 @@ body {
       justify-content: center;
       padding: 0 2em;
       opacity: 0.4;
+      a {
+        color: #fff;
+      }
       svg {
         height: 1.2em;
         width: 1.2em;
@@ -179,11 +185,24 @@ h3 {
   @apply font-circles;
 }
 
+a {
+  color: #dea4ff;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+  em {
+    color: #dea4ff;
+  }
+}
+
 /* mobile menu */
 .drawer-side ul.menu {
   padding-top: 5em;
   > li > a {
     font-size: 1.5em;
+    text-decoration: none;
+    color: #ccc;
   }
   > li {
     margin-bottom: 1em;
@@ -242,8 +261,10 @@ h3 {
     justify-content: start;
     flex-wrap: wrap;
     opacity: 0.4;
-    li, a {
+    li,
+    a {
       padding: 0;
+      color: #fff;
     }
     svg {
       height: 2em;
@@ -274,16 +295,17 @@ footer {
   opacity: 0.8;
   p {
     margin-bottom: 2em;
+    line-height: 1.4em;
   }
   a {
-    text-decoration: underline;
+    color: #fff;
   }
 }
 
 #footer-nav {
   ul {
     display: flex;
-    gap: 1em;
+    gap: 0.5em;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -306,13 +328,14 @@ footer {
     }
   }
 
-  @media (min-width: 500px) {
+  @media (min-width: 650px) {
     ul {
       flex-direction: row;
     }
     li + li:before {
       content: '•';
-      margin-right: 1em;
+      opacity: 0.7;
+      margin-right: 0.5em;
     }
   }
 }

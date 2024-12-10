@@ -53,10 +53,11 @@ export default function RandomPic() {
   const credit =
     randomMedia.alternativeText === 'unknown' ? (
       <>
-        Photo credit unknown -{' '}
+        Photo credit unknown (
         <Obfuscate email="b@slownames.net" aria-label="email me">
           lmk?
         </Obfuscate>
+        )
       </>
     ) : (
       <>Photo by {randomMedia.alternativeText}</>

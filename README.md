@@ -11,5 +11,6 @@ LASTLY
 - do an a11y pass
 - make sure HTML elements are modern, not just a bunch of divs
 
-NO EFFECT (YET)
+LATER
 - decide what to do about those youtube videos that won't download
+- menu column won't scroll vertically

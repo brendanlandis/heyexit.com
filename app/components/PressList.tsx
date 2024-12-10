@@ -32,9 +32,9 @@ export default function PressList() {
             {press.URL ? (
               <>
                 &mdash;
-                <Link href={press.URL} className="press-publication">
-                  {press.publication}
-                </Link>{' '}
+                {/* <Link href={press.URL} className="press-publication"> */}
+                  {press.publication}{' '}
+                {/* </Link>{' '} */}
                 on{' '}
                 <Link href={`/recordings/${getNormalizedTitle(press.recordings[0].title)}`}>
                   <em>{press.recordings[0].title}</em>
@@ -44,9 +44,9 @@ export default function PressList() {
               press.attachments.map((attachment) => (
                 <Fragment key={attachment.id}>
                   &mdash;
-                  <Link href={attachment.url} className="press-publication">
-                    {press.publication}
-                  </Link>{' '}
+                  {/* <Link href={attachment.url} className="press-publication"> */}
+                    {press.publication}{' '}
+                  {/* </Link>{' '} */}
                   on{' '}
                   <Link href={`/recordings/${getNormalizedTitle(press.recordings[0].title)}`}>
                     <em>{press.recordings[0].title}</em>
