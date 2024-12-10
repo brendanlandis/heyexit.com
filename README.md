@@ -14,5 +14,4 @@ LASTLY
 - make sure HTML elements are modern, not just a bunch of divs
 
 NO EFFECT (YET)
-- get vimeo working again in RecordingPromoVideos.tsx
 - decide what to do about those youtube videos that won't download
