@@ -19,8 +19,8 @@ export default function Home() {
         <div>
           <div className="about">
             <p>
-              Hey, I'm <strong>Brendan</strong>. This site is an archive for the
-              music I made throughout the 2010s, mostly under the name{' '}
+              Hey, I'm Brendan. This site is an archive for the music I made
+              throughout the 2010s, mostly under the name{' '}
               <strong>Hey Exit</strong>.
             </p>
             <RandomPic />
