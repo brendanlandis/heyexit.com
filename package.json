@@ -15,10 +15,10 @@
     "axios": "^1.7.9",
     "axios-hooks": "^5.0.2",
     "classnames": "^2.5.1",
-    "daisyui": "^4.12.20",
+    "daisyui": "^4.12.21",
     "date-fns": "^4.1.0",
     "husky": "^9.1.7",
-    "next": "15.0.4",
+    "next": "15.1.0",
     "postcss": "^8.4.49",
     "react": "19.0.0",
     "react-dom": "19.0.0",
@@ -33,7 +33,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.0.4",
+    "eslint-config-next": "15.1.0",
     "typescript": "^5"
   }
 }
