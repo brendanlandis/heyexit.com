@@ -1,10 +1,5 @@
 TODO
 
-DESIGN
-
-- go through mailchimp archive and transfer any writing on albums, cross-check event info, etc.
-- check out how ampwall does things. are there any fields I should add to the CMS?
-
 LASTLY
 
 - do an a11y pass
