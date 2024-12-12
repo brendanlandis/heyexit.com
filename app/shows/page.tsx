@@ -14,12 +14,12 @@ export default function Shows() {
           <h1>Gigography</h1>
         </div>
         <p className="header-text">
-          Hey Exit played a pretty good number of shows over the years,
-          especially given how lazy and reluctant I was about booking. I've
-          collected some documents here, then distorted them into a kind of
-          obscure collage, so it feels less like a questionable shrine to my own
-          face, and more like an altar for the work. You can hover over things
-          to see them more clearly.
+          <strong>Hey Exit</strong> played a pretty good number of shows over
+          the years, especially given how lazy and reluctant I was about
+          booking. I've collected some documents here, then distorted them into
+          a kind of obscure collage, hoping to make it feel less like a
+          questionable shrine to my own face, and more like an altar for the
+          work. You can hover over things to see them more clearly.
         </p>
         <ShowArchive />
       </div>

@@ -35,7 +35,7 @@ export default function Current() {
                 />
                 <div className="band-text">
                   <p>
-                    <span className="name">Receive</span> is my main project
+                    <strong>Receive</strong> is my main project
                     right now &mdash; a heavy art rock four-piece.
                   </p>
                 </div>
@@ -62,7 +62,7 @@ export default function Current() {
                 />
                 <div className="band-text">
                   <p>
-                    <span className="name">Glifter</span> is a songwriting duo
+                    <strong>Glifter</strong> is a songwriting duo
                     with Calley Nelson.
                   </p>
                 </div>
@@ -89,7 +89,7 @@ export default function Current() {
                 />
                 <div className="band-text">
                   <p>
-                    <span className="name">Star Card</span> is Calley's main
+                    <strong>Star Card</strong> is Calley's main
                     project, an alt-rock four-piece. I get to play drums again!
                   </p>
                 </div>

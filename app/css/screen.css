@@ -114,6 +114,7 @@ body {
           color: #aaa;
           position: relative;
           z-index: 2;
+          text-decoration: none;
         }
         a:hover,
         li.active a {
@@ -163,6 +164,10 @@ body {
   container-type: inline-size;
 }
 
+h1 {
+  color: #fff;
+}
+
 h1,
 h2 {
   font-size: 14cqi;
@@ -191,12 +196,18 @@ a {
   &:hover {
     text-decoration: none;
   }
-  em {
+  em,
+  strong {
     color: #dea4ff;
   }
 }
 
 /* mobile menu */
+
+.drawer-toggle:checked ~ .drawer-side {
+  z-index: 20;
+}
+
 .drawer-side ul.menu {
   padding-top: 5em;
   > li > a {
@@ -227,6 +238,8 @@ a {
     display: block;
     a {
       font-weight: 400;
+      color: inherit;
+      text-decoration: none;
     }
     .active a {
       text-decoration: underline;
@@ -363,7 +376,11 @@ footer {
 
 strong {
   color: #fff;
+  font-weight: 900;
 }
 em {
   color: #ffdea4;
+}
+blockquote {
+  font-style: italic;
 }

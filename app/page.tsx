@@ -19,15 +19,16 @@ export default function Home() {
         <div>
           <div className="about">
             <p>
-              Hey, I'm Brendan. This site is an archive for the music I made
-              throughout the 2010s, mostly under the name Hey Exit.
+              Hey, I'm <strong>Brendan</strong>. This site is an archive for the
+              music I made throughout the 2010s, mostly under the name{' '}
+              <strong>Hey Exit</strong>.
             </p>
             <RandomPic />
             <p>
-              Hey Exit was my primary music project for a little over a decade
-              ('09-'21). It was mostly a solo endeavor, but I roped in some
-              friends here and there. This site collects all the recordings,
-              show photos, press, and ephemera from that time.
+              <strong>Hey Exit</strong> was my primary music project for a
+              little over a decade ('09-'21). It was mostly a solo endeavor, but
+              I roped in some friends here and there. This site collects all the
+              recordings, show photos, press, and ephemera from that time.
             </p>
             <p className="disclaimer">
               (It feels a little weird to be making such a thorough archive of
@@ -97,16 +98,16 @@ export default function Home() {
               .
             </p>
             <p>
-              Some of the creative threads explored throughout the Hey Exit
-              catalog went on to become their own projects. These, as well as
-              several collaborative projects from aroud the same time, are
-              detailed on the <Link href="/projects">related projects</Link>{' '}
-              page.
+              Some of the creative threads explored throughout the{' '}
+              <strong>Hey Exit</strong> catalog went on to become their own
+              projects. These, as well as several collaborative projects from
+              aroud the same time, are detailed on the{' '}
+              <Link href="/projects">related projects</Link> page.
             </p>
             <p>
-              After forty-plus releases and one or two hundred shows, Hey Exit
-              is retired for the foreseeable future. I still play a lot of
-              music, which you can check out on the{' '}
+              After forty-plus releases and one or two hundred shows,{' '}
+              <strong>Hey Exit</strong> is retired for the foreseeable future. I
+              still play a lot of music, which you can check out on the{' '}
               <Link href="/current">current projects</Link> page.
             </p>
 

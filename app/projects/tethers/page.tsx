@@ -24,17 +24,18 @@ export default function TethersPage() {
         </div>
         <div className="project-content">
           <p className="project-intro">
-            An instrumental duo with the supreme dude Andrew Weathers (Tamarisk,
-            Wind Tide). What started as a spare, spikey instrumental duo turned
-            gradually into something more mountainous and expansive, sometimes a
-            glacier, other times a distant cloud.
+            An instrumental duo with the supreme dude Andrew Weathers (
+            <strong>Tamarisk</strong>, <strong>Wind Tide</strong>). What started
+            as a spare, spikey instrumental duo turned gradually into something
+            more mountainous and expansive, sometimes a glacier, other times a
+            distant cloud.
           </p>
           <Gigography band="Tethers" displayImages={false} shortList={true} />
           <div className="project-releases">
             <SingleRelease id="dsl01ulm53esw6mnyqdsyrx9" displayArtist={false}>
               <p>
-                A pair of scorched earth instrumentals. Side A was improvised
-                simultaneously in Brooklyn / Oakland on the full moon of July
+                A pair of lush instrumentals. Side A was improvised
+                simultaneously in Brooklyn and Oakland on the full moon of July
                 19th, 2016, with no monitoring between the two sessions, and no
                 temporal edits to the final mix. Side B was written in 2016 and
                 recorded in a single room in Brooklyn in 2017.
@@ -51,27 +52,29 @@ export default function TethersPage() {
               <p>
                 Recorded at Andrew's place in 2018, the initial plan for these
                 sessions was to record a bunch of tracks for a new tape in the{' '}
-                <em>Else</em> series, plus a bunch of tracks for a new Tethers
-                album. I went home and edited these tracks into place, but
-                circumstances prevented the Tethers tracks from materializing.
+                <em>Else</em> series, plus a bunch of tracks for a new{' '}
+                <strong>Tethers</strong> album. I went home and edited these
+                tracks into place, but circumstances prevented the{' '}
+                <strong>Tethers</strong> tracks from materializing.
               </p>
               <p>
-                In retrospect this should probably have been a Tethers release.
-                Then again, I took more compositional liberties with it than I
-                usually do. A curious entry in the discography, but honestly one
-                of my favs.
+                In retrospect this should probably have been a{' '}
+                <strong>Tethers</strong> release. Then again, I took more
+                compositional liberties with it than I usually do. A curious
+                entry in the discography, but honestly one of my favs.
               </p>
             </SingleRelease>
             <h2>older stuff</h2>
             <SingleRelease id="xcfr9c0qbpc4k63hylvu2vsn" displayArtist={false}>
               <p>
-                Several lifetimes ago, we played straight duo tracks with banjo
-                and koto. I remember for these sessions we drove all around the
-                Bay, recording in bunkers, libraries, bedrooms, parks; then
-                manipulated those recordings in some complex procedural fashion;
-                and finally played those manipulated recordings out of tiny
-                speakers in the same spaces. A moderate hassle in retrospect,
-                but then again the tunes turned out pretty nice.
+                Several lifetimes ago, we played straight, one-shot duo tracks
+                with banjo and koto. I remember for these sessions we drove all
+                around the Bay, recording in bunkers, libraries, bedrooms,
+                parks; then manipulated those recordings in some complex
+                procedural fashion; and finally played those manipulated
+                recordings out of tiny speakers in the same spaces. A moderate
+                hassle in retrospect, but then again the tunes turned out pretty
+                nice.
               </p>
               <p>
                 The "before" and "after" tracks both have this

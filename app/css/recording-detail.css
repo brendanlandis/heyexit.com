@@ -73,9 +73,11 @@
         font-size: 7cqi;
       }
     }
-    &.letters-34,
-    &.letters-35 {
+    &.letters-34 {
       font-size: 8cqi;
+    }
+    &.letters-35 {
+      font-size: 7.5cqi;
     }
     &.letters-41 {
       font-size: 5cqi;
@@ -107,6 +109,9 @@
     display: flex;
     flex-direction: column;
     gap: 2em;
+  }
+  .carousel-item {
+    align-items: center;
   }
 }
 
@@ -278,14 +283,6 @@
       grid-template-columns: 1fr 0;
     }
   }
-  .track-length:not(:empty) {
-    &:before {
-      content: '(';
-    }
-    &:after {
-      content: ')';
-    }
-  }
 }
 
 /* about */
@@ -301,6 +298,10 @@
     font-size: 1.6em;
     line-height: 1em;
     margin: 0;
+  }
+  em,
+  strong {
+    color: inherit;
   }
 }
 

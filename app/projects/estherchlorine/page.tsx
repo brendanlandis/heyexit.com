@@ -25,10 +25,14 @@ export default function EstherChlorinePage() {
         <div className="project-content">
           <p className="project-intro">
             An industrial / murky dark ambient duo with Bay Area legend and
-            major homie Greg Garbage (Black Thread, Vibrating Garbage, Birds You
-            Once Knew, Turmeric Magnitudes, Cascading Fragments, Unless, Rose
-            Buried in Sand, Von Himmel, Spitting Falcons, Wires &amp; Relays,
-            et. al.).
+            major homie Greg Garbage (<strong>Black Thread</strong>,{' '}
+            <strong>Vibrating Garbage</strong>,{' '}
+            <strong>Birds You Once Knew</strong>,{' '}
+            <strong>Turmeric Magnitudes</strong>,{' '}
+            <strong>Cascading Fragments</strong>, <strong>Unless</strong>,{' '}
+            <strong>Rose Buried in Sand</strong>,<strong>Von Himmel</strong>,{' '}
+            <strong>Spitting Falcons</strong>,{' '}
+            <strong>Wires &amp; Relays</strong>, et. al.).
           </p>
           <Gigography
             band="Esther Chlorine"
@@ -58,7 +62,8 @@ export default function EstherChlorinePage() {
             </SingleRelease>
             <SingleRelease id="adow7g00osk3dn00j7xlo2rj" displayArtist={false}>
               <p>
-                A collection of tiny shards of music. The follow-up to <em>World of Prophecy</em>.
+                A collection of tiny shards of music. The follow-up to{' '}
+                <em>World of Prophecy</em>.
               </p>
             </SingleRelease>
             <SingleRelease id="oeikprflqcfwvevafodywbze" displayArtist={false}>

@@ -26,7 +26,8 @@ export default function BigHiatusPage() {
           <p className="project-intro">
             A hazy-but-sharp psych journey between nothing and nowhere. A duo
             with spiritual brother and absolute hero of underground outsider
-            music David Drucker (Painted Faces, Bad Trips).
+            music David Drucker (<strong>Painted Faces</strong>,{' '}
+            <strong>Bad Trips</strong>).
           </p>
           <Gigography
             band="Big Hiatus"

@@ -44,7 +44,7 @@ export default function AdvectionPage() {
                 2CD ambient album.
               </p>
             </SingleRelease>
-            <h2>precursors</h2>
+            <h2>a precursor</h2>
             <SingleRelease id="lf6b1e7ke7zze04rhif3ojwl" displayArtist={true}>
               <p>
                 A trio of modular synth pieces, each a different take on the
@@ -67,15 +67,16 @@ export default function AdvectionPage() {
               </p>
               <p>
                 It's always a little funny to post stuff like this &mdash; early
-                tunes that aren't very good. But, in the context of an achival
-                space on the web, there's space for beginnings.
+                tunes that, while charming, aren't very skillful. But, in the
+                context of an achival space on the web, there's space for
+                beginnings.
               </p>
               <p>The LP contains the most completed, presentable tracks...</p>
             </SingleRelease>
             <SingleRelease id="bwpl69xzd4hd4qlyvrr2755o" displayArtist={false}>
               <p>
                 ...while the EPs contain b-sides, miscellany, segues, sketches,
-                ephemera. The <em>Lo</em> EP is more downtempo tracks...
+                ephemera. The <em>Lo</em> EP has a more downtempo feel...
               </p>
             </SingleRelease>
             <SingleRelease id="r02cjr0zz5de4tgqbw0biyke" displayArtist={false}>
