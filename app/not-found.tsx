@@ -1,5 +1,9 @@
 import './css/errors.css';
 
+export const metadata = {
+  title: 'Hey Exit :: 404 Not Found',
+};
+
 export default function Custom404() {
   return (
     <>

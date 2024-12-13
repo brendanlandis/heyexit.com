@@ -1,5 +1,4 @@
 LASTLY
-- do an a11y pass
 - make sure HTML elements are modern, not just a bunch of divs
 
 LATER
