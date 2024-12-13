@@ -29,6 +29,7 @@ export default function AdvectionPage() {
             remains some of my favorite music to make.
           </p>
           <div className="project-releases">
+            <h2>recordings</h2>
             <SingleRelease id="vymkfdtzdzrbawkmwzt8ws17" displayArtist={false}>
               <p>
                 A half-hour set of hazy, mid-tempo electronic tunes. Some of

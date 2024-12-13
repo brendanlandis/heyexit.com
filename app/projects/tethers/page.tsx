@@ -32,6 +32,7 @@ export default function TethersPage() {
           </p>
           <Gigography band="Tethers" displayImages={false} shortList={true} />
           <div className="project-releases">
+            <h2>recordings</h2>
             <SingleRelease id="dsl01ulm53esw6mnyqdsyrx9" displayArtist={false}>
               <p>
                 A pair of lush instrumentals. Side A was improvised

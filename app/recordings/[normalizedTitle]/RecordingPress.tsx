@@ -34,13 +34,13 @@ export default function RecordingPress(recording: Recording) {
             ))}
           </ul>
           <div className="collapse">
-            <input type="checkbox" />
-            <div className="more-reviews collapse-title">
+            <input type="checkbox" id="moreReviews" />
+            <label htmlFor="moreReviews" className="more-reviews collapse-title">
               <div className="more-reviews-button">
                 More press for {recording.title}
                 <RxCaretDown />
               </div>
-            </div>
+            </label>
             <ul className="collapse-content">
               {allPress.slice(2).map((press, index) => (
                 <li key={`second-${index}`} className={getClassForIndex(index + 2)}>

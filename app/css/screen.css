@@ -11,6 +11,48 @@ body {
   text-wrap: pretty;
 }
 
+#navToggle {
+  @media (max-width: 1023px) {
+    display: block;
+    text-align: right;
+    height: 45px;
+    width: 50px;
+    justify-self: end;
+    cursor: pointer;
+    position: fixed;
+    z-index: 3;
+    top: 15px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0.5em;
+    text-align: center;
+    span {
+      display: none;
+    }
+    svg {
+      height: 40px;
+      width: 40px;
+      margin: 2.5px auto 0 auto;
+    }
+    .menu {
+      position: fixed;
+      border-radius: 0.5em;
+      top: 125px;
+      right: 50px;
+      background-color: #222;
+      z-index: 1;
+      min-width: 200px;
+      font-size: 7vw;
+      line-height: 1em;
+      li:first-child {
+        border-radius-top-left: 0.5em;
+      }
+    }
+  }
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
 #wrapper {
   display: grid;
   gap: 2em;
@@ -21,39 +63,15 @@ body {
     #mainNav-wrapper {
       display: none;
     }
-    #navToggle {
-      display: block;
-      text-align: right;
-      height: 50px;
-      width: 50px;
-      justify-self: end;
-      margin-right: 30px;
-      cursor: pointer;
-      svg {
-        height: 50px;
-        width: 50px;
-      }
-      .menu {
-        position: fixed;
-        border-radius: 0.5em;
-        top: 125px;
-        right: 50px;
-        background-color: #222;
-        z-index: 1;
-        min-width: 200px;
-        font-size: 7vw;
-        line-height: 1em;
-        li:first-child {
-          border-radius-top-left: 0.5em;
-        }
-      }
-    }
     header {
       text-align: center;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      justify-content: space-between;
+      grid-template-columns: 1fr;
+      justify-content: center;
       align-items: center;
+    }
+    .logo {
+      margin: 0 auto;
     }
   }
   @media screen and (min-width: 1024px) {
@@ -70,9 +88,6 @@ body {
     }
     footer {
       grid-area: footer;
-    }
-    #navToggle {
-      display: none;
     }
     #mainNav-wrapper {
       display: block;

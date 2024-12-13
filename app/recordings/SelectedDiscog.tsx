@@ -30,19 +30,19 @@ export default function SelectedDiscog() {
       {orderedRecordings.map((recording: Recording) => {
         const normalizedTitle = getNormalizedTitle(recording.title);
         return (
-          <div className="recording" key={recording.id}>
-            <Link href={`/recordings/${normalizedTitle}`} className="cover">
+          <Link href={`/recordings/${normalizedTitle}`} className="recording" key={recording.id}>
+            <div className="cover">
               {recording.cover.map((cover) => (
                 <Image
                   key={cover.id}
                   src={cover.url}
-                  alt={recording.title}
+                  alt={`cover art for ${recording.title}`}
                   width={1024}
                   height={1024}
                 />
               ))}
-            </Link>
-            <Link href={`/recordings/${normalizedTitle}`} className="details">
+            </div>
+            <div className="details">
               <div
                 className={classNames('album-title', {
                   'long-title':
@@ -54,8 +54,8 @@ export default function SelectedDiscog() {
               <div className="album-releasedate">
                 {new Date(recording.releaseDate).toISOString().slice(0, 4)}
               </div>
-            </Link>
-          </div>
+            </div>
+          </Link>
         );
       })}
     </div>

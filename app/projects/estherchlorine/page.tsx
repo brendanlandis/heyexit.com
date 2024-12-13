@@ -40,6 +40,7 @@ export default function EstherChlorinePage() {
             shortList={true}
           />
           <div className="project-releases">
+            <h2>recordings</h2>
             <SingleRelease id="hk2qknpq4nzztqaygnw3ih2k" displayArtist={false}>
               <p>
                 A longform, semi-composed piece for guitar and electronics. The

@@ -31,6 +31,7 @@ export default function AnuraPage() {
           </p>
           <Gigography band="Anura" displayImages={false} shortList={true} />
           <div className="project-releases">
+            <h2>recordings</h2>
             <SingleRelease id="hy78nty4ro38zdbe3fjm8ueh" displayArtist={false}>
               <p>
                 My first real songwriting album, complete with all the signs of

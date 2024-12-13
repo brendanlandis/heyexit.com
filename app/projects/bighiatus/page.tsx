@@ -35,6 +35,7 @@ export default function BigHiatusPage() {
             shortList={true}
           />
           <div className="project-releases">
+            <h2>recordings</h2>
             <SingleRelease id="mukz8w9810tle26oc0kwld3h" displayArtist={false}>
               <p>
                 Towering, deep fried psych noise, heavily influenced by the east

@@ -177,6 +177,9 @@
   gap: 1em;
   align-items: center;
   justify-content: center;
+  span {
+    display: none;
+  }
   svg {
     height: 3em;
     width: 3em;

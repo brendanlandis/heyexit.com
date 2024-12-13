@@ -114,10 +114,15 @@
 
 .content-projects:not(.generic-container) {
   h2 {
-    text-align: left;
-    font-size: 7em;
-    clear: left;
-    margin-top: 1.2em;
+    .project-releases &:first-child {
+      display: none;
+    }
+    &:not(:first-child) {
+      margin-top: 1.2em;
+      text-align: left;
+      font-size: 7em;
+      clear: left;
+    }
   }
   @media (max-width: 768px) {
     h2 {
@@ -222,7 +227,10 @@
 
 .project-shows {
   margin-top: 5em;
-  h3 {
+  h2 {
+    margin: 0.1em 0 0 0 !important;
+    line-height: 1em;
+    font-size: 4em !important;
     text-align: left;
     @apply font-charlottenburg;
   }

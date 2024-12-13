@@ -31,13 +31,15 @@
     aspect-ratio: 1;
     object-fit: cover;
   }
+  @media (max-width: 1023px) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
   .details {
     @media (max-width: 1023px) {
       display: block;
       margin-top: 1em;
-      &:hover {
-        text-decoration: underline;
-      }
     }
     @media (min-width: 1024px) {
       position: absolute;

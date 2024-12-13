@@ -31,7 +31,7 @@ export default function Gigography({
 
   return (
     <div className="project-shows">
-      <h3>shows</h3>
+      <h2>shows</h2>
       <div className="show-archive">
         <ShowList shows={relevantShows} shortList={shortList} />
         {displayImages ? <ShowImages images={images} /> : null}

@@ -30,6 +30,7 @@ export default function ItBreaksPage() {
           </p>
           <Gigography band="It Breaks" displayImages={false} shortList={true} />
           <div className="project-releases">
+            <h2>recordings</h2>
             <SingleRelease id="d001u3hv85kt3p0v9sgtku22" displayArtist={false}>
               <p>
                 A one-day recording session birthed this tour EP of miniature

@@ -7,6 +7,7 @@ export default function RecordingIcons(recording: Recording) {
     <div className="recording-icons">
       {recording.bandcampURL ? (
         <Link href={recording.bandcampURL}>
+          <span>listen on Bandcamp</span>
           <FaBandcamp />
         </Link>
       ) : (
@@ -14,6 +15,7 @@ export default function RecordingIcons(recording: Recording) {
       )}
       {recording.spotifyURL ? (
         <Link href={recording.spotifyURL}>
+          <span>listen on Spotify</span>
           <FaSpotify />
         </Link>
       ) : (

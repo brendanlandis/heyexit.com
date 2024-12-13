@@ -30,18 +30,18 @@ export default function CompleteDiscog() {
       {orderedRecordings.map((recording: Recording) => {
         const normalizedTitle = getNormalizedTitle(recording.title);
         return (
-          <div className="recording" key={recording.id}>
-            <Link href={`/recordings/${normalizedTitle}`} className="cover">
+          <Link href={`/recordings/${normalizedTitle}`} className="recording" key={recording.id}>
+            <div className="cover">
               {recording.cover && recording.cover[0] && (
                 <Image
                   src={recording.cover[0].url}
-                  alt={recording.title}
+                  alt={`cover art for ${recording.title}`}
                   width={750}
                   height={750}
                 />
               )}
-            </Link>
-            <Link href={`/recordings/${normalizedTitle}`} className="details">
+            </div>
+            <div className="details">
               <div
                 className={classNames('album-title', {
                   'long-title':
@@ -56,8 +56,8 @@ export default function CompleteDiscog() {
               <div className="album-releasedate">
                 {new Date(recording.releaseDate).toISOString().slice(0, 4)}
               </div>
-            </Link>
-          </div>
+            </div>
+          </Link>
         );
       })}
     </div>

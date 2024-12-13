@@ -74,7 +74,7 @@ export default function Current() {
               <div className="band-pic band-pic-star-card">
                 <Image
                   src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/240320_Star_Card_Bar_Freda_Katixa_05_079291cb0a.jpg"
-                  alt="photo of Glifter playing live"
+                  alt="photo of Star Card playing live"
                   width={1024}
                   height={1024}
                 />
