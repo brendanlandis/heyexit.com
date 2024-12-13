@@ -268,9 +268,10 @@
       color: inherit;
     }
     h3 {
-      color: #fff;
+      color: #dea4ff;
+    }
+    .title {
       text-decoration: underline;
-      text-decoration-color: rgba(255, 255, 255, 0.4);
       text-decoration-thickness: 1px;
       text-underline-offset: 0.1em;
     }

@@ -35,6 +35,9 @@
     @media (max-width: 1023px) {
       display: block;
       margin-top: 1em;
+      &:hover {
+        text-decoration: underline;
+      }
     }
     @media (min-width: 1024px) {
       position: absolute;
@@ -52,8 +55,10 @@
       color: #000;
       opacity: 0;
       transition: opacity 0.2s;
+      text-decoration: none;
       &:hover {
         opacity: 0.9;
+        text-decoration: none;
       }
     }
   }
@@ -108,13 +113,12 @@
   .album-title {
     font-size: 8cqi;
     display: inline;
-    /* color: #fff; */
     margin-right: 3cqi;
   }
   .album-releasedate {
     font-size: 8cqi;
     display: inline-block;
-    /* color: #ccc; */
+    text-decoration: none;
     &::before {
       content: '(';
     }

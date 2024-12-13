@@ -46,12 +46,14 @@ export default function SingleRelease({
           </div>
           <div className="project-release-description">
             <h3>
-              {displayArtist
-                ? recording.data.alias
-                  ? `${recording.data.alias} - `
-                  : `${recording.data.bands[0].name} - `
-                : null}
-              {recording.data.title}
+              <span className="title">
+                {displayArtist
+                  ? recording.data.alias
+                    ? `${recording.data.alias} - `
+                    : `${recording.data.bands[0].name} - `
+                  : null}
+                {recording.data.title}
+              </span>
               <span>
                 {' '}
                 (
