@@ -267,13 +267,15 @@
     em {
       color: inherit;
     }
-    h3 {
-      color: #dea4ff;
-    }
-    .title {
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 0.1em;
+    @media (max-width: 649px) {
+      h3 {
+        color: #dea4ff;
+      }
+      .title {
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.1em;
+      }
     }
     &:hover {
       img {
