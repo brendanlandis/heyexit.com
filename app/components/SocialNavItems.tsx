@@ -1,11 +1,11 @@
 import {
   SiInstagram,
-  SiBluesky,
-  SiThreads,
+  // SiBluesky,
+  // SiThreads,
   SiMastodon,
   SiSpotify,
   SiBandcamp,
-  SiPatreon,
+  // SiPatreon,
 } from 'react-icons/si';
 
 export default function SocialNavItems() {
