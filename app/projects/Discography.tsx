@@ -14,7 +14,7 @@ function LoadingOrError({ loading, error }: { loading: boolean; error: any }) {
 
 export default function Discography({ band }: { band: string }) {
   const [{ data: recordings, loading, error }] = useAxios(
-    `https://slownames.net/api/recordings?populate=*&filters[bands][name]=${band}&filters[visibility][$ne]=hidden&pagination[pageSize]=100`
+    `https://api.slownames.net/api/recordings?populate=*&filters[bands][name]=${band}&filters[visibility][$ne]=hidden&pagination[pageSize]=100`
   );
 
   const loadingOrError = <LoadingOrError loading={loading} error={error} />;

@@ -15,7 +15,7 @@ const shuffleArray = (array: Press[]) => {
 
 export default function PressList() {
   const [{ data: presses, loading, error }] = useAxios(
-    'https://slownames.net/api/presses?populate=bands&populate=recordings&populate=attachments&filters[visibility]=highlight&filters[bands][name]=Hey%20Exit&filters[type][$ne]=interview&pagination[pageSize]=100'
+    'https://api.slownames.net/api/presses?populate=bands&populate=recordings&populate=attachments&filters[visibility]=highlight&filters[bands][name]=Hey%20Exit&filters[type][$ne]=interview&pagination[pageSize]=100'
   );
   if (loading) return <p>loading press...</p>;
   if (error) return <p>error</p>;

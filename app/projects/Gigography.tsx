@@ -15,7 +15,7 @@ export default function Gigography({
   shortList: boolean;
 }) {
   const [{ data: shows, loading, error }] = useAxios(
-    `https://slownames.net/api/shows?pagination[pageSize]=300&populate[0]=documentation&populate[1]=flyers&populate[2]=band&filters[band][name]=${band}`
+    `https://api.slownames.net/api/shows?pagination[pageSize]=300&populate[0]=documentation&populate[1]=flyers&populate[2]=band&filters[band][name]=${band}`
   );
 
   if (loading) return <></>;

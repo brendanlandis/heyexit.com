@@ -16,7 +16,7 @@ interface RelatedEntry {
 
 export default function RandomPic() {
   const [{ data: media, loading, error }, refetch] = useAxios(
-    'https://slownames.net/api/upload/files?populate=*&filters[caption][$contains]=heyexitfrontpage'
+    'https://api.slownames.net/api/upload/files?populate=*&filters[caption][$contains]=heyexitfrontpage'
   );
 
   const [isMounted, setIsMounted] = useState(false);

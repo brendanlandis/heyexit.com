@@ -21,7 +21,7 @@ export default function SingleRelease({
   children: ReactNode;
 }) {
   const [{ data: recording, loading, error }] = useAxios(
-    `https://slownames.net/api/recordings/${id}?populate=*`
+    `https://api.slownames.net/api/recordings/${id}?populate=*`
   );
 
   const loadingOrError = <LoadingOrError loading={loading} error={error} />;

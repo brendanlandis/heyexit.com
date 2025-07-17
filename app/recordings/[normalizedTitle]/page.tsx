@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 
 async function fetchRecordings() {
   const response = await fetch(
-    'https://slownames.net/api/recordings?populate=bands&filters[visibility][$ne]=hidden&pagination[pageSize]=100',
+    'https://api.slownames.net/api/recordings?populate=bands&filters[visibility][$ne]=hidden&pagination[pageSize]=100',
     { cache: 'no-store' }
   );
   if (!response.ok) throw new Error('Failed to fetch recordings');

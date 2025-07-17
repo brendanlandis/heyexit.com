@@ -19,7 +19,7 @@ export default function RecordingDetails({
 }: {
   documentId: string;
 }) {
-  const baseUrl = `https://slownames.net/api/recordings/${documentId}`;
+  const baseUrl = `https://api.slownames.net/api/recordings/${documentId}`;
   const query = [
     `populate[0]=editions`,
     `populate[1]=editions.photos`,

@@ -7,7 +7,7 @@ import ShowImages from './ShowImages';
 
 export default function ShowArchive() {
   const [{ data: shows, loading, error }] = useAxios(
-    'https://slownames.net/api/shows?pagination[pageSize]=300&populate[0]=documentation&populate[1]=flyers&populate[2]=band'
+    'https://api.slownames.net/api/shows?pagination[pageSize]=300&populate[0]=documentation&populate[1]=flyers&populate[2]=band'
   );
 
   if (loading) return <p>loading shows...</p>;
