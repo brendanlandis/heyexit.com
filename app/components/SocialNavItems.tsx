@@ -21,26 +21,26 @@ export default function SocialNavItems() {
           <SiSpotify />
         </a>
       </li>
-      <li>
+      {/* <li>
         <a href="https://www.patreon.com/user?u=18475116" title="Brendan and Calley on Patreon">
           <SiPatreon />
         </a>
-      </li>
+      </li> */}
       <li>
         <a href="https://www.instagram.com/slow.names" title="Brendan on Instagram">
           <SiInstagram />
         </a>
       </li>
-      <li>
+      {/* <li>
         <a href="https://bsky.app/profile/slownames.bsky.social" title="Brendan on Bluesky">
           <SiBluesky />
         </a>
-      </li>
-      <li>
+      </li> */}
+      {/* <li>
         <a href="https://www.threads.net/@slow.names" title="Brendan on Threads">
           <SiThreads />
         </a>
-      </li>
+      </li> */}
       <li>
         <a href="https://mstdn.social/@slownames" title="Brendan on Mastodon">
           <SiMastodon />
