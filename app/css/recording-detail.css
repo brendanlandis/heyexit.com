@@ -1,3 +1,13 @@
+@import "tailwindcss";
+
+@utility font-charlottenburg {
+  font-family: var(--font-charlottenburg-classic);
+}
+
+@utility font-lofi {
+  font-family: var(--font-lofi-forest);
+}
+
 .content-recording-details {
   h1 {
     @apply font-lofi;

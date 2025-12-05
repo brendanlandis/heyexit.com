@@ -1,3 +1,21 @@
+@import "tailwindcss";
+
+@utility font-mono {
+  font-family: var(--font-dm-mono);
+}
+
+@utility font-circles {
+  font-family: var(--font-charlottenburg-circles);
+}
+
+@utility font-charlottenburg {
+  font-family: var(--font-charlottenburg-classic);
+}
+
+@utility font-lofi {
+  font-family: var(--font-lofi-forest);
+}
+
 .releases-grid {
   display: grid;
   &.selected {
