@@ -93,9 +93,6 @@
         filter: none;
       }
     }
-    &:a {
-      margin-top: -20em;
-    }
   }
 }
 
