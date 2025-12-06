@@ -7,6 +7,8 @@ import MobileMenuClose from './components/MobileMenuClose';
 import Link from 'next/link';
 import Script from 'next/script';
 import SocialNavItems from './components/SocialNavItems';
+import { Suspense } from 'react';
+import { MatomoAnalytics } from './components/MatomoAnalytics';
 
 // fonts
 const dm_mono = DM_Mono({
@@ -132,6 +134,9 @@ export default function RootLayout({
             </ul>
           </div>
         </div>
+        <Suspense fallback={null}>
+          <MatomoAnalytics />
+        </Suspense>
       </body>
     </html>
   );
