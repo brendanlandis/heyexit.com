@@ -1,6 +1,6 @@
 .content-recording-details {
   h1 {
-    @apply font-lofi;
+    font-family: var(--font-lofi-forest);
     font-size: 13cqi;
     line-height: 0.7em;
     margin-top: 0.3em;
@@ -319,6 +319,6 @@
   width: 100%;
   h2 {
     font-size: 10cqi;
-    @apply font-charlottenburg;
+    font-family: var(--font-charlottenburg-classic);
   }
 }

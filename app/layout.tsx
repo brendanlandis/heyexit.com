@@ -36,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="black">
       <head>
         <Script
           defer
@@ -121,7 +121,7 @@ export default function RootLayout({
             </footer>
           </div>
           <div className="drawer-side lg:hidden">
-            <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+            <ul className="menu text-base-content min-h-full w-80 p-4">
               <MobileMenuClose />
               <NavItems />
               <li id="mobile-social-nav">

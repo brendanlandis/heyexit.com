@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+// @ts-ignore - daisyUI v5 plugin compatibility
+import daisyui from 'daisyui';
 
 const config: Config = {
   content: [
@@ -20,9 +22,10 @@ const config: Config = {
       },
     },
   },
-  plugins: [require('daisyui')],
-  daisyui: {
-    themes: ["black"],
-  },
+  plugins: [
+    daisyui({
+      themes: ["black"],
+    }),
+  ],
 };
 export default config;

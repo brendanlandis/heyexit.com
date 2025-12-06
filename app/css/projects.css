@@ -126,7 +126,7 @@
   }
   @media (max-width: 767px) {
     h2 {
-      @apply font-charlottenburg;
+      font-family: var(--font-charlottenburg-classic);
     }
     h3 {
       font-size: 2em;
@@ -183,8 +183,10 @@
       right: 2.3cqi;
       z-index: 20;
       height: 65cqi;
+      line-height: 65cqi;
       @media (min-width: 1024px) {
         height: 30cqi;
+        line-height: 30cqi;
       }
     }
   }
@@ -231,7 +233,7 @@
     line-height: 1em;
     font-size: 4em !important;
     text-align: left;
-    @apply font-charlottenburg;
+    font-family: var(--font-charlottenburg-classic);
   }
   li {
     margin-top: 1em;
@@ -259,7 +261,7 @@
     display: table;
   }
   h3 {
-    @apply font-lofi;
+    font-family: var(--font-lofi-forest);
     line-height: 0.9em;
     margin-bottom: 0.4em;
     position: relative;

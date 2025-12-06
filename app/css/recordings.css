@@ -68,17 +68,17 @@
 
 /* type for album titles and dates */
 .album-title {
-  @apply font-lofi;
+  font-family: var(--font-lofi-forest);
   line-height: 1em;
 }
 .album-releasedate {
-  @apply font-charlottenburg;
+  font-family: var(--font-charlottenburg-classic);
   text-align: right;
   line-height: 1em;
 }
 @media (min-width: 768px) {
   .album-releasedate {
-    @apply font-circles;
+    font-family: var(--font-charlottenburg-circles);
   }
 }
 .details {
@@ -91,7 +91,7 @@
     .releases-grid.complete {
       .album-title,
       .album-releasedate {
-        @apply font-mono;
+        font-family: var(--font-dm-mono);
         font-size: 1em;
         line-height: 1.5em;
         overflow-wrap: anywhere;
@@ -132,7 +132,7 @@
 
 @media (min-width: 1024px) {
   .album-releasedate {
-    @apply font-circles;
+    font-family: var(--font-charlottenburg-circles);
     position: absolute;
     bottom: 0em;
     right: 0.25em;
