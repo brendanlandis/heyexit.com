@@ -1,13 +1,3 @@
-@import "tailwindcss";
-
-@utility font-charlottenburg {
-  font-family: var(--font-charlottenburg-classic);
-}
-
-@utility font-lofi {
-  font-family: var(--font-lofi-forest);
-}
-
 .content-projects {
   h1 {
     text-shadow: 1px 1px 1px #000;
@@ -102,6 +92,9 @@
       img {
         filter: none;
       }
+    }
+    &:a {
+      margin-top: -20em;
     }
   }
 }

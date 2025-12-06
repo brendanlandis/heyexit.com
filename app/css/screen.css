@@ -1,21 +1,7 @@
-@import "tailwindcss";
-@import './helpers.css';
-
-@utility font-mono {
-  font-family: var(--font-dm-mono);
-}
-
-@utility font-circles {
-  font-family: var(--font-charlottenburg-circles);
-}
-
-@utility font-charlottenburg {
-  font-family: var(--font-charlottenburg-classic);
-}
-
-@utility font-lofi {
-  font-family: var(--font-lofi-forest);
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'helpers.css';
 
 body {
   font-size: 1em;
