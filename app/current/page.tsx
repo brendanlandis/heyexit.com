@@ -1,10 +1,10 @@
-import '../css/current.css';
-import Link from 'next/link';
-import Image from 'next/image';
+import "../css/current.css";
+import Link from "next/link";
+import Image from "next/image";
 
 export const metadata = {
-  title: 'Hey Exit :: Current Projects',
-  description: 'current projects of Brendan Landis',
+  title: "Hey Exit :: Current Projects",
+  description: "current projects of Brendan Landis",
 };
 
 export default function Current() {
@@ -19,7 +19,7 @@ export default function Current() {
             <Link href="https://receive.blue/">
               <div className="band-pic band-pic-receive">
                 <Image
-                  src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/240830_Receive_Bar_Freda_Katixa_14_316fc228aa.jpg"
+                  src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/DSC_01657_e02726fdeb.jpeg"
                   alt="photo of Receive playing live"
                   width={1024}
                   height={1024}
@@ -27,7 +27,7 @@ export default function Current() {
               </div>
               <div className="band-description">
                 <Image
-                  src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/receive_white_on_transparent_dd5c3a65ee.png"
+                  src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/receive_logo_mixed_up_01_white_on_transparent_7f8a82e722.png"
                   alt="Receive logo"
                   width={1024}
                   height={1024}
@@ -35,8 +35,35 @@ export default function Current() {
                 />
                 <div className="band-text">
                   <p>
-                    <strong>Receive</strong> is my main project
-                    right now &mdash; a heavy art rock four-piece.
+                    <strong>Receive</strong> is my main project right now
+                    &mdash; a heavy art rock four-piece.
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </li>
+          <li>
+            <Link href="https://starcardband.com/">
+              <div className="band-pic band-pic-star-card">
+                <Image
+                  src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/240320_Star_Card_Bar_Freda_Katixa_05_079291cb0a.jpg"
+                  alt="photo of Star Card playing live"
+                  width={1024}
+                  height={1024}
+                />
+              </div>
+              <div className="band-description">
+                <Image
+                  src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/star_card_logo_gate_white_on_transparent_96f9090589.png"
+                  alt="Star Card logo"
+                  width={1024}
+                  height={1024}
+                  className="band-logo band-logo-star-card"
+                />
+                <div className="band-text">
+                  <p>
+                    I also play drums in an alt-rock four-piece called{" "}
+                    <strong>Star Card</strong>.
                   </p>
                 </div>
               </div>
@@ -62,35 +89,8 @@ export default function Current() {
                 />
                 <div className="band-text">
                   <p>
-                    <strong>Glifter</strong> is a songwriting duo
-                    with Calley Nelson.
-                  </p>
-                </div>
-              </div>
-            </Link>
-          </li>
-          <li>
-            <Link href="https://starcard.bandcamp.com/">
-              <div className="band-pic band-pic-star-card">
-                <Image
-                  src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/240320_Star_Card_Bar_Freda_Katixa_05_079291cb0a.jpg"
-                  alt="photo of Star Card playing live"
-                  width={1024}
-                  height={1024}
-                />
-              </div>
-              <div className="band-description">
-                <Image
-                  src="https://slownames-strapi-media.s3.us-east-1.amazonaws.com/star_card_logo_white_on_transparent_7d6c1c6fa1.png"
-                  alt="Star Card logo"
-                  width={1024}
-                  height={1024}
-                  className="band-logo band-logo-star-card"
-                />
-                <div className="band-text">
-                  <p>
-                    <strong>Star Card</strong> is Calley's main
-                    project, an alt-rock four-piece. I get to play drums again!
+                    <strong>Glifter</strong> is a songwriting duo with Calley
+                    Nelson.
                   </p>
                 </div>
               </div>
